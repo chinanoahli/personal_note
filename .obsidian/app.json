@@ -1,0 +1,9 @@
+{
+  "vimMode": true,
+  "defaultViewMode": "preview",
+  "livePreview": false,
+  "strictLineBreaks": true,
+  "trashOption": "local",
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "./attachments"
+}
