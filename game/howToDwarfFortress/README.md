@@ -20,19 +20,19 @@
 
    1. [游戏画面截图](./01.gameIntroduction.md#游戏画面截图)
 
-1. [游戏安装](./02.gameInstallation.md)
+2. [游戏安装](./02.gameInstallation.md)
 
    1. [游戏下载及安装](./02.gameInstallation.md#游戏下载及安装)
 
-   1. [初次启动游戏！](./02.gameInstallation.md#初次启动游戏)
+   2. [初次启动游戏！](./02.gameInstallation.md#初次启动游戏)
 
-   1. [游戏界面初探](./02.gameInstallation.md#游戏界面初探)
+   3. [游戏界面初探](./02.gameInstallation.md#游戏界面初探)
 
-   1. [退出游戏](./02.gameInstallation.md#退出游戏)
+   4. [退出游戏](./02.gameInstallation.md#退出游戏)
 
-   1. [更换图形包](./02.gameInstallation.md#更换图形包)
+   5. [更换图形包](./02.gameInstallation.md#更换图形包)
 
-   1. [高级设置](./02.gameInstallation.md#高级设置)
+   6. [高级设置](./02.gameInstallation.md#高级设置)
 
 ---
 
@@ -40,25 +40,25 @@
 
 1. [Dwarf Fortress Wiki](http://www.bay12games.com/dwarves/)
 
-1. [The Dwarf Fortress Wiki](https://dwarffortresswiki.org/index.php/Main_Page)
+2. [The Dwarf Fortress Wiki](https://dwarffortresswiki.org/index.php/Main_Page)
 
-1. [Getting Started with Dwarf Fortress](http://members.iinet.net.au/~morty/Getting_Started_with_Dwarf_Fortress.pdf) \[ [百度云备用链接](https://pan.baidu.com/s/1hLqSzhPutORjfR8mHK2_zw?pwd=piu3) 提取码：**piu3** \]
+3. [Getting Started with Dwarf Fortress](http://members.iinet.net.au/~morty/Getting_Started_with_Dwarf_Fortress.pdf) \[ [百度云备用链接](https://pan.baidu.com/s/1hLqSzhPutORjfR8mHK2_zw?pwd=piu3) 提取码：**piu3** \]
 
    by: Peterr Tyson
 
-1. [矮人要塞從零開始到上手完整教學](https://forum.gamer.com.tw/C.php?bsn=20131&snA=18)
+4. [矮人要塞從零開始到上手完整教學](https://forum.gamer.com.tw/C.php?bsn=20131&snA=18)
 
    by: Ashdias@巴哈姆特
 
-1. [矮人要塞之旅 第一期 进游戏而已！](https://www.bilibili.com/video/BV1zr4y1K7TJ)
+5. [矮人要塞之旅 第一期 进游戏而已！](https://www.bilibili.com/video/BV1zr4y1K7TJ)
 
    by: 大寒点冰PhenixZhang@Bilibili
 
-1. [矮人要塞新汉化版超详细教程（大概）](https://www.bilibili.com/video/BV1cb411h7G6)
+6. [矮人要塞新汉化版超详细教程（大概）](https://www.bilibili.com/video/BV1cb411h7G6)
 
    by: 你笑不笑都倾城@Bilibili
 
-1. [5分钟教你玩矮人要塞](https://www.bilibili.com/video/BV1nJ411t7hD)
+7. [5分钟教你玩矮人要塞](https://www.bilibili.com/video/BV1nJ411t7hD)
 
    by: 你笑不笑都倾城@Bilibili
 
