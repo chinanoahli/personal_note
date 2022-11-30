@@ -20,7 +20,7 @@
    > 
    > 如果你无法翻墙，可以直接点击下面的文件下载
    > 
-   > [SX_Gear_v1.1.zip](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/nintendo/switch/attachments//SX_Gear_v1.1.zip)
+   > [SX_Gear_v1.1.zip](./attachments/SX_Gear_v1.1.zip)
 
 4. 下载 hekate - Nyx 破解引导程序：[下载地址](https://github.com/CTCaer/hekate)
    
@@ -250,7 +250,7 @@
     
     覆盖到 D:\\SwitchCrack\\bootloader\\res，然后修改 hekate_ipl.ini 中的 **icon** 字段即可
     
-    [res.7z](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/nintendo/switch/attachments//res.7z)
+    [res.7z](./attachments/res.7z)
 
 ---
 
