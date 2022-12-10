@@ -1,5 +1,7 @@
 # 从Wim映像文件中启动Windows
 
+> 参考来源：[Fadeer的日志](https://fadeer.github.io/%E5%B7%A5%E4%BD%9C/2015/08/06/windows-wim-boot.html)
+
 > 这里只简述步骤，具体原理可能以后补充，也可能不会补充
 >
 > 如需要了解原理，请参考[Windows Image File Boot (WimBoot)](https://learn.microsoft.com/en-us/windows/win32/w8cookbook/windows-image-file-boot--wimboot-)
