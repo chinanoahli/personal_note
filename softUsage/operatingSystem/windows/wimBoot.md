@@ -40,7 +40,7 @@ Dism /Export-Image /WIMBoot /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex
 Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1
 ```
 
-若正确无误，返回中应包含 `WIM Bootable : Yes` 字段
+若正确无误，返回中应包含 `WIM Bootable : Yes` 或 `WIM 可引导: 是` 字段
 
 ## 准备系统安装磁盘
 

@@ -7,8 +7,9 @@
    + [抓取原神数据包的下载地址](./genshin/downloadDataDirectly.md)
    + [抄作业进度](./genshin/copyHomework.md)
 
-+ ## SteamOS
-    + [SteamOS使用笔记](./steamOS/steamOSNotes.md)
++ ## Steam Deck
+    + [SteamOS 使用笔记](./steamDeck/steamOSNotes.md)
+    + [Windows on Deck 使用笔记](./steamDeck/winDeckNotes.md)
 
 + ## Nintendo Switch
     + [SXOS 转 Atmosphère](./nintendo/switch/sxosToAtmosphere.md)
