@@ -4,7 +4,8 @@
     + [目录](./howToDwarfFortress/README.md)
 
 + ## SteamOS
-    + [SteamOS使用笔记](./steamOS/steamOSNotes.md)
+    + [SteamOS 使用笔记](./steamDeck/steamOSNotes.md)
+    + [Windows on Deck 使用笔记](./steamDeck/winDeckNotes.md)
 
 + ## Nintendo Switch
     + [SXOS 转 Atmosphère](./nintendo/switch/sxosToAtmosphere.md)
