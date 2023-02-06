@@ -46,6 +46,21 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Network\NewNetworkWindowOff]
 ```
 
+## 将硬件时间设定为UTC
+
+Windows 默认将主板 RTC 模块的时间识别为当地时间，而 \*UNIX 则是识别为 UTC 时间
+
+这样会导致 Windows 和 \*UNIX 双系统使用时，总会有一个系统产生很大时差
+
+为了解决这个问题，可以通过新增下面的注册表*键值* 来解决
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+"RealTimeUniversal"=hex(b):01,00,00,00,00,00,00,00
+```
+
 ---
 
 [上一级](../README.md)
