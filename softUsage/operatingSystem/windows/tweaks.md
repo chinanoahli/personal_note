@@ -4,7 +4,7 @@
 
 我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 `chinanoahli`
 
-但是不久后，我发现，每次当我换不同的硬盘启动是，系统完成用户账户登录并进入桌面后，总会提示 **某分区的回收站损坏**
+但是不久后，我发现，每次当我换不同的硬盘启动时，系统完成用户账户登录并进入桌面后，总会提示 **某分区的回收站损坏**
 
 起初我不以为意，认为是不同系统的用户UID不一样，所以造成了这个盘的回收站出现了一些问题
 
@@ -60,6 +60,52 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
 "RealTimeUniversal"=hex(b):01,00,00,00,00,00,00,00
 ```
+
+## 自动卸载在内存中的DLL
+
+**DLL** 是Windows系统的动态链接库文件，在一般情况下，Windows不会主动卸载已经装载在内存中的DLL
+
+你可以通过新增下面的注册表值来强制Windows自动卸载当前没有被程序调用的DLL
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"AlwaysUnloadDLL"=dword:00000001
+```
+
+## 禁用幽灵\&熔断漏洞的微码补丁
+
+众所周知，禁用这两个漏洞的补丁，会导致安全问题
+
+但是总有希望尽可能电脑全部性能的时候，这时你可以选择通过新增下面的注册表值来禁用该补丁
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+"FeatureSettingsOverride"=dword:00000003
+"FeatureSettingsOverrideMask"=dword:00000003
+```
+
+## 通过注册表进行映像劫持
+
+映像劫持，可以让用户在运行一个可执行文件的时候，被注入的另一个程序所代替
+
+下面以安装在  `C:\Program Files\7-Zip\7zFM.exe` 的 7Zip 注入到  `Explorer.exe` 作为例子讲解
+
+首先需要在 `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options]` 下创建一个名为 `explorer.exe` 的键
+
+然后再其内创建一个名为 `Debugger` 的值，类型为 `字符串值 (REG_SZ)`， 值则为 7Zip 的可执行文件完整路径
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
+"Debugger"="C:\\Program Files\\7-Zip\\7zFM.exe"
+```
+
+设置完成后，重启电脑，即可发现这时系统不再在登入用户账户后，自动启动 `explorer.exe` 所自带的桌面环境，转而启动了 7Zip
 
 ---
 
