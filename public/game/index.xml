@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>笔记总目录 on chinanoahli&#39;s note</title>
-    <link>/</link>
-    <description>Recent content in 笔记总目录 on chinanoahli&#39;s note</description>
+    <title>游戏笔记 on chinanoahli&#39;s note</title>
+    <link>/game/</link>
+    <description>Recent content in 游戏笔记 on chinanoahli&#39;s note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Feb 2023 09:56:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2023 10:03:25 +0800</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/game/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

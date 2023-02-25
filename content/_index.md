@@ -1,11 +1,19 @@
-# hugo 分支说明
+---
+title: "笔记总目录"
+date: 2023-02-25T09:56:49+08:00
+draft: false
+---
 
-本分支为个人网站的 hugo 仓库，以 main 分支的内容作为基准更新
+# 笔记总目录
 
-以下为个人网站的两个可用域名:
-
- + [https://chinanoahli.info](https://chinanoahli.info)
- + [https://chinanoahli.net](https://chinanoahli.net)
++ [美术学习笔记](./art)
++ [游戏笔记](./game)
++ [软件使用笔记](./softUsage)
++ 硬件使用笔记
++ 编程语言学习
++ 外语学习
++ 网页剪藏
++ 其他
 
 ---
 

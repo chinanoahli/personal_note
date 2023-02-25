@@ -1,9 +1,10 @@
-baseURL = "https://www.chinanoahli.info/"
 languageCode = "zh-CN"
 title = "chinanoahli's note"
 theme = "hugo-book"
+disablePathToLower = true
 
 [params]
   BookTheme = 'dark'
   BookCommitPath = 'commit'
-
+  BookSearch = false
+  BookMenuBundle = '/menu'
