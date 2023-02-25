@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="第一课 术语的约定   在一个方块的透视中，平面上靠左边的轴称为y轴，靠右边的轴称为x轴，垂直平面方向的轴称为z轴
+  传统美术教学中常见的三种透视定义   单点透视，指在x轴方向上所有的线条都水平于画笔，z轴方向上所有线条都垂直于画布，只有y轴方向上的线条有一个消失点
+  两点透视，z轴方向上所有线条都垂直于画布，但x轴和y轴方向上的线条都具有消失点
+  三点透视，x轴y轴z轴方向的所有线条，均有消失点
+  透视的成因及观察角度 单点透视 假设目前有一个摄像机（或人眼），观察两个不同位置的立方体A和B（箭头代表摄像机平视前方）
+ 💡 人眼观察没有画面边框，因此在某些场合里不好描述，后面课程默认以摄像机为观察者
+ 当观察A位置时，画面应该如下图
+ 💡 最外侧的红色边框为画面边缘，下同
+ 当立方体从A位置往下移动到B位置时，观察角度保持平视不变，画面应该如下图
+在能完全观察到立方体的正面的同时，也能观察到一部分的顶面
+当方块继续往下移动时（且人眼的观察角度大约为60°）
+画面最终就会如下图所示，我们可以观察到立方体更多的顶面
+且因为观察的视线始终跟立方体的正面保持垂直，所以z轴的线条不会产生明显的收缩（ 但物体已经超出画布的边缘）
+以上就是传统美术教学中的单点透视
+两点透视 现在将立方体往上移动回B位置，并且把它左右旋转45°
+就会得到在x轴和y轴方向都有消失点的立方体图像
+因为此时视线仍然跟立方体垂直，所以z轴的线条仍旧没有出现透视收缩现象
+三点透视 在两点透视的基础上，将观察角度从平视变为俯视
+这时候我们观察到的图像，就会变成三个方向的线条都都具有透视收缩效果
+本段小结 透视是由观察角度以及被观察物体的角度共同决定的
+物体与摄像机之间的关系  ❌ 误区：一幅画里面所有的物体只能有一种透视
+💡 正解：透视的理解和分析只能限制在同一个物体中，一幅画里面的不同物体可以拥有不同角度的透视，讨论透视的时候只能针对画面中具体一个物体，而不能说一幅整画是什么透视
+ 上述法则可以通过下面的小实验来验证
+小实验 1   取任意一幅带有场景的画作
+  以墙面作为分析依据，可以得到这个房间的透视，大体是长这样的
+  此时，可以在画面任意位置上，尝试加入与房间的透视毫无关联的立方体
+  只要立方体的透视基本正确，画面上并不会产生违和感
+  现在来构建一下这幅画的侧视图，假设摄像机在右边往左拍摄">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Krenz 基础透视与结构 第一课" />
+<meta property="og:description" content="第一课 术语的约定   在一个方块的透视中，平面上靠左边的轴称为y轴，靠右边的轴称为x轴，垂直平面方向的轴称为z轴
+  传统美术教学中常见的三种透视定义   单点透视，指在x轴方向上所有的线条都水平于画笔，z轴方向上所有线条都垂直于画布，只有y轴方向上的线条有一个消失点
+  两点透视，z轴方向上所有线条都垂直于画布，但x轴和y轴方向上的线条都具有消失点
+  三点透视，x轴y轴z轴方向的所有线条，均有消失点
+  透视的成因及观察角度 单点透视 假设目前有一个摄像机（或人眼），观察两个不同位置的立方体A和B（箭头代表摄像机平视前方）
+ 💡 人眼观察没有画面边框，因此在某些场合里不好描述，后面课程默认以摄像机为观察者
+ 当观察A位置时，画面应该如下图
+ 💡 最外侧的红色边框为画面边缘，下同
+ 当立方体从A位置往下移动到B位置时，观察角度保持平视不变，画面应该如下图
+在能完全观察到立方体的正面的同时，也能观察到一部分的顶面
+当方块继续往下移动时（且人眼的观察角度大约为60°）
+画面最终就会如下图所示，我们可以观察到立方体更多的顶面
+且因为观察的视线始终跟立方体的正面保持垂直，所以z轴的线条不会产生明显的收缩（ 但物体已经超出画布的边缘）
+以上就是传统美术教学中的单点透视
+两点透视 现在将立方体往上移动回B位置，并且把它左右旋转45°
+就会得到在x轴和y轴方向都有消失点的立方体图像
+因为此时视线仍然跟立方体垂直，所以z轴的线条仍旧没有出现透视收缩现象
+三点透视 在两点透视的基础上，将观察角度从平视变为俯视
+这时候我们观察到的图像，就会变成三个方向的线条都都具有透视收缩效果
+本段小结 透视是由观察角度以及被观察物体的角度共同决定的
+物体与摄像机之间的关系  ❌ 误区：一幅画里面所有的物体只能有一种透视
+💡 正解：透视的理解和分析只能限制在同一个物体中，一幅画里面的不同物体可以拥有不同角度的透视，讨论透视的时候只能针对画面中具体一个物体，而不能说一幅整画是什么透视
+ 上述法则可以通过下面的小实验来验证
+小实验 1   取任意一幅带有场景的画作
+  以墙面作为分析依据，可以得到这个房间的透视，大体是长这样的
+  此时，可以在画面任意位置上，尝试加入与房间的透视毫无关联的立方体
+  只要立方体的透视基本正确，画面上并不会产生违和感
+  现在来构建一下这幅画的侧视图，假设摄像机在右边往左拍摄" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/art/krenzArtwork/perspective/lesson1/" />
+<meta property="article:published_time" content="2023-02-25T13:44:17+08:00" />
+<meta property="article:modified_time" content="2023-02-25T13:44:17+08:00" />
+<title>Krenz 基础透视与结构 第一课 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e7f37fe6627bb0082cb1b0b9ae15c3938017238a72448c8464c197a5611ed191.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">基础透视与结构</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/nintendo/switch/sxosToAtmosphere/">Nintendo Switch SXOS 转 Atmosphere</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Krenz 基础透视与结构 第一课</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#单点透视">单点透视</a></li>
+    <li><a href="#两点透视">两点透视</a></li>
+    <li><a href="#三点透视">三点透视</a>
+      <ul>
+        <li><a href="#本段小结">本段小结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#小实验-1">小实验 1</a></li>
+        <li><a href="#小实验-1-总结">小实验 1 总结</a></li>
+        <li><a href="#小实验-2">小实验 2</a></li>
+        <li><a href="#小实验-2-总结">小实验 2 总结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#反透视">反透视</a></li>
+    <li><a href="#其它问题">其它问题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#技巧">技巧</a>
+      <ul>
+        <li><a href="#如何使用钢笔工具检验透视的准确度">如何使用钢笔工具检验透视的准确度</a></li>
+        <li><a href="#如何寻找平面的中心">如何寻找平面的中心</a></li>
+        <li><a href="#如何找出平面上的对称线">如何找出平面上的对称线</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#将立方体应用到人体透视中">将立方体应用到人体透视中</a></li>
+    <li><a href="#透视压缩">透视压缩</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="第一课">第一课</h1>
+<h1 id="术语的约定">术语的约定</h1>
+<ul>
+<li>
+<p>在一个方块的透视中，平面上靠左边的轴称为y轴，靠右边的轴称为x轴，垂直平面方向的轴称为z轴</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-1.png" alt="l1-1" /></p>
+</li>
+</ul>
+<h1 id="传统美术教学中常见的三种透视定义">传统美术教学中常见的三种透视定义</h1>
+<ul>
+<li>
+<p><strong>单点透视</strong>，指在x轴方向上所有的线条都水平于画笔，z轴方向上所有线条都垂直于画布，只有y轴方向上的线条有一个消失点</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-2.png" alt="l1-2" /></p>
+</li>
+<li>
+<p><strong>两点透视</strong>，z轴方向上所有线条都垂直于画布，但x轴和y轴方向上的线条都具有消失点</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-3.png" alt="l1-3" /></p>
+</li>
+<li>
+<p><strong>三点透视</strong>，x轴y轴z轴方向的所有线条，均有消失点</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-4.png" alt="l1-4" /></p>
+</li>
+</ul>
+<h1 id="透视的成因及观察角度">透视的成因及观察角度</h1>
+<h2 id="单点透视">单点透视</h2>
+<p>假设目前有一个摄像机（或人眼），观察两个不同位置的立方体A和B（箭头代表摄像机<strong>平视前方</strong>）</p>
+<blockquote>
+<p>💡 人眼观察没有<strong>画面边框</strong>，因此在某些场合里不好描述，后面课程默认以摄像机为观察者</p>
+</blockquote>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-5.png" alt="l1-5" /></p>
+<p>当观察A位置时，画面应该如下图</p>
+<blockquote>
+<p>💡 最外侧的红色边框为画面边缘，下同</p>
+</blockquote>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-6.png" alt="l1-6" /></p>
+<p>当立方体从A位置往下移动到B位置时，观察角度<strong>保持平视</strong>不变，画面应该如下图</p>
+<p>在能完全观察到立方体的正面的同时，也能观察到一部分的顶面</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-7.png" alt="l1-7" /></p>
+<p>当方块继续往下移动时（且人眼的观察角度大约为60°）</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-8.png" alt="l1-8" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-9.png" alt="l1-9" /></p>
+<p>画面最终就会如下图所示，我们可以观察到立方体更多的顶面</p>
+<p>且因为观察的视线始终跟立方体的正面保持<strong>垂直</strong>，所以z轴的线条不会产生明显的收缩（
+但物体已经超出画布的边缘）</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-10.png" alt="l1-10" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-11.png" alt="l1-11" /></p>
+<p>以上就是传统美术教学中的单点透视</p>
+<h2 id="两点透视">两点透视</h2>
+<p>现在将立方体往上移动回B位置，并且把它左右旋转45°</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-12.png" alt="l1-12" /></p>
+<p>就会得到在x轴和y轴方向都有消失点的立方体图像</p>
+<p>因为此时视线仍然跟立方体垂直，所以z轴的线条仍旧没有出现透视收缩现象</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-13.png" alt="l1-13" /></p>
+<h2 id="三点透视">三点透视</h2>
+<p>在两点透视的基础上，将观察角度从平视变为俯视</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-14.png" alt="l1-14" /></p>
+<p>这时候我们观察到的图像，就会变成三个方向的线条都都具有透视收缩效果</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-15.png" alt="l1-15" /></p>
+<h3 id="本段小结">本段小结</h3>
+<p>透视是由观察角度以及被观察物体的角度共同决定的</p>
+<h1 id="物体与摄像机之间的关系">物体与摄像机之间的关系</h1>
+<blockquote>
+<p>❌ 误区：一幅画里面所有的物体只能有一种透视</p>
+<p>💡 正解：透视的理解和分析只能限制在同一个物体中，一幅画里面的不同物体可以拥有不同角度的透视，讨论透视的时候只能针对画面中具体一个物体，而不能说一幅整画是什么透视</p>
+</blockquote>
+<p>上述法则可以通过下面的小实验来验证</p>
+<h3 id="小实验-1">小实验 1</h3>
+<ol>
+<li>
+<p>取任意一幅带有场景的画作</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-16.png" alt="l1-16" /></p>
+</li>
+<li>
+<p>以墙面作为分析依据，可以得到这个房间的透视，大体是长这样的</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-17.png" alt="l1-17" /></p>
+</li>
+<li>
+<p>此时，可以在画面任意位置上，尝试加入与房间的透视毫无关联的立方体</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-18.png" alt="l1-18" /></p>
+</li>
+<li>
+<p>只要立方体的透视基本正确，画面上并不会产生违和感</p>
+</li>
+<li>
+<p>现在来构建一下这幅画的侧视图，假设摄像机在右边往左拍摄</p>
+<p>此时可以看出，角色手上的枪，对于画面来说应该是三点透视（不好理解的话，可以将枪补全成一个立方体）</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-19.png" alt="l1-19" /></p>
+</li>
+<li>
+<p>这时，就算将角色的手擦掉，让枪悬浮在空中，它对于画面来说，枪仍旧还是三点透视，与房间的透视并无关联</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-20.png" alt="l1-20" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-21.png" alt="l1-21" /></p>
+</li>
+</ol>
+<hr>
+<h3 id="小实验-1-总结">小实验 1 总结</h3>
+<p>画面中任何物体与摄像机的关系只有下列三种</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-22.png" alt="l1-22" /></p>
+<ol>
+<li>
+<p>物体<strong>在地面上</strong>，且与摄像机正面相对</p>
+</li>
+<li>
+<p>物体<strong>在地面上</strong>，且侧面对着摄像机</p>
+</li>
+<li>
+<p>物体<strong>悬浮在空中</strong>，以任意角度对着摄像机（暂称<strong>浮空方块</strong>）</p>
+</li>
+</ol>
+<blockquote>
+<p>💡 <strong>只有</strong>画第3种浮空方块时，无需顾虑画面场景已有的透视，只要方块透视本身是准确的就可以；而画前两种方块时，必须遵循场景既有的透视。</p>
+</blockquote>
+<hr>
+<h3 id="小实验-2">小实验 2</h3>
+<p>接下来实验一下上述第1、2种情况（实操方法后面课程会讲述，这里只做实验演示）</p>
+<ol>
+<li>
+<p>有这样一个场景</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-23.png" alt="l1-23" /></p>
+</li>
+<li>
+<p>假设需要在场景的地面右下角， 绘制一个<strong>放在地面上</strong>的，旋转45°的方体</p>
+<p>此时则需要根据场景的透视，先在地面右下角，绘制一个旋转45°的后的方形平面</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-24.png" alt="l1-24" /></p>
+</li>
+<li>
+<p>然后在方形的各个顶点出往上延伸出高度，再将顶点链接起来</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-25.png" alt="l1-25" /></p>
+</li>
+<li>
+<p>最后再涂上颜色，这样绘制出来的方体看起来就能紧贴地面，而不会给人悬浮在空中的感觉</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-26.png" alt="l1-26" /></p>
+</li>
+</ol>
+<hr>
+<h3 id="小实验-2-总结">小实验 2 总结</h3>
+<p>要将画面上的物体准确地”放到“地面上，就必须依据画面中地面的透视来画出物体，如果未被的画面种地面的透视，那么物体看起来就会悬浮在空中</p>
+<p>这也是为什么我们有时候画带场景的人像时，总觉得人像没办法站立在地面上的主要原因（鞋子或脚的透视与地面的透视不匹配）</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-27.png" alt="l1-27" /></p>
+<hr>
+<h1 id="画透视时常犯的问题">画透视时常犯的问题</h1>
+<h2 id="反透视">反透视</h2>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-28.png" alt="l1-28" /></p>
+<p>假如上图画得是一个立方体，那么画面中存在不符合透视的线条<strong>C</strong>，要避免画出反透视，需要时常观察画面整体进行透视检查，避免长时间在一个地方画细节，或者在画的时候只与上一条线对比</p>
+<h2 id="其它问题">其它问题</h2>
+<ol>
+<li>蹭线：容易导致无法准确描线，从而导致最后成品出现反透视</li>
+<li>飘线：容易画出带有弧度的长线，成品无法观察正确透视的效果</li>
+</ol>
+<h1 id="如何利用透视临摹物体">如何利用透视临摹物体</h1>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-29.png" alt="l1-29" /></p>
+<p>任何一幅完整的建筑物图，都存在着x、y、z三轴的信息</p>
+<p>观察上图，可以知道上图的建筑是遵循两点透视所画的</p>
+<p>这时候只要找出其中一个透视方向的两条平行线，就可以根据它们之间的角度画出与它们平行的（类似找角平分线的原理），<strong>大致正确</strong>的其他透视线</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-30.png" alt="l1-30" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-31.png" alt="l1-31" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-32.png" alt="l1-32" /></p>
+<p>画出<strong>大致正确</strong>的透视以后，再利用<strong>钢笔工具</strong>拉出矢量路径检查并校正即可</p>
+<p>找出大致的透视方向后，就要开始建立三视图，研究原图的比例关系</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-33.png" alt="l1-33" /></p>
+<p>然后再通过抓型以及三视图的顶视图比例关系，画好建筑的底面</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-34.png" alt="l1-34" /></p>
+<p>这时候就可以根据画出来的底面，用钢笔工具拿出符合画面透视的消失点</p>
+<p>找到准确的消失点后，就可以依据原图的比例，通过路径的辅助，逐渐构建出与原图一样的图形</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-35.png" alt="l1-35" /></p>
+<h2 id="技巧">技巧</h2>
+<h3 id="如何使用钢笔工具检验透视的准确度">如何使用钢笔工具检验透视的准确度</h3>
+<p><a href="%E7%AC%AC%E4%B8%80%E8%AF%BE%20d4026abf15df4c8eb9089af98930056f/%E5%B8%B8%E7%94%A8%E7%BB%98%E7%94%BB%E8%BD%AF%E4%BB%B6%E9%92%A2%E7%AC%94%E5%B7%A5%E5%85%B7%E7%9A%84%E7%94%A8%E6%B3%95%2069f00ed1674b48e8aeee0800b9aeb679.md">常用绘画软件钢笔工具的用法</a></p>
+<h3 id="如何寻找平面的中心">如何寻找平面的中心</h3>
+<p>在一个方形之中，只要找到对角线交叉的点，就可以找到方形的平分线</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-36.png" alt="l1-36" /></p>
+<h3 id="如何找出平面上的对称线">如何找出平面上的对称线</h3>
+<ol>
+<li>先找到方形的<strong>中心点</strong></li>
+<li>在方形的一边上取一点A并画出该点对应的线条</li>
+<li>从该线条的<strong>顶点</strong>穿过方形的<strong>中心点</strong>作一条直线</li>
+<li>直线与方形边缘相切的B点，就是A线条在方形平面中的对称线</li>
+<li>在实际的画图中，可以通过先画出平面的对称图形，然后通过对平面图形的自由变换，调整到需要的平面上去</li>
+</ol>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-37.png" alt="l1-37" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-38.png" alt="l1-38" /></p>
+<h1 id="取景框上帝视角">取景框/上帝视角</h1>
+<p>不会画场景，不一定是真的不会设计场景，这时候可以尝试将画布调整得更大，在更大的画布上绘制完整的建筑（或场景），之后再绘制角色，最后只去其中的一块画面作为最终作品</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-39.png" alt="l1-39" /></p>
+<p>如果只看最终画面，很多场景物品处于画框外，观看着是无法很好地判断场景原本是怎么构建出来的</p>
+<h1 id="特殊的45视角及利用立方体推理出复杂形体">特殊的45°视角及利用立方体推理出复杂形体</h1>
+<p>利用立方体，就可以构建出任何已知几何体的组合</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-40.png" alt="l1-40" /></p>
+<p>在平面上，可以通过，正方形的一个顶点，向对向边的中点发出射线，来求出与这个正方形大小完全一致正方形</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-41.png" alt="l1-41" /></p>
+<p>将这个方法应用在立体透视图形中，就可以轻松得到与原有立方体同样大小的立方体</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-42.png" alt="l1-42" /></p>
+<p>只需要利用这个方法，就可以构建出上面要求的小房子模型</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-43.png" alt="l1-43" /></p>
+<h2 id="将立方体应用到人体透视中">将立方体应用到人体透视中</h2>
+<p>以下的人体比例画法以安德鲁·路米斯的《人体素描》比例图为示范</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-44.png" alt="l1-44" /></p>
+<p>根据人体素描里面的理想化男性身体比例，可以大略地将胸腔的比例简化为<strong>2:2:1.55</strong></p>
+<p>有了这一比例，我们就可以利用立方体，堆砌出一个<strong>2x2x2</strong>的空间，并在里面描画出一个</p>
+<p>标准胸腔的大小</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-45.png" alt="l1-45" /></p>
+<p>然后再利用同样的方法，推理出其他各部分身体的形体</p>
+<blockquote>
+<p>💡 不同年龄段的人体，躯干和手脚的比例不一样，但胸腔和盆腔之间的相对比例不会有太大的变化</p>
+<p>所以并不推荐死记各种年龄段的人体比例，可以灵活运用肢体各部分与胸腔或盆腔之间的相对比例去构建人体</p>
+<p>这样可以减少记忆人体比例所消耗脑力</p>
+</blockquote>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-46.png" alt="l1-46" /></p>
+<h2 id="透视压缩">透视压缩</h2>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-47.png" alt="l1-47" /></p>
+<p>45°观察视角是最容易被肉眼找出准确比例的角度</p>
+<p>上图就是一个<strong>1:1:1</strong>的立方体，稍作辅助线，就可以发现，立方体两边的透视收缩的幅度是一样的</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-48.png" alt="l1-48" /></p>
+<p>再进一步，可知，立方体左右两个面（A和B）的形状及面积也是一样</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-49.png" alt="l1-49" /></p>
+<p>这就导致了，一开始学习透视的时候，很多画手会不自觉地将透视画成45°</p>
+<p>如果不是45°的视角，物体的纵深 y轴 会变得非常难以抓准</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-50.png" alt="l1-50" /></p>
+<p>刚学透视的画手就会不自觉的将物体画得很长</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l1-51.png" alt="l1-51" /></p>
+<p>下一节课会具体探讨如何修正这种透视错误</p>
+<hr>
+<p><a href="../..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#单点透视">单点透视</a></li>
+    <li><a href="#两点透视">两点透视</a></li>
+    <li><a href="#三点透视">三点透视</a>
+      <ul>
+        <li><a href="#本段小结">本段小结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#小实验-1">小实验 1</a></li>
+        <li><a href="#小实验-1-总结">小实验 1 总结</a></li>
+        <li><a href="#小实验-2">小实验 2</a></li>
+        <li><a href="#小实验-2-总结">小实验 2 总结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#反透视">反透视</a></li>
+    <li><a href="#其它问题">其它问题</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#技巧">技巧</a>
+      <ul>
+        <li><a href="#如何使用钢笔工具检验透视的准确度">如何使用钢笔工具检验透视的准确度</a></li>
+        <li><a href="#如何寻找平面的中心">如何寻找平面的中心</a></li>
+        <li><a href="#如何找出平面上的对称线">如何找出平面上的对称线</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#将立方体应用到人体透视中">将立方体应用到人体透视中</a></li>
+    <li><a href="#透视压缩">透视压缩</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

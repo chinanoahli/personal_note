@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>笔记总目录 on chinanoahli&#39;s note</title>
-    <link>/</link>
-    <description>Recent content in 笔记总目录 on chinanoahli&#39;s note</description>
+    <title>Krenz 绘画教室 on chinanoahli&#39;s note</title>
+    <link>/art/krenzArtwork/</link>
+    <description>Recent content in Krenz 绘画教室 on chinanoahli&#39;s note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Feb 2023 09:56:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2023 13:36:38 +0800</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/art/krenzArtwork/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -45,30 +45,6 @@
   此时，可以在画面任意位置上，尝试加入与房间的透视毫无关联的立方体
   只要立方体的透视基本正确，画面上并不会产生违和感
   现在来构建一下这幅画的侧视图，假设摄像机在右边往左拍摄</description>
-    </item>
-    
-    <item>
-      <title>Nintendo Switch SXOS 转 Atmosphere</title>
-      <link>/game/nintendo/switch/sxosToAtmosphere/</link>
-      <pubDate>Sat, 25 Feb 2023 10:58:40 +0800</pubDate>
-      
-      <guid>/game/nintendo/switch/sxosToAtmosphere/</guid>
-      <description>Nintendo Switch SXOS 转 Atmosphere  本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
-SXOS生成的虚拟系统无需保留，因为要将其转换成Atmosphère能用的并不容易，建议删掉后重新使用 hekate - Nyx 创建虚拟系统
-   请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
-相关文件如下：
- boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项    如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
-  下载 SX Gear：下载地址 (需要翻墙)
- 这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
-如果你无法翻墙，可以直接点击下面的文件下载
-SX_Gear_v1.1.zip
-   下载 hekate - Nyx 破解引导程序：下载地址
-进入网页后，点击页面右侧的Releases，在弹出的页面中，下载第一个Assets下面的hekate_ctcaer_X.X.X_Nyx_X.X.X.zip
- X.X.X 为版本号，下载最新的就行，下同
-   下载 Atmosphère 自制系统：下载地址
- 下载方法同第4步
-这里需要注意一下，除了下载 atmosphere-X.X.X-master-XXXXXXXXX+hbl-X.X.X+hbmenu-X.X.X.zip 以外，还需要下载 fusee.bin
-   下载 Signature Patches 签名补丁：</description>
     </item>
     
   </channel>
