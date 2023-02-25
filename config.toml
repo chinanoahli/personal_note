@@ -1,0 +1,9 @@
+baseURL = "https://www.chinanoahli.info/"
+languageCode = "zh-CN"
+title = "chinanoahli's note"
+theme = "hugo-book"
+
+[params]
+  BookTheme = 'dark'
+  BookCommitPath = 'commit'
+

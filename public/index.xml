@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chinanoahli&#39;s note</title>
+    <link>https://www.chinanoahli.info/</link>
+    <description>Recent content on chinanoahli&#39;s note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    
+	<atom:link href="https://www.chinanoahli.info/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
