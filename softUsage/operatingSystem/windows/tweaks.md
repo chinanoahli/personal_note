@@ -78,7 +78,7 @@ Windows Registry Editor Version 5.00
 
 众所周知，禁用这两个漏洞的补丁，会导致安全问题
 
-但是总有希望尽可能电脑全部性能的时候，这时你可以选择通过新增下面的注册表值来禁用该补丁
+但是总有希望尽可能发挥电脑全部性能的时候，这时你可以选择通过新增下面的注册表值来禁用该补丁
 
 ```
 Windows Registry Editor Version 5.00
@@ -106,6 +106,115 @@ Windows Registry Editor Version 5.00
 ```
 
 设置完成后，重启电脑，即可发现这时系统不再在登入用户账户后，自动启动 `explorer.exe` 所自带的桌面环境，转而启动了 7Zip
+
+## 通过命令行工具管理服务项
+
+1. 列出所有服务
+
+   ```
+   sc query type= service state= all
+   ```
+
+2. 只列出所有服务名称
+
+   ```
+   sc query type= service state= all | find /i "SERVICE_NAME:"
+   ```
+
+3. 查找特定的服务
+
+   ```
+   sc query type= service state= all | find /i "SERVICE_NAME: 要查找的服务名称"
+   ```
+
+4. 显示特定服务的详细情况
+
+   ```
+   sc query 服务名称
+   ```
+
+5. 查找正在运行的服务
+
+   1. `sc query type= service`
+   2. `net start`
+
+6. 查找所有停止的服务
+
+   ```
+   sc query type= service state= inactive
+   ```
+
+7. 启动一项服务<br>⚠注意: 这里需要用的是 **<i>服务名称 (SERVICE_NAME)</i>** ，而非显示名称 (DISPLAY_NAME)
+
+   ```
+   net start 服务名称
+   ```
+
+8. 停止一项服务<br>⚠注意: 这里需要用的是 **<i>服务名称 (SERVICE_NAME)</i>** ，而非显示名称 (DISPLAY_NAME)
+
+   ```
+   net stop 服务名称
+   ```
+
+9. 禁用一项服务<br>⚠注意: 这里需要用的是 **<i>服务名称 (SERVICE_NAME)</i>** ，而非显示名称 (DISPLAY_NAME)
+
+   ```
+   sc config 服务名称 start= disabled
+   ```
+
+10. 启用一项服务<br>⚠注意: 这里需要用的是 **<i>服务名称 (SERVICE_NAME)</i>** ，而非显示名称 (DISPLAY_NAME)
+
+   ```
+   REM delayed-auto = 自动(延迟启动)
+   REM auto         = 自动
+   REM demand       = 手动
+
+   sc config 服务名称 start= auto
+   ```
+
+11. 删除一项服务<br>⚠注意: 这里需要用的是 **<i>服务名称 (SERVICE_NAME)</i>** ，而非显示名称 (DISPLAY_NAME)<br>⚠注意: 本操作不可逆，在删除一项系统自带的服务之前，你可以先通过在注册表的 `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services` 路径下，导出与服务名相同的注册表项作为备份
+
+   ```
+   REM 需要管理员权限，若管理员权限仍然不够，那么你可能需要 TrustedInstaller 权限
+   sc delete 服务名称
+   ```
+
+## 通过命令行工具管理计划任务
+
+1. 列出所有计划任务
+
+   ```
+   schtasks /query
+   ```
+
+   示例输出:
+
+   ```
+   文件夹: \Microsoft\Windows\RecoveryEnvironment
+   任务名            下次运行时间       模式
+   ================ ================ ================
+   VerifyWinRE      N/A              已禁用
+   ```
+
+2. 删除特定计划任务<br>本例中使用上一条命令的输出作为示例，删除时需要提供 **<i>完整</i>** 的任务计划名（即文件夹 + 任务名）
+
+   ```
+   REM /f 参数不是必须的，如果不加这个参数，删除时就会弹出确认选项
+   
+   schtasks /delete /tn "\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE" /f
+   ```
+
+3. 禁用特定的计划任务
+
+   ```
+   schtasks /change /tn "完整的任务计划名" /disable
+   ```
+
+4. 启用特定的计划任务
+
+   ```
+   schtasks /change /tn "完整的任务计划名" /enable
+   ```
 
 ---
 
