@@ -202,6 +202,22 @@ curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/uninstal
 
 完全手动安装，请参考[安装脚本](https://github.com/SteamDeckHomebrew/decky-loader/blob/main/dist/install_release.sh)，安装脚本很短，有经验的Linux使用者应该可以完全读懂
 
+## 找回消失的 `Return to Gaming Mode`
+
+SteamOS 在 桌面模式 的桌面会有一个图标，让玩家可以立即退出桌面模式并回到游戏模式，但是因为某些原因，这个图标偶尔会被莫名其妙地删除掉
+
+这时只需要在桌面新建一个文件名为 `Return.desktop` 的文件(注意后缀应该为 `.desktop` )，内容为下面的内容，即可找回该功能
+
+```text
+[Desktop Entry]
+Name=Return to Gaming Mode
+Exec=qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logout
+Icon=steamdeck-gaming-return
+Terminal=false
+Type=Application
+StartupNotify=false
+```
+
 ## SteamOS 默认设置调优
 
 > 本节内容针对有经验的 Linux 用户，不作详细操作解释
