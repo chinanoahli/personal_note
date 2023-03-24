@@ -17,6 +17,14 @@ draft: false
 
 ---
 
+## 内容归属
+
+[chinanoahli @ GitHub](https://github.com/chinanoahli)
+
+对笔记内容有任何问题或建议，请到本项目的 [Discussions页面](https://github.com/chinanoahli/personal_note/discussions) 提出
+
+---
+
 ## 关于许可证
 
 基本全为个人笔记和个人观点，采用**CC BY SA**许可证发布。
