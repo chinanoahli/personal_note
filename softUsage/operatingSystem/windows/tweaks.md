@@ -36,6 +36,12 @@ takeown /f X: /A /R /D Y
 我们建议你在家庭和工作网络而非公共网络上启用此功能。
 ```
 
+```
+Do you want to allow your PC to be discoverable by other PCs and devices on this network?
+
+We recommend allowing this on your home and work networks, but not public ones.
+```
+
 如果你在某些虚拟机上使用Windows，那么很有可能，这个提示每次开机都会遇到
 
 你可以通过创建下面一个注册表 *项*，来禁用这个烦人的提示
