@@ -208,10 +208,10 @@
     127.0.0.1 receive-%.dg.srv.nintendo.net receive-%.er.srv.nintendo.net
     127.0.0.1 *nintendo.*
     127.0.0.1 *nintendoswitch.*
-    127.0.0.1 *[nintendo-europe.com](http://nintendo-europe.com/)
-    127.0.0.1 *[nintendoswitch.com.cn](http://nintendoswitch.com.cn/)
-    207.246.121.77 *[conntest.nintendowifi.net](http://conntest.nintendowifi.net/)
-    207.246.121.77 *[ctest.cdn.nintendo.net](http://ctest.cdn.nintendo.net/)
+    127.0.0.1 *nintendo-europe.com
+    127.0.0.1 *nintendoswitch.com.cn
+    207.246.121.77 *conntest.nintendowifi.net
+    207.246.121.77 *ctest.cdn.nintendo.net
     ```
     
     即可屏蔽所有主机与任天堂网络服务的连接 **（仅在自制系统中生效）**

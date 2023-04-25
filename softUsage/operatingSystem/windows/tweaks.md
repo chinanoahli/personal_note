@@ -64,7 +64,7 @@ Windows 默认将主板 RTC 模块的时间识别为当地时间，而 \*UNIX �
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
-"RealTimeUniversal"=hex(b):01,00,00,00,00,00,00,00
+"RealTimeUniversal"=dword:00000001
 ```
 
 ## 自动卸载在内存中的DLL
