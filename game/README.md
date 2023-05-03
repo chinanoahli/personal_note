@@ -4,6 +4,7 @@
     + [目录](./howToDwarfFortress/README.md)
 
 + ## 原神
+   + [SteamOS 图形设置优化](./genshin/graphicSettings.md)
    + [抓取原神数据包的下载地址](./genshin/downloadDataDirectly.md)
    + [抄作业进度](./genshin/copyHomework.md)
 
