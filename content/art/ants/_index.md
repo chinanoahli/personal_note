@@ -1,18 +1,18 @@
 ---
 title: "自在涂形堂"
 date: 2023-05-05T18:20:58+09:00
-draft: true
+draft: false
 ---
 
-# 自在涂形堂
+# 自在涂形堂 {#ants}
 
-+ 素体·体态
++ #### 图形·平设 {#ants_graphicDesign} 
+
++ #### 素体·体态 {#ants_humanBodyDesign}
 
   + [第一课 出彩的比例与趋势 —— 内骨骼提炼](./humanBodyDesign/lesson1)
 
-+ 图形·平设
-
-+ 道具球
++ #### 道具球 {#ants_ants_propBall}
 
 ---
 

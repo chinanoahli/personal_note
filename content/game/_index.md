@@ -6,14 +6,14 @@ draft: false
 
 # 游戏笔记
 
-+ ## 矮人要塞个人研究
++ ## 矮人要塞个人研究 {#dwarfFortress}
     + [目录](./howToDwarfFortress)
 
-+ ## SteamOS
++ ## SteamOS {#steamOS}
     + [SteamOS 使用笔记](./steamDeck/steamOSNotes)
     + [Windows on Deck 使用笔记](./steamDeck/winDeckNotes)
 
-+ ## Nintendo Switch
++ ## Nintendo Switch {#nSwitch}
     + [SXOS 转 Atmosphère](./nintendo/switch/sxosToAtmosphere)
 
 ---

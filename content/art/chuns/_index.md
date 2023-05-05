@@ -8,4 +8,6 @@ draft: false
 
 + #### 人体结构基础课 {#chuns_HumanBodyStructure}
 
+  + [第一课 头部结构拆解](./humanBodyStructure/lesson1)
+
 + #### 人物动态速写塑造课 {#chuns_CharacterDynamicSketch}
