@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="从Wim映像文件中启动Windows #   参考来源：Fadeer的日志
+  这里只简述步骤，具体原理可能以后补充，也可能不会补充
+如需要了解原理，请参考Windows Image File Boot (WimBoot)
+若此链接失效，请直接在Microsoft Lean中搜索wimboot即可
+  这里的例子会将Wim映像文件单独放到一个分区中，这个分区会被设置为恢复分区，默认情况下，不会显示在 Explorer 中
+ 准备用于WimBoot的映像文件 #  默认情况下，微软提供的安装光盘中的系统映像是不可以直接用于WimBoot的
+我们需要先从安装光盘中找到 X:\sources\install.wim 文件，并将它复制到任意可读写的路径中
+然后在控制台中利用 Dism 命令将需要的映像导出为可以WimBoot的映像，注意，按需选择对应的 Index 即可
+Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 在导出对应的映像之后，推荐进行以下的操作（非必须）：
+ 移除系统自带的 WinRE 环境，以减小映像文件体积
+对应的文件在 MountPoint\Windows\Windows\System32\Recovery\winre.wim 按需加入语言包、.Net3.5、IE、补丁等 对映像进行清理并最佳化，以减小映像文件体积
+参见DISM命令速查  得到基本映像之后，我们还需要给加入WimBoot支持
+Dism /Export-Image /WIMBoot /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 准备好映像之后，我们可以通过以下的命令对映像进行检查
+Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1 若正确无误，返回中应包含 WIM Bootable : Yes 或 WIM 可引导: 是 字段">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="从Wim映像文件中启动Windows" />
+<meta property="og:description" content="从Wim映像文件中启动Windows #   参考来源：Fadeer的日志
+  这里只简述步骤，具体原理可能以后补充，也可能不会补充
+如需要了解原理，请参考Windows Image File Boot (WimBoot)
+若此链接失效，请直接在Microsoft Lean中搜索wimboot即可
+  这里的例子会将Wim映像文件单独放到一个分区中，这个分区会被设置为恢复分区，默认情况下，不会显示在 Explorer 中
+ 准备用于WimBoot的映像文件 #  默认情况下，微软提供的安装光盘中的系统映像是不可以直接用于WimBoot的
+我们需要先从安装光盘中找到 X:\sources\install.wim 文件，并将它复制到任意可读写的路径中
+然后在控制台中利用 Dism 命令将需要的映像导出为可以WimBoot的映像，注意，按需选择对应的 Index 即可
+Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 在导出对应的映像之后，推荐进行以下的操作（非必须）：
+ 移除系统自带的 WinRE 环境，以减小映像文件体积
+对应的文件在 MountPoint\Windows\Windows\System32\Recovery\winre.wim 按需加入语言包、.Net3.5、IE、补丁等 对映像进行清理并最佳化，以减小映像文件体积
+参见DISM命令速查  得到基本映像之后，我们还需要给加入WimBoot支持
+Dism /Export-Image /WIMBoot /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 准备好映像之后，我们可以通过以下的命令对映像进行检查
+Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1 若正确无误，返回中应包含 WIM Bootable : Yes 或 WIM 可引导: 是 字段" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/softUsage/operatingSystem/windows/wimBoot/" />
+<meta property="article:published_time" content="2023-05-05T19:53:40+09:00" />
+<meta property="article:modified_time" content="2023-05-05T19:53:40+09:00" />
+<title>从Wim映像文件中启动Windows | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>从Wim映像文件中启动Windows</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#准备用于wimboot的映像文件">准备用于WimBoot的映像文件</a></li>
+    <li><a href="#准备系统安装磁盘">准备系统安装磁盘</a></li>
+    <li><a href="#进行wimboot的安装和引导程序设置">进行WimBoot的安装和引导程序设置</a></li>
+    <li><a href="#验证安装正确性">验证安装正确性</a></li>
+    <li><a href="#如何快速重装">如何快速重装</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="从wim映像文件中启动windows">
+  从Wim映像文件中启动Windows
+  <a class="anchor" href="#%e4%bb%8ewim%e6%98%a0%e5%83%8f%e6%96%87%e4%bb%b6%e4%b8%ad%e5%90%af%e5%8a%a8windows">#</a>
+</h1>
+<blockquote>
+<p>参考来源：<a href="https://fadeer.github.io/%E5%B7%A5%E4%BD%9C/2015/08/06/windows-wim-boot.html">Fadeer的日志</a></p>
+</blockquote>
+<blockquote>
+<p>这里只简述步骤，具体原理可能以后补充，也可能不会补充</p>
+<p>如需要了解原理，请参考<a href="https://learn.microsoft.com/en-us/windows/win32/w8cookbook/windows-image-file-boot--wimboot-">Windows Image File Boot (WimBoot)</a></p>
+<p>若此链接失效，请直接在<a href="https://learn.microsoft.com/en-us/">Microsoft Lean</a>中搜索<code>wimboot</code>即可</p>
+</blockquote>
+<blockquote>
+<p>这里的例子会将Wim映像文件单独放到一个分区中，这个分区会被设置为恢复分区，默认情况下，不会显示在 <em>Explorer</em> 中</p>
+</blockquote>
+<h2 id="准备用于wimboot的映像文件">
+  准备用于WimBoot的映像文件
+  <a class="anchor" href="#%e5%87%86%e5%a4%87%e7%94%a8%e4%ba%8ewimboot%e7%9a%84%e6%98%a0%e5%83%8f%e6%96%87%e4%bb%b6">#</a>
+</h2>
+<p>默认情况下，微软提供的安装光盘中的系统映像是不可以直接用于WimBoot的</p>
+<p>我们需要先从安装光盘中找到 <code>X:\sources\install.wim</code> 文件，并将它复制到任意可读写的路径中</p>
+<p>然后在控制台中利用 <strong><i>Dism</i></strong> 命令将需要的映像导出为可以WimBoot的映像，注意，按需选择对应的 <em>Index</em> 即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Export-Image /SourceImageFile:<span style="color:#ae81ff">\S</span>ourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:<span style="color:#ae81ff">\D</span>estinationWIMFilePath.wim
+</code></pre></div><p>在导出对应的映像之后，推荐进行以下的操作（非必须）：</p>
+<ul>
+<li>移除系统自带的 <em>WinRE</em> 环境，以减小映像文件体积<br>对应的文件在 <code>MountPoint\Windows\Windows\System32\Recovery\winre.wim</code></li>
+<li>按需加入语言包、.Net3.5、IE、补丁等</li>
+<li>对映像进行清理并最佳化，以减小映像文件体积<br>参见<a href="../dismCommands">DISM命令速查</a></li>
+</ul>
+<p>得到基本映像之后，我们还需要给加入WimBoot支持</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Export-Image /WIMBoot /SourceImageFile:<span style="color:#ae81ff">\S</span>ourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:<span style="color:#ae81ff">\D</span>estinationWIMFilePath.wim
+</code></pre></div><p>准备好映像之后，我们可以通过以下的命令对映像进行检查</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Get-ImageInfo /ImageFile:<span style="color:#ae81ff">\W</span>IMFile.wim /Index:1
+</code></pre></div><p>若正确无误，返回中应包含 <code>WIM Bootable : Yes</code> 或 <code>WIM 可引导: 是</code> 字段</p>
+<h2 id="准备系统安装磁盘">
+  准备系统安装磁盘
+  <a class="anchor" href="#%e5%87%86%e5%a4%87%e7%b3%bb%e7%bb%9f%e5%ae%89%e8%a3%85%e7%a3%81%e7%9b%98">#</a>
+</h2>
+<p>接下来通过 <em>WinPE</em>  启动电脑，这里推荐使用系统安装光盘自带的PE或者<a href="https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install">Windows ADK</a>提供的PE</p>
+<p>在我试验时，我一开始使用的是USM，但是USM把命令行工具 <code>diskpart</code> 精简掉了，导致无法继续操作</p>
+<p>进入PE后按  <code>Shift + F10</code> 调出控制台，然后利用 <code>diskpart</code> 命令为硬盘分区</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">diskpart
+
+:: 根据自己的系统环境选择硬盘号，并重建GPT分区表
+<span style="color:#66d9ef">select</span> disk X
+clean
+convert gpt
+
+:: 创建一个 300M 的 EFI 分区
+create partition efi size<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>
+format quick fs<span style="color:#f92672">=</span>fat32 label<span style="color:#f92672">=</span>EFI
+
+:: 将剩余的空间都分配给主分区，用作系统盘
+create partition primary
+
+:: 缩减系统盘空间，在磁盘最后面保留8G空间
+shrink minimum<span style="color:#f92672">=</span><span style="color:#ae81ff">8192</span>
+
+:: 格式化系统盘，将卷标设为<span style="color:#e6db74">`</span>OS<span style="color:#e6db74">`</span>，并为其指派盘符<span style="color:#e6db74">`</span>C<span style="color:#e6db74">`</span>
+format quick fs<span style="color:#f92672">=</span>ntfs label<span style="color:#f92672">=</span>OS
+assign letter<span style="color:#f92672">=</span>c
+
+:: 利用保留的8G空间创建专门用于存放映像文件的分区
+:: 格式化分区，将卷标设为<span style="color:#e6db74">`</span>WimImgs<span style="color:#e6db74">`</span>，并指为其派盘符<span style="color:#e6db74">`</span>M<span style="color:#e6db74">`</span>
+:: 这里不推荐将盘符指派成<span style="color:#e6db74">`</span>D<span style="color:#e6db74">`</span>和<span style="color:#e6db74">`</span>E<span style="color:#e6db74">`</span>，因为PE启动时很可能光驱已经占用了这些盘符
+:: 挑选一个在字母表中后的字母较为稳妥
+create partition primary
+format quick fs<span style="color:#f92672">=</span>ntfs label<span style="color:#f92672">=</span>WimImgs
+assign letter<span style="color:#f92672">=</span>m
+
+:: 调整映像分区的参数，让它成为不可见的恢复分区
+set id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;de94bba4-06d1-4d40-a16a-bfd50179d6ac&#34;</span>
+gpt attributes<span style="color:#f92672">=</span>0x8000000000000001
+::                ^ 14个0
+
+:: 退出 diskpart
+exit
+</code></pre></div><h2 id="进行wimboot的安装和引导程序设置">
+  进行WimBoot的安装和引导程序设置
+  <a class="anchor" href="#%e8%bf%9b%e8%a1%8cwimboot%e7%9a%84%e5%ae%89%e8%a3%85%e5%92%8c%e5%bc%95%e5%af%bc%e7%a8%8b%e5%ba%8f%e8%ae%be%e7%bd%ae">#</a>
+</h2>
+<p>在准备好硬盘的分区之后，接下来我们需要把映像复制到已经准备好的磁盘中</p>
+<blockquote>
+<p>安装光盘自带的安装程序并不适用与设置WimBoot，所以不能直接使用安装光盘提供的GUI安装程序</p>
+</blockquote>
+<p>首先我们需要将准备好的映像文件复制到储存映像的盘中，在本例就是M盘</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Copy WIMFile.wim M:<span style="color:#ae81ff">\
+</span></code></pre></div><p>接下来，需要以WimBoot方式释放文件（即创建文件指针）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Apply-Image /ImageFile:M:<span style="color:#ae81ff">\W</span>IMFile.wim /ApplyDir:C: /Index:1 /WIMBoot
+</code></pre></div><p>最后，我们还需要手动写入BCD引导程序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">C:<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\S</span>ystem32<span style="color:#ae81ff">\b</span>cdboot.exe C:<span style="color:#ae81ff">\W</span>indows /L zh-cn <span style="color:#e6db74">&#34;Windows 10 (WimBoot)&#34;</span>
+</code></pre></div><p>到这里，全部操作已经完成，只需要重启即可进入系统准备阶段</p>
+<h2 id="验证安装正确性">
+  验证安装正确性
+  <a class="anchor" href="#%e9%aa%8c%e8%af%81%e5%ae%89%e8%a3%85%e6%ad%a3%e7%a1%ae%e6%80%a7">#</a>
+</h2>
+<p>为了验证系统是否以WimBoot的方式安装，你可以尝试以下步骤：</p>
+<ul>
+<li>以管理员身份运行 <code>fsutil wim enumwims C:</code> 并查看返回信息</li>
+<li>在 <em>磁盘管理器</em> 中查看系统盘是否包含 <code>Wim 引导</code> 参数</li>
+</ul>
+<h2 id="如何快速重装">
+  如何快速重装
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%bf%ab%e9%80%9f%e9%87%8d%e8%a3%85">#</a>
+</h2>
+<p>首先当然还是把电脑启动到PE环境并调出控制台</p>
+<p>接着需要利用 <code>diskpart</code> 将C盘格式化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">diskpart
+
+:: 根据自己的系统环境选择硬盘号
+<span style="color:#66d9ef">select</span> disk X
+
+:: 列出硬盘里的所有分区
+list volume
+
+:: 根据自己的系统环境，选择C盘对应的磁盘号
+<span style="color:#66d9ef">select</span> volume X
+
+:: 格式化系统盘，将卷标设为<span style="color:#e6db74">`</span>OS<span style="color:#e6db74">`</span>
+format quick fs<span style="color:#f92672">=</span>ntfs label<span style="color:#f92672">=</span>OS
+
+:: 现在还无需退出 diskpart !!
+</code></pre></div><p>到此，我们还需要将恢复分区手动挂载一下，因为恢复分区是不会被系统自动分配盘符的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">:: 在上面列出分区的步骤，应该可以看到我们存放映像文件的恢复分区了
+:: 这里为恢复分区分配盘符<span style="color:#e6db74">`</span>M<span style="color:#e6db74">`</span>，以便我们可以访问它里面的映像文件
+<span style="color:#66d9ef">select</span> volume Y
+assign letter<span style="color:#f92672">=</span>m
+
+:: 退出 diskpart
+exit
+</code></pre></div><p>然后重新运行一下Dism命令，以WimBoot的方式释放系统文件到C盘即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Apply-Image /ImageFile:M:<span style="color:#ae81ff">\W</span>IMFile.wim /ApplyDir:C: /Index:1 /WIMBoot
+</code></pre></div><p>注意，这里我们无需重新写入BCD引导程序</p>
+<p>因为BCD引导程序是存放在EFI分区，而不是系统盘C盘里面的，所以并不会被重装过程影响到</p>
+<p>到这里重装就结束了，我们只需要重启电脑即可进入系统准备阶段</p>
+<hr>
+<p><a href="..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#准备用于wimboot的映像文件">准备用于WimBoot的映像文件</a></li>
+    <li><a href="#准备系统安装磁盘">准备系统安装磁盘</a></li>
+    <li><a href="#进行wimboot的安装和引导程序设置">进行WimBoot的安装和引导程序设置</a></li>
+    <li><a href="#验证安装正确性">验证安装正确性</a></li>
+    <li><a href="#如何快速重装">如何快速重装</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

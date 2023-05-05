@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="抓取原神数据包的下载地址 #   参考链接：点我跳转(需翻墙)
+这里原作者说方法已失效，实际上是错误的，直到3.3.0更新为止，本方法仍然有效
+ 0x00 工具的准备 #  首先我们要准备工具，以从内存提取下载地址
+不用担心，这个过程是安全的，因为没有篡改游戏本身的文件，也不需要登录（只操作启动器），所以正常来说不会被封禁
+工具的名字叫 Process Hacker ，官方网站点这里，进入官网后，点击网页上蓝色的按钮 Download Process Hacker ，然后根据你的系统以及架构选择对应的 Portable 版本即可
+ Portable 即便携版，不需要安装，下载后是一个zip压缩文件，解压到任意位置即可使用
+ 0x01 启动 Process Hacker 的注意点 #  一定要记得用管理员身份运行Process Hacker，否则Process Hacker将无法读取原神启动器的内存，从而造成操作失败
+0x02 通过 Process Hacker 启动原神启动器 #  在解压出来的Process Hacker路径中找到ProcessHacker.exe，然后右键点击它，从弹出菜单中选择以管理员身份运行 (A)
+ 请注意，如果你成功地以管理员身份运行了Process Hacker的话，它的标题栏是会显示Administrator的（见下图）
+ 然后你将会看到Process Hacker的主窗口
+现在，从菜单栏中找到Hacker &gt; Run...，然后从弹出文件选择窗口中，选择原神启动器的launcher.exe以通过 Process Hacker 启动原神启动器
+然后让启动器开始下载数据文件，如初次安装游戏或进行预下载等等
+这时我们先将注意力放到Process Hacker的主窗口中，从进程列表里面找到原神图标的launcher.exe进程
+找到之后，在它上面点击鼠标右键，并从弹出菜单中选择Properties，打开启动器进程的属性窗口
+在属性窗口中，我们进入Memory标签，然后点击Strings...按钮
+接下来会弹出 String Search 字符串搜索窗口，这里我们不需要更改任何设置，直接点击OK按钮即可
+接着在弹出的 Results 结果窗口中，点击窗口左下角的Filter过滤器按钮，并在弹出的菜单中选择Conntains内容">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="DownloadDataDirectly" />
+<meta property="og:description" content="抓取原神数据包的下载地址 #   参考链接：点我跳转(需翻墙)
+这里原作者说方法已失效，实际上是错误的，直到3.3.0更新为止，本方法仍然有效
+ 0x00 工具的准备 #  首先我们要准备工具，以从内存提取下载地址
+不用担心，这个过程是安全的，因为没有篡改游戏本身的文件，也不需要登录（只操作启动器），所以正常来说不会被封禁
+工具的名字叫 Process Hacker ，官方网站点这里，进入官网后，点击网页上蓝色的按钮 Download Process Hacker ，然后根据你的系统以及架构选择对应的 Portable 版本即可
+ Portable 即便携版，不需要安装，下载后是一个zip压缩文件，解压到任意位置即可使用
+ 0x01 启动 Process Hacker 的注意点 #  一定要记得用管理员身份运行Process Hacker，否则Process Hacker将无法读取原神启动器的内存，从而造成操作失败
+0x02 通过 Process Hacker 启动原神启动器 #  在解压出来的Process Hacker路径中找到ProcessHacker.exe，然后右键点击它，从弹出菜单中选择以管理员身份运行 (A)
+ 请注意，如果你成功地以管理员身份运行了Process Hacker的话，它的标题栏是会显示Administrator的（见下图）
+ 然后你将会看到Process Hacker的主窗口
+现在，从菜单栏中找到Hacker &gt; Run...，然后从弹出文件选择窗口中，选择原神启动器的launcher.exe以通过 Process Hacker 启动原神启动器
+然后让启动器开始下载数据文件，如初次安装游戏或进行预下载等等
+这时我们先将注意力放到Process Hacker的主窗口中，从进程列表里面找到原神图标的launcher.exe进程
+找到之后，在它上面点击鼠标右键，并从弹出菜单中选择Properties，打开启动器进程的属性窗口
+在属性窗口中，我们进入Memory标签，然后点击Strings...按钮
+接下来会弹出 String Search 字符串搜索窗口，这里我们不需要更改任何设置，直接点击OK按钮即可
+接着在弹出的 Results 结果窗口中，点击窗口左下角的Filter过滤器按钮，并在弹出的菜单中选择Conntains内容" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/game/genshin/downloadDataDirectly/" />
+<meta property="article:published_time" content="2023-05-05T19:14:32+09:00" />
+<meta property="article:modified_time" content="2023-05-05T19:14:32+09:00" />
+<title>DownloadDataDirectly | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>DownloadDataDirectly</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#0x00-工具的准备">0x00 工具的准备</a></li>
+    <li><a href="#0x01-启动-process-hacker-的注意点">0x01 启动 Process Hacker 的注意点</a></li>
+    <li><a href="#0x02-通过-process-hacker-启动原神启动器">0x02 通过 Process Hacker 启动原神启动器</a></li>
+    <li><a href="#0x03-下载链接的选择">0x03 下载链接的选择</a></li>
+    <li><a href="#如何处理下载到的数据文件">如何处理下载到的数据文件</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="抓取原神数据包的下载地址">
+  抓取原神数据包的下载地址
+  <a class="anchor" href="#%e6%8a%93%e5%8f%96%e5%8e%9f%e7%a5%9e%e6%95%b0%e6%8d%ae%e5%8c%85%e7%9a%84%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80">#</a>
+</h1>
+<blockquote>
+<p>参考链接：<a href="https://oscarcx.com/tech/genshin-direct-download.html">点我跳转(需翻墙)</a></p>
+<p>这里原作者说方法已失效，实际上是错误的，直到<code>3.3.0</code>更新为止，本方法仍然有效</p>
+</blockquote>
+<h2 id="0x00-工具的准备">
+  0x00 工具的准备
+  <a class="anchor" href="#0x00-%e5%b7%a5%e5%85%b7%e7%9a%84%e5%87%86%e5%a4%87">#</a>
+</h2>
+<p>首先我们要准备工具，以从内存提取下载地址</p>
+<p>不用担心，这个过程是安全的，因为没有篡改游戏本身的文件，也不需要登录（只操作启动器），所以正常来说不会被封禁</p>
+<p>工具的名字叫 <strong><i>Process Hacker</i></strong> ，官方网站点<a href="https://processhacker.sourceforge.io/">这里</a>，进入官网后，点击网页上蓝色的按钮 <strong><i>Download Process Hacker</i></strong> ，然后根据你的系统以及架构选择对应的 <em>Portable</em> 版本即可</p>
+<blockquote>
+<p><em>Portable</em> 即便携版，不需要安装，下载后是一个zip压缩文件，解压到任意位置即可使用</p>
+</blockquote>
+<h2 id="0x01-启动-process-hacker-的注意点">
+  0x01 启动 Process Hacker 的注意点
+  <a class="anchor" href="#0x01-%e5%90%af%e5%8a%a8-process-hacker-%e7%9a%84%e6%b3%a8%e6%84%8f%e7%82%b9">#</a>
+</h2>
+<p>一定要记得用管理员身份运行Process Hacker，否则Process Hacker将无法读取原神启动器的内存，从而造成操作失败</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/access_denied.png" alt="Access Denied" /></p>
+<h2 id="0x02-通过-process-hacker-启动原神启动器">
+  0x02 通过 Process Hacker 启动原神启动器
+  <a class="anchor" href="#0x02-%e9%80%9a%e8%bf%87-process-hacker-%e5%90%af%e5%8a%a8%e5%8e%9f%e7%a5%9e%e5%90%af%e5%8a%a8%e5%99%a8">#</a>
+</h2>
+<p>在解压出来的Process Hacker路径中找到<code>ProcessHacker.exe</code>，然后右键点击它，从弹出菜单中选择<code>以管理员身份运行 (A)</code></p>
+<blockquote>
+<p>请注意，如果你成功地以管理员身份运行了Process Hacker的话，它的标题栏是会显示<code>Administrator</code>的（见下图）</p>
+</blockquote>
+<p>然后你将会看到Process Hacker的主窗口</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/mainWindow.png" alt="Main Window" /></p>
+<p>现在，从菜单栏中找到<code>Hacker &gt; Run...</code>，然后从弹出文件选择窗口中，选择原神启动器的<code>launcher.exe</code>以通过 Process Hacker 启动原神启动器</p>
+<p>然后让启动器开始下载数据文件，如初次安装游戏或进行预下载等等</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/run.png" alt="Run Launcher from PH" /></p>
+<p>这时我们先将注意力放到Process Hacker的主窗口中，从进程列表里面找到原神图标的<code>launcher.exe</code>进程</p>
+<p>找到之后，在它上面点击鼠标右键，并从弹出菜单中选择<code>Properties</code>，打开启动器进程的属性窗口</p>
+<p>在属性窗口中，我们进入<code>Memory</code>标签，然后点击<code>Strings...</code>按钮</p>
+<p>接下来会弹出 <strong>String Search</strong> 字符串搜索窗口，这里我们不需要更改任何设置，直接点击<code>OK</code>按钮即可</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/properties.png" alt="Open Properties" /></p>
+<p>接着在弹出的 <strong>Results</strong> 结果窗口中，点击窗口左下角的<code>Filter</code>过滤器按钮，并在弹出的菜单中选择<code>Conntains</code>内容</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/filter.png" alt="Filter" /></p>
+<p>然后在弹出的<strong>Filter</strong>过滤器窗口中填入<code>autopatch</code>这串字符，并点击<code>OK</code>按钮</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/autopatch.png" alt="Autopatch" /></p>
+<p>接下来，Process Hacker将会弹出新的 <strong>Results</strong> 结果窗口，我们可以看到很多以<code>.zip</code>结尾的文件链接</p>
+<p>如何选择下载链接，将会在下一段讲述，这里我们先学习一下如何把想要的链接复制出来</p>
+<p>首先我们在 <strong>Results</strong> 窗口点击一条想要复制的链接选中它，然后点击窗口右下角的<code>Copy</code>按钮即可将这条结果复制出来</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/game/genshin/attachments/links.png" alt="Copy the Links" /></p>
+<p>复制出来将会是以下的效果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">0x18bf6416f90 (232): 
+
+https://autopatchcn.yuanshen.com/client_app/download/pc_zip/20221024103540_fp3L3cHoDpo9eNeT/Audio_Japanese_3.2.0.zip
+</code></pre></div><p>我们只需要将第二行的链接复制到任意多线程HTTP下载工具开始下载即可</p>
+<blockquote>
+<p>多线程HTTP下载工具：IDM、FDM等等都行</p>
+</blockquote>
+<h2 id="0x03-下载链接的选择">
+  0x03 下载链接的选择
+  <a class="anchor" href="#0x03-%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5%e7%9a%84%e9%80%89%e6%8b%a9">#</a>
+</h2>
+<blockquote>
+<p>本次以3.2.0升级到3.3.0这次升级为例</p>
+</blockquote>
+<p>在上面一步中，我们是先开始了在原神启动器里面下载任务再提取地址的</p>
+<p>现在，我们可以打开游戏的安装目录，可以发现里面有一个后缀名为<code>zip_tmp</code>的文件</p>
+<p><code>tmp</code>即临时文件的意思，所以下载完成后后缀名里面的<code>_tmp</code>会被去掉，文件会自动被重命名为<code>*.zip</code></p>
+<p>这个就是我们即将要下载的数据文件，记下它的名字<code>game_3.2.0_3.3.0_hdiff_06STMj1gxyYbPCR5.zip_tmp</code></p>
+<p>从文件的名字中，我们可以看到我们目前的版本号为<code>3.2.0</code>，即将升级到<code>3.3.0</code>，而<code>hdiff</code>就是增量包的意思</p>
+<blockquote>
+<p>增量包：只包含这次升级新增或修改的部分文件，并不包含整个游戏的全部文件</p>
+<p>全量包：包含整个游戏的所有资源文件</p>
+<p>所以如果你是初次下载安装游戏，就需要直接找到文件名不包含<code>hdiff</code>且版本号为最新版本的文件下载链接</p>
+<p>如<code>YuanShen_3.30.zip</code>、<code>YuanShen_3.30.zip.001</code>等等，这里是分卷压缩，注意要把所有所有分P全部下完才行</p>
+</blockquote>
+<p>然后我们就可以到Process Hacker的搜索结果里面，找到下载链接结尾为<code>game_3.2.0_3.3.0_hdiff_06STMj1gxyYbPCR5.zip</code>的链接，这就是我们要找了更新补丁数据链接</p>
+<blockquote>
+<p>你现在或许发现了，Process Hacker的搜索结果里面还包含了从<code>3.1.0</code>升级到<code>3.2.0</code>的数据文件下载地址</p>
+<p>假如你并没有先在启动器里开始下载任务，或者游戏安装目录里面没有找到临时文件，这里就要注意不要选错地址了！</p>
+</blockquote>
+<p>要注意的是，这只是游戏本身的更新数据，并不包含不同的语言包和语音包</p>
+<p>你可能已经注意到，Processs Hacker的搜索结果里面，包含很多语言代码，如<code>zh-cn</code>、<code>en-us</code>以及<code>ja-jp</code></p>
+<p>没错，就是相关的语言包，下面列出常见的语言代码：</p>
+<ul>
+<li><code>zh-cn</code> 代表简体中文</li>
+<li><code>en-us</code> 代表美国英语</li>
+<li><code>ja-jp</code> 代表日语</li>
+<li><code>ko-kr</code> 代表韩语</li>
+</ul>
+<p>你会发现，好像没有见到有繁体中文的项目，这里我的推测是：繁体中文其实是由简体中文进行简单的简繁转换而来的</p>
+<p>接下来还要处理语音包，再次浏览Process Hacker的搜索结果，我们可以发现，有不少文件是以<code>Audio</code>开头的，如<code>Audio_Chinese_3.3.0.zip</code>和<code>Audio_English(US)_3.3.0.zip</code>等等，这些文件的名字就好理解多了：</p>
+<ul>
+<li><code>Chinese</code> 代表中文语音包</li>
+<li><code>English(US)</code> 代表美式英语语音包</li>
+<li><code>Japanese</code> 代表日语语音包</li>
+<li><code>Korean</code> 调表韩国语语音包</li>
+</ul>
+<p>根据自身的需要下载对应的语音包即可</p>
+<h2 id="如何处理下载到的数据文件">
+  如何处理下载到的数据文件
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e4%b8%8b%e8%bd%bd%e5%88%b0%e7%9a%84%e6%95%b0%e6%8d%ae%e6%96%87%e4%bb%b6">#</a>
+</h2>
+<p>当我们把下载地址都找全了以后，就可以暂停原神启动器里面的下载任务，或干脆退出启动器</p>
+<p>接下来进入游戏安装目录，把现有的后缀名为<code>zip_tmp</code>临时文件全部删除掉</p>
+<p>然后把下载得到的文件的后缀名从<code>zip</code>改为<code>zip_tmp</code>，并将数据文件放到游戏目录（最好的做法是在下载时直接将游戏安装目录选为下载目录），再重新启动原神启动器，并重新开始下载任务</p>
+<p>此时，原神启动器将会自动检查临时文件临时文件是否完整，如果文件完整的话，启动器将会自动解压并将新数据整合到现有的游戏数据里面</p>
+<blockquote>
+<p>注意：我个人不推荐自己手动解压覆盖文件的做法，因为不确定米忽悠有没有在更新时进行文件的修改工作（如文件拼接等等），让启动器去自动处理最为保险</p>
+</blockquote>
+<hr>
+<p><a href="..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#0x00-工具的准备">0x00 工具的准备</a></li>
+    <li><a href="#0x01-启动-process-hacker-的注意点">0x01 启动 Process Hacker 的注意点</a></li>
+    <li><a href="#0x02-通过-process-hacker-启动原神启动器">0x02 通过 Process Hacker 启动原神启动器</a></li>
+    <li><a href="#0x03-下载链接的选择">0x03 下载链接的选择</a></li>
+    <li><a href="#如何处理下载到的数据文件">如何处理下载到的数据文件</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

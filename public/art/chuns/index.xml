@@ -6,10 +6,33 @@
     <description>Recent content in 画画的春哥 on chinanoahli&#39;s note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Feb 2023 14:11:42 +0800</lastBuildDate>
-    
-	<atom:link href="/art/chuns/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 25 Feb 2023 14:11:42 +0800</lastBuildDate><atom:link href="/art/chuns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>画画的春哥 人体结构基础课 第一课</title>
+      <link>/art/chuns/humanBodyStructure/lesson1/</link>
+      <pubDate>Fri, 05 May 2023 18:52:40 +0900</pubDate>
+      
+      <guid>/art/chuns/humanBodyStructure/lesson1/</guid>
+      <description>第一课 头部结构拆解 #  简化头骨组成 #  为了更方便地理解头骨，可以将头骨简化为以下模型：头顶的球体、面骨以及下颌骨，这三大区域
+头骨的区块 #   💡 下面说到的比例，如无特殊说明，均以理想的成年人作为模型
+⚠️ 但实际上每个角色都有其特征，所以下面说到的数据均不能死板地套用在所画的角色身上
+比例数据都允许有一定的误差，且应该根据所画的对象进行一定调整
+后面的课程中提到的其他比例数据同理
+   成年人的头骨大致可以看成是一个 2 : 3 : 3 的方块
+  从正视图看，可以将头骨纵向划分为三个区域，亦即三庭
+  上庭：指从发际线到眉弓这一块区域
+  中庭：指从眉弓到鼻底这一块区域
+  下庭：指从鼻底到下巴这一块区域
+    而从横向看，则可以以一只眼睛的宽度作为基准，将头骨横向划分为五个区域，亦即五眼
+   💡 这里的眼宽，是指在皮肉健全的状态下一只眼睛的宽度，而非只有骨头的状态
+ 从侧视图看，耳朵位于侧视图的中间，约为中庭1/2的位置
+而脖子的起点则位于头顶球体部分与鼻低延长线 相切的地方
+要准确抓住一个角色部的头部特征，也可以借由切分侧视图，并利用切分线与头骨之间的负型来分析
+ 💡 一般来说，男性的头骨通常会比女性的头骨更强壮，如具有更宽大的下颚、更饱满的额头等
+ 分析并画出头骨 #  从真人照片到方块 #  在分析真人照片的时候，可以先通接眉毛末端
+ ⚠️ 要注意连接眉毛末端时，需要考虑到眉毛转到照片中看不到的背面的情况
+遇到这种情况时，应该连接被遮住的眉毛末端，而不是面部的眉毛轮廓</description>
+    </item>
     
   </channel>
 </rss>

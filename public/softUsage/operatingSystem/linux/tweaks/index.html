@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linux 常用技巧 #  一条命令调整文件与目录的权限 [1] #   背景:
+偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 0777，这是让人难以接受的
+以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了
+ 有两个办法：
+  通过 find 命令
+# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644   通过 chmod 命令本身的参数控制
+chmod -R u&#43;rwX,go&#43;rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这个参数可以为 目录 自动加入 可执行 权限
+但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 可执行 权限
+  文件本身是 可执行文件">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Linux 常用技巧" />
+<meta property="og:description" content="Linux 常用技巧 #  一条命令调整文件与目录的权限 [1] #   背景:
+偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 0777，这是让人难以接受的
+以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了
+ 有两个办法：
+  通过 find 命令
+# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644   通过 chmod 命令本身的参数控制
+chmod -R u&#43;rwX,go&#43;rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这个参数可以为 目录 自动加入 可执行 权限
+但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 可执行 权限
+  文件本身是 可执行文件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/softUsage/operatingSystem/linux/tweaks/" />
+<meta property="article:published_time" content="2023-05-05T19:54:13+09:00" />
+<meta property="article:modified_time" content="2023-05-05T19:54:13+09:00" />
+<title>Linux 常用技巧 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Linux 常用技巧</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一条命令调整文件与目录的权限-sup1sup">一条命令调整文件与目录的权限 <sup>[1]</sup></a></li>
+    <li><a href="#引用来源">引用来源</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="linux-常用技巧">
+  Linux 常用技巧
+  <a class="anchor" href="#linux-%e5%b8%b8%e7%94%a8%e6%8a%80%e5%b7%a7">#</a>
+</h1>
+<h2 id="一条命令调整文件与目录的权限-sup1sup">
+  一条命令调整文件与目录的权限 <sup>[1]</sup>
+  <a class="anchor" href="#%e4%b8%80%e6%9d%a1%e5%91%bd%e4%bb%a4%e8%b0%83%e6%95%b4%e6%96%87%e4%bb%b6%e4%b8%8e%e7%9b%ae%e5%bd%95%e7%9a%84%e6%9d%83%e9%99%90-sup1sup">#</a>
+</h2>
+<blockquote>
+<p>背景:</p>
+<p>偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 <code>0777</code>，这是让人难以接受的</p>
+<p>以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了</p>
+</blockquote>
+<p>有两个办法：</p>
+<ol>
+<li>
+<p>通过 <em>find</em> 命令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># for directories</span>
+find /path/to/dir -type d -print0 | xargs -0 chmod <span style="color:#ae81ff">0755</span>
+   
+<span style="color:#75715e"># for files</span>
+find /path/to/dir -type f -print0 | xargs -0 chmod <span style="color:#ae81ff">0644</span>
+</code></pre></div></li>
+<li>
+<p>通过 <em>chmod</em> 命令本身的参数控制</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">chmod -R u+rwX,go+rX,go-w /path/to/dir
+</code></pre></div><p>这里主要是用到了 <code>-X</code> 参数，这个参数可以为 <em>目录</em> 自动加入 <strong>可执行</strong> 权限</p>
+<p>但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 <strong>可执行</strong> 权限</p>
+<ol>
+<li>
+<p>文件本身是 <em>可执行文件</em></p>
+</li>
+<li>
+<p>能 <em>被当前用户(组)</em> (取决于你这个 <code>-X</code> 放在命令中的哪一段) 检索到</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="引用来源">
+  引用来源
+  <a class="anchor" href="#%e5%bc%95%e7%94%a8%e6%9d%a5%e6%ba%90">#</a>
+</h2>
+<ol>
+<li><a href="https://stackoverflow.com/questions/18817744/change-all-files-and-folders-permissions-of-a-directory-to-644-755">Change all files and folders permissions of a directory to 644/755</a></li>
+</ol>
+<hr>
+<p><a href="../..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一条命令调整文件与目录的权限-sup1sup">一条命令调整文件与目录的权限 <sup>[1]</sup></a></li>
+    <li><a href="#引用来源">引用来源</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,10 +6,74 @@
     <description>Recent content in 游戏笔记 on chinanoahli&#39;s note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Feb 2023 10:03:25 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2023 10:03:25 +0800</lastBuildDate><atom:link href="/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WinDeckNotes</title>
+      <link>/game/steamDeck/winDeckNotes/</link>
+      <pubDate>Fri, 05 May 2023 19:21:53 +0900</pubDate>
+      
+      <guid>/game/steamDeck/winDeckNotes/</guid>
+      <description>Windows on Deck 使用笔记 #   本篇只涉及 Windows on Deck 的使用
+如果需要在 Steam Deck 上使用 SteamOS 的相关信息，请点击这里
+ 官方资源快速链接 #  Windows驱动点此跳转 #  安装顺序(请参考下列文件名)：
+ APU驱动程序
+APU_XXX.zip
+Aerith Windows Driver_XXX.zip Wi-Fi驱动程序
+RTLWlanE_XXX.zip 蓝牙驱动程序
+RTBlueR_XXX.zip SD读卡器驱动程序
+BayHub_SD_STOR_XXX.zip 音频驱动程序  音频驱动程序1
+cs35l41_XXX.zip 音频驱动程序2
+NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址均为项目本体GitHub链接，可能需要翻墙)  ViGEmBus
+专为各种手柄设计的Windows内核驱动 HidHide
+对游戏隐藏指定的某个手柄插件 DS4Windows
+可以将任意型号的手柄伪装为PlayStation手柄或者Xbox手柄
+必须搭配ViGEmBus使用，建议同时用HidHide隐藏自带的手柄 Steamdeck WIndows Controller Driver (SWICD)
+第三方手柄驱动
+*. 暂时未知是否必须    Windows系统游戏体验提升小工具合集 #    Borderless Gaming</description>
+    </item>
     
-	<atom:link href="/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SteamOSNotes</title>
+      <link>/game/steamDeck/steamOSNotes/</link>
+      <pubDate>Fri, 05 May 2023 19:21:42 +0900</pubDate>
+      
+      <guid>/game/steamDeck/steamOSNotes/</guid>
+      <description>SteamOS 使用笔记 #   本篇只涉及 SteamOS (ArchLinux) 的使用
+如果需要在 Steam Deck 上使用 Windows 的相关信息，请点击这里
+ 首次开机无法更新 #   这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
+需要一个 USB HUB 用于插入外置键盘
+引用来源: Reddit帖子
+   在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
+⚠注意⚠：成功联网即可，千万不要点击下一步
+  同时按下键盘的 Ctrl + Alt + F4，进入 tty 模式
+  使用用户 deck 登录，默认无密码
+  passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
+  运行命令 sudo steamos-update，并根据提示输入刚才设置的密码</description>
+    </item>
     
+    <item>
+      <title>BorderlessGamingUsage</title>
+      <link>/game/steamDeck/borderlessGamingUsage/</link>
+      <pubDate>Fri, 05 May 2023 19:21:21 +0900</pubDate>
+      
+      <guid>/game/steamDeck/borderlessGamingUsage/</guid>
+      <description>Borderless Gaming 使用攻略 #   请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+ 调整成中文UI #  软件默认是英文UI，可以在Options菜单中选择Select Language &amp;gt; 中文(中国)来调整显示语言
+调整后，软件将会关闭，需要你重新启动一下本软件
+无边框、置顶显示Windows自带的屏幕键盘 #    打开软件后，请 ** 务必 ** 先在工具菜单勾选暂停自动处理
+  打开系统自带的屏幕键盘
+  在软件左边的应用程序框中右键点击屏幕键盘 [osk]
+  在弹出的菜单中选择添加到自动处理列表... &amp;gt; 以进程可折行文件名识别
+  在软件右边的自动处理列表中右键点击osk [Process]
+  在弹出的菜单中勾选尺寸不变
+这时的osk [Process]会变成osk [Process] [NoSize]
+  在软件右边的自动处理列表中右键点击osk [Process] [NoSize]
+  在弹出的菜单中勾选设置窗口尺寸
+  在弹出的「使用鼠标选择区域？」窗口中点击是
+  在弹出的「Draw Windows Rectangle」窗口中点击确定</description>
+    </item>
     
     <item>
       <title>Nintendo Switch SXOS 转 Atmosphere</title>
@@ -17,7 +81,7 @@
       <pubDate>Sat, 25 Feb 2023 10:58:40 +0800</pubDate>
       
       <guid>/game/nintendo/switch/sxosToAtmosphere/</guid>
-      <description>Nintendo Switch SXOS 转 Atmosphere  本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
+      <description>Nintendo Switch SXOS 转 Atmosphere #   本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
 SXOS生成的虚拟系统无需保留，因为要将其转换成Atmosphère能用的并不容易，建议删掉后重新使用 hekate - Nyx 创建虚拟系统
    请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
 相关文件如下：

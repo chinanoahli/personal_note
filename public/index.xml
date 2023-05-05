@@ -6,10 +6,293 @@
     <description>Recent content in 笔记总目录 on chinanoahli&#39;s note</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Feb 2023 09:56:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2023 09:56:49 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 常用命令</title>
+      <link>/softUsage/operatingSystem/linux/commonCommands/</link>
+      <pubDate>Fri, 05 May 2023 19:54:21 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/linux/commonCommands/</guid>
+      <description>Linux 常用命令 #   上一级
+笔记首页</description>
+    </item>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 常用技巧</title>
+      <link>/softUsage/operatingSystem/linux/tweaks/</link>
+      <pubDate>Fri, 05 May 2023 19:54:13 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/linux/tweaks/</guid>
+      <description>Linux 常用技巧 #  一条命令调整文件与目录的权限 [1] #   背景:
+偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 0777，这是让人难以接受的
+以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了
+ 有两个办法：
+  通过 find 命令
+# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644   通过 chmod 命令本身的参数控制
+chmod -R u+rwX,go+rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这个参数可以为 目录 自动加入 可执行 权限
+但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 可执行 权限
+  文件本身是 可执行文件</description>
+    </item>
     
+    <item>
+      <title>页面施工中</title>
+      <link>/softUsage/operatingSystem/windows/componentsAndServices/</link>
+      <pubDate>Fri, 05 May 2023 19:53:58 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/windows/componentsAndServices/</guid>
+      <description>页面施工中 #   上一级
+笔记首页</description>
+    </item>
+    
+    <item>
+      <title>DISM 命令速查</title>
+      <link>/softUsage/operatingSystem/windows/dismCommands/</link>
+      <pubDate>Fri, 05 May 2023 19:53:48 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/windows/dismCommands/</guid>
+      <description>DISM 命令速查 #   请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
+请注意将 &amp;lt;Package.Name~xxxxx&amp;gt; Package包名按照实际情况修改
+{ | } 代表可选项目，如 Package.{cab | msu} 可被展开为 Package.cab 或 Package.msu
+ 挂载/卸载 保存映像 #   挂载映像  Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件  Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS  Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像  Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像  Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 #   导出映像其中一个index  Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.</description>
+    </item>
+    
+    <item>
+      <title>从Wim映像文件中启动Windows</title>
+      <link>/softUsage/operatingSystem/windows/wimBoot/</link>
+      <pubDate>Fri, 05 May 2023 19:53:40 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/windows/wimBoot/</guid>
+      <description>从Wim映像文件中启动Windows #   参考来源：Fadeer的日志
+  这里只简述步骤，具体原理可能以后补充，也可能不会补充
+如需要了解原理，请参考Windows Image File Boot (WimBoot)
+若此链接失效，请直接在Microsoft Lean中搜索wimboot即可
+  这里的例子会将Wim映像文件单独放到一个分区中，这个分区会被设置为恢复分区，默认情况下，不会显示在 Explorer 中
+ 准备用于WimBoot的映像文件 #  默认情况下，微软提供的安装光盘中的系统映像是不可以直接用于WimBoot的
+我们需要先从安装光盘中找到 X:\sources\install.wim 文件，并将它复制到任意可读写的路径中
+然后在控制台中利用 Dism 命令将需要的映像导出为可以WimBoot的映像，注意，按需选择对应的 Index 即可
+Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 在导出对应的映像之后，推荐进行以下的操作（非必须）：
+ 移除系统自带的 WinRE 环境，以减小映像文件体积
+对应的文件在 MountPoint\Windows\Windows\System32\Recovery\winre.wim 按需加入语言包、.Net3.5、IE、补丁等 对映像进行清理并最佳化，以减小映像文件体积
+参见DISM命令速查  得到基本映像之后，我们还需要给加入WimBoot支持
+Dism /Export-Image /WIMBoot /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 准备好映像之后，我们可以通过以下的命令对映像进行检查
+Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1 若正确无误，返回中应包含 WIM Bootable : Yes 或 WIM 可引导: 是 字段</description>
+    </item>
+    
+    <item>
+      <title>Windows 常用技巧</title>
+      <link>/softUsage/operatingSystem/windows/tweaks/</link>
+      <pubDate>Fri, 05 May 2023 19:53:27 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/windows/tweaks/</guid>
+      <description>Windows 常用技巧 #  修复文件或路径无权访问的情况 #  我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
+但是不久后，我发现，每次当我换不同的硬盘启动时，系统完成用户账户登录并进入桌面后，总会提示 某分区的回收站损坏
+起初我不以为意，认为是不同系统的用户UID不一样，所以造成了这个盘的回收站出现了一些问题
+所以我总是根据系统提示，把该盘符里面的回收站重建
+但是渐渐地，我发现事情不太对劲，这个盘符出现了以下情况
+ 应用程序可以创建文件却无法写入
+例如：用 OBS Studio 录屏，生成的文件始终是 0 KB 大小 应用程序无法读取文件
+例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题  经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
+因为盘符根目录是它里面所有子目录的父目录，所以 盘符根目录 的权限出错将会被继承到所有的子目录中，但是你在Explorer中却不能看出问题所在，而且一般来说，也不能一下子就想到竟然是 盘符根目录 的权限出现了错误
+为了修复这个错误，你可以通过拥有 管理员权限 的终端运行以下命令解决：
+takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 #  当电脑连接到一个新的网络环境时，Windows 总会提示：
+想要允许你的电脑被此网络上的其他电脑和设备发现吗? 我们建议你在家庭和工作网络而非公共网络上启用此功能。 Do you want to allow your PC to be discoverable by other PCs and devices on this network?</description>
+    </item>
+    
+    <item>
+      <title>矮人要塞个人研究 02 游戏安装</title>
+      <link>/game/howToDwarfFortress/02.gameInstallation/</link>
+      <pubDate>Fri, 05 May 2023 19:45:26 +0900</pubDate>
+      
+      <guid>/game/howToDwarfFortress/02.gameInstallation/</guid>
+      <description>游戏安装 #  游戏下载及安装 #  矮人要塞兼容 Windows / Linux / Mac 系统，且有各个平台 Legacy / SDL 两种不同的版本。
+这里主要以Windows平台进行演示，Linux以及Mac系统以后有空再安排。
+如果使用原版来自行安装插件的话，研究所需要的时间会比较久。
+所以这里采用了矮人要塞Wiki推荐的直接使用懒人新手包 (Lazy Newb Pack，简称 LNP)的方式安装游戏。
+Windows版本的LNP由玩家PeridexisErrant进行维护，LNP的发布原帖见这里，下载页面见这里。
+LNP可以快速更改游戏本体的各项参数、一键切换游戏图形包，也可以方便地加载第三方插件，可以说是十分好用。
+在撰写本页面的时候，LNP最新版本为0.47.05-r06对应原版游戏的0.47.05版本。
+该版本的LNP包含的内容如下：
+游戏本体和游戏启动器
+ Dwarf Fortress 0.47.05 PyLNP 0.14a  DFHack 插件加载及管理器 0.47.05-r3 (includes Stonesense)
+ TwbT 0.47.05-r3  游戏插件
+ Announcement Window v1.2b Armok Vision v0.21.0 DF Story Maker 1.0 Dorven Realms R1 Dwarf Mockup 1.2.0 Dwarf Portrait v2.1.0 Dwarf Therapist v41.2.2 Isoworld 2.</description>
+    </item>
+    
+    <item>
+      <title>矮人要塞个人研究 01 游戏简介</title>
+      <link>/game/howToDwarfFortress/01.gameIntroduction/</link>
+      <pubDate>Fri, 05 May 2023 19:42:50 +0900</pubDate>
+      
+      <guid>/game/howToDwarfFortress/01.gameIntroduction/</guid>
+      <description>游戏简介 #   《矮人要塞》（英语：Slaves to Armok: God of Blood Chapter II: Dwarf Fortress，全名“亚莫之奴：神与血第二章：矮人要塞”）是兼有经营模拟和roguelike特征的独立制作游戏。游戏为免费软件，在2002年开始开发，2006年alpha版释出，之后每隔2~3年有较大的更新。制作人是塔恩·亚当斯和札克·亚当斯兄弟，两人只靠玩家的捐款过活。游戏用特定算法随机产生奇幻世界，玩家控制一群矮人建立一个地底要塞，或是控制一个人物在这个世界中游荡。评论家对游戏的极端复杂度和衍生玩法给予正面评价，但对其难度反应不一。此游戏是我的世界的重要灵感来源，并在2012年被选入纽约现代艺术博物馆的电玩史展出。
+游戏使用延伸ASCII图象作为界面，但玩家可以用简单的图案取代之。游戏是开放的，没有特定目的。在开始玩之前，程序会先必须产生一个有海洋、陆地、气候、生物相、历史、人物的地图。要塞模式让玩家在地图上找一个地点建立要塞，对抗自然环境和敌人，创造财富，并照顾矮人的食衣住行育乐。每个矮人有自己的个性、宗教、性向、体质、偏好、和工作技能。冒险模式是回合制的roguelike角色扮演游戏，玩家在这个世界中自由探索、交易、接受任务，甚至可以去参观要塞。战斗过程包括解剖学细节，可以刺穿各个内脏、挫伤脂肪、割断血管造成失血、或砍断四肢。
+在矮人要塞之前，塔恩·亚当斯做的是“亚莫之奴：神与血”，是一个等角立体的游戏。到2004年，游戏太难维持，亚当斯把重心转到矮人要塞。亚当斯称矮人要塞是他的毕生事业，并在2011年说游戏的1.0版可能要再过20年才会完成，而且就算到那时候他也会继续开发。矮人要塞有一群小众支持者和活跃的网络社群。因为游戏没有最终目标，几乎每一场游戏最后都会灭亡，所以社群中有个非官方的口号：输了才好玩（losing is fun）。
+2019年为了酬医疗费，官方推出了一个有图装的版本在Steam上贩售。
+&amp;ndash; &amp;ndash; 维基百科 2022-05-08
+  游戏画面截图 #    原版游戏画面
+        使用了Tergel图形包后的游戏画面
+         上一级
+笔记首页</description>
+    </item>
+    
+    <item>
+      <title>WinDeckNotes</title>
+      <link>/game/steamDeck/winDeckNotes/</link>
+      <pubDate>Fri, 05 May 2023 19:21:53 +0900</pubDate>
+      
+      <guid>/game/steamDeck/winDeckNotes/</guid>
+      <description>Windows on Deck 使用笔记 #   本篇只涉及 Windows on Deck 的使用
+如果需要在 Steam Deck 上使用 SteamOS 的相关信息，请点击这里
+ 官方资源快速链接 #  Windows驱动点此跳转 #  安装顺序(请参考下列文件名)：
+ APU驱动程序
+APU_XXX.zip
+Aerith Windows Driver_XXX.zip Wi-Fi驱动程序
+RTLWlanE_XXX.zip 蓝牙驱动程序
+RTBlueR_XXX.zip SD读卡器驱动程序
+BayHub_SD_STOR_XXX.zip 音频驱动程序  音频驱动程序1
+cs35l41_XXX.zip 音频驱动程序2
+NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址均为项目本体GitHub链接，可能需要翻墙)  ViGEmBus
+专为各种手柄设计的Windows内核驱动 HidHide
+对游戏隐藏指定的某个手柄插件 DS4Windows
+可以将任意型号的手柄伪装为PlayStation手柄或者Xbox手柄
+必须搭配ViGEmBus使用，建议同时用HidHide隐藏自带的手柄 Steamdeck WIndows Controller Driver (SWICD)
+第三方手柄驱动
+*. 暂时未知是否必须    Windows系统游戏体验提升小工具合集 #    Borderless Gaming</description>
+    </item>
+    
+    <item>
+      <title>SteamOSNotes</title>
+      <link>/game/steamDeck/steamOSNotes/</link>
+      <pubDate>Fri, 05 May 2023 19:21:42 +0900</pubDate>
+      
+      <guid>/game/steamDeck/steamOSNotes/</guid>
+      <description>SteamOS 使用笔记 #   本篇只涉及 SteamOS (ArchLinux) 的使用
+如果需要在 Steam Deck 上使用 Windows 的相关信息，请点击这里
+ 首次开机无法更新 #   这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
+需要一个 USB HUB 用于插入外置键盘
+引用来源: Reddit帖子
+   在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
+⚠注意⚠：成功联网即可，千万不要点击下一步
+  同时按下键盘的 Ctrl + Alt + F4，进入 tty 模式
+  使用用户 deck 登录，默认无密码
+  passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
+  运行命令 sudo steamos-update，并根据提示输入刚才设置的密码</description>
+    </item>
+    
+    <item>
+      <title>BorderlessGamingUsage</title>
+      <link>/game/steamDeck/borderlessGamingUsage/</link>
+      <pubDate>Fri, 05 May 2023 19:21:21 +0900</pubDate>
+      
+      <guid>/game/steamDeck/borderlessGamingUsage/</guid>
+      <description>Borderless Gaming 使用攻略 #   请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+ 调整成中文UI #  软件默认是英文UI，可以在Options菜单中选择Select Language &amp;gt; 中文(中国)来调整显示语言
+调整后，软件将会关闭，需要你重新启动一下本软件
+无边框、置顶显示Windows自带的屏幕键盘 #    打开软件后，请 ** 务必 ** 先在工具菜单勾选暂停自动处理
+  打开系统自带的屏幕键盘
+  在软件左边的应用程序框中右键点击屏幕键盘 [osk]
+  在弹出的菜单中选择添加到自动处理列表... &amp;gt; 以进程可折行文件名识别
+  在软件右边的自动处理列表中右键点击osk [Process]
+  在弹出的菜单中勾选尺寸不变
+这时的osk [Process]会变成osk [Process] [NoSize]
+  在软件右边的自动处理列表中右键点击osk [Process] [NoSize]
+  在弹出的菜单中勾选设置窗口尺寸
+  在弹出的「使用鼠标选择区域？」窗口中点击是
+  在弹出的「Draw Windows Rectangle」窗口中点击确定</description>
+    </item>
+    
+    <item>
+      <title>GraphicSettings</title>
+      <link>/game/genshin/graphicSettings/</link>
+      <pubDate>Fri, 05 May 2023 19:14:42 +0900</pubDate>
+      
+      <guid>/game/genshin/graphicSettings/</guid>
+      <description>游戏图形设置 #   FPS: 45 垂直同步: 关闭 渲染精细度: 1.0 阴影品质: 低 后期效果: 中 特效品质: 中 场景细节: 中 反锯齿: FSR2 体积雾: 关闭 反射: 关闭 动态模糊: 关闭 Bloom: 打开 人群密度: 高 多人游戏队友特效: 部份封锁 次表面反射: 关闭 各向异性采样: 1x   上一级
+笔记首页</description>
+    </item>
+    
+    <item>
+      <title>DownloadDataDirectly</title>
+      <link>/game/genshin/downloadDataDirectly/</link>
+      <pubDate>Fri, 05 May 2023 19:14:32 +0900</pubDate>
+      
+      <guid>/game/genshin/downloadDataDirectly/</guid>
+      <description>抓取原神数据包的下载地址 #   参考链接：点我跳转(需翻墙)
+这里原作者说方法已失效，实际上是错误的，直到3.3.0更新为止，本方法仍然有效
+ 0x00 工具的准备 #  首先我们要准备工具，以从内存提取下载地址
+不用担心，这个过程是安全的，因为没有篡改游戏本身的文件，也不需要登录（只操作启动器），所以正常来说不会被封禁
+工具的名字叫 Process Hacker ，官方网站点这里，进入官网后，点击网页上蓝色的按钮 Download Process Hacker ，然后根据你的系统以及架构选择对应的 Portable 版本即可
+ Portable 即便携版，不需要安装，下载后是一个zip压缩文件，解压到任意位置即可使用
+ 0x01 启动 Process Hacker 的注意点 #  一定要记得用管理员身份运行Process Hacker，否则Process Hacker将无法读取原神启动器的内存，从而造成操作失败
+0x02 通过 Process Hacker 启动原神启动器 #  在解压出来的Process Hacker路径中找到ProcessHacker.exe，然后右键点击它，从弹出菜单中选择以管理员身份运行 (A)
+ 请注意，如果你成功地以管理员身份运行了Process Hacker的话，它的标题栏是会显示Administrator的（见下图）
+ 然后你将会看到Process Hacker的主窗口
+现在，从菜单栏中找到Hacker &amp;gt; Run...，然后从弹出文件选择窗口中，选择原神启动器的launcher.exe以通过 Process Hacker 启动原神启动器
+然后让启动器开始下载数据文件，如初次安装游戏或进行预下载等等
+这时我们先将注意力放到Process Hacker的主窗口中，从进程列表里面找到原神图标的launcher.exe进程
+找到之后，在它上面点击鼠标右键，并从弹出菜单中选择Properties，打开启动器进程的属性窗口
+在属性窗口中，我们进入Memory标签，然后点击Strings...按钮
+接下来会弹出 String Search 字符串搜索窗口，这里我们不需要更改任何设置，直接点击OK按钮即可
+接着在弹出的 Results 结果窗口中，点击窗口左下角的Filter过滤器按钮，并在弹出的菜单中选择Conntains内容</description>
+    </item>
+    
+    <item>
+      <title>画画的春哥 人体结构基础课 第一课</title>
+      <link>/art/chuns/humanBodyStructure/lesson1/</link>
+      <pubDate>Fri, 05 May 2023 18:52:40 +0900</pubDate>
+      
+      <guid>/art/chuns/humanBodyStructure/lesson1/</guid>
+      <description>第一课 头部结构拆解 #  简化头骨组成 #  为了更方便地理解头骨，可以将头骨简化为以下模型：头顶的球体、面骨以及下颌骨，这三大区域
+头骨的区块 #   💡 下面说到的比例，如无特殊说明，均以理想的成年人作为模型
+⚠️ 但实际上每个角色都有其特征，所以下面说到的数据均不能死板地套用在所画的角色身上
+比例数据都允许有一定的误差，且应该根据所画的对象进行一定调整
+后面的课程中提到的其他比例数据同理
+   成年人的头骨大致可以看成是一个 2 : 3 : 3 的方块
+  从正视图看，可以将头骨纵向划分为三个区域，亦即三庭
+  上庭：指从发际线到眉弓这一块区域
+  中庭：指从眉弓到鼻底这一块区域
+  下庭：指从鼻底到下巴这一块区域
+    而从横向看，则可以以一只眼睛的宽度作为基准，将头骨横向划分为五个区域，亦即五眼
+   💡 这里的眼宽，是指在皮肉健全的状态下一只眼睛的宽度，而非只有骨头的状态
+ 从侧视图看，耳朵位于侧视图的中间，约为中庭1/2的位置
+而脖子的起点则位于头顶球体部分与鼻低延长线 相切的地方
+要准确抓住一个角色部的头部特征，也可以借由切分侧视图，并利用切分线与头骨之间的负型来分析
+ 💡 一般来说，男性的头骨通常会比女性的头骨更强壮，如具有更宽大的下颚、更饱满的额头等
+ 分析并画出头骨 #  从真人照片到方块 #  在分析真人照片的时候，可以先通接眉毛末端
+ ⚠️ 要注意连接眉毛末端时，需要考虑到眉毛转到照片中看不到的背面的情况
+遇到这种情况时，应该连接被遮住的眉毛末端，而不是面部的眉毛轮廓</description>
+    </item>
+    
+    <item>
+      <title>自在涂形堂 素体·体态 第一课</title>
+      <link>/art/ants/humanBodyDesign/lesson1/</link>
+      <pubDate>Fri, 05 May 2023 18:21:03 +0900</pubDate>
+      
+      <guid>/art/ants/humanBodyDesign/lesson1/</guid>
+      <description>第一课
+出彩的比例与趋势 —— 内骨骼提炼 #  1. 学习误区 #    ❌ 在日常练习中练习了所有见到的动态，而不是「有用的动态」✔ 建议练习的应该是「日后工作中最常用的动态」
+  ❌ 只会复制参考图，照抄照片
+✔ 要用学到的知识在练习时优化参考图
+  ❌ 同时学习多项技能，且平均分配精力
+针对初学者，不推荐同时学习多项技能，因为人的精力是有限的
+在一般情况下，人很难同时学习多个项目
+如果对每个项目都平均分配精力的话，很可能会影响学习 / 练习的进度：
+  对于擅长的项目，没有足够的时间深入，导致进展缓慢
+  对于不擅长的项目，接受的速度会比较慢，不利于推进学习进度
+  ✔ 推荐的做法是：
+  先找出自己擅长的项目，优先练习到「出彩」的程度
+因为擅长的项目接吸收来会更快，所以用的时间并不需要太多
+  而其他项目前期只需要达到合格线即可，等擅长的项目 不再需要 太多精力应对时，再对弱项进行强化练习
+  如果觉得自己都不擅长的话，就要多尝试不同的项目，尝试找到自己擅长的项目
+    ❌ 以医学的严谨来学习肌肉
+  ❌ 画出来的成年角色比例不稳定
+通常造成这种问题的原因是初学练习时，习惯用大头身比的成年人来练习
+在画人体时，必须要兼顾透视，如果头身比太大，在透视上就不得不耗费更多的精力，这是不利于人体结构的练习的
+✔ 所以更推荐初学者用低头身比的少年或儿童体型来作为练习目标
+  2. 推荐的素体学习线路 (课程目标及个人目标制定指引) #   初学者应该着重练习前 3 项，学习线路应当按照自己的学习进度适时调整</description>
+    </item>
     
     <item>
       <title>Krenz 基础透视与结构 第一课</title>
@@ -17,11 +300,11 @@
       <pubDate>Sat, 25 Feb 2023 13:44:17 +0800</pubDate>
       
       <guid>/art/krenzArtwork/perspective/lesson1/</guid>
-      <description>第一课 术语的约定   在一个方块的透视中，平面上靠左边的轴称为y轴，靠右边的轴称为x轴，垂直平面方向的轴称为z轴
-  传统美术教学中常见的三种透视定义   单点透视，指在x轴方向上所有的线条都水平于画笔，z轴方向上所有线条都垂直于画布，只有y轴方向上的线条有一个消失点
+      <description>第一课 #  术语的约定 #    在一个方块的透视中，平面上靠左边的轴称为y轴，靠右边的轴称为x轴，垂直平面方向的轴称为z轴
+  传统美术教学中常见的三种透视定义 #    单点透视，指在x轴方向上所有的线条都水平于画笔，z轴方向上所有线条都垂直于画布，只有y轴方向上的线条有一个消失点
   两点透视，z轴方向上所有线条都垂直于画布，但x轴和y轴方向上的线条都具有消失点
   三点透视，x轴y轴z轴方向的所有线条，均有消失点
-  透视的成因及观察角度 单点透视 假设目前有一个摄像机（或人眼），观察两个不同位置的立方体A和B（箭头代表摄像机平视前方）
+  透视的成因及观察角度 #  单点透视 #  假设目前有一个摄像机（或人眼），观察两个不同位置的立方体A和B（箭头代表摄像机平视前方）
  💡 人眼观察没有画面边框，因此在某些场合里不好描述，后面课程默认以摄像机为观察者
  当观察A位置时，画面应该如下图
  💡 最外侧的红色边框为画面边缘，下同
@@ -31,20 +314,14 @@
 画面最终就会如下图所示，我们可以观察到立方体更多的顶面
 且因为观察的视线始终跟立方体的正面保持垂直，所以z轴的线条不会产生明显的收缩（ 但物体已经超出画布的边缘）
 以上就是传统美术教学中的单点透视
-两点透视 现在将立方体往上移动回B位置，并且把它左右旋转45°
+两点透视 #  现在将立方体往上移动回B位置，并且把它左右旋转45°
 就会得到在x轴和y轴方向都有消失点的立方体图像
 因为此时视线仍然跟立方体垂直，所以z轴的线条仍旧没有出现透视收缩现象
-三点透视 在两点透视的基础上，将观察角度从平视变为俯视
+三点透视 #  在两点透视的基础上，将观察角度从平视变为俯视
 这时候我们观察到的图像，就会变成三个方向的线条都都具有透视收缩效果
-本段小结 透视是由观察角度以及被观察物体的角度共同决定的
-物体与摄像机之间的关系  ❌ 误区：一幅画里面所有的物体只能有一种透视
-💡 正解：透视的理解和分析只能限制在同一个物体中，一幅画里面的不同物体可以拥有不同角度的透视，讨论透视的时候只能针对画面中具体一个物体，而不能说一幅整画是什么透视
- 上述法则可以通过下面的小实验来验证
-小实验 1   取任意一幅带有场景的画作
-  以墙面作为分析依据，可以得到这个房间的透视，大体是长这样的
-  此时，可以在画面任意位置上，尝试加入与房间的透视毫无关联的立方体
-  只要立方体的透视基本正确，画面上并不会产生违和感
-  现在来构建一下这幅画的侧视图，假设摄像机在右边往左拍摄</description>
+本段小结 #  透视是由观察角度以及被观察物体的角度共同决定的
+物体与摄像机之间的关系 #   ❌ 误区：一幅画里面所有的物体只能有一种透视
+💡 正解：透视的理解和分析只能限制在同一个物体中，一幅画里面的不同物体可以拥有不同角度的透视，讨论透视的时候只能针对画面中具体一个物体，而不能说一幅整画是什么透视</description>
     </item>
     
     <item>
@@ -53,7 +330,7 @@
       <pubDate>Sat, 25 Feb 2023 10:58:40 +0800</pubDate>
       
       <guid>/game/nintendo/switch/sxosToAtmosphere/</guid>
-      <description>Nintendo Switch SXOS 转 Atmosphere  本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
+      <description>Nintendo Switch SXOS 转 Atmosphere #   本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
 SXOS生成的虚拟系统无需保留，因为要将其转换成Atmosphère能用的并不容易，建议删掉后重新使用 hekate - Nyx 创建虚拟系统
    请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
 相关文件如下：
