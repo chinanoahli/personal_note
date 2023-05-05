@@ -8,3 +8,6 @@ disablePathToLower = true
   BookCommitPath = 'commit'
   BookSearch = false
   BookMenuBundle = '/menu'
+
+[markup.goldmark.renderer]
+unsafe= true
