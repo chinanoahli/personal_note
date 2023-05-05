@@ -20,3 +20,4 @@ headless = true
     - [SteamOS]({{< relref "/game#steamOS" >}})
     - [Nintendo Switch]({{< relref "/game#nSwitch" >}})
   - [软件使用笔记]({{< relref "/softUsage" >}})
+    - [操作系统]({{< relref "/softUsage#operatingSystem" >}})

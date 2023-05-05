@@ -6,7 +6,7 @@ draft: false
 
 # 软件使用笔记
 
-+ ## [操作系统](./operatingSystem)
++ ## [操作系统](./operatingSystem) {#operatingSystem}
 
 ---
 
