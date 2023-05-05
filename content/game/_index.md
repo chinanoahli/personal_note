@@ -12,6 +12,7 @@ draft: false
 + ## SteamOS {#steamOS}
     + [SteamOS 使用笔记](./steamDeck/steamOSNotes)
     + [Windows on Deck 使用笔记](./steamDeck/winDeckNotes)
+    + [Borderless Gaming 使用攻略](./steamDeck/borderlessGamingUsage)
 
 + ## Nintendo Switch {#nSwitch}
     + [SXOS 转 Atmosphère](./nintendo/switch/sxosToAtmosphere)
