@@ -44,7 +44,7 @@ draft: false
 
 5. 给素体加入 **<i>轻微动态</i>** ，如：微屈、坐姿等
 
-6. ⚠给素体骨架加入肌肉，并以加强记忆为目的，**<i>并反复默写</i>**<br>配合手臂动态，加强练习带有轻微动态的素体<br>在这一阶段，你应该达到 **<i>「在无参考的状态下，能快速绘制出常见且带轻微动态的素体」</i>** 的水平
+6. ⚠ 给素体骨架加入肌肉，并以加强记忆为目的，**<i>并反复默写</i>**<br>配合手臂动态，加强练习带有轻微动态的素体<br>在这一阶段，你应该达到 **<i>「在无参考的状态下，能快速绘制出常见且带轻微动态的素体」</i>** 的水平
 
 7. 学习设计向女性素体
 
@@ -105,7 +105,9 @@ draft: false
 
 完全没有学过绘画的初学者，可以参考下面的示意图，尝试从钢丝人演变到木偶，再从木偶转化成设计向骨架
 
-> ⚠ 请注意，正如任何学习人体的课程里面都会反复强调的一样：这里给出的比例并非通用于所有角色的固定标准，它只是一个比较常见的参考比例，请勿在不同角色上生搬硬套
+> ⚠ 请注意，正如任何学习人体的课程里面都会反复强调的一样：
+>
+> 这里给出的比例并非通用于所有角色的固定标准，它只是一个比较常见的参考比例，请勿在不同角色上生搬硬套
 
 ![L1-04](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-04.png)
 
@@ -130,6 +132,130 @@ draft: false
 这样画，可以产生视线引导效果，因为它有一定的指向性
 
 > ❌ 注意：不要同时强调上臂和前臂的肌肉感，同时强调上臂和前臂的肌肉感，将会令上臂和前臂失去对比！
+
+### 3.4 设计向骨架胸腔的细节
+
+从真实的人体骨架模型来看，我们可以看到，人体的胸腔是一个 *上窄下宽* 的 「蛋形」
+
+而设计向骨架则刚好相反，胸腔时 「**上宽下窄**」
+
+为什么我们要做这样的简化呢？
+
+因为，如果按照真实的人体胸腔外形来画的话，会很容易把胸腔画得 *上下等宽* 
+
+如果需要把人画得更壮，我们就需要往身体上画更夸张的肌肉，而胸腔的肌肉恰巧集中在骨架的上半部分
+
+另外，如果要表达苗条的身形，就必须把腰画得比较细，但是如果胸腔模型本身下面就是宽的，画到腰的时候就会被固定的思维影响，很难以把腰部改细
+
+<table align="center">
+    <tr>
+        <td align="center" width="50%">
+           <img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-07.png" alt="L1-07"/>
+        </td>
+        <td align="center" width="50%">
+           <img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-08.png" alt="L1-08"/>
+        </td>
+    </tr>
+</table>
+
+所以这里设计向骨架会采取反其道而行的方法，把胸腔概括成 「**上宽下窄**」的样子
+
+> 💡 记住：画面中的效果往往都是 「**对比**」出来的，胸腔和腰的关系也不例外，如果把一个元素画得与另一个元素画得差不多的话，就失去了对比
+
+### 3.5 骨盆
+
+![L1-09](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-09.png)
+
+骨盆需要注意的点并不多，但是腰时刻记住，脊椎与骨盆的连接点在 **靠背部** 的一侧
+
+### 3.6 脊椎三段线
+
+![L1-10](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-10.png)
+
+当把脊椎的弯曲作适当简化之后，可以得到一条三段线
+
+<table align="center">
+    <tr>
+        <td align="center" width="50%">
+           <img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-11.png" alt="L1-11"/>
+        </td>
+        <td align="center" width="50%">
+           <img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-12.png" alt="L1-12"/>
+        </td>
+    </tr>
+</table>
+
+胸腔往上，脖子是稍向上且朝前方弯曲的趋势
+
+胸腔往下，则是骨盆
+
+![L1-13](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-13.png)
+
+与骨盆连接处会有一段曲线的方向相对更 「**直立**」，然后才会往外走
+
+在某些特定的角度观察时，这段 「**直立**」 的部分会被完全遮挡
+
+### 3.7 胸腔外轮廓三段线 (肌肉外轮廓)
+
+> 这个部分我目前还无法理解（有种看玄学的感觉），所以可能以下的笔记会描述得不够清晰
+>
+> 我个人认为：胸腔的三段线是在大量练习后所产生的一种图形感与肌肉记忆，它可以快速描绘画手心中大致的轮廓
+
+不论从哪个角度观察，胸腔的左右两边的轮廓都可以归纳成三段线，在 **<i>非正面视图</i>** ( *包括正面仰视以及正面俯视* )，*靠近摄像机一侧* 的三段线弧度往往会比 *远离摄像机一侧* 的弧度更夸张
+
+如果可以熟练运用三段线，就可以快速画出具有不同特征或风格的角色的胸腔：
+
+![L1-14](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-14.png)
+
+通过控制 *红色段* 可以快速定义角色是否强壮，因为红色段代表了斜方肌，只有在画十分强壮的角色时才会去强调
+
+通过控制 *蓝色段* 可以快速控制风格化表现时，角色的胸腔在整个身高中的占比
+
+而 *绿色段* 则可以控制腰部的粗细程度
+
+### 3.8 腿部
+
+#### 3.8.1 大腿
+
+![L1-15](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-15.png)
+
+从后侧方观察真实的人体骨骼，我们可以发现大腿骨其实是带有一定弧度的
+
+![L1-16](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-16.png)
+
+如果把大腿画得过直，就很容易在有透视 (任何非正视、平视) 角度的情况下把角色画得很 「*平*」，角色也更不容易 「**站稳**」，空间感会难以体现
+
+#### 3.8.2 小腿
+
+在设计向骨架中，小腿骨架的弯曲，可以视作为小腿肚肌肉的简化，夸张过的小腿弧度，可以与大腿互相平衡，让角色站得更平稳
+
+#### 3.8.3 腿部总结
+
+当我们分析一下机甲与人形怪物的设计，就可以发现很多优秀的设计都在强化大小腿的弧度，大小腿的弧度会让角色更力量感
+
+在练习时，我们应该先学习这种夸张的弧度，当可以轻松画出这种夸张的弧度之后，再画一般角色时只需要稍作收敛，即可得到不错的效果
+
+同时还可以避免长期对腿部弧度的忽视，导致无法画出想要的效果
+
+![L1-17](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-17.png)
+
+那么为何我们在画正面的设计向骨架的时候仍然需要把大腿画成弯曲的呢，明明从真实的人体骨架上来看，正面的大腿骨几乎接近直线？
+
+![L1-18](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/ants/humanBodyDesign/attachments/L1-18.png)
+
+当我们观察带有肌肉的人体模型时，我们可以观察到，尽管时从正面看，大腿骨接近笔直，但大腿的肌肉轮廓仍然存在着一定的弧度，靠近骨盆的位置会更粗一些
+
+为了降低记忆难度，设计向骨架把正面的大腿骨也简化成带弧度的样子，这几乎与从侧面看一致
+
+> ⚠ 注意：
+>
+> 在某些透视角度下，参考图片中可能会有其中一条腿在视觉上看起来接近 *笔直* 的情况
+>
+> 尽管如此，我们仍然需要在画的时候加入一些适当的修改，避免把腿画直
+>
+> 因为从图形美感上来看「永远不应该让你画的角色的身体出现笔直的部分」是绝对不会有错的
+
+### 3.9 锁骨
 
 ---
 
