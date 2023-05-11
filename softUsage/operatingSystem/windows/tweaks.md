@@ -222,6 +222,24 @@ Windows Registry Editor Version 5.00
    schtasks /change /tn "完整的任务计划名" /enable
    ```
 
+## 启用或禁用「基于虚拟化的安全性」
+
+> ⚠ 注意：关闭后将会影响虚拟机的使用
+
+以管理员身份运行下面的命令
+
+```
+REM 关闭
+bcdedit /set hypervisorlaunchtype off
+
+REM 打开
+bcdedit /set hypervisorlaunchtype auto
+```
+
+查询方法
+
+运行 `msinfo32` 打开 *系统信息* 工具，在 *系统摘要* 下找到 *基于虚拟化的安全性*
+
 ---
 
 [上一级](../README.md)
