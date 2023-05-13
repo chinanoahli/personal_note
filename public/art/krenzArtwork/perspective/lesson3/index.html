@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="第三课 #  角度控制 #  如何分析像下图一样，随机角度堆叠的立方体：
+先简单根据图中的信息，描画一下立方体的轮廓并建立顶视图
+这时候就可以发现，除了盒子A，其他立方体均与地面角度相异
+当根据地面与盒子A延伸线条找到消失点时，可以发现，两者之间的消失点在同一条水平线上而且相互重叠
+用同样的方法延伸盒子B的线条时就会发现，虽然盒子B的消失点，与盒子A和地面的消失点不重合，但仍然落在同一水平线上
+接着分析纸片C和盒子D，可以印证上面一次分析说得的现象
+尽管立方体的角度各异，但只要它们在同一个平面（或说与该平面产生关联，如：叠放在该平面的某处），它们的消失点必然落在同一水平线上
+但是，假如将这个结论直接套用到作画中，就很容易造成「如果画面中的物体太多，要给透视检查时需要大量辅助线，让画面变得混乱不堪」的毛病
+ ❓ 是否存在更简单的办法，用一个已知角度的立方体推理出其他角度的立方体呢？
+  💡 在画平面图形时：
+可以利用连接对角线得到正方形的中点，从而找到平分正方体的十字线，然后通过连接每边的平分点来获得旋转 45° 以后的正方形
+  💡 将此方法应用到带透视的任意立方体中，即可将该立方体旋转 45°
+  💡 在实际作画中，只要应用上面的窍门，找到一块大致是正方形的地板，就可以构建出不同角度的物体
+  利用透视临摹带景画作的步骤简述 #  优先找到画面中最容易还原出立方体的物品并还原成立方体，再依据立方体推理出其他物品
+视平线、地平线、水平线 #  三种「线」概念的差异 #    在一般情况下，人观察物体，物体一般与地面平行
+保持物体和人眼的相对位置不变，把物体往上抬，就会发现地面的透视还在原本的位置不变，但物体的透视往上抬了
+可见，通常情况下，我们一般采取平视的角度观察世界、画画，所以很多教学里面的视平线和地平线的两个概念经常混用
+为什么说不要纠结于「视平线」、「地平线」 #  在Krenz这边的教学体系中，练习透视时都推荐先徒手画出想要角度的平面，而不是像传统美术教学一样，先定义出视平线或地平线
+因为如果像传统美术教学一样，先定义好视平线或地平线的话，就会很容易会绕进「定好了视平线、地平线和消失点之后，无论如何都没办法将物体画成是想要的角度」的情况
+这是因为只要确定了地平线、视平线和消失点之后，物体的角度已经被确定，是没办法旋转角度的
+ 可以结合上面「角度控制」小节进行理解
+ 所以，为了破除这种惯性思维，会比较推荐先徒手画一个自己想要角度的平面或者立方体（通过物体来隐性地定义视平线、地平线的存在），再进行透视检查并进行纠正，但又不至于陷入传统美术教学的「无法转角度」的怪圈之中
+另外，如果形成了「先有视平线、地平线」这种惯性思维，就会难以理解浮在空中的任意角度的立方体（第一节课中称为浮空方块，下同）
+浮空方块本质上是一个在任意角度平面（与地面不平行）上的立方体，浮空方块只遵照它所在的平面的透视规则，并不遵循原有地面的透视规则
+ 这里可以参考穿透美术教学书籍中的 「斜面（斜坡）透视」 进行理解，要深刻地理解为什么斜面与地面上的物体的透视规则并不相同
+  在理解了「斜面（斜坡）透视」后，就可以明白：浮空方块透视与斜面透视的差异在于「浮空方块所在的面比『斜坡』的角度更加自由」
+  💡 简单总结成一句话：">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Krenz 基础透视与结构 第三课" />
+<meta property="og:description" content="第三课 #  角度控制 #  如何分析像下图一样，随机角度堆叠的立方体：
+先简单根据图中的信息，描画一下立方体的轮廓并建立顶视图
+这时候就可以发现，除了盒子A，其他立方体均与地面角度相异
+当根据地面与盒子A延伸线条找到消失点时，可以发现，两者之间的消失点在同一条水平线上而且相互重叠
+用同样的方法延伸盒子B的线条时就会发现，虽然盒子B的消失点，与盒子A和地面的消失点不重合，但仍然落在同一水平线上
+接着分析纸片C和盒子D，可以印证上面一次分析说得的现象
+尽管立方体的角度各异，但只要它们在同一个平面（或说与该平面产生关联，如：叠放在该平面的某处），它们的消失点必然落在同一水平线上
+但是，假如将这个结论直接套用到作画中，就很容易造成「如果画面中的物体太多，要给透视检查时需要大量辅助线，让画面变得混乱不堪」的毛病
+ ❓ 是否存在更简单的办法，用一个已知角度的立方体推理出其他角度的立方体呢？
+  💡 在画平面图形时：
+可以利用连接对角线得到正方形的中点，从而找到平分正方体的十字线，然后通过连接每边的平分点来获得旋转 45° 以后的正方形
+  💡 将此方法应用到带透视的任意立方体中，即可将该立方体旋转 45°
+  💡 在实际作画中，只要应用上面的窍门，找到一块大致是正方形的地板，就可以构建出不同角度的物体
+  利用透视临摹带景画作的步骤简述 #  优先找到画面中最容易还原出立方体的物品并还原成立方体，再依据立方体推理出其他物品
+视平线、地平线、水平线 #  三种「线」概念的差异 #    在一般情况下，人观察物体，物体一般与地面平行
+保持物体和人眼的相对位置不变，把物体往上抬，就会发现地面的透视还在原本的位置不变，但物体的透视往上抬了
+可见，通常情况下，我们一般采取平视的角度观察世界、画画，所以很多教学里面的视平线和地平线的两个概念经常混用
+为什么说不要纠结于「视平线」、「地平线」 #  在Krenz这边的教学体系中，练习透视时都推荐先徒手画出想要角度的平面，而不是像传统美术教学一样，先定义出视平线或地平线
+因为如果像传统美术教学一样，先定义好视平线或地平线的话，就会很容易会绕进「定好了视平线、地平线和消失点之后，无论如何都没办法将物体画成是想要的角度」的情况
+这是因为只要确定了地平线、视平线和消失点之后，物体的角度已经被确定，是没办法旋转角度的
+ 可以结合上面「角度控制」小节进行理解
+ 所以，为了破除这种惯性思维，会比较推荐先徒手画一个自己想要角度的平面或者立方体（通过物体来隐性地定义视平线、地平线的存在），再进行透视检查并进行纠正，但又不至于陷入传统美术教学的「无法转角度」的怪圈之中
+另外，如果形成了「先有视平线、地平线」这种惯性思维，就会难以理解浮在空中的任意角度的立方体（第一节课中称为浮空方块，下同）
+浮空方块本质上是一个在任意角度平面（与地面不平行）上的立方体，浮空方块只遵照它所在的平面的透视规则，并不遵循原有地面的透视规则
+ 这里可以参考穿透美术教学书籍中的 「斜面（斜坡）透视」 进行理解，要深刻地理解为什么斜面与地面上的物体的透视规则并不相同
+  在理解了「斜面（斜坡）透视」后，就可以明白：浮空方块透视与斜面透视的差异在于「浮空方块所在的面比『斜坡』的角度更加自由」
+  💡 简单总结成一句话：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/art/krenzArtwork/perspective/lesson3/" />
+<meta property="article:published_time" content="2023-05-13T10:37:28+09:00" />
+<meta property="article:modified_time" content="2023-05-13T10:37:28+09:00" />
+<title>Krenz 基础透视与结构 第三课 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Krenz 基础透视与结构 第三课</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#角度控制">角度控制</a></li>
+    <li><a href="#利用透视临摹带景画作的步骤简述">利用透视临摹带景画作的步骤简述</a></li>
+    <li><a href="#视平线地平线水平线">视平线、地平线、水平线</a>
+      <ul>
+        <li><a href="#三种线概念的差异">三种「线」概念的差异</a></li>
+        <li><a href="#为什么说不要纠结于视平线地平线">为什么说不要纠结于「视平线」、「地平线」</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="第三课">
+  第三课
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%89%e8%af%be">#</a>
+</h1>
+<h2 id="角度控制">
+  角度控制
+  <a class="anchor" href="#%e8%a7%92%e5%ba%a6%e6%8e%a7%e5%88%b6">#</a>
+</h2>
+<p>如何分析像下图一样，随机角度堆叠的立方体：</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-01.png" alt="L3-01" /></p>
+<p>先简单根据图中的信息，描画一下立方体的轮廓并建立顶视图</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-02.png" alt="L3-02" /></p>
+<p>这时候就可以发现，除了盒子A，其他立方体均与地面角度相异</p>
+<p>当根据地面与盒子A延伸线条找到消失点时，可以发现，两者之间的消失点在同一条水平线上而且相互重叠</p>
+<p>用同样的方法延伸盒子B的线条时就会发现，虽然盒子B的消失点，与盒子A和地面的消失点不重合，但仍然落在<strong>同一水平线</strong>上</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-04.png" alt="L3-03" /></p>
+<p>接着分析纸片C和盒子D，可以印证上面一次分析说得的现象</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-04.png" alt="L3-04" /></p>
+<p>尽管立方体的角度各异，但只要它们在<strong>同一个平面（或说与该平面产生关联，如：叠放在该平面的某处）</strong>，它们的消失点必然落在<strong>同一水平线</strong>上</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-05.gif" alt="L3-05" /></p>
+<p>但是，假如将这个结论直接套用到作画中，就很容易造成「如果画面中的物体太多，要给透视检查时需要大量辅助线，让画面变得混乱不堪」的毛病</p>
+<blockquote>
+<p>❓ 是否存在更简单的办法，用一个已知角度的立方体推理出其他角度的立方体呢？</p>
+</blockquote>
+<blockquote>
+<p>💡 在画平面图形时：</p>
+<p>可以利用连接对角线得到正方形的中点，从而找到平分正方体的十字线，然后通过连接每边的平分点来获得旋转 45° 以后的正方形</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-06.png" alt="L3-06" /></p>
+</blockquote>
+<blockquote>
+<p>💡 将此方法应用到带透视的任意立方体中，即可将该立方体旋转 45°</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-07.png" alt="L3-07" /></p>
+</blockquote>
+<blockquote>
+<p>💡 在实际作画中，只要应用上面的窍门，找到一块大致是正方形的地板，就可以构建出不同角度的物体</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-08.png" alt="L3-08" /></p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-09.png" alt="L3-09" /></p>
+</blockquote>
+</aside>
+<h2 id="利用透视临摹带景画作的步骤简述">
+  利用透视临摹带景画作的步骤简述
+  <a class="anchor" href="#%e5%88%a9%e7%94%a8%e9%80%8f%e8%a7%86%e4%b8%b4%e6%91%b9%e5%b8%a6%e6%99%af%e7%94%bb%e4%bd%9c%e7%9a%84%e6%ad%a5%e9%aa%a4%e7%ae%80%e8%bf%b0">#</a>
+</h2>
+<p>优先找到画面中最容易还原出立方体的物品并还原成立方体，再依据立方体推理出其他物品</p>
+<h2 id="视平线地平线水平线">
+  视平线、地平线、水平线
+  <a class="anchor" href="#%e8%a7%86%e5%b9%b3%e7%ba%bf%e5%9c%b0%e5%b9%b3%e7%ba%bf%e6%b0%b4%e5%b9%b3%e7%ba%bf">#</a>
+</h2>
+<h3 id="三种线概念的差异">
+  三种「线」概念的差异
+  <a class="anchor" href="#%e4%b8%89%e7%a7%8d%e7%ba%bf%e6%a6%82%e5%bf%b5%e7%9a%84%e5%b7%ae%e5%bc%82">#</a>
+</h3>
+<blockquote>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-10.png" alt="L3-10" /></p>
+</blockquote>
+<p>在一般情况下，人观察物体，物体一般与地面平行</p>
+<p>保持物体和人眼的相对位置不变，把物体往上抬，就会发现地面的透视还在原本的位置不变，但物体的透视往上抬了</p>
+<p>可见，通常情况下，我们一般采取平视的角度观察世界、画画，所以很多教学里面的视平线和地平线的两个概念经常混用</p>
+<h3 id="为什么说不要纠结于视平线地平线">
+  为什么说不要纠结于「视平线」、「地平线」
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%af%b4%e4%b8%8d%e8%a6%81%e7%ba%a0%e7%bb%93%e4%ba%8e%e8%a7%86%e5%b9%b3%e7%ba%bf%e5%9c%b0%e5%b9%b3%e7%ba%bf">#</a>
+</h3>
+<p>在Krenz这边的教学体系中，练习透视时都推荐先徒手画出想要角度的平面，而不是像传统美术教学一样，先定义出视平线或地平线</p>
+<p>因为如果像传统美术教学一样，先定义好视平线或地平线的话，就会很容易会绕进「定好了视平线、地平线和消失点之后，无论如何都没办法将物体画成是想要的角度」的情况</p>
+<p>这是因为只要确定了地平线、视平线和消失点之后，物体的角度已经<strong>被确定</strong>，是没办法旋转角度的</p>
+<blockquote>
+<p>可以结合上面「角度控制」小节进行理解</p>
+</blockquote>
+<p>所以，为了破除这种惯性思维，会比较推荐<strong>先徒手画</strong>一个自己想要角度的平面或者立方体（通过物体来隐性地定义视平线、地平线的存在），再进行透视检查并进行纠正，但又不至于陷入传统美术教学的「无法转角度」的怪圈之中</p>
+<p>另外，如果形成了「先有视平线、地平线」这种惯性思维，就会难以理解浮在空中的任意角度的立方体（第一节课中称为<strong>浮空方块</strong>，下同）</p>
+<p><strong>浮空方块</strong>本质上是一个在任意角度平面（与地面不平行）上的立方体，<strong>浮空方块</strong>只遵照它所在的平面的透视规则，并<strong>不遵循</strong>原有地面的透视规则</p>
+<blockquote>
+<p>这里可以参考穿透美术教学书籍中的 <strong>「斜面（斜坡）透视」</strong> 进行理解，要深刻地理解为什么斜面与地面上的物体的透视规则并不相同</p>
+</blockquote>
+<blockquote>
+<p>在理解了「斜面（斜坡）透视」后，就可以明白：浮空方块透视与斜面透视的差异在于「浮空方块所在的面比『斜坡』的角度更加自由」</p>
+</blockquote>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l3-11.png" alt="L3-11" /></p>
+<blockquote>
+<p>💡 简单总结成一句话：</p>
+<p>在某一平面上的物体，<em><strong>必定</strong></em>遵照该平面上的透视规则，这个物体与别的平面没有任何关联</p>
+</blockquote>
+<hr>
+<p><a href="../..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#角度控制">角度控制</a></li>
+    <li><a href="#利用透视临摹带景画作的步骤简述">利用透视临摹带景画作的步骤简述</a></li>
+    <li><a href="#视平线地平线水平线">视平线、地平线、水平线</a>
+      <ul>
+        <li><a href="#三种线概念的差异">三种「线」概念的差异</a></li>
+        <li><a href="#为什么说不要纠结于视平线地平线">为什么说不要纠结于「视平线」、「地平线」</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

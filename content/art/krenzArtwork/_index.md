@@ -9,6 +9,8 @@ draft: false
 + #### 基础透视与结构 {#krenz_perspective}
 
   + [第一课](./perspective/lesson1)
+  + [第二课](./perspective/lesson2)
+  + [第三课](./perspective/lesson3)
 
 + #### 光影与色彩 {#krenz_digitalpainting}
 
