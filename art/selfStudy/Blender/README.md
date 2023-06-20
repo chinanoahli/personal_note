@@ -8,8 +8,11 @@
 
 > 本笔记基本上是基于 [只剩一瓶辣椒酱@Bilibili](https://space.bilibili.com/35723238) 的 [视频 BV1zh411Y7LX](https://www.bilibili.com/video/BV1zh411Y7LX) 进行学习，如果你希望获取到关于本笔记的附件资源，请移步他的视频页面，并于视频的简介中查找链接，进行下载
 
+<!-- https://stackoverflow.com/questions/8506827/is-it-possible-to-format-an-ordered-list-with-hexadecimal-numbers -->
+
 1. [下载 Blender 与偏好设置](./01.downloadAndBaseSettings.md)
 2. [在 Blender 中观察物体](./02.observeObjects.md)
+3. [在 Blender 中变换和移动物体](./03.movingAndTransformingObject.md)
 
 ---
 
