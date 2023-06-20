@@ -6,9 +6,8 @@
   "trashOption": "local",
   "newLinkFormat": "relative",
   "attachmentFolderPath": "./attachments",
+  "alwaysUpdateLinks": true,
   "showLineNumber": true,
-  "showFrontmatter": true,
   "spellcheck": false,
-  "autoPairBrackets": false,
-  "useTab": false
+  "autoPairBrackets": true
 }
