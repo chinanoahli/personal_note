@@ -5,5 +5,9 @@
   "strictLineBreaks": true,
   "trashOption": "local",
   "newLinkFormat": "relative",
-  "attachmentFolderPath": "./attachments"
+  "attachmentFolderPath": "./attachments",
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "spellcheck": false,
+  "autoPairBrackets": true
 }
