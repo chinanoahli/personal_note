@@ -10,12 +10,20 @@
 
 > 同时本篇笔记还使用了很多我自行创造的词语，可能与传统的 3D 建模软件教程有所出入，可能会造成读者有所不适，你可以通过本笔记的 [GitHub Discussions](https://github.com/chinanoahli/personal_note/discussions) 页面提出改进建议
 
+> 如果你在 Windows 10 下使用 Blender 你可能会发现有时候 Blender 的快捷键全都失效了
+> 
+> 这其实是因为 Win 10 新设计的输入法跟 Blender 不兼容所造成的，因为有一些字符被输入<sub>(大概率是在中文输入状态下按快捷键造成的后果)</sub>，但是 Blender 未能正确识别成快捷键，从而堵塞了操作
+>
+> 此时再切换会英语输入模式也无济于事
+>
+> 解决方法也很简单，你只需要激活任意一个可以输入字符的输入框，例如 Blender 右上角导航器的搜索框，就可以把堵塞的字符去掉，然后快捷键就会恢复正常
+
 <!-- https://stackoverflow.com/questions/8506827/is-it-possible-to-format-an-ordered-list-with-hexadecimal-numbers -->
 
-1. [下载 Blender 与偏好设置](./01.downloadAndBaseSettings.md)
-2. [在 Blender 中观察物体](./02.observeObjects.md)
-3. [在 Blender 中变换和移动物体](./03.movingAndTransformingObject.md)
-4. [在 Blender 中选择物体](./04.selectObjects.md)
+1. [下载与偏好设置](./01.downloadAndBaseSettings.md)
+2. [观察物体](./02.observeObjects.md)
+3. [中变换和移动物体](./03.movingAndTransformingObject.md)
+4. [场景单位与物体的选择](./04.spaceProperties.SelectAndAdd.DeleteObject.md)
 
 ---
 
