@@ -1,5 +1,8 @@
 # 游戏笔记
 
++ ## Steam
+    + [Steam 游戏疑难杂症什锦](./steamGames/steamGameErrors.md)
+
 + ## 矮人要塞个人研究
     + [目录](./howToDwarfFortress/README.md)
 
