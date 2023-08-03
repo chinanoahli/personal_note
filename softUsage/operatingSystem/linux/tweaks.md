@@ -34,9 +34,25 @@
    
    2. 能 *被当前用户(组)* (取决于你这个 `-X` 放在命令中的哪一段) 检索到
 
+## LightDM 开机自动登陆用户账户 <sup>[2]</sup>
+
+修改文件 `/etc/lightdm/lightdm.conf`
+
+在 `[Seat:*]` 下方跟添加
+
+```
+autologin-user=chinanoahli    # 以 chinanoahli 用户作为例子，请修改为你自己的用户名
+autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自动登陆
+```
+
+> ⚠ 注意:
+>
+> LightDM 的配置文件内容相同的注释比较多，如果用搜索功能进行搜索的话，务必要看清楚自己修改的必须是 `[Seat:*]` 段落里面的内容，而不是其他注释说明中的内容！！
+
 ## 引用来源：
 
 1. [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744/change-all-files-and-folders-permissions-of-a-directory-to-644-755)
+2. [Enabling Auto Login](https://forums.linuxmint.com/viewtopic.php?t=286267)
 
 ---
 
