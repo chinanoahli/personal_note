@@ -240,6 +240,17 @@ bcdedit /set hypervisorlaunchtype auto
 
 运行 `msinfo32` 打开 *系统信息* 工具，在 *系统摘要* 下找到 *基于虚拟化的安全性*
 
+## 通过注册表降低网络延迟
+
+![通过注册表降低网络延迟](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/operatingSystem/windows/img0001.png)
+
+打开 **注册表** 然后定位到以下键 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`，这时你应该能在左边的窗格中看到很多由UUID组成的子键
+
+逐个打开并确认这些子键其中的 `DhcpServer` 值是否跟你的网络环境相互，如果相符，则添加下列两个 `DWORD(32位)值`，两个值的数据均为 `1`
+
++ `TcpAckFrequency`
++ `TCPNoDelay`
+
 ---
 
 [上一级](../README.md)
