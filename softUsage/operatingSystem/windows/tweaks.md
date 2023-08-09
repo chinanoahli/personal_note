@@ -244,12 +244,20 @@ bcdedit /set hypervisorlaunchtype auto
 
 ![通过注册表降低网络延迟](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/operatingSystem/windows/img0001.png)
 
-打开 **注册表** 然后定位到以下键 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`，这时你应该能在左边的窗格中看到很多由UUID组成的子键
+打开 **注册表编辑器** 然后定位到以下键 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`，这时你应该能在左边的窗格中看到很多由UUID命名的子键
 
 逐个打开并确认这些子键其中的 `DhcpServer` 值是否跟你的网络环境相互，如果相符，则添加下列两个 `DWORD(32位)值`，两个值的数据均为 `1`
 
 + `TcpAckFrequency`
 + `TCPNoDelay`
+
+## 删除 *此电脑* 里面的 *3D 对象*
+
+> 其他的 *文件夹* 也是同理，但这里不展开说，因为我习惯会保留住方便快捷访问，对于我个人来说，只有 *3D 对象* 是用不到的
+
+打开 **注册表编辑器** 然后定位到以下键  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace`
+
+然后删除名为 `{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}` 的键
 
 ---
 
