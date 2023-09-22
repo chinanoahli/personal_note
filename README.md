@@ -1,6 +1,7 @@
 # 笔记总目录
 
 + [美术学习笔记](./art/README.md)
++ [音乐学习笔记](./music/README.md)
 + [游戏笔记](./game/README.md)
 + [软件使用笔记](./softUsage/README.md)
 + 硬件使用笔记
