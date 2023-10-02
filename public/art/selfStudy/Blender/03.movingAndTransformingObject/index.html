@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="03. 变换和移动物体 #  移动物体 #  使用 Blender UI 上的按钮 #  在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
+细心的小伙伴可能会注意到，在任意 两条轴的中间 ，还会有一个带颜色的小方格
+只需要拖动这个小方格就可以在 这两条轴所形成的平面上 任意移动物体，而不再受单一轴向的影响，注意观看下图方块的三轴座标变化
+通过快捷键移动 #  在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
+让物体在指定轴向上移动 #  如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
+ 按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键  这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
+(其他轴也是同理，需要锁定在 Y 轴，则按 Y)
+让物体在某两轴组成的平面上移动 #  假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
+ 按下键盘的 G 键，进入物体移动模式 按下快捷键  Shift &#43; Z 来锁定物体的 Z 轴座标  这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记 03 变换和移动物体" />
+<meta property="og:description" content="03. 变换和移动物体 #  移动物体 #  使用 Blender UI 上的按钮 #  在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
+细心的小伙伴可能会注意到，在任意 两条轴的中间 ，还会有一个带颜色的小方格
+只需要拖动这个小方格就可以在 这两条轴所形成的平面上 任意移动物体，而不再受单一轴向的影响，注意观看下图方块的三轴座标变化
+通过快捷键移动 #  在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
+让物体在指定轴向上移动 #  如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
+ 按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键  这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
+(其他轴也是同理，需要锁定在 Y 轴，则按 Y)
+让物体在某两轴组成的平面上移动 #  假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
+ 按下键盘的 G 键，进入物体移动模式 按下快捷键  Shift &#43; Z 来锁定物体的 Z 轴座标  这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/art/selfStudy/Blender/03.movingAndTransformingObject/" />
+<meta property="article:published_time" content="2023-10-02T16:38:16+09:00" />
+<meta property="article:modified_time" content="2023-10-02T16:38:16+09:00" />
+<title>Blender 学习笔记 03 变换和移动物体 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/">Blender 学习笔记</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Blender 学习笔记 03 变换和移动物体</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#移动物体">移动物体</a>
+      <ul>
+        <li><a href="#使用-blender-ui-上的按钮">使用 Blender UI 上的按钮</a></li>
+        <li><a href="#通过快捷键移动">通过快捷键移动</a></li>
+      </ul>
+    </li>
+    <li><a href="#变换物体">变换物体</a>
+      <ul>
+        <li><a href="#旋转物体">旋转物体</a></li>
+        <li><a href="#缩放物体">缩放物体</a></li>
+      </ul>
+    </li>
+    <li><a href="#同时移动与变换物体">同时移动与变换物体</a>
+      <ul>
+        <li><a href="#使用-blender-ui-上的按钮-1">使用 Blender UI 上的按钮</a></li>
+        <li><a href="#gizemo">Gizemo</a></li>
+        <li><a href="#通过参数面板">通过参数面板</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="03-变换和移动物体">
+  03. 变换和移动物体
+  <a class="anchor" href="#03-%e5%8f%98%e6%8d%a2%e5%92%8c%e7%a7%bb%e5%8a%a8%e7%89%a9%e4%bd%93">#</a>
+</h1>
+<h2 id="移动物体">
+  移动物体
+  <a class="anchor" href="#%e7%a7%bb%e5%8a%a8%e7%89%a9%e4%bd%93">#</a>
+</h2>
+<h3 id="使用-blender-ui-上的按钮">
+  使用 Blender UI 上的按钮
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-blender-ui-%e4%b8%8a%e7%9a%84%e6%8c%89%e9%92%ae">#</a>
+</h3>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-001.gif" alt="根据座标轴方向移动物体" /></p>
+<p>在 Blender 视图左侧找到并点击进入 <strong><i>移动</i></strong> 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆<sub>(操作杆的末端为箭头状)</sub>，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体</p>
+<p>细心的小伙伴可能会注意到，在任意 <strong><i>两条轴的中间</i></strong> ，还会有一个带颜色的小方格</p>
+<p>只需要拖动这个小方格就可以在 <strong><i>这两条轴所形成的平面上</i></strong> 任意移动物体，而不再受单一轴向的影响，注意观看下图方块的三轴座标变化</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-002.gif" alt="任意移动物体" /></p>
+<h3 id="通过快捷键移动">
+  通过快捷键移动
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e5%bf%ab%e6%8d%b7%e9%94%ae%e7%a7%bb%e5%8a%a8">#</a>
+</h3>
+<p>在用鼠标点选物体之后，再按下键盘的 <strong><i>G</i></strong> 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 <strong><i>Esc</i></strong> 键或 <strong><i>鼠标右键</i></strong> 即可</p>
+<h4 id="让物体在指定轴向上移动">
+  让物体在指定轴向上移动
+  <a class="anchor" href="#%e8%ae%a9%e7%89%a9%e4%bd%93%e5%9c%a8%e6%8c%87%e5%ae%9a%e8%bd%b4%e5%90%91%e4%b8%8a%e7%a7%bb%e5%8a%a8">#</a>
+</h4>
+<p>如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:</p>
+<ol>
+<li>按下键盘的 <strong><i>G</i></strong> 键，进入物体移动模式，此时物体可以随着光标任意移动</li>
+<li>因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 <strong><i>X</i></strong> 键</li>
+</ol>
+<p>这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置</p>
+<p><sub>(其他轴也是同理，需要锁定在 Y 轴，则按 <strong><i>Y</i></strong>)</sub></p>
+<h4 id="让物体在某两轴组成的平面上移动">
+  让物体在某两轴组成的平面上移动
+  <a class="anchor" href="#%e8%ae%a9%e7%89%a9%e4%bd%93%e5%9c%a8%e6%9f%90%e4%b8%a4%e8%bd%b4%e7%bb%84%e6%88%90%e7%9a%84%e5%b9%b3%e9%9d%a2%e4%b8%8a%e7%a7%bb%e5%8a%a8">#</a>
+</h4>
+<p>假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上<sub>(也就是说 Z 轴座标不变)</sub>进行移动的话，我们则可以通过:</p>
+<ol>
+<li>按下键盘的 <strong><i>G</i></strong> 键，进入物体移动模式</li>
+<li>按下快捷键 <strong><i> Shift + Z</i></strong> 来锁定物体的 Z 轴座标</li>
+</ol>
+<p>这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置</p>
+<h4 id="让物体回到场景原点">
+  让物体回到场景原点
+  <a class="anchor" href="#%e8%ae%a9%e7%89%a9%e4%bd%93%e5%9b%9e%e5%88%b0%e5%9c%ba%e6%99%af%e5%8e%9f%e7%82%b9">#</a>
+</h4>
+<p>如果我们需要把物体重新移动到场景的原点，则可以通过 <strong><i>Alt + G</i></strong> 来操作</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-010.gif" alt="把物体移动到场景原点" /></p>
+<h5 id="通过快捷键精确移动">
+  通过快捷键精确移动
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e5%bf%ab%e6%8d%b7%e9%94%ae%e7%b2%be%e7%a1%ae%e7%a7%bb%e5%8a%a8">#</a>
+</h5>
+<p>我们先在已经知道，让物体锁定在 Z 轴移动的快捷键是 <strong><i></i></strong></p>
+<p>我们都知道，可以通过 <strong><i>G → Y</i></strong> 快捷键来实现，那么有没有的更精确的 Key Combo 来让物体精 **<i>「锁定 Y 轴并移动一定的位置」</i>**呢？</p>
+<p>答案当然是肯定的:</p>
+<p>假设我们需要让物体锁定 Y 轴并往座标轴的负方向移动 2.5m 的距离，我们只需要按下快捷键  <strong><i>G → Y → - → 2 → . → 5</i></strong> <sup>*</sup>，即「<strong><i>GY-2.5</i></strong>」，就可以让物体实现更精准的移动啦</p>
+<p><sub>*. 数字和符号可以直接用字母区上面的横排数字键和连字符进行输入，并不强制要求使用小键盘</sub></p>
+<h2 id="变换物体">
+  变换物体
+  <a class="anchor" href="#%e5%8f%98%e6%8d%a2%e7%89%a9%e4%bd%93">#</a>
+</h2>
+<h3 id="旋转物体">
+  旋转物体
+  <a class="anchor" href="#%e6%97%8b%e8%bd%ac%e7%89%a9%e4%bd%93">#</a>
+</h3>
+<p>在 Blender 视图左侧找到并点击进入 <strong><i>旋转</i></strong> 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，在物体的三个轴向平面上显示一道圆弧，此时我们只需要用鼠标按住其中一条圆弧，并往需要旋转的方向拖动，即可让物体在对应的轴向平面上作出旋转</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-003.gif" alt="指定轴向旋转物体" /></p>
+<p>当鼠标不选中任意一条圆弧时，物体则可以向任意角度旋转</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-004.gif" alt="任意角度旋转物体" /></p>
+<h4 id="通过快捷键旋转">
+  通过快捷键旋转
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e5%bf%ab%e6%8d%b7%e9%94%ae%e6%97%8b%e8%bd%ac">#</a>
+</h4>
+<p>旋转物体的快捷键是 <strong><i>R</i></strong>，与之前的操作类似，先选中物体，然后按下键盘的 **<i>R</i>**键即可</p>
+<p>值得注意的是: 当第一次通过快捷键**<i>R</i>** 进入旋转模式时，物体仅能在与观察者视角的焦平面平行的方向上进行旋转<sub>(此时的光标会变成一个两向的黑色箭头)</sub>，效果如下图</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-011.gif" alt="观察者焦平面选装" /></p>
+<p>如果我们需要物体进行任意旋转模式，则需要连续使用 <strong><i>R</i></strong> 快捷键<sub>(此时的光标会成一个红绿垂直的十字箭头样式)</sub></p>
+<h5 id="在指定的轴向上旋转">
+  在指定的轴向上旋转
+  <a class="anchor" href="#%e5%9c%a8%e6%8c%87%e5%ae%9a%e7%9a%84%e8%bd%b4%e5%90%91%e4%b8%8a%e6%97%8b%e8%bd%ac">#</a>
+</h5>
+<p>与移动物体类似，如果我们需要让物体以 X 轴为中心旋转的话，只需要按下快捷键 <strong><i>R → X</i></strong> 再移动光标即可</p>
+<p>精准角度控制则可以使用 <strong><i>R → X → 45</i></strong> 这种形式的 Key Combo</p>
+<h4 id="旋转归零">
+  旋转归零
+  <a class="anchor" href="#%e6%97%8b%e8%bd%ac%e5%bd%92%e9%9b%b6">#</a>
+</h4>
+<p>同样地，与移动物体类似，你可以通过快捷键 <strong><i>Alt + R</i></strong> 快速地将一个旋转过的物体重置为 0°，</p>
+<h3 id="缩放物体">
+  缩放物体
+  <a class="anchor" href="#%e7%bc%a9%e6%94%be%e7%89%a9%e4%bd%93">#</a>
+</h3>
+<p>在 Blender 视图左侧找到并点击进入 <strong><i>缩放</i></strong> 模式，此时再点击任何物体，Blender 将会以「原点」为基准，显示一个可操作的三轴操作杆<sub>(操作杆的末端为一个小方块)</sub>，这时我们只需要拖动这个小方块，就可以让物体在对应的轴向上拉长或缩短</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-005.gif" alt="物体的基本缩放" /></p>
+<p>同时，与移动物体类似，在操作杆任意两轴组成的平面上也有一个小方格，可供用户在两条轴上同时缩放物体，而不影响第三条轴</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-006.gif" alt="同时在两轴方向上缩放物体" /></p>
+<h4 id="通过快捷键缩放">
+  通过快捷键缩放
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e5%bf%ab%e6%8d%b7%e9%94%ae%e7%bc%a9%e6%94%be">#</a>
+</h4>
+<p>缩放的快捷键是 <strong><i>S</i></strong>，默认的缩放模式是 <strong><i>「等比缩放」</i></strong></p>
+<p>与移动和旋转物体类似:</p>
+<p>你也可以通过 <strong><i>S → X</i></strong> 这种形式来限定物体，让其仅能在 X 轴向上进行缩放</p>
+<p>而 <strong><i>S → Shift + Z</i></strong> 这种限定方式，则可以让物体 <em>锁定</em> 在 X 和 Y 轴所组成的平面方向上进行 <strong><i>「等比缩放」</i></strong></p>
+<p>缩放归零则可以使用 <strong><i>Alt + S</i></strong> 快捷键</p>
+<h2 id="同时移动与变换物体">
+  同时移动与变换物体
+  <a class="anchor" href="#%e5%90%8c%e6%97%b6%e7%a7%bb%e5%8a%a8%e4%b8%8e%e5%8f%98%e6%8d%a2%e7%89%a9%e4%bd%93">#</a>
+</h2>
+<h3 id="使用-blender-ui-上的按钮-1">
+  使用 Blender UI 上的按钮
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-blender-ui-%e4%b8%8a%e7%9a%84%e6%8c%89%e9%92%ae-1">#</a>
+</h3>
+<p>Blender 还提供了一个 <strong><i>变换</i></strong> 模式，激活后，视图中可以同时显示物体的 <strong><i>移动操作杆</i></strong> 、 <strong><i>旋转操作弧</i></strong> 以及 <strong><i>缩放操作杆</i></strong>，此时用户只需要根据自己的需要对物体作出调整即可</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-007.gif" alt="变换模式" /></p>
+<h3 id="gizemo">
+  Gizemo
+  <a class="anchor" href="#gizemo">#</a>
+</h3>
+<p>诚然，Blender 在 UI 设计上给予了初学者很大的便利，但通过鼠标选择工具才能进入对应的操作模式这种工作方式是比较低效的</p>
+<p>那么有什么办法可以让我们在点选一个物体的时候，能更快显示出常用的操作杆呢？</p>
+<p>那就是 <strong><i>Gizemo</i></strong> 啦，只要在视图右上角的 Gizemo 设置菜单里，根据需求勾选位于 <strong><i>物体Gizemo</i></strong> 类别下的: <strong><i>移动</i></strong> 、 <strong><i>旋转</i></strong> 或 <strong><i>缩放</i></strong>，那么我们在下次选点选物体时，对应的操作杆将会自动显示出来</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-008.gif" alt="打开Gizemo设置" /></p>
+<p>通过快捷键 <strong><i>Ctrl + `</i></strong> 或直接点击视图上的 <strong><i>显示Gizemo</i></strong> 按钮则可以快速开启或关闭便利的 Gizemo 功能</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-009.gif" alt="关闭或打开Gizemo" /></p>
+<h3 id="通过参数面板">
+  通过参数面板
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e5%8f%82%e6%95%b0%e9%9d%a2%e6%9d%bf">#</a>
+</h3>
+<p>如果你有更数学精确上的要求，那么你可以使用 Blender 提供的物体参数面板，或通过快捷键 <strong><i>N</i></strong> 激活的 <em>N 键面板</em> 来手动输入物体的座标、旋转角度和变形参数</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch03-012.png" alt="在面板中手动输入数值" /></p>
+<hr>
+<p><a href="..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#移动物体">移动物体</a>
+      <ul>
+        <li><a href="#使用-blender-ui-上的按钮">使用 Blender UI 上的按钮</a></li>
+        <li><a href="#通过快捷键移动">通过快捷键移动</a></li>
+      </ul>
+    </li>
+    <li><a href="#变换物体">变换物体</a>
+      <ul>
+        <li><a href="#旋转物体">旋转物体</a></li>
+        <li><a href="#缩放物体">缩放物体</a></li>
+      </ul>
+    </li>
+    <li><a href="#同时移动与变换物体">同时移动与变换物体</a>
+      <ul>
+        <li><a href="#使用-blender-ui-上的按钮-1">使用 Blender UI 上的按钮</a></li>
+        <li><a href="#gizemo">Gizemo</a></li>
+        <li><a href="#通过参数面板">通过参数面板</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

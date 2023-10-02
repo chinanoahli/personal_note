@@ -9,6 +9,22 @@
 
 ---
 
+Git 命令速查
+
++ 更新 *submodule* <br>`git submodule update --remote`
+
+---
+
+Hugo 命令速查
+
++ 编译页面<br>`hugo --buildFuture`
+
++ 新建页面<br>`hugo new path/to/new/page/_index.md`
+
++ 打开本地测试服务器(会显示新页面，但不会编译)<br>`hugo server -D`
+
+---
+
 ## 关于许可证
 
 基本全为个人笔记和个人观点，采用**CC BY SA**许可证发布。

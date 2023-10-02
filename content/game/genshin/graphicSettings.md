@@ -1,10 +1,10 @@
 ---
-title: "GraphicSettings"
+title: "游戏图形设置"
 date: 2023-05-05T19:14:42+09:00
 draft: false
 ---
 
-# 游戏图形设置
+# 游戏图形设置 for Deck
 
 + FPS: 45
 + 垂直同步: 关闭

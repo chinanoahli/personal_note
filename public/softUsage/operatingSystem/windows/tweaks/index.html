@@ -72,6 +72,8 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/art/">美术学习笔记</a>
 <ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
 <li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
 <ul>
 <li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
@@ -94,9 +96,27 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/">Blender 学习笔记</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="/game/">游戏笔记</a>
 <ul>
-<li><a href="/game/#dwarfFortress">矮人要塞个人研究</a></li>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
 <li><a href="/game/#steamOS">SteamOS</a></li>
 <li><a href="/game/#nSwitch">Nintendo Switch</a></li>
 </ul>
@@ -163,6 +183,9 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#通过注册表进行映像劫持">通过注册表进行映像劫持</a></li>
     <li><a href="#通过命令行工具管理服务项">通过命令行工具管理服务项</a></li>
     <li><a href="#通过命令行工具管理计划任务">通过命令行工具管理计划任务</a></li>
+    <li><a href="#启用或禁用基于虚拟化的安全性">启用或禁用「基于虚拟化的安全性」</a></li>
+    <li><a href="#通过注册表降低网络延迟">通过注册表降低网络延迟</a></li>
+    <li><a href="#删除-此电脑-里面的-3d-对象">删除 <em>此电脑</em> 里面的 <em>3D 对象</em></a></li>
   </ul>
 </nav>
 
@@ -333,7 +356,7 @@ VerifyWinRE      N/A              已禁用
 <li>
 <p>删除特定计划任务<br>本例中使用上一条命令的输出作为示例，删除时需要提供 <strong><i>完整</i></strong> 的任务计划名（即文件夹 + 任务名）</p>
 <pre><code>REM /f 参数不是必须的，如果不加这个参数，删除时就会弹出确认选项
-   
+
 schtasks /delete /tn &quot;\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE&quot; /f
 </code></pre></li>
 <li>
@@ -345,6 +368,41 @@ schtasks /delete /tn &quot;\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE&qu
 <pre><code>schtasks /change /tn &quot;完整的任务计划名&quot; /enable
 </code></pre></li>
 </ol>
+<h2 id="启用或禁用基于虚拟化的安全性">
+  启用或禁用「基于虚拟化的安全性」
+  <a class="anchor" href="#%e5%90%af%e7%94%a8%e6%88%96%e7%a6%81%e7%94%a8%e5%9f%ba%e4%ba%8e%e8%99%9a%e6%8b%9f%e5%8c%96%e7%9a%84%e5%ae%89%e5%85%a8%e6%80%a7">#</a>
+</h2>
+<blockquote>
+<p>⚠ 注意：关闭后将会影响虚拟机的使用</p>
+</blockquote>
+<p>以管理员身份运行下面的命令</p>
+<pre><code>REM 关闭
+bcdedit /set hypervisorlaunchtype off
+
+REM 打开
+bcdedit /set hypervisorlaunchtype auto
+</code></pre><p>查询方法</p>
+<p>运行 <code>msinfo32</code> 打开 <em>系统信息</em> 工具，在 <em>系统摘要</em> 下找到 <em>基于虚拟化的安全性</em></p>
+<h2 id="通过注册表降低网络延迟">
+  通过注册表降低网络延迟
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87%e6%b3%a8%e5%86%8c%e8%a1%a8%e9%99%8d%e4%bd%8e%e7%bd%91%e7%bb%9c%e5%bb%b6%e8%bf%9f">#</a>
+</h2>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/operatingSystem/windows/img0001.png" alt="通过注册表降低网络延迟" /></p>
+<p>打开 <strong>注册表编辑器</strong> 然后定位到以下键 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces</code>，这时你应该能在左边的窗格中看到很多由UUID命名的子键</p>
+<p>逐个打开并确认这些子键其中的 <code>DhcpServer</code> 值是否跟你的网络环境相互，如果相符，则添加下列两个 <code>DWORD(32位)值</code>，两个值的数据均为 <code>1</code></p>
+<ul>
+<li><code>TcpAckFrequency</code></li>
+<li><code>TCPNoDelay</code></li>
+</ul>
+<h2 id="删除-此电脑-里面的-3d-对象">
+  删除 <em>此电脑</em> 里面的 <em>3D 对象</em>
+  <a class="anchor" href="#%e5%88%a0%e9%99%a4-%e6%ad%a4%e7%94%b5%e8%84%91-%e9%87%8c%e9%9d%a2%e7%9a%84-3d-%e5%af%b9%e8%b1%a1">#</a>
+</h2>
+<blockquote>
+<p>其他的 <em>文件夹</em> 也是同理，但这里不展开说，因为我习惯会保留住方便快捷访问，对于我个人来说，只有 <em>3D 对象</em> 是用不到的</p>
+</blockquote>
+<p>打开 <strong>注册表编辑器</strong> 然后定位到以下键  <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</code></p>
+<p>然后删除名为 <code>{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}</code> 的键</p>
 <hr>
 <p><a href="../..">上一级</a></p>
 <p><a href="/">笔记首页</a></p>
@@ -399,6 +457,9 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
     <li><a href="#通过注册表进行映像劫持">通过注册表进行映像劫持</a></li>
     <li><a href="#通过命令行工具管理服务项">通过命令行工具管理服务项</a></li>
     <li><a href="#通过命令行工具管理计划任务">通过命令行工具管理计划任务</a></li>
+    <li><a href="#启用或禁用基于虚拟化的安全性">启用或禁用「基于虚拟化的安全性」</a></li>
+    <li><a href="#通过注册表降低网络延迟">通过注册表降低网络延迟</a></li>
+    <li><a href="#删除-此电脑-里面的-3d-对象">删除 <em>此电脑</em> 里面的 <em>3D 对象</em></a></li>
   </ul>
 </nav>
 

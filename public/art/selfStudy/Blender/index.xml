@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blender 学习笔记 on chinanoahli&#39;s note</title>
+    <link>/art/selfStudy/Blender/</link>
+    <description>Recent content in Blender 学习笔记 on chinanoahli&#39;s note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Oct 2023 16:37:47 +0900</lastBuildDate><atom:link href="/art/selfStudy/Blender/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blender 学习笔记 05 座标系、游标与原点</title>
+      <link>/art/selfStudy/Blender/05.coordinateSystem.CursorAndOriginPoint/</link>
+      <pubDate>Mon, 02 Oct 2023 16:38:35 +0900</pubDate>
+      
+      <guid>/art/selfStudy/Blender/05.coordinateSystem.CursorAndOriginPoint/</guid>
+      <description>05. 座标系、游标与原点 #  通过快捷键切换不同的座标系 #  在 3D 视图中，只需要按下 , 即可快速呼出座标系饼型菜单，此时你可以通过下列任一操作:
+ 移动光标到对应的方向，再按下鼠标左键
+(光标无需在饼型菜单项上点击，当项目高亮时按下鼠标左键即可) 根据饼型菜单的数字提示按下对应的数字键(字母键上方的数字键)  来激活想要的座标系
+ ⚠ 本快捷操作的饼型菜单不会列出自定义座标系
+ 通过 Blender UI 切换不同的座标系 #  你也可以通过 3D 视图上方的 变换座标系 工具来选择需要的座标系
+不同座标系的解释 #  全局(世界座标系) #  全局座标系，也即整个场景的座标系，它不会因为对象的朝向、角度等改变而改变，原点和方向永远固定
+局部 #  以每一个对象自身作为参照的座标系，会随着对象的移动和旋转等因素改变原点和方向
+当我们需要直到一个对象的局部座标系的时候，我们可以先选中对象，然后在 物体属性 面板里面勾选 视图显示 &amp;gt; 轴向 即可让该对象显示局部座标系
+法向 #  法向可以让我们在进入对象的 编辑模式 的 面选择模式 ，并操作对象上的某一个面时所用到的座标系的 Z 轴永远垂直与该面
+ 可以先点选对象，然后按键盘上的 Tab 进入编辑模式，或通过 Blender 的 UI 进入对象编辑模式
+  编辑模式</description>
+    </item>
+    
+    <item>
+      <title>Blender 学习笔记 04 场景单位、对象的选择与添加对象</title>
+      <link>/art/selfStudy/Blender/04.spaceProperties.SelectAndAdd.DeleteObject/</link>
+      <pubDate>Mon, 02 Oct 2023 16:38:25 +0900</pubDate>
+      
+      <guid>/art/selfStudy/Blender/04.spaceProperties.SelectAndAdd.DeleteObject/</guid>
+      <description>04. 场景单位、对象的选择与添加对象 #  场景单位 #  在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
+而这个数值的单位默认是 「米」，那有没有办法可以把这个「米」修改成别的单位呢？
+答案是肯定的，我们只需要在 Blender 窗口右侧的属性面板中找到 场景属性 面板，然后根据需要修改其中的 单位 &amp;gt; 单位系统 即可
+对象的选择 #  与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
+通过 导航器 选择对象 #  在这里，先来说说 导航器 中选择对象的操作
+导航器的操作相对直观，它与很多其他软件类似，提供了两种操作方式:
+  通过 Shift 进行快速选择在导航器中连续排列的对象
+ 选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象    通过 Ctrl 实现跳跃式多选
+ 按住 Ctrl 不放 逐一点击需要选中的对象    取消选择某一个对象
+有时候我们需要从已经选择的多个工具中取消一些选中的对象，这时我们可以执行下列的操作
+  按住 Ctrl 不放</description>
+    </item>
+    
+    <item>
+      <title>Blender 学习笔记 03 变换和移动物体</title>
+      <link>/art/selfStudy/Blender/03.movingAndTransformingObject/</link>
+      <pubDate>Mon, 02 Oct 2023 16:38:16 +0900</pubDate>
+      
+      <guid>/art/selfStudy/Blender/03.movingAndTransformingObject/</guid>
+      <description>03. 变换和移动物体 #  移动物体 #  使用 Blender UI 上的按钮 #  在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
+细心的小伙伴可能会注意到，在任意 两条轴的中间 ，还会有一个带颜色的小方格
+只需要拖动这个小方格就可以在 这两条轴所形成的平面上 任意移动物体，而不再受单一轴向的影响，注意观看下图方块的三轴座标变化
+通过快捷键移动 #  在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
+让物体在指定轴向上移动 #  如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
+ 按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键  这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
+(其他轴也是同理，需要锁定在 Y 轴，则按 Y)
+让物体在某两轴组成的平面上移动 #  假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
+ 按下键盘的 G 键，进入物体移动模式 按下快捷键  Shift + Z 来锁定物体的 Z 轴座标  这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置</description>
+    </item>
+    
+    <item>
+      <title>Blender 学习笔记 02 观察对象</title>
+      <link>/art/selfStudy/Blender/02.observeObjects/</link>
+      <pubDate>Mon, 02 Oct 2023 16:38:08 +0900</pubDate>
+      
+      <guid>/art/selfStudy/Blender/02.observeObjects/</guid>
+      <description>02. 观察对象 #   以对象为中心旋转  按住 鼠标中键 不放并同时进行拖拽，这时观察者视角将会以对象的「原点」(在这里暂且称为「原点」，因为这个点用户可以根据自己的需要而改变位置) 当打开了 模拟3键鼠标 设置后，可以以「按住 Alt 不放并对画面进行拖拽」代替此操作 在 漫游器 上点击 鼠标左键 不放并同时进行拖拽     以对象为中心旋转
+ 漫游器
+        平移视角  按住 Shift 不放并同时进行拖拽 以 鼠标左键 按住 移动视图 按钮不放并向需要的方向移动     平移视角
+ 移动视图 按钮
+        视角推拉  向前滚动 滚轮 以拉近对象，向后滚动 滚轮 以推远对象 以 鼠标左键 按住 缩/放视图 按钮不放  向屏幕上方移动光标以拉近对象 向屏幕下方移动光标以推远对象       视角推拉</description>
+    </item>
+    
+    <item>
+      <title>Blender 学习笔记 01 下载与偏好设置</title>
+      <link>/art/selfStudy/Blender/01.downloadAndBaseSettings/</link>
+      <pubDate>Mon, 02 Oct 2023 16:38:00 +0900</pubDate>
+      
+      <guid>/art/selfStudy/Blender/01.downloadAndBaseSettings/</guid>
+      <description>01. 下载与偏好设置 #  如何下载 #  下载 Blender 可以到其官网，也可以直接到国内的阿里云镜像站下载
+下载完成后，运行安装程序，并按照提示安装即可
+偏好设置 #   以下的笔记，基本上是以 Blender 自带的 简体中文 翻译版本的作为对象记录，必要时会同时提及该项目的英文原名
+ 第一次打开 Blender 时，默认为英文UI，我们首先需要在顶部菜单 Edit &amp;gt; Preferences&amp;hellip; 打开 Blender 偏好设置 (Blender Preferences) 窗口
+界面 (Interface) #  然后在左侧的窗格中找到 界面 (Interface)，并在右边的窗格中找到 翻译 (Translation) &amp;gt; 语言 (Language)，把它从**English (English)** 改为 **Simplified Chinese (简体中文)**
+假若你在高分屏中使用 Blender，你可能会觉得 Blender 的UI及字体很小，你可以把 显示 &amp;gt; 分辨率缩放 调整得大一点，此值默认为 1.0
+在 Blender 每次启动时，都会自动显示 启动画面，你若不需要启动画面，可以同时将 显示 &amp;gt; 启动画面 取消勾选
+在 翻译 中，有一个名为 新建数据 的选项，它会导致某些插件出错，所以这里它关掉</description>
+    </item>
+    
+  </channel>
+</rss>

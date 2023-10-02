@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Blender 学习笔记 #   ❓假如你是在GitHub观看本篇笔记，并发现有一些图片无法显示
+这是正常的，GitHub在引用外部资源的时候会检查引用资源的大小，如果超过大小，就不会被加载，而本篇笔记正好有比较多的大文件GIF
+你可以选择到 仓库首页 &gt; About 里面的网址观看完整的版本
+  ⚠ 本笔记基本上是基于 只剩一瓶辣椒酱@Bilibili 的 视频 BV1zh411Y7LX 进行学习，如果你希望获取到关于本笔记的附件资源，请移步他的视频页面，并于视频的简介中查找链接，进行下载
+  💡 同时本篇笔记还使用了很多我自行创造的词语，可能与传统的 3D 建模软件教程有所出入，可能会造成读者有所不适，你可以通过本笔记的 GitHub Discussions 页面提出改进建议
+  ⚠ 注意: 在使用快捷键组合的时候，鼠标光标所在的位置十分重要，当鼠标光标处于不同的子窗口时，快捷键的效果将会完全不一样
+  ❓ 如果你在 Windows 10 下使用 Blender 你可能会发现有时候 Blender 的快捷键全都失效了
+这其实是因为 Win 10 新设计的输入法跟 Blender 不兼容所造成的，因为有一些字符被输入(大概率是在中文输入状态下按快捷键造成的后果)，但是 Blender 未能正确识别成快捷键，从而堵塞了操作
+此时再切换会英语输入模式也无济于事
+解决方法也很简单，你只需要激活任意一个可以输入字符的输入框，例如 Blender 右上角导航器的搜索框，就可以把堵塞的字符去掉，然后快捷键就会恢复正常
+  下载与偏好设置 观察物体 中变换和移动物体 场景单位与物体的选择 座标系、游标与原点   上一级
+笔记首页">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/art/selfStudy/Blender/" />
+<meta property="og:updated_time" content="2023-10-02T16:37:47+09:00" />
+<title>Blender 学习笔记 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><link rel="alternate" type="application/rss+xml" href="/art/selfStudy/Blender/index.xml" title="chinanoahli's note" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/"class=active>Blender 学习笔记</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Blender 学习笔记</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="blender-学习笔记">
+  Blender 学习笔记
+  <a class="anchor" href="#blender-%e5%ad%a6%e4%b9%a0%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<blockquote>
+<p>❓假如你是在GitHub观看本篇笔记，并发现有一些图片无法显示</p>
+<p>这是正常的，GitHub在引用外部资源的时候会检查引用资源的大小，如果超过大小，就不会被加载，而本篇笔记正好有比较多的大文件GIF</p>
+<p>你可以选择到 仓库首页 &gt; About 里面的网址观看完整的版本</p>
+</blockquote>
+<blockquote>
+<p>⚠ 本笔记基本上是基于 <a href="https://space.bilibili.com/35723238">只剩一瓶辣椒酱@Bilibili</a> 的 <a href="https://www.bilibili.com/video/BV1zh411Y7LX">视频 BV1zh411Y7LX</a> 进行学习，如果你希望获取到关于本笔记的附件资源，请移步他的视频页面，并于视频的简介中查找链接，进行下载</p>
+</blockquote>
+<blockquote>
+<p>💡 同时本篇笔记还使用了很多我自行创造的词语，可能与传统的 3D 建模软件教程有所出入，可能会造成读者有所不适，你可以通过本笔记的 <a href="https://github.com/chinanoahli/personal_note/discussions">GitHub Discussions</a> 页面提出改进建议</p>
+</blockquote>
+<blockquote>
+<p>⚠ 注意: 在使用快捷键组合的时候，鼠标光标所在的位置十分重要，当鼠标光标处于不同的子窗口时，快捷键的效果将会完全不一样</p>
+</blockquote>
+<blockquote>
+<p>❓ 如果你在 Windows 10 下使用 Blender 你可能会发现有时候 Blender 的快捷键全都失效了</p>
+<p>这其实是因为 Win 10 新设计的输入法跟 Blender 不兼容所造成的，因为有一些字符被输入<sub>(大概率是在中文输入状态下按快捷键造成的后果)</sub>，但是 Blender 未能正确识别成快捷键，从而堵塞了操作</p>
+<p>此时再切换会英语输入模式也无济于事</p>
+<p>解决方法也很简单，你只需要激活任意一个可以输入字符的输入框，例如 Blender 右上角导航器的搜索框，就可以把堵塞的字符去掉，然后快捷键就会恢复正常</p>
+</blockquote>
+<!-- https://stackoverflow.com/questions/8506827/is-it-possible-to-format-an-ordered-list-with-hexadecimal-numbers -->
+<ol>
+<li><a href="./01.downloadAndBaseSettings">下载与偏好设置</a></li>
+<li><a href="./02.observeObjects">观察物体</a></li>
+<li><a href="./03.movingAndTransformingObject">中变换和移动物体</a></li>
+<li><a href="./04.spaceProperties.SelectAndAdd.DeleteObject">场景单位与物体的选择</a></li>
+<li><a href="05.coordinateSystem.CursorAndOriginPoint">座标系、游标与原点</a></li>
+</ol>
+<hr>
+<p><a href="../..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

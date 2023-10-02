@@ -8,17 +8,17 @@
     <language>zh-CN</language>
     <lastBuildDate>Sat, 25 Feb 2023 10:03:25 +0800</lastBuildDate><atom:link href="/game/genshin/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GraphicSettings</title>
+      <title>游戏图形设置</title>
       <link>/game/genshin/graphicSettings/</link>
       <pubDate>Fri, 05 May 2023 19:14:42 +0900</pubDate>
       
       <guid>/game/genshin/graphicSettings/</guid>
-      <description>游戏图形设置 #   FPS: 45 垂直同步: 关闭 渲染精细度: 1.0 阴影品质: 低 后期效果: 中 特效品质: 中 场景细节: 中 反锯齿: FSR2 体积雾: 关闭 反射: 关闭 动态模糊: 关闭 Bloom: 打开 人群密度: 高 多人游戏队友特效: 部份封锁 次表面反射: 关闭 各向异性采样: 1x   上一级
+      <description>游戏图形设置 for Deck #   FPS: 45 垂直同步: 关闭 渲染精细度: 1.0 阴影品质: 低 后期效果: 中 特效品质: 中 场景细节: 中 反锯齿: FSR2 体积雾: 关闭 反射: 关闭 动态模糊: 关闭 Bloom: 打开 人群密度: 高 多人游戏队友特效: 部份封锁 次表面反射: 关闭 各向异性采样: 1x   上一级
 笔记首页</description>
     </item>
     
     <item>
-      <title>DownloadDataDirectly</title>
+      <title>抓取原神数据包的下载地址</title>
       <link>/game/genshin/downloadDataDirectly/</link>
       <pubDate>Fri, 05 May 2023 19:14:32 +0900</pubDate>
       

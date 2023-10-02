@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="04. 场景单位、对象的选择与添加对象 #  场景单位 #  在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
+而这个数值的单位默认是 「米」，那有没有办法可以把这个「米」修改成别的单位呢？
+答案是肯定的，我们只需要在 Blender 窗口右侧的属性面板中找到 场景属性 面板，然后根据需要修改其中的 单位 &gt; 单位系统 即可
+对象的选择 #  与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
+通过 导航器 选择对象 #  在这里，先来说说 导航器 中选择对象的操作
+导航器的操作相对直观，它与很多其他软件类似，提供了两种操作方式:
+  通过 Shift 进行快速选择在导航器中连续排列的对象
+ 选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象    通过 Ctrl 实现跳跃式多选
+ 按住 Ctrl 不放 逐一点击需要选中的对象    取消选择某一个对象
+有时候我们需要从已经选择的多个工具中取消一些选中的对象，这时我们可以执行下列的操作
+  按住 Ctrl 不放">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记 04 场景单位、对象的选择与添加对象" />
+<meta property="og:description" content="04. 场景单位、对象的选择与添加对象 #  场景单位 #  在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
+而这个数值的单位默认是 「米」，那有没有办法可以把这个「米」修改成别的单位呢？
+答案是肯定的，我们只需要在 Blender 窗口右侧的属性面板中找到 场景属性 面板，然后根据需要修改其中的 单位 &gt; 单位系统 即可
+对象的选择 #  与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
+通过 导航器 选择对象 #  在这里，先来说说 导航器 中选择对象的操作
+导航器的操作相对直观，它与很多其他软件类似，提供了两种操作方式:
+  通过 Shift 进行快速选择在导航器中连续排列的对象
+ 选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象    通过 Ctrl 实现跳跃式多选
+ 按住 Ctrl 不放 逐一点击需要选中的对象    取消选择某一个对象
+有时候我们需要从已经选择的多个工具中取消一些选中的对象，这时我们可以执行下列的操作
+  按住 Ctrl 不放" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/art/selfStudy/Blender/04.spaceProperties.SelectAndAdd.DeleteObject/" />
+<meta property="article:published_time" content="2023-10-02T16:38:25+09:00" />
+<meta property="article:modified_time" content="2023-10-02T16:38:25+09:00" />
+<title>Blender 学习笔记 04 场景单位、对象的选择与添加对象 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/">Blender 学习笔记</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Blender 学习笔记 04 场景单位、对象的选择与添加对象</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#场景单位">场景单位</a></li>
+    <li><a href="#对象的选择">对象的选择</a>
+      <ul>
+        <li><a href="#通过-导航器-选择对象">通过 <em>导航器</em> 选择对象</a></li>
+      </ul>
+    </li>
+    <li><a href="#从-3d-视图中选择对象">从 3D 视图中选择对象</a>
+      <ul>
+        <li><a href="#通过-shift-进行选择">通过 <em>Shift</em> 进行选择</a></li>
+        <li><a href="#通过-框选-工具进行选择">通过 <em>框选</em> 工具进行选择</a></li>
+        <li><a href="#通过-刷选-工具进行选择">通过 <em>刷选</em> 工具进行选择</a></li>
+        <li><a href="#通过-套索选择-工具进行选择">通过 <em>套索选择</em> 工具进行选择</a></li>
+        <li><a href="#在-3d-场景中的选择操作键盘快捷键">在 3D 场景中的选择操作键盘快捷键</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加对象">添加对象</a></li>
+    <li><a href="#删除对象">删除对象</a></li>
+    <li><a href="#附录-体验产品创作过程">附录: 体验产品创作过程</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="04-场景单位对象的选择与添加对象">
+  04. 场景单位、对象的选择与添加对象
+  <a class="anchor" href="#04-%e5%9c%ba%e6%99%af%e5%8d%95%e4%bd%8d%e5%af%b9%e8%b1%a1%e7%9a%84%e9%80%89%e6%8b%a9%e4%b8%8e%e6%b7%bb%e5%8a%a0%e5%af%b9%e8%b1%a1">#</a>
+</h1>
+<h2 id="场景单位">
+  场景单位
+  <a class="anchor" href="#%e5%9c%ba%e6%99%af%e5%8d%95%e4%bd%8d">#</a>
+</h2>
+<p>在上一节 <a href="./03.movingAndTransformingObject.md">变换和移动对象</a> 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象</p>
+<p>而这个数值的单位默认是 <strong><i>「米」</i></strong>，那有没有办法可以把这个「米」修改成别的单位呢？</p>
+<p>答案是肯定的，我们只需要在 Blender 窗口右侧的属性面板中找到 <strong><i>场景属性</i></strong> 面板，然后根据需要修改其中的 <strong><i>单位 &gt; 单位系统</i></strong> 即可</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-001.png" alt="修改场景的单位" /></p>
+<h2 id="对象的选择">
+  对象的选择
+  <a class="anchor" href="#%e5%af%b9%e8%b1%a1%e7%9a%84%e9%80%89%e6%8b%a9">#</a>
+</h2>
+<p>与其他任何编辑类软件类似，Blender 也提供了非常人性化的 <strong><i>单选</i></strong> 、 <strong><i>多选</i></strong> 等选择对象的操作</p>
+<h3 id="通过-导航器-选择对象">
+  通过 <em>导航器</em> 选择对象
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87-%e5%af%bc%e8%88%aa%e5%99%a8-%e9%80%89%e6%8b%a9%e5%af%b9%e8%b1%a1">#</a>
+</h3>
+<p>在这里，先来说说 <strong><i>导航器</i></strong> 中选择对象的操作</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-002.png" alt="导航器" /></p>
+<p>导航器的操作相对直观，它与很多其他软件类似，提供了两种操作方式:</p>
+<ol>
+<li>
+<p>通过 <strong><i>Shift</i></strong> 进行快速选择在导航器中连续排列的对象</p>
+<ol>
+<li>选择第一个需要选择的对象</li>
+<li>按住 <strong><i>Shift</i></strong> 不放</li>
+<li>选择最后一个需要选中的对象</li>
+</ol>
+</li>
+<li>
+<p>通过  <strong><i>Ctrl</i></strong> 实现跳跃式多选</p>
+<ol>
+<li>按住 <strong><i>Ctrl</i></strong> 不放</li>
+<li>逐一点击需要选中的对象</li>
+</ol>
+</li>
+<li>
+<p>取消选择某一个对象<br><sub>有时候我们需要从已经选择的多个工具中取消一些选中的对象，这时我们可以执行下列的操作</sub></p>
+</li>
+<li>
+<p>按住 <strong><i>Ctrl</i></strong> 不放</p>
+</li>
+<li>
+<p>逐一点击需要取消选中的对象<br><sub>⚠ 有时需要多点击一次才能取消选择，被选择的对象会被标记成 <strong><i>蓝色高亮</i></strong></sub></p>
+</li>
+</ol>
+<h2 id="从-3d-视图中选择对象">
+  从 3D 视图中选择对象
+  <a class="anchor" href="#%e4%bb%8e-3d-%e8%a7%86%e5%9b%be%e4%b8%ad%e9%80%89%e6%8b%a9%e5%af%b9%e8%b1%a1">#</a>
+</h2>
+<h3 id="通过-shift-进行选择">
+  通过 <em>Shift</em> 进行选择
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87-shift-%e8%bf%9b%e8%a1%8c%e9%80%89%e6%8b%a9">#</a>
+</h3>
+<p>在 3D 视图中，我们可以通过按住 <strong><i>Shift</i></strong> 不放，逐一点击场景中需要选择的多个对象来进行多选，取消选择也是同理，只需要按住 <strong><i>Shift</i></strong> 不放，再次点击已经被选中的对象即可取消选择</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-003.gif" alt="在3D视图中用Shift多选对象" /></p>
+<h3 id="通过-框选-工具进行选择">
+  通过 <em>框选</em> 工具进行选择
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87-%e6%a1%86%e9%80%89-%e5%b7%a5%e5%85%b7%e8%bf%9b%e8%a1%8c%e9%80%89%e6%8b%a9">#</a>
+</h3>
+<p>鼠标左键长按 <strong><i>调整</i></strong> 工具不放，待工具子菜单弹出来后，把光标移动到 <strong><i>框选</i></strong> 工具上再放开鼠标左键，即可进入 <strong><i>框选</i></strong> 工具</p>
+<p>你也可以通过键盘的 <strong><i>W</i></strong> 键来进行快速切换<sub>(包括后面提到的另外两种选择工具都可以切换到喔)</sub></p>
+<blockquote>
+<p>⚠ 在进入框选工具后鼠标将暂时无法再进行视图旋转的操作</p>
+</blockquote>
+<p>框选工具有5种模式:</p>
+<ol>
+<li>开始新的选择<br><sub>每次拖出选择框都不会保留之前已选中的项目</sub></li>
+<li>扩展当前选中项<br><sub>保留已选中的项目，并加选现在框选到的项目</sub></li>
+<li>从当前选中项中减除<br><sub>从已选中的项目中移除框选到的对象 (不会影响未被选择的对象)</sub></li>
+<li>反转所有选中项<br><sub>被框选到的对象反转选中状态 (即选中的会被取消选中，未选中的则会被选中)</sub></li>
+<li>与现有选中项相交<br><sub>仅保留选中在多次框选中都被选中的对象</sub></li>
+</ol>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-004.gif" alt="框选工具演示" /></p>
+<h3 id="通过-刷选-工具进行选择">
+  通过 <em>刷选</em> 工具进行选择
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87-%e5%88%b7%e9%80%89-%e5%b7%a5%e5%85%b7%e8%bf%9b%e8%a1%8c%e9%80%89%e6%8b%a9">#</a>
+</h3>
+<p>同样地，<strong><i>刷选</i></strong> 也拥有 <strong><i>开始新选择</i></strong> 、 <strong><i>扩展当前选中项</i></strong> 以及 <strong><i>从当前选中项中减除</i></strong> 这3种不同的选择模式</p>
+<p>与框选工具不同的是，<strong><i>刷选</i></strong> 工具会让你的光标暂时变成笔刷，笔刷的大小可以被调整，在复杂场景中需要连续选择一片对象时会非常有用</p>
+<p>从下面的GIF中你可以看到调整 <strong><i>半径</i></strong> 后，鼠标光标将会随着半径的大小而改变大小</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-005.gif" alt="刷选工具演示" /></p>
+<h3 id="通过-套索选择-工具进行选择">
+  通过 <em>套索选择</em> 工具进行选择
+  <a class="anchor" href="#%e9%80%9a%e8%bf%87-%e5%a5%97%e7%b4%a2%e9%80%89%e6%8b%a9-%e5%b7%a5%e5%85%b7%e8%bf%9b%e8%a1%8c%e9%80%89%e6%8b%a9">#</a>
+</h3>
+<p>与任何平面图像设计软件(Photoshop、Clip Studio和SAI等等)类似，Blender 也提供了 <strong><i>套索选择</i></strong> 工具，且其用法基本相似</p>
+<p>套索选择工具允许你通过鼠标光标画出任意形状蚂蚁线，并根据选择模式对蚂蚁线圈中的对象进行加选或减除</p>
+<p>套索选择工具很好地避免了使用框选工具时，必须使用矩形框而导致经常选择到不需要的对象的尴尬</p>
+<p>同样地，套索选择工具拥有与框选工具同样的5中选择模式</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-006.gif" alt="套索选择工具演示" /></p>
+<h3 id="在-3d-场景中的选择操作键盘快捷键">
+  在 3D 场景中的选择操作键盘快捷键
+  <a class="anchor" href="#%e5%9c%a8-3d-%e5%9c%ba%e6%99%af%e4%b8%ad%e7%9a%84%e9%80%89%e6%8b%a9%e6%93%8d%e4%bd%9c%e9%94%ae%e7%9b%98%e5%bf%ab%e6%8d%b7%e9%94%ae">#</a>
+</h3>
+<p>在 3D 视图中，要全选场景里面的对象，我们只需要按下键盘的 <strong><i>A</i></strong> 键即可</p>
+<p>要取消全部选中对象的话，只需要连续按下 <strong><i>两次</i></strong> 的 <strong><i>A</i></strong> 键即可</p>
+<blockquote>
+<p>当然了，Blender 默认还提供了令一组快捷键，即 <strong><i>Alt + A</i></strong> 来进行取消全部选择，但是以后会介快捷操作，这个快捷操作将会占用 <strong><i>Alt + A</i></strong> 这组快捷键，所以这里并不推荐使用这组快捷键进行取消选择</p>
+</blockquote>
+<h2 id="添加对象">
+  添加对象
+  <a class="anchor" href="#%e6%b7%bb%e5%8a%a0%e5%af%b9%e8%b1%a1">#</a>
+</h2>
+<p>要在 Blender 场景中添加对象、灯光以及摄像机等等，我们不仅可以通过位于顶部工具栏的 <strong><i>添加菜单</i></strong> 来添加对象，还可以通过快捷键 <strong><i>Shift + A</i></strong> 来快速打开添加菜单</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-007.gif" alt="添加对象" /></p>
+<h2 id="删除对象">
+  删除对象
+  <a class="anchor" href="#%e5%88%a0%e9%99%a4%e5%af%b9%e8%b1%a1">#</a>
+</h2>
+<p>要在 Blender 场景中删除对象，即可以使用大部分 3D 软件都通用，键盘上的 <strong><i>Delete</i></strong> 键，也可以使用 Blender 独有的 <strong><i>X</i></strong> 键</p>
+<p>在按下 Blender 独有的 <strong><i>X</i></strong> 键后，软件会在你光标的附近弹出一个确认框，此时用鼠标点下确认框中的 <strong><i>删除</i></strong> 按钮即可</p>
+<p>这里只需要根据个人习惯进行选择即可，如果你习惯以右手使用鼠标，那么则推荐使用 <strong><i>X</i></strong> 键，因为它位于键盘的左手测，可以避免你经常移动左手<sub>(或为了用右手按下Del键而不得不放开鼠标)</sub>，以便提高工作效率</p>
+<h2 id="附录-体验产品创作过程">
+  附录: 体验产品创作过程
+  <a class="anchor" href="#%e9%99%84%e5%bd%95-%e4%bd%93%e9%aa%8c%e4%ba%a7%e5%93%81%e5%88%9b%e4%bd%9c%e8%bf%87%e7%a8%8b">#</a>
+</h2>
+<blockquote>
+<p>附录提到的文件，请到<a href="https://www.bilibili.com/video/BV1zh411Y7LX">原视频教程 BV1zh411Y7LX</a> 的简介信息中下载</p>
+</blockquote>
+<p>先将 Blender 默认工程中的立方体删除掉</p>
+<p>然后从 Blender 的菜单栏中找到 <strong><i>文件 &gt; 关联</i></strong></p>
+<p>并在弹出的文件浏览器中找到 <strong><i> 辣椒教材汇总 &gt; 黑铁骑士Ⅱ配套文件 &gt; 第零章(摩托在此~) &gt; 02基础入门与动画案例 &gt; 素材.zip<sub>(需提前解压出来)</sub> &gt; 摩托.blend &gt; Collection &gt; 摩托</i></strong></p>
+<p>然后点击文件浏览器右下角的 <strong><i>关联</i></strong> 按钮</p>
+<blockquote>
+<p>若你的电脑性能可以，可以在 3D 视图右上角，把 <strong><i>视图着色方式</i></strong> 调整成 <strong><i>「渲染」</i></strong>，这样你就能直接在 3D 视图上大致看到追踪渲染的结果</p>
+<p>如果电脑性能不太行则不建议开启这个功能</p>
+</blockquote>
+<p>此时，你应该能看到一台摩托车出现在场景地平面的原点上，如果你觉得摩托车有点小，则可以根据自己的需要进行<a href="./03.movingAndTransformingObject.md#%e7%bc%a9%e6%94%be%e7%89%a9%e4%bd%93">缩放</a></p>
+<p>然后移除我们用不到的自带点光源，并新建一个 <strong><i>面光</i></strong>，并把面光移动到摩托车的右上方，光照方向朝向摩托车<sub>(面光上会有一条垂直线，这就是光照的方向，拖动垂直线上的小原点即可改变光照方向)</sub></p>
+<p>默认情况下，灯光非常暗，这时候我们就需要在属性面板中找到面光的 <strong><i>物体数据属性</i></strong> 并把能量调到合适的大小</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-008.png" alt="演示1" /></p>
+<p>这时我们重复上面创建灯光的操作，以摩托车的位置为对称轴，在摩托车的另一边新建一个同样的面光，然后在 Y 轴方向上，把两个面光的长度拉伸到足以能照亮整台摩托车</p>
+<p>目前的画面还没有足够的看头，因为它没有任何的背景环境，我们需要通过下面的操作导入一个背景</p>
+<p>先在 Blender 的右侧面板中找到 <strong><i>世界属性</i></strong>，然后点击 <strong><i>表(曲)面 &gt; 颜色</i></strong> 前面的 <strong><i>小黄点</i></strong>，再弹出的菜单中选择 <strong><i>环境纹理</i></strong></p>
+<p>此时整个场景都会变成紫色，这时因为我们还没有导入背景图像</p>
+<p>接下来，我们继续点击位于 <strong><i>颜色</i></strong> 下一行的 <strong><i>打开</i></strong> 按钮，并从之前的附件位置中，找到 <strong><i>金丝雀码头_hdr.hdr</i></strong>，然后点击文件浏览器右下角的 <strong><i>打开图像</i></strong> 按钮即可</p>
+<p>接下来，我们还需要挑选一个拍摄角度，活用<a href="./02.observeObjects.md">第二篇笔记</a>中的技巧，挑选一个不错的角度，然后按下 <strong><i>Ctrl + Alt + 0</i></strong> 把它设置成摄像机视角</p>
+<p>接下来是特效的微调<sub>(后面的课程会详细讲解)</sub>，在 Blender 右侧面板中找到 <strong><i>渲染属性</i></strong> 面板，勾选 <strong><i>环境光遮蔽</i></strong> 、 <strong><i>屏幕空间反射</i></strong></p>
+<p>因为摩托车大灯前面有玻璃材质，所以我们还需要打开 <strong><i>屏幕空间反射</i></strong> 里面的 <strong><i>折射</i></strong>，这样可以让玻璃产生折射效果，整体结果更真实</p>
+<p>这时候，厉害可以调整 <strong><i>采样 &gt; 视图</i></strong> 的数值，以获得更高的渲染精度</p>
+<p>如果视图着色方式为「渲染」的话，这个操作将会显著提升 Blender 对硬件资源的占用，请酌情调整或把视图渲染方式调整为默认的「实体」</p>
+<p>如果需要做出背景虚化，还可以点选摄像机，然后在它的 <strong><i>物体数据属性</i></strong> 面板中勾选 <strong><i>景深</i></strong></p>
+<p>接着展开 <strong><i>景深</i></strong> 的设置，可以看到，<strong><i>聚焦到物体</i></strong> 一栏目前是空值，这时候我们只需要点一些输入框后面的 <strong><i>吸取数据块</i></strong> 按钮，并在场景中点选摩托车，即可让摄像机聚焦到摩托车上</p>
+<p>若有需要可以继续调整 <strong><i>焦点距离</i></strong> 参数</p>
+<p>微调已经全部完成，此时我们可以在 Blender 上方菜单栏找到 <strong><i>渲染 &gt; 渲染图像</i></strong><sub>(或使用快捷键 <strong><i>F12</i></strong>)</sub>，这时就会弹出 <strong><i>Blender 渲染</i></strong> 窗口并渲染出最终效果</p>
+<p>如果需要保存渲染结果为图片，我们可以在 <strong><i>Blender 渲染</i></strong> 窗口的菜单栏中找到 <strong><i>图像 &gt; 保存 (or 另存为)</i></strong> 并根据自己的需要，选择输出格式、保存位置等参数，最后修改文件名并点击 <strong><i>保存为图像</i></strong> 按钮即可</p>
+<p>接下来简单讲解如何输出动画</p>
+<p>要输出动画，首先肯定要让画面动起来，这里演示最简单的动画效果，即物体不动，把摄像机移动到另一个位置</p>
+<p>首先，确保 Blender 窗口下方的 <strong><i>时间轴</i></strong> 中，当前光标位于第0帧</p>
+<p>接下来，我们需要点选摄像机，然后找到 Blender 右侧的 <strong><i>物体属性</i></strong> 面板</p>
+<p>然后，把光标移动到物体属性面板的 <strong><i>变换 &gt; 位置</i></strong> 上<sub>(X Y Z 均可)</sub>，然后按下键盘的 <strong><i>I</i></strong> 键</p>
+<p>这时我们可以看到，位置参数输入框变成了黄色，并且在其后面出现了一个 <strong><i>实心菱形</i></strong>，同时时间轴的第0帧也出现了一个黄色菱形</p>
+<p>这就意味着，摄像机目前的 <strong><i>位置参数</i></strong> 已经记录到时间轴的 <strong><i>第0帧</i></strong> 上</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-009.png" alt="演示2" /></p>
+<p>接下来，我们继续在摄像机的 <strong><i>旋转</i></strong> 参数上按下 <strong><i>I</i></strong> 键，把摄像机的拍摄角度也记录到时间轴上称为关键帧信息<sub>(同理，使用 <strong><i>Alt + I</i></strong> 可以取消记录关键帧信息)</sub></p>
+<p>接下来，我们打开 Blender 右侧的 <strong><i>输出属性</i></strong> 面板，在 <strong><i>格式 &gt; 帧率</i></strong> 这里，我们可以看到这段动画每秒的帧率，在本例中，我们做一个5秒的动画，所以结束的一帧应该是第120帧，我们可以通过改变 <strong><i>帧范围 &gt; 结束点</i></strong> 来让动画结束在120帧</p>
+<p>所以我们先在需要选中时间轴的第120帧</p>
+<p>这时，重新回到摄像机的物体属性面板，我们可以发现，之前被记录过关键帧的参数目前被绿色填充</p>
+<p>为了更方便地进行操作，我们这里打开摄像机的 <strong><i>锁定摄像机到视图方位</i></strong> 并轻微调整观察角度</p>
+<p>此时，我们再观察摄像机的位置属性，可以发现，由于摄像机改变了位置，所以位置和旋转参数都变成了新的值，数值框也变成了橙色</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/selfStudy/Blender/attachments/ch04-010.png" alt="演示3" /></p>
+<p>最后，我们重复前面记录关键帧的操作，把光标放在已改变的值的上面，按下 <strong><i>I</i></strong> 键，在第120帧的位置记录新的参数</p>
+<p>这时，我们重新选择时间轴上的第0帧，并按下时间轴上方的播放按钮，就可以看到动画效果了</p>
+<p>Blender 默认的插帧方式带有 <strong><i>「缓入缓出」</i></strong> 效果，我们可以通过先用鼠标框选时间轴上的关键帧<sub>(在Blender 3.5.1 中似乎不选中关键帧也行)</sub>，再在时间轴上点击鼠标右键，并在弹出菜单中找到 <strong><i>插值方式 &gt; 线性</i></strong> 来关闭缓入缓出效果</p>
+<p>接下来回到 <strong><i>输出属性</i></strong> 面板，根据需要更改 <strong><i>格式 &gt; 分辨率</i></strong>，在该面板的下方还有 <strong><i>输出 &gt; 输出路径 、文件格式</i></strong> 等参数，根据自身需要调整对应的项目即可</p>
+<p>接下来找到 Blender 上方菜单栏的 <strong><i>渲染 &gt; 渲染视频</i></strong><sub>(或使用快捷键 <strong><i>Ctrl + F12</i></strong>)</sub>，让 Blender 开始渲染成品视频文件</p>
+<p>渲染结束后，我们就可以在之前设定好的输出路径下找到输出的视频啦</p>
+<hr>
+<p><a href="..">上一级</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#场景单位">场景单位</a></li>
+    <li><a href="#对象的选择">对象的选择</a>
+      <ul>
+        <li><a href="#通过-导航器-选择对象">通过 <em>导航器</em> 选择对象</a></li>
+      </ul>
+    </li>
+    <li><a href="#从-3d-视图中选择对象">从 3D 视图中选择对象</a>
+      <ul>
+        <li><a href="#通过-shift-进行选择">通过 <em>Shift</em> 进行选择</a></li>
+        <li><a href="#通过-框选-工具进行选择">通过 <em>框选</em> 工具进行选择</a></li>
+        <li><a href="#通过-刷选-工具进行选择">通过 <em>刷选</em> 工具进行选择</a></li>
+        <li><a href="#通过-套索选择-工具进行选择">通过 <em>套索选择</em> 工具进行选择</a></li>
+        <li><a href="#在-3d-场景中的选择操作键盘快捷键">在 3D 场景中的选择操作键盘快捷键</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加对象">添加对象</a></li>
+    <li><a href="#删除对象">删除对象</a></li>
+    <li><a href="#附录-体验产品创作过程">附录: 体验产品创作过程</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

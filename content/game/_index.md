@@ -6,6 +6,9 @@ draft: false
 
 # 游戏笔记
 
++ ## Steam {#steam}
+    + [Steam 游戏疑难杂症什锦](./steamGames/steamGameError)
+
 + ## 矮人要塞个人研究 {#dwarfFortress}
     + [目录](./howToDwarfFortress)
 

@@ -212,7 +212,7 @@ Windows Registry Editor Version 5.00
 
    ```
    REM /f 参数不是必须的，如果不加这个参数，删除时就会弹出确认选项
-   
+
    schtasks /delete /tn "\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE" /f
    ```
 
@@ -227,6 +227,43 @@ Windows Registry Editor Version 5.00
    ```
    schtasks /change /tn "完整的任务计划名" /enable
    ```
+
+## 启用或禁用「基于虚拟化的安全性」
+
+> ⚠ 注意：关闭后将会影响虚拟机的使用
+
+以管理员身份运行下面的命令
+
+```
+REM 关闭
+bcdedit /set hypervisorlaunchtype off
+
+REM 打开
+bcdedit /set hypervisorlaunchtype auto
+```
+
+查询方法
+
+运行 `msinfo32` 打开 *系统信息* 工具，在 *系统摘要* 下找到 *基于虚拟化的安全性*
+
+## 通过注册表降低网络延迟
+
+![通过注册表降低网络延迟](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/operatingSystem/windows/img0001.png)
+
+打开 **注册表编辑器** 然后定位到以下键 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`，这时你应该能在左边的窗格中看到很多由UUID命名的子键
+
+逐个打开并确认这些子键其中的 `DhcpServer` 值是否跟你的网络环境相互，如果相符，则添加下列两个 `DWORD(32位)值`，两个值的数据均为 `1`
+
++ `TcpAckFrequency`
++ `TCPNoDelay`
+
+## 删除 *此电脑* 里面的 *3D 对象*
+
+> 其他的 *文件夹* 也是同理，但这里不展开说，因为我习惯会保留住方便快捷访问，对于我个人来说，只有 *3D 对象* 是用不到的
+
+打开 **注册表编辑器** 然后定位到以下键  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace`
+
+然后删除名为 `{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}` 的键
 
 ---
 

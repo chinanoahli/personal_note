@@ -1,5 +1,5 @@
 ---
-title: "DownloadDataDirectly"
+title: "抓取原神数据包的下载地址"
 date: 2023-05-05T19:14:32+09:00
 draft: false
 ---
@@ -71,7 +71,7 @@ draft: false
 复制出来将会是以下的效果
 
 ```txt
-0x18bf6416f90 (232): 
+0x18bf6416f90 (232):
 
 https://autopatchcn.yuanshen.com/client_app/download/pc_zip/20221024103540_fp3L3cHoDpo9eNeT/Audio_Japanese_3.2.0.zip
 ```
@@ -95,17 +95,17 @@ https://autopatchcn.yuanshen.com/client_app/download/pc_zip/20221024103540_fp3L3
 从文件的名字中，我们可以看到我们目前的版本号为`3.2.0`，即将升级到`3.3.0`，而`hdiff`就是增量包的意思
 
 > 增量包：只包含这次升级新增或修改的部分文件，并不包含整个游戏的全部文件
-> 
+>
 > 全量包：包含整个游戏的所有资源文件
-> 
+>
 > 所以如果你是初次下载安装游戏，就需要直接找到文件名不包含`hdiff`且版本号为最新版本的文件下载链接
-> 
+>
 > 如`YuanShen_3.30.zip`、`YuanShen_3.30.zip.001`等等，这里是分卷压缩，注意要把所有所有分P全部下完才行
 
 然后我们就可以到Process Hacker的搜索结果里面，找到下载链接结尾为`game_3.2.0_3.3.0_hdiff_06STMj1gxyYbPCR5.zip`的链接，这就是我们要找了更新补丁数据链接
 
 > 你现在或许发现了，Process Hacker的搜索结果里面还包含了从`3.1.0`升级到`3.2.0`的数据文件下载地址
-> 
+>
 > 假如你并没有先在启动器里开始下载任务，或者游戏安装目录里面没有找到临时文件，这里就要注意不要选错地址了！
 
 要注意的是，这只是游戏本身的更新数据，并不包含不同的语言包和语音包

@@ -66,6 +66,8 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><a href="/art/">美术学习笔记</a>
 <ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
 <li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
 <ul>
 <li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
@@ -88,9 +90,27 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/">Blender 学习笔记</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="/game/">游戏笔记</a>
 <ul>
-<li><a href="/game/#dwarfFortress">矮人要塞个人研究</a></li>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
 <li><a href="/game/#steamOS">SteamOS</a></li>
 <li><a href="/game/#nSwitch">Nintendo Switch</a></li>
 </ul>
@@ -150,7 +170,8 @@ https://github.com/alex-shpak/hugo-book
 <nav id="TableOfContents">
   <ul>
     <li><a href="#一条命令调整文件与目录的权限-sup1sup">一条命令调整文件与目录的权限 <sup>[1]</sup></a></li>
-    <li><a href="#引用来源">引用来源</a></li>
+    <li><a href="#lightdm-开机自动登陆用户账户-sup2sup">LightDM 开机自动登陆用户账户 <sup>[2]</sup></a></li>
+    <li><a href="#引用来源">引用来源：</a></li>
   </ul>
 </nav>
 
@@ -182,7 +203,7 @@ https://github.com/alex-shpak/hugo-book
 <p>通过 <em>find</em> 命令</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># for directories</span>
 find /path/to/dir -type d -print0 | xargs -0 chmod <span style="color:#ae81ff">0755</span>
-   
+
 <span style="color:#75715e"># for files</span>
 find /path/to/dir -type f -print0 | xargs -0 chmod <span style="color:#ae81ff">0644</span>
 </code></pre></div></li>
@@ -201,12 +222,25 @@ find /path/to/dir -type f -print0 | xargs -0 chmod <span style="color:#ae81ff">0
 </ol>
 </li>
 </ol>
+<h2 id="lightdm-开机自动登陆用户账户-sup2sup">
+  LightDM 开机自动登陆用户账户 <sup>[2]</sup>
+  <a class="anchor" href="#lightdm-%e5%bc%80%e6%9c%ba%e8%87%aa%e5%8a%a8%e7%99%bb%e9%99%86%e7%94%a8%e6%88%b7%e8%b4%a6%e6%88%b7-sup2sup">#</a>
+</h2>
+<p>修改文件 <code>/etc/lightdm/lightdm.conf</code></p>
+<p>在 <code>[Seat:*]</code> 下方跟添加</p>
+<pre><code>autologin-user=chinanoahli    # 以 chinanoahli 用户作为例子，请修改为你自己的用户名
+autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自动登陆
+</code></pre><blockquote>
+<p>⚠ 注意:</p>
+<p>LightDM 的配置文件内容相同的注释比较多，如果用搜索功能进行搜索的话，务必要看清楚自己修改的必须是 <code>[Seat:*]</code> 段落里面的内容，而不是其他注释说明中的内容！！</p>
+</blockquote>
 <h2 id="引用来源">
-  引用来源
+  引用来源：
   <a class="anchor" href="#%e5%bc%95%e7%94%a8%e6%9d%a5%e6%ba%90">#</a>
 </h2>
 <ol>
 <li><a href="https://stackoverflow.com/questions/18817744/change-all-files-and-folders-permissions-of-a-directory-to-644-755">Change all files and folders permissions of a directory to 644/755</a></li>
+<li><a href="https://forums.linuxmint.com/viewtopic.php?t=286267">Enabling Auto Login</a></li>
 </ol>
 <hr>
 <p><a href="../..">上一级</a></p>
@@ -255,7 +289,8 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
 <nav id="TableOfContents">
   <ul>
     <li><a href="#一条命令调整文件与目录的权限-sup1sup">一条命令调整文件与目录的权限 <sup>[1]</sup></a></li>
-    <li><a href="#引用来源">引用来源</a></li>
+    <li><a href="#lightdm-开机自动登陆用户账户-sup2sup">LightDM 开机自动登陆用户账户 <sup>[2]</sup></a></li>
+    <li><a href="#引用来源">引用来源：</a></li>
   </ul>
 </nav>
 
