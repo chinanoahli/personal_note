@@ -9,5 +9,6 @@
   "alwaysUpdateLinks": true,
   "showLineNumber": true,
   "spellcheck": false,
-  "autoPairBrackets": true
+  "autoPairBrackets": true,
+  "promptDelete": false
 }
