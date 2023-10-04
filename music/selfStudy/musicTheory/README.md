@@ -10,7 +10,7 @@
 
 ## 需要先行解释的词汇概念
 
-#### 音高
+### 音高
 
 音高是指人类心理上对音符基本频率的感受，不同的音符<sub>（可以先简单理解为钢琴琴键）</sub>有不同的音高
 
@@ -18,7 +18,7 @@
 
 音名，即音高的名字，为了方便音乐交流，通常以字母 *C D E F G A B*  来表示
 
-#### 音域
+### 音域
 
 音域是指特定一种乐器（**包括人声**），能够演奏出来的 **所有** 的 **音高** 的总和
 
@@ -107,6 +107,8 @@
 
 每一个组的 7 个 **白键** 正好对应 7 个音名，从左到右依次分别都是 *C D E F G A B*
 
+![WhiteKeyNames](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0003.svg)
+
 除了白键，我们可以看到每一组按键中还有 5 个黑键，那么黑键又要如何称呼呢？
 
 #### 变音记号
@@ -123,7 +125,7 @@
 
 因此，白键与黑键的名称应该如下图显示的一般
 
-![NameOfTheKeys](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0003.svg)
+![BlackKeyNames](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0004.svg)
 
 ### 两种不同的音高记号法
 
@@ -145,7 +147,7 @@
 
 下图为 *科学音高记号法* 的钢琴全键名称示意图
 
-![SPN](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0004.svg)
+![SPN](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0005.svg)
 
 #### 亥姆霍兹音高记号法
 
@@ -179,7 +181,7 @@
 
 同样地，其他键的音名根据这种模式推出来即可，下图为 *亥姆霍兹音高记号法* 的钢琴全键名称示意图
 
-![Helmholtz](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0005.svg)
+![Helmholtz](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0006.svg)
 
 ### 变音记号的补充
 
