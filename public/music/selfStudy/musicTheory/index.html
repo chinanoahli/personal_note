@@ -8,7 +8,7 @@
 ⚠ 部分 SVG 会在打开了 强制黑暗模式 / Auto Dark Mode for Web Contents 的Chorme 浏览器中出现色彩错误的现象，你可以暂时关闭该模式，或使用其他浏览器进行浏览
   💡 乐理的学习通常以钢琴作为演示，原因是因为钢琴的结构更简单更直观，可以更容易地解释乐理知识
 乐理通用于所有乐器，所以并不会出现在学习乐理时使用钢琴，学完后却不会使用其他乐器的情况
-  ⚠ 本篇笔记在大多数情况下都使用了 科学音高记号 来标识音名
+  ⚠ 本篇笔记在大多数情况下都使用了 科学音高记号法 来标识音名
   需要先行解释的词汇概念 #  音高 #  音高是指人类心理上对音符基本频率的感受，不同的音符（可以先简单理解为钢琴琴键）有不同的音高
 音名 #  音名，即音高的名字，为了方便音乐交流，通常以字母 C D E F G A B 来表示
 音域 #  音域是指特定一种乐器（包括人声），能够演奏出来的 所有 的 音高 的总和">
@@ -183,9 +183,19 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#两种不同的音高记号法">两种不同的音高记号法</a></li>
         <li><a href="#变音记号的补充">变音记号的补充</a></li>
         <li><a href="#1--c-的补充"><code>1 = C</code> 的补充</a></li>
+        <li><a href="#中央-c">中央 C</a></li>
+        <li><a href="#标准音">标准音</a></li>
       </ul>
     </li>
     <li><a href="#纯八度">纯八度</a></li>
+    <li><a href="#全音与半音">全音与半音</a></li>
+    <li><a href="#17span775span1-的内在规则"><em>1~7<span>̇</span>1</em> 的内在规则</a>
+      <ul>
+        <li><a href="#调式">调式</a></li>
+        <li><a href="#自然大调">自然大调</a></li>
+      </ul>
+    </li>
+    <li><a href="#音阶">音阶</a></li>
   </ul>
 </nav>
 
@@ -214,7 +224,7 @@ https://github.com/alex-shpak/hugo-book
 <p>乐理通用于所有乐器，所以并不会出现在学习乐理时使用钢琴，学完后却不会使用其他乐器的情况</p>
 </blockquote>
 <blockquote>
-<p>⚠ 本篇笔记在大多数情况下都使用了 <a href="#%e7%a7%91%e5%ad%a6%e9%9f%b3%e9%ab%98%e8%ae%b0%e5%8f%b7%e6%b3%95"><strong>科学音高记号</strong></a> 来标识音名</p>
+<p>⚠ 本篇笔记在大多数情况下都使用了 <a href="#%e7%a7%91%e5%ad%a6%e9%9f%b3%e9%ab%98%e8%ae%b0%e5%8f%b7%e6%b3%95"><strong>科学音高记号法</strong></a> 来标识音名</p>
 </blockquote>
 <hr>
 <h2 id="需要先行解释的词汇概念">
@@ -312,7 +322,7 @@ https://github.com/alex-shpak/hugo-book
 <p>那该如何在简谱上表现高低音呢？</p>
 <p>用 <strong>高 / 低音点</strong> 即可</p>
 <p>要提高的音只需要在数字上方加点圆点，要提高 1 次，就加点 1 个圆点；要提高 2 次，则加点两个圆点，最高不超过 4 个原点</p>
-<p>要降低的音只需要在数字下方加点原点，同理，按照降低的次数加点圆点，且最高不超过四个圆点</p>
+<p>要降低的音只需要在数字下方加点原点，同理，按照降低的次数加点圆点，且最高不超过 4 个圆点</p>
 <p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0002.svg" alt="Dots" /></p>
 <h3 id="其他相对没那么重要的标记">
   其他相对没那么重要的标记
@@ -347,7 +357,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e7%90%b4%e9%94%ae%e7%9a%84%e5%90%8d%e7%a7%b0">#</a>
 </h3>
 <p>长长的钢琴由 <em>9</em> 个完全一致的 <strong>组</strong> 构成</p>
-<p>每个组包含了 <em>7</em> 个白键和 <em>5</em> 个黑键，而且左边的按键发出的音高重比右边的按键发出的音高要低</p>
+<p>每个组包含了 <em>7</em> 个白键和 <em>5</em> 个黑键，而且左边的按键发出的音高总比右边的按键发出的音高要低</p>
 <p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0003.svg" alt="PianoBasicGroup" /></p>
 <blockquote>
 <p>⚠ 注意: 一般的钢琴总共有 <em>88</em> 个按键，虽然最左边和最右边的两组都 <strong>不包含</strong> 完整的 12 个按键，但它们仍然算是完全独立的两个组</p>
@@ -355,18 +365,22 @@ https://github.com/alex-shpak/hugo-book
 <blockquote>
 <p>⚠ 注意: 虽然钢琴的白键和黑键在外观上有高有低，但它们的地位是完全相等的，这种有高有低的设计是为了可以更轻松地演奏而设计的</p>
 </blockquote>
+<blockquote>
+<p>⚠ 注意: 虽然钢琴上只有 9 个组，但实际上音的范围并不只有这 9 组的范围，音的范围是无穷无尽的，往钢琴两端无限延伸</p>
+</blockquote>
 <p>每一个组的 7 个 <strong>白键</strong> 正好对应 7 个音名，从左到右依次分别都是 <em>C D E F G A B</em></p>
 <p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0004.svg" alt="WhiteKeyNames" /></p>
 <p>除了白键，我们可以看到每一组按键中还有 5 个黑键，那么黑键又要如何称呼呢？</p>
-<h4 id="变音记号">
-  变音记号
-  <a class="anchor" href="#%e5%8f%98%e9%9f%b3%e8%ae%b0%e5%8f%b7">#</a>
+<h4 id="变音记号和等音">
+  变音记号和「<em>等音</em>」
+  <a class="anchor" href="#%e5%8f%98%e9%9f%b3%e8%ae%b0%e5%8f%b7%e5%92%8c%e7%ad%89%e9%9f%b3">#</a>
 </h4>
 <p>在了解黑键的名称之前，我们还需要先了解一下音乐中的 <strong>变音记号</strong>: <strong>升号</strong> <code>♯</code> 和 <strong>降号</strong> <code>♭</code></p>
 <p>升号代表要从相邻的音提升，降号则代表要从相邻的音降低，带升降号的音名读作 <strong>升某音</strong> 或 <strong>降某音</strong></p>
 <p>第 1 个黑键位于 <em>C</em> 之后，代表要从 <em>C</em> 提升，因此记作 <code>C♯</code> <sub>读作: <code>升 C</code></sub></p>
 <p>同时它也在 <em>D</em> 的前面，所以它也能代表要从 <em>D</em> 降低，因此也可以记作 <code>D♭</code> <sub>读作: <code>降 D</code></sub></p>
 <p>以此方法进行推理就可以知道，第 2 个黑键它位于 <em>D</em> 之后和 <em>E</em> 之前，所以它也可以记作 <code>D♯</code> 或 <code>E♭</code></p>
+<p>此时，我们就称 <code>D♯</code> 和 <code>E♭</code> 是 <strong>等音</strong>，<em>等音</em> 正是指同一个音的不同名称</p>
 <p>因此，白键与黑键的名称应该如下图显示的一般</p>
 <p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0005.svg" alt="BlackKeyNames" /></p>
 <h3 id="两种不同的音高记号法">
@@ -393,7 +407,7 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e4%ba%a5%e5%a7%86%e9%9c%8d%e5%85%b9%e9%9f%b3%e9%ab%98%e8%ae%b0%e5%8f%b7%e6%b3%95">#</a>
 </h4>
 <blockquote>
-<p><em>亥姆霍兹音高记号法</em> 是由德国科学家 <em>赫尔曼·路德维希·费迪南德·冯·亥姆霍兹 <sub>(Hermann Ludwig Ferdinand von Helmholtz)</sub></em> 所发明的一套音高记号法</p>
+<p><em>亥姆霍兹音高记号法</em> 是由德国科学家 <em>赫尔曼·路德维希·费迪南德·冯·亥姆霍兹 <sub>(Hermann Ludwig Ferdinand von Helmholtz)</sub></em>  所发明的一套音高记号法</p>
 <p>通常国内又称之为 <em>赫尔姆霍茨音高记号法</em></p>
 </blockquote>
 <p>在 <em>亥姆霍兹音高记号法</em> 中，从左数起第三组被称为 <strong>大字组</strong>，第 1 组的组名 <strong>不包含</strong> 序号，大字组的序号往 <strong>左</strong> 递增</p>
@@ -448,6 +462,12 @@ https://github.com/alex-shpak/hugo-book
 </table>
 <p>同样地，其他键的音名根据这种模式推出来即可，下图为 <em>亥姆霍兹音高记号法</em> 的钢琴全键名称示意图</p>
 <p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0007.svg" alt="Helmholtz" /></p>
+<blockquote>
+<p>💡 原版的 <em>亥姆霍兹音高记号法</em> 是以撇号来标记音名的:</p>
+<p><em>大字X组</em> 的 <em>C</em> 需要在 <em>C</em> 的右下角加上 X 个 <code>͵</code> ，即 <code>C͵</code> 表示 <em>大字一组</em> 的 <em>C</em> ； <code>C͵͵</code> 表示 <em>大字二组</em> 的 <em>C</em></p>
+<p><em>小字X组</em> 的 <em>c</em> 则需要在 <em>c</em> 的右上角加上 X 个 <code>′</code> ，即 <code>c′</code> 表示 <em>小字一组</em> 的 <em>c</em> ； <code>c′′</code> 表示 <em>小字二组</em> 的 <em>c</em></p>
+<p>后来人们发现这种方法比较难以辨识，就将撇号改变成数字的样式</p>
+</blockquote>
 <h3 id="变音记号的补充">
   变音记号的补充
   <a class="anchor" href="#%e5%8f%98%e9%9f%b3%e8%ae%b0%e5%8f%b7%e7%9a%84%e8%a1%a5%e5%85%85">#</a>
@@ -475,6 +495,19 @@ https://github.com/alex-shpak/hugo-book
 <li>简谱的高低音点如果太多，会让简谱变得很复杂，为了尽可能与钢琴对应，将 <code>do</code> 对应到 <em>C4</em> ，就可以尽可能减少高低音点的使用，从而达到简化谱面的效果</li>
 </ol>
 <p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0009.svg" alt="PianoAndNotation" /></p>
+<h3 id="中央-c">
+  中央 C
+  <a class="anchor" href="#%e4%b8%ad%e5%a4%ae-c">#</a>
+</h3>
+<p><strong>中央 C</strong> 是指钢琴上的 <em>C4</em> ，也就是 <code>1 = C</code> 通常所对应的 <em>C</em></p>
+<h3 id="标准音">
+  标准音
+  <a class="anchor" href="#%e6%a0%87%e5%87%86%e9%9f%b3">#</a>
+</h3>
+<p><strong>标准音</strong> 是指 <em>A4</em> ，它的频率国际上公认地固定为 <strong>440 Hz</strong> ，而钢琴上其他按键的频率，都将它作为参照而进行校准</p>
+<blockquote>
+<p>💡 <em>标准音</em> 的频率不是永远固定不变的，国际上每过一段时间都会对其进行一次调整</p>
+</blockquote>
 <h2 id="纯八度">
   纯八度
   <a class="anchor" href="#%e7%ba%af%e5%85%ab%e5%ba%a6">#</a>
@@ -482,6 +515,82 @@ https://github.com/alex-shpak/hugo-book
 <blockquote>
 <p>本内容为 <strong>音程</strong> 相关知识的子项目，后面说道 <em>音程</em> 时仍会详细介绍，在此先作简单的介绍</p>
 </blockquote>
+<p>当两个音的频率数值比为 <code>1 : 2</code> 时，我们成它们为 <strong>纯八度</strong></p>
+<p>在钢琴 <strong>相邻</strong> 的任意两个组之间，音名相同的键所发出的音 <sub>(如: <em>C3</em> 和 <em>C4</em> ，<em>D2</em> 和 <em>D3</em> )</sub> ，都为 <em>纯八度</em> 关系，如果两个相音名相同的音相隔多组，我们可以称之为 <em>N个纯八度</em> 的关系</p>
+<p>互为 <em>纯八度</em> 的音听起来极为相似、和谐，同时弹奏的话，对音不敏感的人听起来甚至会像是只有一个音一样</p>
+<p>这也是为什么琴键的音名只有 7 个，因为到第 8 个时，它发音的频率正好是第 1 个的两倍，它们听起来极为相似，听起来几乎只有一个音，所以就不再使用新的音名了</p>
+<h2 id="全音与半音">
+  全音与半音
+  <a class="anchor" href="#%e5%85%a8%e9%9f%b3%e4%b8%8e%e5%8d%8a%e9%9f%b3">#</a>
+</h2>
+<p><em>C4</em> <em>D4</em> <em>E4</em> ，三个键的频率分别为 <code>261.63 Hz</code> <code>293.66 Hz</code> <code>329.63 Hz</code> ……</p>
+<p>如果音乐的世界都需要用赫兹来沟通的话，将会变得非常麻烦</p>
+<p>所以为了简化音乐的沟通，人们人为地将两个相邻音名的差值简称为 <strong>半音</strong></p>
+<p><em>半音</em> 是形容两个相邻的音 <sub>(如: <em>B</em> 和 <em>C</em> ， <em>C</em> 和 <em>C♯</em> )</sub> 之间的 <strong>距离</strong> <sub>(距离是不分方向的，既可以往低音的方向找，也可以往高音的方向找)</sub> 的词汇，当只有一个音的时候，是不可以使用 <em>半音</em> 这个词汇的，因为并没有对比的对象</p>
+<p>而如果两个连续 <strong>两个</strong> <em>半音</em> 的距离加起来 <sub>(如: <em>B</em> 和 <em>C♯</em> ， <em>C</em> 和 <em>D</em>)</sub> ，就是一个 <strong>全音</strong></p>
+<p>所以 <em>半音</em>  和 <em>全音</em> 的准确说法应该是：</p>
+<ul>
+<li><em>B</em> 和 <em>C</em> 是一个 <em>半音</em> 的距离</li>
+<li><em>B</em> 和 <em>C♯</em> 是一个 <em>全音</em> 的距离</li>
+</ul>
+<p>但是在日常的交流中，我们通常会简化成以下读说法：</p>
+<ul>
+<li><em>B</em> 和 <em>C</em> 是 <em>半音</em></li>
+<li><em>B</em> 和 <em>C♯</em> 是 <em>全音</em></li>
+</ul>
+<p>同时，在任何乐器中，<em>B</em> 和 <em>C</em> 、 <em>E</em>  和<em>F</em> 都是直接相连在一起的</p>
+<h2 id="17span775span1-的内在规则">
+  <em>1~7<span>̇</span>1</em> 的内在规则
+  <a class="anchor" href="#17span775span1-%e7%9a%84%e5%86%85%e5%9c%a8%e8%a7%84%e5%88%99">#</a>
+</h2>
+<blockquote>
+<p>实际上，这里研究的只有 <em>do</em> ~ <em>si</em> 的内容，不过为了不忽略前一组与后一组的关联，所以也会加上后一组的 <em>do</em> 进行讲解</p>
+</blockquote>
+<p>音乐里有一项很奇妙的现象， <em>do</em> ~ <em>si</em> <em>do</em> 音列听起来永远都都是 <em>do</em> ~ <em>si</em> <em>do</em> 而不会跟其他音列混淆</p>
+<p>我们都知道当 <code>1 = C</code> 的时候，<em>1~7<span>̇</span>1</em> 正好都对应在白键 <em>C D E F G A B C</em>  上，</p>
+<p>先在来分析一下这些白键的之间的关系:</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0010.svg" alt="1to7" /></p>
+<p>就可以发现， <em>do</em> ~ <em>si</em> <em>do</em> 音列实际上对应的是一个 <em>全 全 半 全 全 全 半</em> 这样一个音的差距之间的循环组合</p>
+<p>也就是说我们在弹奏 <em>do</em> ~ <em>si</em> <em>do</em>  时，必须完全复现这一规律，才能让 <em>do</em> ~ <em>si</em> <em>do</em>  听起来像是 <em>do</em> ~ <em>si</em> <em>do</em></p>
+<p>如果我们让 <code>1 = D</code> 的话，按照 <em>全 全 半 全 全 全 半</em> 这组序列推算，就必须要弹奏 <em>D E F♯ G A B C♯ D</em> ，如下图一样</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/music/selfStudy/musicTheory/attachments/img_0011.svg" alt="1=D" /></p>
+<p>同理让 <code>1 = E</code> 的话，音列就会变成 <em>E F♯ G♯ A B C♯ D♯ E</em></p>
+<p>这个 <em>全 全 半 全 全 全 半</em> 套用在黑键上也是完全一致的，只要按照这个序列推算出来的音列，一定都会给人有 <em>do</em> ~ <em>si</em> <em>do</em> 的感觉</p>
+<p>那么，这个 <em>全 全 半 全 全 全 半</em> 到底是什么东西呢？</p>
+<h3 id="调式">
+  调式
+  <a class="anchor" href="#%e8%b0%83%e5%bc%8f">#</a>
+</h3>
+<p>对于 <strong>调式</strong> 的定义，简单来说就是: 把 <strong>若干个</strong> 音，按照 <strong>某种规则</strong> 排列起来</p>
+<p>由于音乐中，这个 <em>某种规则</em> 里有很多种不同样的规则，这里就先单独介绍 <em>全 全 半 全 全 全 半</em> 这一种</p>
+<blockquote>
+<p>💡 <em>调式</em> 里面还包括: <em>大调式</em> 、 <em>中古调式</em> 、 <em>小调式</em> 、 <em>五声调式</em> 等等调式，这里就不一一列举</p>
+<p>不同的 <em>调式</em> 所使用到的音的数量以及排列规则都不一样</p>
+</blockquote>
+<h3 id="自然大调">
+  自然大调
+  <a class="anchor" href="#%e8%87%aa%e7%84%b6%e5%a4%a7%e8%b0%83">#</a>
+</h3>
+<blockquote>
+<p>💡 <em>自然大调</em> ，全称为 <strong>自然大调式</strong></p>
+<p>但在日常交流中，人们通常会把 <em>大调式</em> 中的「式」字省略</p>
+<p>对于 <em>自然大调</em> 人们还通常还会省略「自然」二字，直接称呼其为 <em>大调</em></p>
+<p><em>自然大调式</em> 只是 <em>大调式</em> 的其中一种调式</p>
+</blockquote>
+<p><strong>自然大调</strong> 就是指 <strong>7</strong> 个音，按照 <em>全 全 半 全 全 全 半</em> 的规则排列起来</p>
+<p>你可能会问，被 <em>7</em> 个 <em>全、半音</em> 分离开的音不是应该有 <em>8</em> 个才对吗？</p>
+<p>没错，确实被 <em>7</em> 个 <em>全、半音</em> 分离开的音是 <em>8</em> 个</p>
+<p>但仔细分析过后，你会发现: 最后一个音只是第一个音的高八度，音名是一样的</p>
+<p>正如上面提到的 <a href="#17span775span1-%e7%9a%84%e5%86%85%e5%9c%a8%e8%a7%84%e5%88%99"><em>do</em> ~ <em>si</em> <em>do</em></a> 一样，最后一个音 <em>do</em> 正是一开始的 <em>do</em> 的高八度，这就说明这个 <em>调式</em> 已经结束并回到最开始的第一个音</p>
+<p>所以这里我们说 <em>大调</em> 里面只有 <strong>7</strong> 个音</p>
+<p>既然 <em>大调</em> 只规定了音的数量和排列规则，那么我们直到 <code>1</code> 即可以 <code>= C</code> 也可以 <code>= D, E, F</code> 等等，我们要怎么称呼这些从不同音开头的 <em>大调</em> 呢？</p>
+<p>答案很简单，我们只需要在「<em>大调</em>」的前面加上 <em>音名</em> 即可，如:</p>
+<p><em>C 大调</em> 、 <em>D 大调</em> 等等……</p>
+<h2 id="音阶">
+  音阶
+  <a class="anchor" href="#%e9%9f%b3%e9%98%b6">#</a>
+</h2>
+<p><strong>音阶</strong> 的定义为: 将 <em>调式</em> 中的音，以 <em>主音</em> <strong>开始</strong> 到 <em>主音</em> <strong>结束</strong> ，由 <strong>从低到高</strong> <sub>(叫做: 上行)</sub>，或 <strong>从高到低</strong> <sub>(叫做: 下行)</sub> ，以 <em>阶梯状</em> 排列起来</p>
 <p>未完待续……</p>
 <hr>
 <p><a href="../..">上一级</a></p>
@@ -551,9 +660,19 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
         <li><a href="#两种不同的音高记号法">两种不同的音高记号法</a></li>
         <li><a href="#变音记号的补充">变音记号的补充</a></li>
         <li><a href="#1--c-的补充"><code>1 = C</code> 的补充</a></li>
+        <li><a href="#中央-c">中央 C</a></li>
+        <li><a href="#标准音">标准音</a></li>
       </ul>
     </li>
     <li><a href="#纯八度">纯八度</a></li>
+    <li><a href="#全音与半音">全音与半音</a></li>
+    <li><a href="#17span775span1-的内在规则"><em>1~7<span>̇</span>1</em> 的内在规则</a>
+      <ul>
+        <li><a href="#调式">调式</a></li>
+        <li><a href="#自然大调">自然大调</a></li>
+      </ul>
+    </li>
+    <li><a href="#音阶">音阶</a></li>
   </ul>
 </nav>
 
