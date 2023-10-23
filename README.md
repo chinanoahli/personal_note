@@ -9,7 +9,7 @@
 > 不喜欢就请退出本页面，不欢迎你来指指点点
 
 + [游戏笔记](./game/README.md)
-+ [投资笔记](./investment/README.md)
++ [投资笔记](./investment/README.md) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
