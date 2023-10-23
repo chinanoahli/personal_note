@@ -18,6 +18,7 @@ headless = true
         - [道具球]({{< relref "/art/ants#ants_propBall" >}})
     - [自学笔记]({{< relref "/art#selfStudy" >}})
       - [Blender 学习笔记]({{< relref "/art/selfStudy/Blender" >}})
+    - [个人思考及经验总结]({{< relref "/art#myArtNote" >}})
   - [音乐学习笔记]({{< relref "/music" >}})
     - [课程笔记]({{< relref "/music#onlineCourse" >}})
     - [自学笔记]({{< relref "/music#selfStudy" >}})

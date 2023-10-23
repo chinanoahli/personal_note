@@ -8,6 +8,18 @@
     <language>zh-CN</language>
     <lastBuildDate>Fri, 05 May 2023 19:51:14 +0900</lastBuildDate><atom:link href="/softUsage/operatingSystem/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>MacOS 使用技巧</title>
+      <link>/softUsage/operatingSystem/macOS/tweaks/</link>
+      <pubDate>Mon, 23 Oct 2023 21:14:35 +0900</pubDate>
+      
+      <guid>/softUsage/operatingSystem/macOS/tweaks/</guid>
+      <description>MacOS 使用技巧 #   收录一些MacOS系统目前遇到过的问题的解决方案。
+  sudo 要求输入管理员帐号的密码，输入密码时不会显示 ∙ 或 *，确保输入无误后按 enter/return 即可。
+  禁用 「App」尚未针对您的Mac优化 提示 #  打开 Terminal 根据需要运行以下命令
+   命令作用 命令 测试环境     禁用最佳化提示 defaults write -g CSUIDisable32BitWarning -boolean TRUE MacOS 10.14.6 (18G84) 通过   启用最佳化提示 defaults delete -g CSUIDisable32BitWarning 未测试   查看当前设置 defaults read -g CSUIDisable32BitWarning 未测试    来源： #   Apple官方介绍页面 How to suppress alert &amp;lsquo;this app is not optimized for your Mac&amp;rsquo;   修改 hostname #  本技巧可以在你的计算机名(Hostname)加入非英文字符。</description>
+    </item>
+    
+    <item>
       <title>Linux 常用命令</title>
       <link>/softUsage/operatingSystem/linux/commonCommands/</link>
       <pubDate>Fri, 05 May 2023 19:54:21 +0900</pubDate>

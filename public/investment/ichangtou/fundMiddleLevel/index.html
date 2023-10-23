@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="基金进阶 #    第一天 一万块，搞定全球资产配置
+  第二天 三部认清一只指数
+  第三天 基金那么多，要稳健，选哪只？
+  第四天 选对行业更赚钱·行业指数
+  第五天 100 元就能投资境外市场？QDII 基金
+  第六天 预测投资收益·博格公式估值法
+  第七天 指数基金那么多，怎么买才好？
+  第八天 一次性搞定所有债券基金
+  第九天 攻守兼备的投资利器·可转债基金
+  第十天 大类资产配置·升级版股债平衡
+  第十一天 波动的市场，网格助你锁定收益
+  第十二天 如何利用网格策略网住收益？实操篇
+  第十三天 进阶投资者的心态
+   第一课笔记 #  2020-02-17 #  马考维茨有效边界模型 #    没有人可以精确算出实际投资环境的风险和收益的关系，所以就 不存在 所谓的「最佳低风险高收益」的投资组合">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="基金进阶" />
+<meta property="og:description" content="基金进阶 #    第一天 一万块，搞定全球资产配置
+  第二天 三部认清一只指数
+  第三天 基金那么多，要稳健，选哪只？
+  第四天 选对行业更赚钱·行业指数
+  第五天 100 元就能投资境外市场？QDII 基金
+  第六天 预测投资收益·博格公式估值法
+  第七天 指数基金那么多，怎么买才好？
+  第八天 一次性搞定所有债券基金
+  第九天 攻守兼备的投资利器·可转债基金
+  第十天 大类资产配置·升级版股债平衡
+  第十一天 波动的市场，网格助你锁定收益
+  第十二天 如何利用网格策略网住收益？实操篇
+  第十三天 进阶投资者的心态
+   第一课笔记 #  2020-02-17 #  马考维茨有效边界模型 #    没有人可以精确算出实际投资环境的风险和收益的关系，所以就 不存在 所谓的「最佳低风险高收益」的投资组合" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/investment/ichangtou/fundMiddleLevel/" />
+<meta property="article:published_time" content="2023-10-23T20:50:11+09:00" />
+<meta property="article:modified_time" content="2023-10-23T20:50:11+09:00" />
+<title>基金进阶 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/">Blender 学习笔记</a></li>
+</ul>
+</li>
+<li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>基金进阶</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#马考维茨有效边界模型">马考维茨有效边界模型</a></li>
+    <li><a href="#投资品种的相关性">投资品种的相关性</a></li>
+    <li><a href="#如何面对风险">如何面对风险</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#看清一只指数">看清一只指数</a>
+      <ul>
+        <li><a href="#第一步-确认样本空间">第一步 确认样本空间</a></li>
+        <li><a href="#第二步-确认选样方法">第二步 确认选样方法</a></li>
+        <li><a href="#第三步-确认加权方式">第三步 确认加权方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#实操">实操</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#策略因子">策略因子</a></li>
+    <li><a href="#策略指数">策略指数</a></li>
+    <li><a href="#红利指数高收益的来源">红利指数高收益的来源</a>
+      <ul>
+        <li><a href="#好公司">好公司</a></li>
+        <li><a href="#好价格">好价格</a></li>
+      </ul>
+    </li>
+    <li><a href="#红利指数的估值">红利指数的估值</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#行业指数">行业指数</a></li>
+    <li><a href="#行业特性">行业特性</a>
+      <ul>
+        <li><a href="#判断行业未来的技巧">判断行业未来的技巧</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#海外市场简介">海外市场简介</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#市场相关度简述">市场相关度简述</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#qdii-基金">QDII 基金</a></li>
+    <li><a href="#挑选-qdii-基金的指标">挑选 QDII 基金的指标</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#博格公式">博格公式</a></li>
+    <li><a href="#实操-1">实操</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#进阶基金配置法">进阶基金配置法</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#债券基金">债券基金</a>
+      <ul>
+        <li></li>
+        <li><a href="#债券基金分类">债券基金分类</a></li>
+        <li><a href="#纯债基金的筛选指标">纯债基金的筛选指标</a></li>
+        <li><a href="#偏债基金的筛选指标">偏债基金的筛选指标</a></li>
+        <li><a href="#投资时机">投资时机</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#可转债">可转债</a></li>
+    <li><a href="#可转债基金筛选指标">可转债基金筛选指标</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#可转债基金买卖时机">可转债基金买卖时机</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#股债平衡">股债平衡</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#网格策略的优缺点">网格策略的优缺点</a></li>
+    <li><a href="#网格策略的必要条件">网格策略的必要条件</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#网格搭建">网格搭建</a></li>
+    <li><a href="#网格策略的意义">网格策略的意义</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#心理误区">心理误区</a></li>
+    <li><a href="#投资是一门与数学结合的艺术">投资是一门与数学结合的艺术</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="基金进阶">
+  基金进阶
+  <a class="anchor" href="#%e5%9f%ba%e9%87%91%e8%bf%9b%e9%98%b6">#</a>
+</h1>
+<ul>
+<li>
+<p><a href="#%e7%ac%ac%e4%b8%80%e8%af%be%e7%ac%94%e8%ae%b0">第一天 一万块，搞定全球资产配置</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e4%ba%8c%e8%af%be%e7%ac%94%e8%ae%b0">第二天 三部认清一只指数</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e4%b8%89%e8%af%be%e7%ac%94%e8%ae%b0">第三天 基金那么多，要稳健，选哪只？</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%9b%9b%e8%af%be%e7%ac%94%e8%ae%b0">第四天 选对行业更赚钱·行业指数</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e4%ba%94%e8%af%be%e7%ac%94%e8%ae%b0">第五天 100 元就能投资境外市场？QDII 基金</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%85%ad%e8%af%be%e7%ac%94%e8%ae%b0">第六天 预测投资收益·博格公式估值法</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e4%b8%83%e8%af%be%e7%ac%94%e8%ae%b0">第七天 指数基金那么多，怎么买才好？</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%85%ab%e8%af%be%e7%ac%94%e8%ae%b0">第八天 一次性搞定所有债券基金</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e4%b9%9d%e8%af%be%e7%ac%94%e8%ae%b0">第九天 攻守兼备的投资利器·可转债基金</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%8d%81%e8%af%be%e7%ac%94%e8%ae%b0">第十天 大类资产配置·升级版股债平衡</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%8d%81%e4%b8%80%e8%af%be%e7%ac%94%e8%ae%b0">第十一天 波动的市场，网格助你锁定收益</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%8d%81%e4%ba%8c%e8%af%be%e7%ac%94%e8%ae%b0">第十二天 如何利用网格策略网住收益？实操篇</a></p>
+</li>
+<li>
+<p><a href="#%e7%ac%ac%e5%8d%81%e4%b8%89%e8%af%be%e7%ac%94%e8%ae%b0">第十三天 进阶投资者的心态</a></p>
+</li>
+</ul>
+<hr>
+<h1 id="第一课笔记">
+  第一课笔记
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%80%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-17">
+  2020-02-17
+  <a class="anchor" href="#2020-02-17">#</a>
+</h4>
+<h2 id="马考维茨有效边界模型">
+  马考维茨有效边界模型
+  <a class="anchor" href="#%e9%a9%ac%e8%80%83%e7%bb%b4%e8%8c%a8%e6%9c%89%e6%95%88%e8%be%b9%e7%95%8c%e6%a8%a1%e5%9e%8b">#</a>
+</h2>
+<ul>
+<li>
+<p>没有人可以精确算出实际投资环境的风险和收益的关系，所以就 <strong>不存在</strong> 所谓的「最佳低风险高收益」的投资组合</p>
+</li>
+<li>
+<p><a href="./stockMiddleLevel.md#%e7%ac%ac%e5%8d%81%e4%b8%80%e8%af%be%e7%ac%94%e8%ae%b0">风险的种类 引用自 : 股票进阶课#第十一课</a></p>
+</li>
+<li>
+<p>为了规避风险，就必须根据投资者自身的情况制定适合自己的投资组合，在适当的风险区间内获得最高的收益</p>
+</li>
+</ul>
+<h2 id="投资品种的相关性">
+  投资品种的相关性
+  <a class="anchor" href="#%e6%8a%95%e8%b5%84%e5%93%81%e7%a7%8d%e7%9a%84%e7%9b%b8%e5%85%b3%e6%80%a7">#</a>
+</h2>
+<p>假如有 A、B 两种不同的投资品</p>
+<ul>
+<li>
+<p><strong>不相关</strong> <br/>不论 A 是涨还是跌都对 B 没有影响</p>
+</li>
+<li>
+<p><strong>正相关</strong> <br/>A 涨 B 也涨，A 跌 B 也跌</p>
+</li>
+<li>
+<p><strong>负相关</strong> <br/>A、B 互为此消彼涨</p>
+</li>
+</ul>
+<p>总的来说，可以在同一个市场（A 股市场）或者在不同的市场（国内和国外）里面，选取相关性不高甚至是负相关的投资品来平滑投资风险</p>
+<h2 id="如何面对风险">
+  如何面对风险
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e9%9d%a2%e5%af%b9%e9%a3%8e%e9%99%a9">#</a>
+</h2>
+<ul>
+<li><a href="./stockMiddleLevel.md#%e5%9f%ba%e6%9c%ac%e5%bf%83%e7%90%86%e8%af%af%e5%8c%ba">面对风险的态度 引用自 : 股票进阶课#第十四课</a></li>
+</ul>
+<hr>
+<h1 id="第二课笔记">
+  第二课笔记
+  <a class="anchor" href="#%e7%ac%ac%e4%ba%8c%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-18">
+  2020-02-18
+  <a class="anchor" href="#2020-02-18">#</a>
+</h4>
+<h2 id="看清一只指数">
+  看清一只指数
+  <a class="anchor" href="#%e7%9c%8b%e6%b8%85%e4%b8%80%e5%8f%aa%e6%8c%87%e6%95%b0">#</a>
+</h2>
+<h3 id="第一步-确认样本空间">
+  第一步 确认样本空间
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5-%e7%a1%ae%e8%ae%a4%e6%a0%b7%e6%9c%ac%e7%a9%ba%e9%97%b4">#</a>
+</h3>
+<blockquote>
+<p>样本空间 : 即挑选成份股的范围</p>
+</blockquote>
+<p>常见样本空间 :</p>
+<ul>
+<li>
+<p><strong>A 股市场</strong></p>
+</li>
+<li>
+<p>沪市 A 股</p>
+</li>
+<li>
+<p>深市 A 股</p>
+</li>
+<li>
+<p><strong>行业市场</strong> <br/>将 A 股市场分成各类行业市场，从单一行业市场里挑选股票</p>
+</li>
+<li>
+<p><strong>海外市场</strong> <br/>除 A 股市场之外的市场，如 : HK、JP 和 US 等市场</p>
+</li>
+</ul>
+<h3 id="第二步-确认选样方法">
+  第二步 确认选样方法
+  <a class="anchor" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5-%e7%a1%ae%e8%ae%a4%e9%80%89%e6%a0%b7%e6%96%b9%e6%b3%95">#</a>
+</h3>
+<p>常见选样方法 :</p>
+<ul>
+<li>
+<p><strong>市值选样</strong> <br/>按照市值从大到小排序，根据数量要求选排名靠前的股票</p>
+</li>
+<li>
+<p><strong>股息率选样</strong> <br/>根据股息率从大到小排序，根据数量要求选排名靠前的股票</p>
+</li>
+<li>
+<p><strong>基本面选样</strong> <br/>根据基本面价值（财报、行业、市场竞争等综合评估）从高到低排序，根据数量要求选排名靠前的股票</p>
+</li>
+<li>
+<p><strong>波动率选样</strong> <br/>股票价格的波动率从小到大排序，根据数量要求选排名靠前的股票</p>
+</li>
+</ul>
+<blockquote>
+<p>波动率 : 股票波动的剧烈程度</p>
+</blockquote>
+<h3 id="第三步-确认加权方式">
+  第三步 确认加权方式
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%89%e6%ad%a5-%e7%a1%ae%e8%ae%a4%e5%8a%a0%e6%9d%83%e6%96%b9%e5%bc%8f">#</a>
+</h3>
+<p>常见加权方式 :</p>
+<ul>
+<li>
+<p><strong>市值加权</strong> <br/>根据股票的市值在所有成份股的总市值中的占比进行加权，成份股市值越大权重越高</p>
+</li>
+<li>
+<p><strong>等权重</strong> <br/>所有成份股的权重都一样， <code>权重 = 1 / 成份股数量</code></p>
+</li>
+<li>
+<p><strong>股息率加权</strong> <br/>股息率越高，权重越高</p>
+</li>
+<li>
+<p><strong>基本面加权</strong> <br/>基本面越好的股票，权重越高</p>
+</li>
+<li>
+<p><strong>波动率加权</strong> <br/>一般来说，波动率越小权重越大</p>
+</li>
+</ul>
+<h2 id="实操">
+  实操
+  <a class="anchor" href="#%e5%ae%9e%e6%93%8d">#</a>
+</h2>
+<blockquote>
+<p><a href="http://www.csindex.com.cn/">中证指数有限公司</a></p>
+</blockquote>
+<ol>
+<li>
+<p>进入中证公司官网，并在左上角搜索框中搜索需要了解的指数</p>
+</li>
+<li>
+<p>在搜索结果中打开对应的指数</p>
+</li>
+<li>
+<p>点击该指数 <em>资料下载</em> 栏目中的 <em>编制方案</em> 以下载该指数的编制方案</p>
+</li>
+<li>
+<p>在编制方案中即可获取该指数的 <strong>样本空间</strong> 、 <strong>选样方法</strong> 、 <strong>加权方式</strong></p>
+</li>
+</ol>
+<blockquote>
+<p>在 <code>调整市值</code> 公式中只有 <code>股价</code> 和 <code>调整股本数</code> 出现时，即为市值加权<br/>在 <code>调整市值</code> 公式中如果存在 <code>权重因子</code> ，则需要根据 <code>权重因子</code> 进行判断</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>如果 <code>权重因子</code> 中，有类似「 <strong>单个股票权重相等</strong> 」等字眼出现时，则这个指数为<em>等权重加权</em>；<br/>如果 <code>权重因子</code> 中包含 <strong>股息率</strong> ，则这个指数为 <em>股息率加权</em></p>
+</blockquote>
+</blockquote>
+<hr>
+<h1 id="第三课笔记">
+  第三课笔记
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%89%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-19">
+  2020-02-19
+  <a class="anchor" href="#2020-02-19">#</a>
+</h4>
+<h2 id="策略因子">
+  策略因子
+  <a class="anchor" href="#%e7%ad%96%e7%95%a5%e5%9b%a0%e5%ad%90">#</a>
+</h2>
+<ul>
+<li>
+<p><strong>规模</strong> <br/>小盘股长期来看比大盘股回报要高</p>
+</li>
+<li>
+<p><strong>价值</strong> <br/>价格低于价值的股票长期来看比贵的股票收益高</p>
+</li>
+<li>
+<p><strong>低波动</strong> <br/>总体波动比较小的股票长期表现会更好</p>
+</li>
+<li>
+<p><strong>红利</strong> <br/>分红多的股票长期回报更高</p>
+</li>
+<li>
+<p><strong>质量</strong> <br/>质地好的、优秀公司的股票，长期来看回报更好</p>
+</li>
+<li>
+<p><strong>动量</strong> <br/>这个因子认为过去涨的股票将来还会继续涨</p>
+</li>
+</ul>
+<h2 id="策略指数">
+  策略指数
+  <a class="anchor" href="#%e7%ad%96%e7%95%a5%e6%8c%87%e6%95%b0">#</a>
+</h2>
+<blockquote>
+<p>策略指数 : 在宽基指数的基础上，在加上策略因子，就成了策略指数</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>中证红利指数</strong> <br/> <strong>100 只</strong> 成份股，反映出整个 A 股市场高红利股票的整体走势<br/>成份股特点 :</p>
+<ul>
+<li>在沪深两地交易所上市</li>
+</ul>
+</li>
+<li>
+<p><strong>上证红利指数</strong> <br/> <strong>50 只</strong> 成份股，反映出沪市高红利股票的整体走势<br/>成份股特点 :</p>
+<ul>
+<li>在上交所上市</li>
+</ul>
+</li>
+<li>
+<p><strong>深证红利指数</strong> <br/> <strong>40 只</strong> 成份股，反映出深市高红利股票的整体走势<br/>成份股特点 :</p>
+<ul>
+<li>在深交所上市</li>
+</ul>
+</li>
+<li>
+<p>共通特点 :</p>
+<ul>
+<li>股息率高</li>
+<li>分红比较稳定</li>
+<li>具有一定规模和流动性</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>全收益指数 : 普通指数 <em>只</em> 体现股价上涨，而全收益指数则将股价与 <strong>分红</strong> 都计算在内</p>
+</blockquote>
+<h2 id="红利指数高收益的来源">
+  红利指数高收益的来源
+  <a class="anchor" href="#%e7%ba%a2%e5%88%a9%e6%8c%87%e6%95%b0%e9%ab%98%e6%94%b6%e7%9b%8a%e7%9a%84%e6%9d%a5%e6%ba%90">#</a>
+</h2>
+<blockquote>
+<p>以好价格买好公司，以中证红利指数为例</p>
+</blockquote>
+<h3 id="好公司">
+  好公司
+  <a class="anchor" href="#%e5%a5%bd%e5%85%ac%e5%8f%b8">#</a>
+</h3>
+<p>中证红利挑选公司的 2 个原则 :</p>
+<ul>
+<li>
+<p>必须连续 2 年有现金分红</p>
+</li>
+<li>
+<p>选择股息率排在前 100 名的股票</p>
+</li>
+</ul>
+<p>小结 : 中证红利挑选的公司能够持续稳定地高分红，这些公司的盈利和现金流素质都必须过硬才有可能坚持做到稳定的高分红。</p>
+<h3 id="好价格">
+  好价格
+  <a class="anchor" href="#%e5%a5%bd%e4%bb%b7%e6%a0%bc">#</a>
+</h3>
+<p><code>股息率 = 分红总额 / 市值 * 100%</code></p>
+<p>此公式中，如果分子分母同时除以总股本，则会变成 :</p>
+<p><code>股息率 = 每股现金分红 / 每股价格 * 100%</code></p>
+<p>也就是说股息率越高且分红高的股票往往意味着其股价越低</p>
+<p>总结 : 中证红利每年调整一次成份股，在调整时，会将股息率降到 100 名以外的股票剔除，同时将 100 名前的股票纳入，从而实现低买高卖。</p>
+<h2 id="红利指数的估值">
+  红利指数的估值
+  <a class="anchor" href="#%e7%ba%a2%e5%88%a9%e6%8c%87%e6%95%b0%e7%9a%84%e4%bc%b0%e5%80%bc">#</a>
+</h2>
+<p>红利指数可用初级课的长投温度估值法进行估值</p>
+<p><a href="./fundPrimary.md#%e7%ac%ac%e4%b8%83%e8%af%be%e7%ac%94%e8%ae%b0">参考 : 基金初级课#第七课</a></p>
+<hr>
+<h1 id="第四课笔记">
+  第四课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%9b%9b%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-20">
+  2020-02-20
+  <a class="anchor" href="#2020-02-20">#</a>
+</h4>
+<h2 id="行业指数">
+  行业指数
+  <a class="anchor" href="#%e8%a1%8c%e4%b8%9a%e6%8c%87%e6%95%b0">#</a>
+</h2>
+<blockquote>
+<p>行业指数的成份股，全都来自同一个行业</p>
+</blockquote>
+<p>行业的分类 :</p>
+<ul>
+<li>
+<p><strong>能源行业</strong>: <br/>石油天然气、能源设备与服务等</p>
+</li>
+<li>
+<p><strong>材料行业</strong>: <br/>金属、采矿、化学制品等</p>
+</li>
+<li>
+<p><strong>工业行业</strong>: <br/>航空航天、运输、建筑产品等</p>
+</li>
+<li>
+<p><strong>可选消费行业</strong>: <br/>汽车、房产、媒体</p>
+</li>
+<li>
+<p><strong>必须消费行业</strong>: <br/>食品、饮料、烟草、家居等</p>
+</li>
+<li>
+<p><strong>医药行业</strong>: <br/>制药、生物科技、医疗保险等</p>
+</li>
+<li>
+<p><strong>金融行业</strong>: <br/>银行、保险、券商等</p>
+</li>
+<li>
+<p><strong>信息行业</strong>: <br/>软硬件、信息技术等</p>
+</li>
+<li>
+<p><strong>电信行业</strong>: <br/>固定线路、无线通信、电信业务等</p>
+</li>
+<li>
+<p><strong>公共事业</strong>: <br/>公路、电力、水务等</p>
+</li>
+</ul>
+<h2 id="行业特性">
+  行业特性
+  <a class="anchor" href="#%e8%a1%8c%e4%b8%9a%e7%89%b9%e6%80%a7">#</a>
+</h2>
+<h3 id="判断行业未来的技巧">
+  判断行业未来的技巧
+  <a class="anchor" href="#%e5%88%a4%e6%96%ad%e8%a1%8c%e4%b8%9a%e6%9c%aa%e6%9d%a5%e7%9a%84%e6%8a%80%e5%b7%a7">#</a>
+</h3>
+<ul>
+<li>
+<p>人们的需求是否稳定。只要需求稳定，行业就能不断赚到钱。</p>
+<ul>
+<li>
+<p>如医药行业，人们无论外部经济如何，只要生病了都得就医，需求稳定。在加上行业是一手交钱一手交货，很少有赊账赖帐，所以比一般行业更赚钱。</p>
+</li>
+<li>
+<p>如航空航天、通信设施等，此行业需要大量资金投入到开发和生产中，虽然赚到的前也不少，但生产投入太多难以有太高的盈利。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>参考国外成熟市场的经验。如美股等。</p>
+<ul>
+<li>从美股 1957~2012 年最赚钱的 20 家公司排名中，可见必须消费品和医药行业占了绝大部分的比率。</li>
+</ul>
+</li>
+<li>
+<p>强周期性行业</p>
+<ul>
+<li>
+<p>强周期行业包括金融、地产、煤炭、钢铁等</p>
+</li>
+<li>
+<p>注意在挑选行业时，必须挑选自己能准确判断的行业，不能挑选自己不熟悉的行业</p>
+</li>
+<li>
+<p>不熟悉的行业一般人很难判断它的发展周期，容易造成投资失败</p>
+</li>
+<li>
+<p>证券行业的周期比较好判断，证券行业周期粗略来说就是股市整体的六熊转换</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="./fundPrimary.md#%e7%ac%ac%e4%b8%83%e8%af%be%e7%ac%94%e8%ae%b0">参考 : 基金初级课#第七课</a></p>
+<hr>
+<h1 id="第五课笔记">
+  第五课笔记
+  <a class="anchor" href="#%e7%ac%ac%e4%ba%94%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-21">
+  2020-02-21
+  <a class="anchor" href="#2020-02-21">#</a>
+</h4>
+<h2 id="海外市场简介">
+  海外市场简介
+  <a class="anchor" href="#%e6%b5%b7%e5%a4%96%e5%b8%82%e5%9c%ba%e7%ae%80%e4%bb%8b">#</a>
+</h2>
+<p>习惯上除 A 股外，香港、美国、德国市场都算是海外市场</p>
+<h4 id="新兴市场">
+  <strong>新兴市场</strong>
+  <a class="anchor" href="#%e6%96%b0%e5%85%b4%e5%b8%82%e5%9c%ba">#</a>
+</h4>
+<blockquote>
+<p>发展中国家的股票市场和发达国家中不成熟的股票市场<br/>通常发展中地区指的是集中在亚洲、非州、拉丁美洲和东欧等地区<br/>发达国家的不成熟市场有韩国、希腊等</p>
+</blockquote>
+<p>A 股市场属于新兴市场</p>
+<h4 id="成熟市场">
+  <strong>成熟市场</strong>
+  <a class="anchor" href="#%e6%88%90%e7%86%9f%e5%b8%82%e5%9c%ba">#</a>
+</h4>
+<blockquote>
+<p>发达国家和地区中较为成熟的股票市场<br/>通常发达国家指的是美国、英国、德国、法国、日本、澳大利亚、新西兰、香港等地区</p>
+</blockquote>
+<p>新兴市场和成熟市场的主要诱因是因为新兴市场和发达市场所在的地区的经济基础环境不一样，通常成熟市场有更好的 <strong>经济基础环境</strong> ，所以其市场发展要更为迅速；其次新兴市场地区和成熟市场地区的 <strong>经济周期</strong> 通常都不一致，投资者对于两种市场的投资预期不一样。以上两个原因导致了两种市场相关性比较低。</p>
+<hr>
+<p>其次，成熟市场相对于新兴市场来说通常具有更多经验丰富的投资者，成熟投资者的换手率低，市场波动较小，市场走势相对于新兴市场来说更稳定</p>
+<h2 id="市场相关度简述">
+  市场相关度简述
+  <a class="anchor" href="#%e5%b8%82%e5%9c%ba%e7%9b%b8%e5%85%b3%e5%ba%a6%e7%ae%80%e8%bf%b0">#</a>
+</h2>
+<h4 id="判断相关度的指标--相关系数">
+  判断相关度的指标 : 相关系数
+  <a class="anchor" href="#%e5%88%a4%e6%96%ad%e7%9b%b8%e5%85%b3%e5%ba%a6%e7%9a%84%e6%8c%87%e6%a0%87--%e7%9b%b8%e5%85%b3%e7%b3%bb%e6%95%b0">#</a>
+</h4>
+<blockquote>
+<p>相关系数是一个处于 <code>[0, 1]</code> 区间的数值，值越大代表比较两者相关性越高<br/>此外值前面通常会使用 <code>+</code> 和 <code>-</code> 号来表示是正相关还是负相关</p>
+</blockquote>
+<p>通过数据统计可知，成熟市场与 A 股相关度是较低的，而新兴市场则与 A 股中度相关<br/>港股市场属于例外情况，虽然港股市场属于成熟市场，但因为有很多大陆的公司同时在港股市场和 A 股市场上市，而且两个市场中有很多重合的投资者。所以港股与其他成熟市场对比，跟 A 股的相似度更高。</p>
+<p>为了降低风险，提升组合的收益，应该尽量选与 A 股市场相关度更低的市场进行组合投资。</p>
+<h2 id="qdii-基金">
+  QDII 基金
+  <a class="anchor" href="#qdii-%e5%9f%ba%e9%87%91">#</a>
+</h2>
+<blockquote>
+<p>Wikipedia 释义 : 合格境内机构投资者，即 QDII，是「Qualified Domestic Institutional Investor」的首字缩写。它是在一国境内设立，经该国有关部门批准从事境外证券市场的股票、债券等有价证券业务的证券投资基金。</p>
+</blockquote>
+<p>影响力较大且投资比较方便的指数有 :</p>
+<ul>
+<li>
+<p>美国</p>
+<ul>
+<li>
+<p>纳斯达克 100 指数</p>
+</li>
+<li>
+<p>标准普尔 500 指数</p>
+</li>
+<li>
+<p><del>道琼斯工业股票指数<br/>国内无对应的指数基金</del></p>
+</li>
+</ul>
+</li>
+<li>
+<p>日本</p>
+<ul>
+<li>日经 225</li>
+</ul>
+</li>
+<li>
+<p>英国</p>
+<ul>
+<li><del>富时 100<br/>国内无对应的指数基金</del></li>
+</ul>
+</li>
+<li>
+<p>德国</p>
+<ul>
+<li>德国 DAX</li>
+</ul>
+</li>
+<li>
+<p>香港</p>
+<ul>
+<li>恒生指数</li>
+</ul>
+</li>
+</ul>
+<h2 id="挑选-qdii-基金的指标">
+  挑选 QDII 基金的指标
+  <a class="anchor" href="#%e6%8c%91%e9%80%89-qdii-%e5%9f%ba%e9%87%91%e7%9a%84%e6%8c%87%e6%a0%87">#</a>
+</h2>
+<ul>
+<li><a href="./fundPrimary.md#%e7%ac%ac%e5%9b%9b%e8%af%be%e7%ac%94%e8%ae%b0">指数基金筛选指标 引用自 : 基金初级#第四课</a></li>
+</ul>
+<hr>
+<h1 id="第六课笔记">
+  第六课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%85%ad%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-22">
+  2020-02-22
+  <a class="anchor" href="#2020-02-22">#</a>
+</h4>
+<h2 id="博格公式">
+  博格公式
+  <a class="anchor" href="#%e5%8d%9a%e6%a0%bc%e5%85%ac%e5%bc%8f">#</a>
+</h2>
+<pre><code>股市长期回报率 = 投资回报率 + 投机回报率
+             = (初始投资时刻的股息率 + 投资期内的盈利增长率) + 投资期内的市盈率变化
+</code></pre><p>博格公式中的 <em>股市长期回报率</em> 可以近似地当成投资一个指数基金的收益率。通常来说实际收益率会比博格公式的结果略低，这是因为实际投资中，需要扣除一定的管理费、托管费、申购费等成本。</p>
+<hr>
+<h2 id="实操-1">
+  实操
+  <a class="anchor" href="#%e5%ae%9e%e6%93%8d-1">#</a>
+</h2>
+<ul>
+<li>
+<p>当前股息率可以从理杏仁中找到</p>
+</li>
+<li>
+<p>投资期内的盈利增长率<br/>可以以我国 <a href="http://data.eastmoney.com/cjsj/gdp.html">GDP 年度平均增长率</a> 来类比，因为一个可以上市的公司相对来说，普遍比一般公司的盈利增长好。<br/>所以，能上市的公司的增长会比平均高，用 GDP 来当作指数未来的增长率，可以视为偏保守的估算。</p>
+</li>
+<li>
+<p>PE 也可以从理杏仁中找到</p>
+<ul>
+<li>
+<p>理杏仁中的 <strong>危险值</strong> <br/>取历史数据的<strong>80%</strong>分位点</p>
+</li>
+<li>
+<p>理杏仁中的 <strong>中位值</strong> <br/>取历史数据的<strong>50%</strong>分位点</p>
+</li>
+<li>
+<p>理杏仁中的 <strong>机会值</strong> <br/>取历史数据的<strong>20%</strong>分位点</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>假设投资 3 年，可以按照以下 3 种情况进行估值</p>
+<ul>
+<li>
+<p><strong>乐观预计</strong> <br/>市盈率会继续上升到危险值附近</p>
+</li>
+<li>
+<p><strong>中性预计</strong> <br/>市盈率会回落到中位值附近</p>
+</li>
+<li>
+<p><strong>悲观预计</strong> <br/>市盈率会降到机会值附近</p>
+</li>
+</ul>
+<hr>
+<p>则实际的年化收益率（长期回报率）为</p>
+<pre><code>年化收益率 = (((预测的市盈率 / 现在的市盈率) ^ (1 / n)) - 1) * 100%
+n 为投资年限
+</code></pre><p>算出三种情况下的长期回报率后，查看悲观预计与乐观预计的收益率，根据自己的实际情况选择是否投资即可</p>
+<hr>
+<h1 id="第七课笔记">
+  第七课笔记
+  <a class="anchor" href="#%e7%ac%ac%e4%b8%83%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-23">
+  2020-02-23
+  <a class="anchor" href="#2020-02-23">#</a>
+</h4>
+<h2 id="进阶基金配置法">
+  进阶基金配置法
+  <a class="anchor" href="#%e8%bf%9b%e9%98%b6%e5%9f%ba%e9%87%91%e9%85%8d%e7%bd%ae%e6%b3%95">#</a>
+</h2>
+<blockquote>
+<p><strong>最终目标</strong> : 稳健的高收益<br/>根据自己实际情况，调整各种基金的投资占比</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>前锋配置</strong> <sub>(进攻 ➔ 获取超额收益)</sub></p>
+<blockquote>
+<p>不超过 20%<br/>当不想承受较高风险时可不配置</p>
+</blockquote>
+<ul>
+<li><em>行业指数</em> <br/>如消费、医药、证券、互联网行业（QDII），挑其中一个温度低就好</li>
+</ul>
+</li>
+<li>
+<p><strong>中场配置</strong> <sub>(防守 + 进攻 ➔ 稳健 + 获取一定的超额收益)</sub></p>
+<blockquote>
+<p>约 30%<br/>有一定风险承受能力，又要追求一定收益的可与后卫一起配置此项</p>
+</blockquote>
+<ul>
+<li>
+<p><em>策略指数</em></p>
+</li>
+<li>
+<p><em>海外指数</em> <br/>若海外市场没有适合估值的指数，可以先将钱放到货币基金，等待机会</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>后卫配置</strong> <sub>(防守 ➔ 稳健)</sub></p>
+<blockquote>
+<p>约 50%<br/>刚进入市场，资金不足，可只配置此项</p>
+</blockquote>
+<ul>
+<li><em>宽基指数</em> <br/>可以同时投资大盘与小盘指数，如沪 : 深 300、中证 500<br/>由于策略指数难以判断其是大盘还是小盘指数，所以一般不作为后卫配置</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="第八课笔记">
+  第八课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%85%ab%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-24">
+  2020-02-24
+  <a class="anchor" href="#2020-02-24">#</a>
+</h4>
+<h2 id="债券基金">
+  债券基金
+  <a class="anchor" href="#%e5%80%ba%e5%88%b8%e5%9f%ba%e9%87%91">#</a>
+</h2>
+<blockquote>
+<p>通常来说，债券基金会在股票市场低迷时表现出突出的业绩<br/>也就是说通常债券与股票是负相关</p>
+</blockquote>
+<h4 id="债券的种类">
+  债券的种类
+  <a class="anchor" href="#%e5%80%ba%e5%88%b8%e7%9a%84%e7%a7%8d%e7%b1%bb">#</a>
+</h4>
+<ul>
+<li>
+<p>国债<br/>债务人 : 中央政府</p>
+</li>
+<li>
+<p>地方债（市政债券）<br/>债务人 : 地方政府</p>
+</li>
+<li>
+<p>金融机构债券</p>
+<ul>
+<li>
+<p>央行票据<br/>债务人 : 中央银行</p>
+</li>
+<li>
+<p>政策性金融债券<br/>债务人 : 政策性银行</p>
+<ul>
+<li>国开债<br/>债务人: 中国开发银行</li>
+</ul>
+</li>
+<li>
+<p>其他金融债券</p>
+<ul>
+<li>
+<p>同业存单<br/>债务人: 存款类金融机构</p>
+</li>
+<li>
+<p>商业银行债</p>
+</li>
+<li>
+<p>证券公司债</p>
+</li>
+<li>
+<p>保险公司债</p>
+</li>
+</ul>
+</li>
+<li>
+<p>其他金融债券</p>
+</li>
+</ul>
+</li>
+<li>
+<p>企业债券</p>
+<ul>
+<li>
+<p>普通公司债券</p>
+</li>
+<li>
+<p>企业短期融资券</p>
+</li>
+<li>
+<p>中期票据</p>
+</li>
+<li>
+<p>资产支持证券</p>
+</li>
+<li>
+<p>可转换债券</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="债券基金分类">
+  债券基金分类
+  <a class="anchor" href="#%e5%80%ba%e5%88%b8%e5%9f%ba%e9%87%91%e5%88%86%e7%b1%bb">#</a>
+</h3>
+<ul>
+<li>
+<p>纯债基金<br/>全部资金都用来投资债券</p>
+</li>
+<li>
+<p>偏债基金<br/><em>至少 80%</em>的资金投资债券，剩下的投资股票</p>
+</li>
+</ul>
+<h3 id="纯债基金的筛选指标">
+  纯债基金的筛选指标
+  <a class="anchor" href="#%e7%ba%af%e5%80%ba%e5%9f%ba%e9%87%91%e7%9a%84%e7%ad%9b%e9%80%89%e6%8c%87%e6%a0%87">#</a>
+</h3>
+<ul>
+<li>
+<p>历史综合评价<br/> <a href="http://cn.morningstar.com/">晨星网</a> ，三年、五年评级 <code>&gt;= 4星</code></p>
+</li>
+<li>
+<p>成立时间<br/>选择成立时间 <code>&gt; 5年</code> 的</p>
+</li>
+<li>
+<p>基金规模<br/>规模 <code>&gt;= 5亿</code> ，避免因规模太小而清盘</p>
+</li>
+<li>
+<p>分析投资的债券种类<br/>挑选风险更低的，建议优先选择持有国债和金融机构债券占比在 <em>20% 以上的</em></p>
+</li>
+</ul>
+<h3 id="偏债基金的筛选指标">
+  偏债基金的筛选指标
+  <a class="anchor" href="#%e5%81%8f%e5%80%ba%e5%9f%ba%e9%87%91%e7%9a%84%e7%ad%9b%e9%80%89%e6%8c%87%e6%a0%87">#</a>
+</h3>
+<blockquote>
+<p>在晨星网中， <em>激进债券</em> 与偏债基金本质类同</p>
+<ol>
+<li>对于纯债基金，偏债基金可以在牛市中博取更大的收益</li>
+<li>相对于股票型基金，偏债基金在熊市的下跌幅度往更小</li>
+</ol>
+</blockquote>
+<ul>
+<li>
+<p>历史综合评价<br/> <a href="http://cn.morningstar.com/">晨星网</a> ，三年、五年评级 <code>&gt;= 3星</code></p>
+</li>
+<li>
+<p>成立时间<br/>选择成立时间 <code>&gt; 5</code> 年的</p>
+</li>
+<li>
+<p>业绩长期来看都 <code>&gt; 0</code></p>
+</li>
+<li>
+<p>资产 <code>5 亿</code> 以上</p>
+</li>
+<li>
+<p>剔除基金经理任职时间 <code>&lt; 5年</code> 的</p>
+</li>
+</ul>
+<h3 id="投资时机">
+  投资时机
+  <a class="anchor" href="#%e6%8a%95%e8%b5%84%e6%97%b6%e6%9c%ba">#</a>
+</h3>
+<blockquote>
+<p>参考 <a href="https://cn.investing.com/rates-bonds/china-10-year-bond-yield">英为财情网 : 十年期国债收益率</a></p>
+</blockquote>
+<ul>
+<li>
+<p>当十年期国债收益率 <code>&gt; 3.5%</code> 时， <strong>买入</strong> 债券基金</p>
+</li>
+<li>
+<p>当十年期国债收益率 <code>&lt; 3.5%</code> 时， <strong>买入</strong> 债券基金</p>
+</li>
+</ul>
+<hr>
+<h1 id="第九课笔记">
+  第九课笔记
+  <a class="anchor" href="#%e7%ac%ac%e4%b9%9d%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-25">
+  2020-02-25
+  <a class="anchor" href="#2020-02-25">#</a>
+</h4>
+<h2 id="可转债">
+  可转债
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba">#</a>
+</h2>
+<p>可转债属性请看 <a href="./convertibleBond.md">可转债投资课笔记</a></p>
+<h2 id="可转债基金筛选指标">
+  可转债基金筛选指标
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e5%9f%ba%e9%87%91%e7%ad%9b%e9%80%89%e6%8c%87%e6%a0%87">#</a>
+</h2>
+<ul>
+<li>
+<p><strong>历史综合评价</strong> <br/> <a href="http://cn.morningstar.com/">晨星网</a> ，三年、五年评级 <code>&gt;= 3星</code></p>
+</li>
+<li>
+<p><strong>历史回报率</strong> <br/>今年以来、一年、两年、三年、五年 <code>&gt; 0</code></p>
+</li>
+<li>
+<p><strong>成立时间</strong> <br/> <code>&gt; 5年</code></p>
+</li>
+<li>
+<p><strong>基金规模</strong> <br/> <code>&gt; 5亿</code></p>
+</li>
+</ul>
+<h4 id="指标意义">
+  指标意义
+  <a class="anchor" href="#%e6%8c%87%e6%a0%87%e6%84%8f%e4%b9%89">#</a>
+</h4>
+<ul>
+<li>
+<p><strong>基金规模</strong> <br/>优质基金能够吸引更多的投资者，相对而言，其规模会比同类要大</p>
+</li>
+<li>
+<p><strong>历史回报率</strong> <br/>由于市场会有牛熊转换，所以更看重五年收益</p>
+</li>
+<li>
+<p>投资可转债的比例越高，越激进，牛市有可能赚更多，但熊市也可能下跌更多</p>
+</li>
+</ul>
+<p>根据个人风险承受能力，选择风格适合自己的基金即可</p>
+<blockquote>
+<p>一般来说 :</p>
+</blockquote>
+<ol>
+<li>后缀带 A 的可转债基金有 <strong>申购费</strong> ，没有 <em>销售服务费</em></li>
+<li>后缀带 C 的可转债基金有 <strong>销售服务费</strong> ，没有 <em>申购费</em></li>
+</ol>
+<ul>
+<li>长期持有（2 年以上），买 A 更划算</li>
+</ul>
+<h2 id="可转债基金买卖时机">
+  可转债基金买卖时机
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e5%9f%ba%e9%87%91%e4%b9%b0%e5%8d%96%e6%97%b6%e6%9c%ba">#</a>
+</h2>
+<p>市面上所有可转债</p>
+<ul>
+<li>
+<p>均价低于 100 元时买入</p>
+</li>
+<li>
+<p>均价高于 130 元时卖出</p>
+</li>
+</ul>
+<p>可转债均价可于 <a href="http://www.richvest.com/index.php?m=cb&amp;c=idx"><em>富投网 可转债指数</em></a> 页面中查询</p>
+<hr>
+<h1 id="第十课笔记">
+  第十课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%8d%81%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-26">
+  2020-02-26
+  <a class="anchor" href="#2020-02-26">#</a>
+</h4>
+<h2 id="股债平衡">
+  股债平衡
+  <a class="anchor" href="#%e8%82%a1%e5%80%ba%e5%b9%b3%e8%a1%a1">#</a>
+</h2>
+<p>总的来说，各种指数基金、QDII 基金、可转债基金，都还是于股票有关系，长期来看还是正相关的</p>
+<p>如果需要做投资配置，一般来做都需要配置 <em>债券类资产</em></p>
+<p>用 <a href="./fundPrimary.md#%e7%ac%ac%e5%8d%81%e4%b8%89%e8%af%be%e7%ac%94%e8%ae%b0">初级课的股债平衡策略</a> ，虽然收益率比较下，单纯股权类资产和股债平衡区别不大；但是单纯投资股权类资产，需要承受等多因为市场波动而产生的心理压力</p>
+<p>根据股票市场的波动，我们需要在市场大热的时候减持更多的股权类资产，以减轻股权资产在市场整体下跌时带来的损失；而市场遇冷的时候则应该增持更多的股权类资产，在市场上涨的时候获得更高的收益</p>
+<p>如果一味遵循 <code>股权:债券 = 1:1</code> 的这个比例进行调仓的话，会让我们错过不少的收益，也可能承受一定的风险</p>
+<p>为避免此类情况，可以根据中证全指的长投温度来进行更灵活的平衡操作，当中证全指温度高时，多减持股票类资产；当中证全指温度低时，多增持股票类资产</p>
+<p>**平衡可参考下表的比例进行调整 : **</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/investment/ichangtou/attachments/fundMiddleLevel_img001.jpg" alt="第二节" /></p>
+<hr>
+<h1 id="第十一课笔记">
+  第十一课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%8d%81%e4%b8%80%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-27">
+  2020-02-27
+  <a class="anchor" href="#2020-02-27">#</a>
+</h4>
+<h2 id="网格策略的优缺点">
+  网格策略的优缺点
+  <a class="anchor" href="#%e7%bd%91%e6%a0%bc%e7%ad%96%e7%95%a5%e7%9a%84%e4%bc%98%e7%bc%ba%e7%82%b9">#</a>
+</h2>
+<p>优点 : 可以在指数长期下跌的时候，仍然能获取一些短期波动带来的收益</p>
+<p>缺点 : 因为设置网格需要设置具体的卖出点，所以网格策略很可能错过连续上涨带来的收益</p>
+<h2 id="网格策略的必要条件">
+  网格策略的必要条件
+  <a class="anchor" href="#%e7%bd%91%e6%a0%bc%e7%ad%96%e7%95%a5%e7%9a%84%e5%bf%85%e8%a6%81%e6%9d%a1%e4%bb%b6">#</a>
+</h2>
+<ul>
+<li>
+<p>进行网格策略操作的交易品种不能轻易就退市，需要能长期存在的品种</p>
+</li>
+<li>
+<p>网格策略的投资对象必须波动率比较大，因为如果波动率不大，就可能出现长期无法达到触发网格策略交易的条件</p>
+</li>
+</ul>
+<hr>
+<h1 id="第十二课笔记">
+  第十二课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%8d%81%e4%ba%8c%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-28">
+  2020-02-28
+  <a class="anchor" href="#2020-02-28">#</a>
+</h4>
+<h2 id="网格搭建">
+  网格搭建
+  <a class="anchor" href="#%e7%bd%91%e6%a0%bc%e6%90%ad%e5%bb%ba">#</a>
+</h2>
+<ul>
+<li>
+<p>网格起始点应该设置在投资品价格略低于价值的时候（网格最上一档的位置）</p>
+<ul>
+<li>
+<p>如果网格设在了价格大大高于价值时，很可能会导致价格跌穿预先设置的最低点，造成损失</p>
+</li>
+<li>
+<p>如果网格设在了价格大大低于价值时，很可能会导致没赚几次钱，价格又涨回去了</p>
+</li>
+<li>
+<p>对于宽基指数，当长投温度介于 25~30 度时，就是指数基金价格略低于价值的时候</p>
+</li>
+</ul>
+</li>
+<li>
+<p>模拟交易品种的最大跌幅（网格最低一档的位置）</p>
+<ul>
+<li>
+<p>模拟最大跌幅可以提前了解自己对于亏损的接受能力</p>
+</li>
+<li>
+<p>假如投资品目前预测最大跌幅为 40%，则此时设计网格就应该将最低一档设置在下跌 40% 的位置，这样可以网住大部分的波动收益，而且不容易出现投资品价格跌穿网格下限的情况</p>
+</li>
+<li>
+<p>一般来说宽基指数在处于恰好低估的区域时，其最大下跌幅度约为 40%</p>
+</li>
+</ul>
+</li>
+<li>
+<p>网格越少，每个区间的资金就越多，收益就越大</p>
+</li>
+<li>
+<p>在设计网格最低一档的位置时，可以根据自己的风险承受能力调整其位置，不希望亏损太多的话，可以适当调高预测的下跌幅度，反之亦然</p>
+</li>
+<li>
+<p>网格大小的设计</p>
+<ul>
+<li>
+<p>推荐的网格大小</p>
+<ul>
+<li>
+<p>宽基指数 4%-5%</p>
+</li>
+<li>
+<p>证券指数等行业指数基金波动非常强的指数 7%-10%</p>
+</li>
+</ul>
+</li>
+<li>
+<p>网格大小的设置原理</p>
+<ul>
+<li>
+<p>如果网格设置太大，容易出现投资品在熊市中始终在一个网格内波动，难以触发交易</p>
+</li>
+<li>
+<p>A股指数基金，基金的单日涨跌幅一年内有90%以上的时间都在3%以下，如果设置网格太小，则可能出现一天之内多次触及交易条件的情况</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>网格买卖操作简述</p>
+</li>
+</ul>
+<p>时间 : 2017 年 11 月 17 日
+指数 : 中证 500（28.9 度）</p>
+<p>当天某追踪中证 500 的基金收盘价为 6.71 元</p>
+<ol>
+<li>
+<p>对于这只基金来说，最高一档的买入价则为 6.71 元。</p>
+</li>
+<li>
+<p>在此预估基金最大跌幅为 40%，即可能下跌到 4.03 元，将此价格设置为最后一档的买入价</p>
+</li>
+<li>
+<p>将网格大小设为 5%，即 <code>6.71*5%=0.3355</code></p>
+</li>
+<li>
+<p>根据第一档的买入价，在 6.71 元时买入的份额应该在价格到达 <code>6.71+0.34=7.05</code> 元时卖出</p>
+</li>
+<li>
+<p>同时，每一个网格首位相连，6.71 元也是第二网格的卖出价格</p>
+</li>
+<li>
+<p>继续以 5% 的波动向前推算，直到推算出所有网格的买入卖出时机，直到推算到预测的最低值 4.03 元为止</p>
+</li>
+<li>
+<p>设定买入的本金，并以设定的本金除以每个网格的买入价格，就能算出买入数量（手）</p>
+</li>
+<li>
+<p>至此，可以根据实际交易数量算出亏损与收益</p>
+<ul>
+<li>
+<p>收益计算 : <br/> <code>收益金额 = (卖出价格 - 买入价格) * 买入数量</code> <br/> <code>收益率 = (买入价格 - 卖出价格) / 买入价格</code></p>
+</li>
+<li>
+<p>亏损预测 : <br/>假设以 <em>10,000</em> 元本金买入 <em>16,660</em> 份，每份 <em>6.71</em> 元，买入第一档后，基金价格跌到了设定的最低值 <em>4.03</em> 元，那么目前的总市值就是 <code>4.03 * 16,660 = 66,898</code> 元，在价格跌倒预测的最大下跌幅度时，亏损会达到 20% 以上</p>
+</li>
+</ul>
+</li>
+<li>
+<p>在实际交易时，可以利用券商交易软件提供的价格预警功能，实现交易条件触发提醒</p>
+</li>
+</ol>
+<h2 id="网格策略的意义">
+  网格策略的意义
+  <a class="anchor" href="#%e7%bd%91%e6%a0%bc%e7%ad%96%e7%95%a5%e7%9a%84%e6%84%8f%e4%b9%89">#</a>
+</h2>
+<p>网格策略旨在缓解高涨的交易欲望，而不是无风险获取高收益的策略</p>
+<hr>
+<h1 id="第十三课笔记">
+  第十三课笔记
+  <a class="anchor" href="#%e7%ac%ac%e5%8d%81%e4%b8%89%e8%af%be%e7%ac%94%e8%ae%b0">#</a>
+</h1>
+<h4 id="2020-02-29">
+  2020-02-29
+  <a class="anchor" href="#2020-02-29">#</a>
+</h4>
+<h2 id="心理误区">
+  心理误区
+  <a class="anchor" href="#%e5%bf%83%e7%90%86%e8%af%af%e5%8c%ba">#</a>
+</h2>
+<ul>
+<li>
+<p>投资策略并非越复杂越好<br/>彼得林奇在《战胜华尔街》中写道 : <em>「如果你准备投资一家公司的股票，那么你对于自己投资理由的解释，既要简单得能够让五年级的小学生都能听懂，又要简短得连五年级的小学生也不会听得厌烦。」</em><br/>心理误区成因 : 更复杂的策略意味着学习时要付出更多的成本，更大的学习成本会在我们脑海中形成这个策略更有效的错觉。</p>
+</li>
+<li>
+<p>区分心理账户<br/>成因 : 人们往往将不同（来源/去向）的资金放到不同的心理区域，对不在同一心理区域的资金会有可能轻微（有时甚至是完全）差别对待的情况。<br/>要走出此误区，必须将所有钱都归到一个心理区域管理，平等对待所有资金。</p>
+</li>
+</ul>
+<h2 id="投资是一门与数学结合的艺术">
+  投资是一门与数学结合的艺术
+  <a class="anchor" href="#%e6%8a%95%e8%b5%84%e6%98%af%e4%b8%80%e9%97%a8%e4%b8%8e%e6%95%b0%e5%ad%a6%e7%bb%93%e5%90%88%e7%9a%84%e8%89%ba%e6%9c%af">#</a>
+</h2>
+<ul>
+<li>
+<p>没有谁可以看透整个世界的经济市场</p>
+</li>
+<li>
+<p>没有谁可以精准算出投资品的走向</p>
+</li>
+<li>
+<p>投资就是一个不断学习投资知识并反复试错的的过程，它既包含理性的计算，也包含感性的决策。<br/>在此过程中，投资者往往需要锻炼强大的精神体魄，以应对各种非常规的情况，并总结经验日益精进，最终取得与付出相符的收益。</p>
+</li>
+</ul>
+<hr>
+<p><a href="../..">返回上级</a></p>
+<p><a href="/hide">隐藏的笔记目录</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#马考维茨有效边界模型">马考维茨有效边界模型</a></li>
+    <li><a href="#投资品种的相关性">投资品种的相关性</a></li>
+    <li><a href="#如何面对风险">如何面对风险</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#看清一只指数">看清一只指数</a>
+      <ul>
+        <li><a href="#第一步-确认样本空间">第一步 确认样本空间</a></li>
+        <li><a href="#第二步-确认选样方法">第二步 确认选样方法</a></li>
+        <li><a href="#第三步-确认加权方式">第三步 确认加权方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#实操">实操</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#策略因子">策略因子</a></li>
+    <li><a href="#策略指数">策略指数</a></li>
+    <li><a href="#红利指数高收益的来源">红利指数高收益的来源</a>
+      <ul>
+        <li><a href="#好公司">好公司</a></li>
+        <li><a href="#好价格">好价格</a></li>
+      </ul>
+    </li>
+    <li><a href="#红利指数的估值">红利指数的估值</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#行业指数">行业指数</a></li>
+    <li><a href="#行业特性">行业特性</a>
+      <ul>
+        <li><a href="#判断行业未来的技巧">判断行业未来的技巧</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#海外市场简介">海外市场简介</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#市场相关度简述">市场相关度简述</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#qdii-基金">QDII 基金</a></li>
+    <li><a href="#挑选-qdii-基金的指标">挑选 QDII 基金的指标</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#博格公式">博格公式</a></li>
+    <li><a href="#实操-1">实操</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#进阶基金配置法">进阶基金配置法</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#债券基金">债券基金</a>
+      <ul>
+        <li></li>
+        <li><a href="#债券基金分类">债券基金分类</a></li>
+        <li><a href="#纯债基金的筛选指标">纯债基金的筛选指标</a></li>
+        <li><a href="#偏债基金的筛选指标">偏债基金的筛选指标</a></li>
+        <li><a href="#投资时机">投资时机</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#可转债">可转债</a></li>
+    <li><a href="#可转债基金筛选指标">可转债基金筛选指标</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#可转债基金买卖时机">可转债基金买卖时机</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#股债平衡">股债平衡</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#网格策略的优缺点">网格策略的优缺点</a></li>
+    <li><a href="#网格策略的必要条件">网格策略的必要条件</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#网格搭建">网格搭建</a></li>
+    <li><a href="#网格策略的意义">网格策略的意义</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#心理误区">心理误区</a></li>
+    <li><a href="#投资是一门与数学结合的艺术">投资是一门与数学结合的艺术</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

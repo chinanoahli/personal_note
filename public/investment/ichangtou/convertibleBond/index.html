@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="可转换公司债券 #  Wiki 定义 #  可转换债券，简称可转债，又作可换股债券，一种金融衍生品，它可以转换为债券发行公司的股票，其转换比率一般会在发行时确定。可转换债券通常具有较低的票面利率，因为可以转换成股票的权利是对债券持有人的一种补偿。因为将可转换债券转换为普通股时，所换得的股票价值一般远大于原债券价值。但是一旦转换成股票就有下跌风险，不再有债券保值特性。从发行者的角度看，用可转换债券融资的主要优势在于可以减少利息费用，但如果债券被转换，公司股东的股权将被稀释。
+关键词概念 #    债券面值 : 固定 100 元一张
+  债性 : 债券不转换成股权，可以一直维持债券，即使公司经营不善，到期也可以收回本金和利息
+  股性 : 若公司经营得当，债券持有人可以选择将债券以转股比例 (确定的比例)转换成股权
+  到期价值 : 可转债 到期后 可以拿到的 本金 &#43; 利息
+  常用公式 :
+到期价值 = 到期赎回价包含最后一年的利息 (避税)&#43; 除最后一年外所有未付利息之和 * 80%减去 20% 的利息税
+转股计算 = 转债面值 * 转债数量 / 转股价格
+溢价率 = ( 转债价值 - 转股价值) / 转股价值 * 100%
+转股价值 = 转债面值 / 转股价格 * 正股价格">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="可转换公司债券" />
+<meta property="og:description" content="可转换公司债券 #  Wiki 定义 #  可转换债券，简称可转债，又作可换股债券，一种金融衍生品，它可以转换为债券发行公司的股票，其转换比率一般会在发行时确定。可转换债券通常具有较低的票面利率，因为可以转换成股票的权利是对债券持有人的一种补偿。因为将可转换债券转换为普通股时，所换得的股票价值一般远大于原债券价值。但是一旦转换成股票就有下跌风险，不再有债券保值特性。从发行者的角度看，用可转换债券融资的主要优势在于可以减少利息费用，但如果债券被转换，公司股东的股权将被稀释。
+关键词概念 #    债券面值 : 固定 100 元一张
+  债性 : 债券不转换成股权，可以一直维持债券，即使公司经营不善，到期也可以收回本金和利息
+  股性 : 若公司经营得当，债券持有人可以选择将债券以转股比例 (确定的比例)转换成股权
+  到期价值 : 可转债 到期后 可以拿到的 本金 &#43; 利息
+  常用公式 :
+到期价值 = 到期赎回价包含最后一年的利息 (避税)&#43; 除最后一年外所有未付利息之和 * 80%减去 20% 的利息税
+转股计算 = 转债面值 * 转债数量 / 转股价格
+溢价率 = ( 转债价值 - 转股价值) / 转股价值 * 100%
+转股价值 = 转债面值 / 转股价格 * 正股价格" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/investment/ichangtou/convertibleBond/" />
+<meta property="article:published_time" content="2023-10-23T20:51:04+09:00" />
+<meta property="article:modified_time" content="2023-10-23T20:51:04+09:00" />
+<title>可转换公司债券 | chinanoahli&#39;s note</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>chinanoahli&#39;s note</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <ul>
+<li><a href="/">笔记总目录</a>
+<ul>
+<li><a href="/art/">美术学习笔记</a>
+<ul>
+<li><a href="/art/#onlineCourse">课程笔记</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz">Krenz 绘画教室</a>
+<ul>
+<li><a href="/art/krenzArtwork/#krenz_perspective">基础透视与结构</a></li>
+<li><a href="/art/krenzArtwork/#krenz_digitalpainting">光影与色彩</a></li>
+<li><a href="/art/krenzArtwork/#krenz_dynamicshape">动态与构成</a></li>
+</ul>
+</li>
+<li><a href="/art/chuns/#chuns">画画的春哥</a>
+<ul>
+<li><a href="/art/chuns/#chuns_HumanBodyStructure">人体结构基础课</a></li>
+<li><a href="/art/chuns/#chuns_CharacterDynamicSketch">人物动态速写塑造课</a></li>
+</ul>
+</li>
+<li><a href="/art/ants/#ants">自在涂形堂</a>
+<ul>
+<li><a href="/art/ants/#ants_graphicDesign">图形·平设</a></li>
+<li><a href="/art/ants/#ants_humanBodyDesign">素体·体态</a></li>
+<li><a href="/art/ants/#ants_propBall">道具球</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/art/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/art/selfStudy/Blender/">Blender 学习笔记</a></li>
+</ul>
+</li>
+<li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
+</ul>
+</li>
+<li><a href="/music/">音乐学习笔记</a>
+<ul>
+<li><a href="/music/#onlineCourse">课程笔记</a></li>
+<li><a href="/music/#selfStudy">自学笔记</a>
+<ul>
+<li><a href="/music/selfStudy/musicTheory/#selfStudy">乐理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/game/">游戏笔记</a>
+<ul>
+<li><a href="/game/#steam">Steam</a></li>
+<li><a href="/game/#dwarfFortress">矮人要塞个人研究 (绝赞弃坑中)</a></li>
+<li><a href="/game/#steamOS">SteamOS</a></li>
+<li><a href="/game/#nSwitch">Nintendo Switch</a></li>
+</ul>
+</li>
+<li><a href="/softUsage/">软件使用笔记</a>
+<ul>
+<li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>可转换公司债券</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#wiki-定义">Wiki 定义</a></li>
+    <li><a href="#关键词概念">关键词概念</a></li>
+    <li><a href="#可转债筛选要点">可转债筛选要点</a></li>
+    <li><a href="#可转债交易要点">可转债交易要点</a></li>
+    <li><a href="#低风险的表现">低风险的表现</a></li>
+    <li><a href="#高收益的表现">高收益的表现</a>
+      <ul>
+        <li><a href="#复合年化收益率计算方式">复合年化收益率计算方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#可转债的交易">可转债的交易</a></li>
+    <li><a href="#上市公司发行可转债的目的">上市公司发行可转债的目的</a></li>
+    <li><a href="#可转债的条款">可转债的条款</a>
+      <ul>
+        <li><a href="#上市公司-强制赎回-可转债">上市公司 <em>强制赎回</em> 可转债</a></li>
+        <li><a href="#下调转股价格">下调转股价格</a></li>
+      </ul>
+    </li>
+    <li><a href="#政府安排的特殊保险单--回售条款">政府安排的特殊「保险单」 —— 回售条款</a></li>
+    <li><a href="#可转债的筛选">可转债的筛选</a>
+      <ul>
+        <li><a href="#四要素">四要素</a></li>
+        <li><a href="#筛选指标">筛选指标</a></li>
+        <li><a href="#构建组合">构建组合</a></li>
+        <li><a href="#实操简述">实操简述</a></li>
+      </ul>
+    </li>
+    <li><a href="#实操追记">实操追记</a></li>
+    <li><a href="#投资禁忌">投资禁忌</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="可转换公司债券">
+  可转换公司债券
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e6%8d%a2%e5%85%ac%e5%8f%b8%e5%80%ba%e5%88%b8">#</a>
+</h1>
+<h2 id="wiki-定义">
+  Wiki 定义
+  <a class="anchor" href="#wiki-%e5%ae%9a%e4%b9%89">#</a>
+</h2>
+<p>可转换债券，简称可转债，又作可换股债券，一种金融衍生品，它可以转换为债券发行公司的股票，其转换比率一般会在发行时确定。可转换债券通常具有较低的票面利率，因为可以转换成股票的权利是对债券持有人的一种补偿。因为将可转换债券转换为普通股时，所换得的股票价值一般远大于原债券价值。但是一旦转换成股票就有下跌风险，不再有债券保值特性。从发行者的角度看，用可转换债券融资的主要优势在于可以减少利息费用，但如果债券被转换，公司股东的股权将被稀释。</p>
+<h2 id="关键词概念">
+  关键词概念
+  <a class="anchor" href="#%e5%85%b3%e9%94%ae%e8%af%8d%e6%a6%82%e5%bf%b5">#</a>
+</h2>
+<ul>
+<li>
+<p>债券面值 : 固定 100 元一张</p>
+</li>
+<li>
+<p>债性 : 债券不转换成股权，可以一直维持债券，即使公司经营不善，到期也可以收回本金和利息</p>
+</li>
+<li>
+<p>股性 : 若公司经营得当，债券持有人可以选择将债券以<strong>转股比例 (确定的比例)</strong>转换成股权</p>
+</li>
+<li>
+<p>到期价值 : 可转债 <em>到期后</em> 可以拿到的 <em>本金 + 利息</em></p>
+</li>
+<li>
+<p>常用公式 :</p>
+<p><code>到期价值 = 到期赎回价<sup>包含最后一年的<a href="#可转债交易要点">利息 (避税)</a></sup>+ 除最后一年外所有未付利息之和 * 80%<sup>减去 20% 的利息税</sup></code></p>
+<p><code>转股计算 = 转债面值 * 转债数量 / 转股价格</code></p>
+<p><code>溢价率 = ( 转债价值 - 转股价值) / 转股价值 * 100%</code></p>
+<p><code>转股价值 = 转债面值 / 转股价格 * 正股价格</code></p>
+</li>
+</ul>
+<h2 id="可转债筛选要点">
+  可转债筛选要点
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e7%ad%9b%e9%80%89%e8%a6%81%e7%82%b9">#</a>
+</h2>
+<ul>
+<li>
+<p>可转债发行方要 <em>连续 3 年</em> 持续盈利，且净资产收益率要在 <em>10% 以上</em></p>
+</li>
+<li>
+<p>发行方公司属于以下领域的话，持续三年的净资产收益率可以略低，但最低 <strong>不能低于 7%</strong></p>
+<ul>
+<li>能源；原材料；基础设施</li>
+</ul>
+</li>
+<li>
+<p>发行可转债后，资产负载率 <strong>不得高于 70%</strong></p>
+</li>
+<li>
+<p>累计债券余额 <strong>不得超过</strong> 公司净资产额的 40%</p>
+</li>
+<li>
+<p>公司募集的资金要用在合法用途</p>
+</li>
+</ul>
+<h2 id="可转债交易要点">
+  可转债交易要点
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e4%ba%a4%e6%98%93%e8%a6%81%e7%82%b9">#</a>
+</h2>
+<ul>
+<li>
+<p>可转债的续存期一般为 5-6 年</p>
+</li>
+<li>
+<p>交易可转债需要在场内进行</p>
+</li>
+<li>
+<p><strong>💰避税💰</strong> : 续存期 <em>最后</em> 一年，其他金融机构为了获取可转债筹码进行套利，会用接近赎回价的价格购买可转债<br/>个人投资者可以选择将可转债卖给这些机构，避开最后一年的利息税<br/>也可以减少债券持有时间，提高资金利用效率</p>
+</li>
+</ul>
+<h2 id="低风险的表现">
+  低风险的表现
+  <a class="anchor" href="#%e4%bd%8e%e9%a3%8e%e9%99%a9%e7%9a%84%e8%a1%a8%e7%8e%b0">#</a>
+</h2>
+<ul>
+<li>
+<p>本质上可转债属于债券</p>
+</li>
+<li>
+<p>债券有法律保障，到期一定可以取回 <em>债券面值</em></p>
+<ul>
+<li>上市公司到期赎回债券时，是以 <strong>债券面值</strong> 为依据，并非以交易价格为依据<br/>所以如果想要赚取利息，需要注意交易时的价格是否 <strong>超过</strong> 债券面值，如果超过，则会有到期无法收全部回本金的</li>
+</ul>
+</li>
+<li>
+<p>可转债利息较 <em>低</em> ，每年只有 0.5%-2% 左右</p>
+<ul>
+<li>
+<p>利息通常不是每年等量派发，在续存期内通常利息是每年递增的</p>
+</li>
+<li>
+<p>在派息日前购入，只要持有到派息日，即可获得当年全部利息</p>
+</li>
+</ul>
+</li>
+<li>
+<p>若公司赖账，证监会会用该公司的资产和股票抵债，所以正常的公司不会选择赖账不还</p>
+</li>
+<li>
+<p>发行可转债的条件非常苛刻，需要经过证监会审核，发债公司基破产机率几乎为 0</p>
+</li>
+</ul>
+<h2 id="高收益的表现">
+  高收益的表现
+  <a class="anchor" href="#%e9%ab%98%e6%94%b6%e7%9b%8a%e7%9a%84%e8%a1%a8%e7%8e%b0">#</a>
+</h2>
+<h3 id="复合年化收益率计算方式">
+  复合年化收益率计算方式
+  <a class="anchor" href="#%e5%a4%8d%e5%90%88%e5%b9%b4%e5%8c%96%e6%94%b6%e7%9b%8a%e7%8e%87%e8%ae%a1%e7%ae%97%e6%96%b9%e5%bc%8f">#</a>
+</h3>
+<p><code>复合年化收益率 = ((卖出价格 / 买入价格) ^ (1 / 持有年限)) - 1) * 100%</code></p>
+<h2 id="可转债的交易">
+  可转债的交易
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e7%9a%84%e4%ba%a4%e6%98%93">#</a>
+</h2>
+<ul>
+<li>
+<p>按较低的转股价转股，然后以较高的股价卖出</p>
+</li>
+<li>
+<p>直接卖出可转债</p>
+<ul>
+<li>
+<p>可转债的发行数量是有限的，而可转债的转股价格是基本不变的<br/>（除非发行方调整了转股价格）</p>
+</li>
+<li>
+<p>当发行可转债的公司股价上涨后，如果直接卖出可转债，将能获得比转股后再卖出更大的收益</p>
+<blockquote>
+<p>假设一个可转债转股价格是 10 元，对应的正股价格为 12 元，而可转债的发行数量是有限的<br/>投资者以 100 元的价值买入可转债，如果转成股票后卖出，则可以赚取 <em>20 元</em>  <code>= 100 / 10 * 12 - 100</code> <br/>此时直接卖出可转债，则可转债的定价将会超过 120 元，因为持有可转债的投资者必然不会以 120 元的价格卖出可转债</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="上市公司发行可转债的目的">
+  上市公司发行可转债的目的
+  <a class="anchor" href="#%e4%b8%8a%e5%b8%82%e5%85%ac%e5%8f%b8%e5%8f%91%e8%a1%8c%e5%8f%af%e8%bd%ac%e5%80%ba%e7%9a%84%e7%9b%ae%e7%9a%84">#</a>
+</h2>
+<p>发行可转债，假如债权人选择转股，那么公司的股权将会被摊薄</p>
+<p>公司融资的渠道</p>
+<ul>
+<li>
+<p>股权融资</p>
+<ul>
+<li>
+<p>优点 : 将债权人转变为股东，不再需要归还获得的资金，与股东共担风险</p>
+</li>
+<li>
+<p>坏处 : 需要出售公司的份额，自己的份额会被摊薄，且要与股东共享收益</p>
+</li>
+<li>
+<p>要求较高，公司需要有比较好的盈利模式才能持续融资</p>
+</li>
+</ul>
+</li>
+<li>
+<p>债权融资（不需要摊薄股权）</p>
+<ul>
+<li>
+<p>发行公司债券 : 利息较高，如果资不抵债还可能会导致公司破产</p>
+</li>
+<li>
+<p>向银行贷款 : 审批严格，可能无法借到需要的额度</p>
+</li>
+</ul>
+</li>
+<li>
+<p>半股权半债券融资（可转债）</p>
+<ul>
+<li>优点 : 利息低，可以转股，如果债权人将债权转为股权成为股东，则无需归还借款和利息</li>
+</ul>
+</li>
+</ul>
+<h2 id="可转债的条款">
+  可转债的条款
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e7%9a%84%e6%9d%a1%e6%ac%be">#</a>
+</h2>
+<h3 id="上市公司-强制赎回-可转债">
+  上市公司 <em>强制赎回</em> 可转债
+  <a class="anchor" href="#%e4%b8%8a%e5%b8%82%e5%85%ac%e5%8f%b8-%e5%bc%ba%e5%88%b6%e8%b5%8e%e5%9b%9e-%e5%8f%af%e8%bd%ac%e5%80%ba">#</a>
+</h3>
+<p>强制赎回触发条件 : 在一段时间内（通常为 30 天内至少 15 天），可转债的正股价格 <strong>超过</strong> 可转债的转股价格的 <strong>130%</strong> ，发行可转债的公司就可以强制赎回投资者手中的可转债，发生强制赎回时债券利息以 <strong>当期应记利息</strong> 计算。</p>
+<h3 id="下调转股价格">
+  下调转股价格
+  <a class="anchor" href="#%e4%b8%8b%e8%b0%83%e8%bd%ac%e8%82%a1%e4%bb%b7%e6%a0%bc">#</a>
+</h3>
+<p>在可转债的续存期内，如果正股收盘价在任意连续 20 个交易日中 <em>至少 10 个</em> 交易日收盘价 <strong>低于</strong> 当期转股价的 <strong>85% 时</strong> ，发行人董事会有权提出转股价格向下修正方案，并提交发行人股东大会表决。</p>
+<p>公司会在股价连跌或熊市采取下调转股价的策略，促进债权人转股。</p>
+<ul>
+<li>注意 : 可交换债 <strong>没有</strong> 向下修正转股价的权利，不要与可转债混淆。</li>
+</ul>
+<p>对于投资者来说，一旦转股价下调，就意味着手中的可转债可以换取更多该公司的股票，转股获利的可能性增加，也会促进可转债的价格上涨。</p>
+<h2 id="政府安排的特殊保险单--回售条款">
+  政府安排的特殊「保险单」 —— 回售条款
+  <a class="anchor" href="#%e6%94%bf%e5%ba%9c%e5%ae%89%e6%8e%92%e7%9a%84%e7%89%b9%e6%ae%8a%e4%bf%9d%e9%99%a9%e5%8d%95--%e5%9b%9e%e5%94%ae%e6%9d%a1%e6%ac%be">#</a>
+</h2>
+<p>可转债指投资者在特定条件下，将手里的可转债以特定的价格卖回给发行可转债的公司，可转债的发行公司 <strong>无权拒绝</strong> 这项交易。</p>
+<h2 id="可转债的筛选">
+  可转债的筛选
+  <a class="anchor" href="#%e5%8f%af%e8%bd%ac%e5%80%ba%e7%9a%84%e7%ad%9b%e9%80%89">#</a>
+</h2>
+<p>工具网站 : <a href="https://www.jisilu.cn/">集思录</a></p>
+<h3 id="四要素">
+  四要素
+  <a class="anchor" href="#%e5%9b%9b%e8%a6%81%e7%b4%a0">#</a>
+</h3>
+<ul>
+<li>溢价率</li>
+</ul>
+<blockquote>
+<p><code>转股价值 = 转债面值 / 转股价格 * 正股价格</code> <br/> <code>转股溢价率 = (转载价值 - 转股价值) / 转股价值 * 100%</code></p>
+</blockquote>
+<p>转股价值通常跟可转债的现价作对比， <code>转股价值 &gt; 转债现价</code> 则说明可转载目前可以投资，<br/> <code>转债价值 &lt; 转载现价</code> 则需要等待合适的时机进行转股。</p>
+<p>溢价率越高，则说明转股越划不来。</p>
+<ul>
+<li>
+<p>税后到期年化收益率</p>
+<p>以当前价格购入可转债，持有到到期为止，可以获得的平均年化收益率</p>
+<blockquote>
+<p><code>到期年化收益率 = 到期收益率 / 剩余年限</code> <br/> <code>到期收益率 = (到期价值 - 当日可转债价格) / 当日可转债价格 * 100%</code></p>
+</blockquote>
+</li>
+<li>
+<p>剩余年限</p>
+<p>投资日起，到可转债续存期结束之日为止的时间剩余年限越 <strong>短</strong> 越好</p>
+</li>
+<li>
+<p>信用评级</p>
+<p>与发行债券方的信用与偿还能力直接挂钩，评级越高越好</p>
+<blockquote>
+<p>推荐优先选择 AA 级及以上的可转债（ <strong>不</strong> 包含 AA-）</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="筛选指标">
+  筛选指标
+  <a class="anchor" href="#%e7%ad%9b%e9%80%89%e6%8c%87%e6%a0%87">#</a>
+</h3>
+<h4 id="先看到期收益率和溢价率">
+  先看到期收益率和溢价率
+  <a class="anchor" href="#%e5%85%88%e7%9c%8b%e5%88%b0%e6%9c%9f%e6%94%b6%e7%9b%8a%e7%8e%87%e5%92%8c%e6%ba%a2%e4%bb%b7%e7%8e%87">#</a>
+</h4>
+<ul>
+<li>
+<p><strong>防御型可转债</strong></p>
+<p>到期年化收益率 <code>&gt; 3%</code> ，现价在 80-90 元左右是最好的，尽量不买超过 100 元现价的<br/>到期收益率高，有更强的债性，即使行情不好，至少也能取回本金和相应的利息，风险较低</p>
+</li>
+<li>
+<p><strong>平衡型可转债</strong></p>
+<p>到期年化收益率 <code>0%&lt; x &lt;3%</code> ，转股溢价率 <code>&lt; 5%</code> ，股市上涨时，可转债价格随着正股价格上涨；股市下跌时可以当作债券安心持有，保住本金</p>
+</li>
+<li>
+<p><strong>进攻型可转债</strong></p>
+<p>根据转股起始日，剔除 <strong>未到达</strong> 转股期限的可转债<br/>转股溢价率 <code>&lt; 2%</code> 是硬性指标，进攻型可转债 <strong>必须</strong> 满足这一点<br/>搏一搏单车变摩托。正股价格上涨时，因为买入是转股溢价率低，此时通过转股可以获得较高的收益；因为没有考虑到期年化收益率，当正股下跌比较恨的话，可转债会有一定的损失，属于风险比较大的类型</p>
+</li>
+<li>
+<p><strong>其他共通指标</strong></p>
+<ul>
+<li>优先考虑剩余年限短的，甚至是 <strong>即将</strong> 触发回售条款的可转债，但已经触发回售的<strong> <em>不可以买</em> </strong>！<br/>（公司会更有动力拉升股价促进转股，避免发生还本付息或被投资者回售的情况）</li>
+</ul>
+</li>
+</ul>
+<h4 id="再看别的指标">
+  再看别的指标
+  <a class="anchor" href="#%e5%86%8d%e7%9c%8b%e5%88%ab%e7%9a%84%e6%8c%87%e6%a0%87">#</a>
+</h4>
+<p>经过到期收益率和溢价率的筛选后，选评级更高、剩余年限更低者。</p>
+<h4 id="技巧">
+  技巧
+  <a class="anchor" href="#%e6%8a%80%e5%b7%a7">#</a>
+</h4>
+<p>优先考虑即将触发回售的可转债，处于回售期内、即将触发回售条款的可转债价格通常不会太高。上市公司更有可能行使下调转股价的权利或直接抬升股价，促进转股避免触发回售，此时可以以更划算的条件转股。</p>
+<h3 id="构建组合">
+  构建组合
+  <a class="anchor" href="#%e6%9e%84%e5%bb%ba%e7%bb%84%e5%90%88">#</a>
+</h3>
+<ul>
+<li>
+<p>推荐抗风险且收益较高的比例是</p>
+<blockquote>
+<p>防御型 <strong>30%</strong> <br/>平衡型 <strong>50%</strong> <br/>进攻型 <strong>20%</strong></p>
+</blockquote>
+</li>
+<li>
+<p>简述筛选步骤</p>
+<ol>
+<li>
+<p>剔除评级不符合条件的可转债</p>
+</li>
+<li>
+<p>根据溢价率、到期年化收益率和剩余年限筛选出三种可转债<br/>如出现一个可转债复合多种类型，则优先划分到 <strong>安全性更高</strong> 的等级之中，其质量相对其他更加优秀</p>
+</li>
+<li>
+<p>分配资金构建组合</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="实操简述">
+  实操简述
+  <a class="anchor" href="#%e5%ae%9e%e6%93%8d%e7%ae%80%e8%bf%b0">#</a>
+</h3>
+<ol>
+<li>
+<p>打开 <a href="https://www.jisilu.cn/">集思录</a> 的可转债页面<br/> <strong>⚠️注意</strong> : 该页面中默认包含可交换债，需要手动将其取消勾选</p>
+</li>
+<li>
+<p>将筛选所得的所有可转债数据复制到 Excel 中，仅保留以下的列即可</p>
+<ul>
+<li>
+<p>代码</p>
+</li>
+<li>
+<p>转债名称</p>
+</li>
+<li>
+<p>溢价率</p>
+</li>
+<li>
+<p>评级</p>
+</li>
+<li>
+<p>剩余年限</p>
+</li>
+<li>
+<p>到期税后 (年化) 收益率</p>
+</li>
+</ul>
+</li>
+<li>
+<p>利用筛选功能剔除 AA 级以下的可转债</p>
+</li>
+<li>
+<p>再按照三种类别的可转债的指标进一步分批筛选</p>
+</li>
+<li>
+<p>构建组合时，一只可转债最少交易为 1 手 <code>（10张 * 100元）</code> ，建立组合时至少需要 10 只可转债，所以本金约为 1 万元</p>
+<ol>
+<li>
+<p>将前面步骤筛选到的防御型可转债按照到期税后收益率进行<strong>倒序</strong>排列，挑选前 3 只</p>
+</li>
+<li>
+<p>假如更注重到期收益率，则可以继续沿用到期税后收益率倒序的排列，挑选 <strong>排名靠前</strong> 的平衡性可转债<br/>假如更希望转股获利，则优先选择转股溢价率低的可转债，假如数量不够，则可考虑用不在转股期内的可转债作为补充</p>
+</li>
+<li>
+<p>挑选进攻型可转债时，需要将表格按照溢价率升序排列，选择前两位的进攻型可转债即可</p>
+</li>
+</ol>
+</li>
+<li>
+<p>资金根据组合比例分配到不同类型的可转债中<br/>假如筛选到的可转债数量 <strong>不足以</strong> 一次性构建组合，则需要根据目前筛选出的数量，<br/>按每只可转债筹资<strong>不超过 10%</strong>的比例分配资金到不同的可转债中<br/>剩余的资金投入货币基金等较为灵活的投资方式中，等出现符合条件的可转债时继续构建组合</p>
+</li>
+<li>
+<p>卖出时机</p>
+<ul>
+<li>
+<p>历史价格参考 <a href="https://xueqiu.com/">雪球网</a> ，不论是何种可转债，卖出时机都是一样的</p>
+</li>
+<li>
+<p>可转债如果 <strong>跌破</strong> 其历史最高价的 <strong>90%</strong> 马上卖出</p>
+</li>
+<li>
+<p>可转债如果到达其 <strong>历史最高价 - 10 元</strong> 马上卖出</p>
+</li>
+<li>
+<p>⚠️一般强赎公告 30 天后，强赎就会实施，所以需要注意强赎是否被触发，以及强赎公告天数</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="实操追记">
+  实操追记
+  <a class="anchor" href="#%e5%ae%9e%e6%93%8d%e8%bf%bd%e8%ae%b0">#</a>
+</h2>
+<ul>
+<li>
+<p>⚠️可转债不同股票，股票组合重新复核时如果不在符合指标需要剔除，而可转债则不然<br/>可转债一经买入，则需要等到到达预定目标 (接近强赎价) 才卖出，即使后续筛选不再复合条件也无需卖出</p>
+</li>
+<li>
+<p>可转债并无补仓的说法，如果资金充足，可以在可转债跌破面值时「补仓」</p>
+</li>
+</ul>
+<h2 id="投资禁忌">
+  投资禁忌
+  <a class="anchor" href="#%e6%8a%95%e8%b5%84%e7%a6%81%e5%bf%8c">#</a>
+</h2>
+<ul>
+<li>
+<p>短线投资不可取</p>
+</li>
+<li>
+<p>只用闲钱投资</p>
+</li>
+<li>
+<p>切忌集中投资<br/>（投资数量不够多，风险未能有效分散）</p>
+</li>
+</ul>
+<hr>
+<p><a href="../..">返回上级</a></p>
+<p><a href="/hide">隐藏的笔记目录</a></p>
+<p><a href="/">笔记首页</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
+document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
+select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#wiki-定义">Wiki 定义</a></li>
+    <li><a href="#关键词概念">关键词概念</a></li>
+    <li><a href="#可转债筛选要点">可转债筛选要点</a></li>
+    <li><a href="#可转债交易要点">可转债交易要点</a></li>
+    <li><a href="#低风险的表现">低风险的表现</a></li>
+    <li><a href="#高收益的表现">高收益的表现</a>
+      <ul>
+        <li><a href="#复合年化收益率计算方式">复合年化收益率计算方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#可转债的交易">可转债的交易</a></li>
+    <li><a href="#上市公司发行可转债的目的">上市公司发行可转债的目的</a></li>
+    <li><a href="#可转债的条款">可转债的条款</a>
+      <ul>
+        <li><a href="#上市公司-强制赎回-可转债">上市公司 <em>强制赎回</em> 可转债</a></li>
+        <li><a href="#下调转股价格">下调转股价格</a></li>
+      </ul>
+    </li>
+    <li><a href="#政府安排的特殊保险单--回售条款">政府安排的特殊「保险单」 —— 回售条款</a></li>
+    <li><a href="#可转债的筛选">可转债的筛选</a>
+      <ul>
+        <li><a href="#四要素">四要素</a></li>
+        <li><a href="#筛选指标">筛选指标</a></li>
+        <li><a href="#构建组合">构建组合</a></li>
+        <li><a href="#实操简述">实操简述</a></li>
+      </ul>
+    </li>
+    <li><a href="#实操追记">实操追记</a></li>
+    <li><a href="#投资禁忌">投资禁忌</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

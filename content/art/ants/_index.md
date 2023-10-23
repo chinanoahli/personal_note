@@ -6,9 +6,13 @@ draft: false
 
 # 自在涂形堂 {#ants}
 
-+ #### 图形·平设 {#ants_graphicDesign} 
++ #### 图形·平设 {#ants_graphicDesign}
+
+   > 虽然学过了，但目前的水平还没get到精髓，所以这部分先省略，过后再作补充
 
 + #### 素体·体态 {#ants_humanBodyDesign}
+
+   > 虽然学过了，但目前的水平还没get到精髓，所以这部分先省略，过后再作补充
 
   + [第一课 出彩的比例与趋势 —— 内骨骼提炼](./humanBodyDesign/lesson1)
 
