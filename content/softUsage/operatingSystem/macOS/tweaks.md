@@ -78,7 +78,7 @@ cat Payload | gzip -d | cpio -id                   # 解包出真正的应用文
 
 ---
 
-## 打开/关闭 [*SIP*](https://support.apple.com/zh-cn/HT204899) 安全机制(高危操作)
+## 打开/关闭 <a href="https://support.apple.com/zh-cn/HT204899">SIP</a> 安全机制(高危操作)
 
 > 本操作可能导致系统不可逆损坏，请在执行前确保你清楚自己正在干什么！！
 
@@ -95,7 +95,7 @@ csrutil status   # 查看SIP设置 (可在正常系统下使用本命令)
 
 ---
 
-## 在「[恢复功能](https://support.apple.com/zh-cn/HT201314)」模式下修复全盘文件权限错误
+## 在「<a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误
 
 > 此方法**仅**适用于**尚未**应用 [*SIP*](https://support.apple.com/zh-cn/HT204899) 安全机制的系统(OS X El Capitan以前的系统，不包括OS X El Capitan)，相关命令行工具在包含SIP的系统上已经被苹果**移除**！因此强烈**不**建议在日常使用中长时间关闭SIP保护！
 

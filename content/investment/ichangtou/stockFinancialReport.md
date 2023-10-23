@@ -6,7 +6,7 @@ draft: false
 
 # 财报分析
 
-+ [《巴菲特教你读财报》笔记](./WarrenBuffettAndTheInterpretationOfFinancialStatements.md)
++ [《巴菲特教你读财报》笔记](../WarrenBuffettAndTheInterpretationOfFinancialStatements)
 
 -------------------------
 

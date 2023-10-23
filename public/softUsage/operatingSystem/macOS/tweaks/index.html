@@ -168,8 +168,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#修改-hostname">修改 hostname</a></li>
     <li><a href="#修改-dock-图标大小">修改 Dock 图标大小</a></li>
     <li><a href="#解包-pkg-文件">解包 PKG 文件</a></li>
-    <li><a href="#打开关闭-siphttpssupportapplecomzh-cnht204899-安全机制高危操作">打开/关闭 <a href="https://support.apple.com/zh-cn/HT204899"><em>SIP</em></a> 安全机制(高危操作)</a></li>
-    <li><a href="#在恢复功能httpssupportapplecomzh-cnht201314模式下修复全盘文件权限错误">在「<a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误</a></li>
+    <li><a href="#打开关闭-a-hrefhttpssupportapplecomzh-cnht204899sipa-安全机制高危操作">打开/关闭 <a href="https://support.apple.com/zh-cn/HT204899">SIP</a> 安全机制(高危操作)</a></li>
+    <li><a href="#在a-hrefhttpssupportapplecomzh-cnht201314恢复功能a模式下修复全盘文件权限错误">在「<a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误</a></li>
     <li><a href="#通过terminal打开所有来源">通过<em>Terminal</em>打开「所有来源」</a></li>
     <li><a href="#手动删除出错的升级安装包">手动删除出错的升级安装包</a></li>
     <li><a href="#查看修改默认xcode的路径">查看/修改默认XCode的路径</a></li>
@@ -304,9 +304,9 @@ pkgutil --flatten ExampleApp.unpkg ExampleApp.pkg  <span style="color:#75715e">#
 cd path/to/Payload/file
 cat Payload | gzip -d | cpio -id                   <span style="color:#75715e"># 解包出真正的应用文件</span>
 </code></pre></div><hr>
-打开/关闭 <h2 id="打开关闭-siphttpssupportapplecomzh-cnht204899-安全机制高危操作">
-  <a href="https://support.apple.com/zh-cn/HT204899"><em>SIP</em></a> 安全机制(高危操作)
-  <a class="anchor" href="#%e6%89%93%e5%bc%80%e5%85%b3%e9%97%ad-siphttpssupportapplecomzh-cnht204899-%e5%ae%89%e5%85%a8%e6%9c%ba%e5%88%b6%e9%ab%98%e5%8d%b1%e6%93%8d%e4%bd%9c">#</a>
+<h2 id="打开关闭-a-hrefhttpssupportapplecomzh-cnht204899sipa-安全机制高危操作">
+  打开/关闭 <a href="https://support.apple.com/zh-cn/HT204899">SIP</a> 安全机制(高危操作)
+  <a class="anchor" href="#%e6%89%93%e5%bc%80%e5%85%b3%e9%97%ad-a-hrefhttpssupportapplecomzh-cnht204899sipa-%e5%ae%89%e5%85%a8%e6%9c%ba%e5%88%b6%e9%ab%98%e5%8d%b1%e6%93%8d%e4%bd%9c">#</a>
 </h2>
 <blockquote>
 <p>本操作可能导致系统不可逆损坏，请在执行前确保你清楚自己正在干什么！！</p>
@@ -318,9 +318,9 @@ csrutil enable   <span style="color:#75715e"># 启用SIP</span>
 csrutil clear    <span style="color:#75715e"># 重置SIP (默认值为启用)</span>
 csrutil status   <span style="color:#75715e"># 查看SIP设置 (可在正常系统下使用本命令)</span>
 </code></pre></div><hr>
-在「<h2 id="在恢复功能httpssupportapplecomzh-cnht201314模式下修复全盘文件权限错误">
-  <a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误
-  <a class="anchor" href="#%e5%9c%a8%e6%81%a2%e5%a4%8d%e5%8a%9f%e8%83%bdhttpssupportapplecomzh-cnht201314%e6%a8%a1%e5%bc%8f%e4%b8%8b%e4%bf%ae%e5%a4%8d%e5%85%a8%e7%9b%98%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90%e9%94%99%e8%af%af">#</a>
+<h2 id="在a-hrefhttpssupportapplecomzh-cnht201314恢复功能a模式下修复全盘文件权限错误">
+  在「<a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误
+  <a class="anchor" href="#%e5%9c%a8a-hrefhttpssupportapplecomzh-cnht201314%e6%81%a2%e5%a4%8d%e5%8a%9f%e8%83%bda%e6%a8%a1%e5%bc%8f%e4%b8%8b%e4%bf%ae%e5%a4%8d%e5%85%a8%e7%9b%98%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90%e9%94%99%e8%af%af">#</a>
 </h2>
 <blockquote>
 <p>此方法<strong>仅</strong>适用于<strong>尚未</strong>应用 <a href="https://support.apple.com/zh-cn/HT204899"><em>SIP</em></a> 安全机制的系统(OS X El Capitan以前的系统，不包括OS X El Capitan)，相关命令行工具在包含SIP的系统上已经被苹果<strong>移除</strong>！因此强烈<strong>不</strong>建议在日常使用中长时间关闭SIP保护！</p>
@@ -725,8 +725,8 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
     <li><a href="#修改-hostname">修改 hostname</a></li>
     <li><a href="#修改-dock-图标大小">修改 Dock 图标大小</a></li>
     <li><a href="#解包-pkg-文件">解包 PKG 文件</a></li>
-    <li><a href="#打开关闭-siphttpssupportapplecomzh-cnht204899-安全机制高危操作">打开/关闭 <a href="https://support.apple.com/zh-cn/HT204899"><em>SIP</em></a> 安全机制(高危操作)</a></li>
-    <li><a href="#在恢复功能httpssupportapplecomzh-cnht201314模式下修复全盘文件权限错误">在「<a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误</a></li>
+    <li><a href="#打开关闭-a-hrefhttpssupportapplecomzh-cnht204899sipa-安全机制高危操作">打开/关闭 <a href="https://support.apple.com/zh-cn/HT204899">SIP</a> 安全机制(高危操作)</a></li>
+    <li><a href="#在a-hrefhttpssupportapplecomzh-cnht201314恢复功能a模式下修复全盘文件权限错误">在「<a href="https://support.apple.com/zh-cn/HT201314">恢复功能</a>」模式下修复全盘文件权限错误</a></li>
     <li><a href="#通过terminal打开所有来源">通过<em>Terminal</em>打开「所有来源」</a></li>
     <li><a href="#手动删除出错的升级安装包">手动删除出错的升级安装包</a></li>
     <li><a href="#查看修改默认xcode的路径">查看/修改默认XCode的路径</a></li>

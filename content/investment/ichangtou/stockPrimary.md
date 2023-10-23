@@ -6,7 +6,7 @@ draft: false
 
 # 股票初级
 
-> [课后答疑](./stockPrimaryQ&A.md)
+> [课后答疑](../stockPrimaryQandA)
 
 ### 目录
 
