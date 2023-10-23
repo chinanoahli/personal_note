@@ -164,3 +164,9 @@
 > <sub>橙色的肌肉就是胫骨前肌</sub>
 >
 > ![胫骨前肌造成的突起](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/chuns/humanBodyStructure/attachments/l8-21.png)
+
+---
+
+[上一级](../chuns.md)
+
+[笔记首页](../../../README.md)
