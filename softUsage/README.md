@@ -4,6 +4,8 @@
 
 + 其他软件 
 
+   + [多媒体软件指南](./otherSoft/imgSoft.md)
+
    + [Android 虚拟机(模拟器)](./otherSoft/androidEmulator.md)
 
 ---
