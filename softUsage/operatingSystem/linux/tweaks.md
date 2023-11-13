@@ -49,6 +49,14 @@ autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自�
 >
 > LightDM 的配置文件内容相同的注释比较多，如果用搜索功能进行搜索的话，务必要看清楚自己修改的必须是 `[Seat:*]` 段落里面的内容，而不是其他注释说明中的内容！！
 
+## 重建 GUI 的字体缓存
+
+以 **<i>root</i>** 身份运行 `fc-cache -r -v`
+
+## 重建 GUI 的图标缓存
+
+以 **<i>root</i>** 身份运行 `update-icon-caches /usr/share/icons/*`
+
 ## 引用来源：
 
 1. [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744/change-all-files-and-folders-permissions-of-a-directory-to-644-755)
