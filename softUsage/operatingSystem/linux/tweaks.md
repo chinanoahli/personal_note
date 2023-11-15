@@ -57,11 +57,26 @@ autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自�
 
 以 **<i>root</i>** 身份运行 `update-icon-caches /usr/share/icons/*`
 
+
+## 检查 ext4 文件系统错误，并进行碎片整理 <sup>[3] [4]</sup>
+
+> 这些操作都需要 **<i>root</i>** 权限
+
+```shell
+# umount 你需要操作的<分区>
+fsck.ext4 -y -f -v /dev/<分区>     # 检查文件系统是否有错误
+fsck.ext4 -y -f -v -D /dev/<分区>  # 优化目录结构
+# mount 你需要操作的<分区>
+e4defrag -v /dev/<分区>            # 对文件进行碎片整理
+fsck.ext4 -y -f -v /dev/<分区>     # 检查到底优化了多少(非必要)
+```
+
 ## 引用来源：
 
 1. [Change all files and folders permissions of a directory to 644/755](https://stackoverflow.com/questions/18817744/change-all-files-and-folders-permissions-of-a-directory-to-644-755)
 2. [Enabling Auto Login](https://forums.linuxmint.com/viewtopic.php?t=286267)
-
+3. [How to defrag an ext4 filesystem](https://askubuntu.com/questions/221079/how-to-defrag-an-ext4-filesystem)
+4. [How to optimize / defrag ext4 filesystem](https://gist.github.com/rmi1974/108c58cdeaa4c1f8b29a2af68f6ca698)
 ---
 
 [上一级](../README.md)
