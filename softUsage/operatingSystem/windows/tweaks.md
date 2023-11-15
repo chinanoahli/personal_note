@@ -259,6 +259,33 @@ bcdedit /set hypervisorlaunchtype auto
 
 然后删除名为 `{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}` 的键
 
+## Microsoft Store 应用安装失败，无法为 App 创建 AppContainer 配置文件
+
+错误截图如下：
+
+![AppContainerError](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/operatingSystem/windows/img0002.png)
+
+详细错误原因：
+
+`应用安装失败，错误消息: 错误 0x80070005: Windows 无法为 AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa 程序包创建 AppContainer 配置文件。 (0x80070005)`
+
+用 **<i>管理员身份</i>** 的 *PowerShell* 运行下方的命令即可：
+
+`Get-AppXPackage -AllUsers -Name App包的PackageName | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml" -Verbose}`
+
+在本例中， **<i>App包的PackageName</i>** 应该为 `AppleInc.iCloud` ， *App包的PackageName* 可以在错误原因里面查到
+
+示例输出：
+
+```text
+PS C:\Windows\system32> Get-AppXPackage -AllUsers -Name AppleInc.iCloud | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml" -Verbose}
+
+详细信息: 正在目标“C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml”上执行操作“注册程序包”。
+详细信息: 操作完成: C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml
+```
+
+<sub> \* . [引用来源](https://answers.microsoft.com/zh-hans/windows/forum/all/%E5%BE%AE%E8%BD%AF%E5%BA%94%E7%94%A8%E5%95%86/1ed45936-e599-4524-9616-5263c7031c13) </sub>
+
 ---
 
 [上一级](../README.md)
