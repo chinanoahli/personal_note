@@ -8,6 +8,35 @@
     <language>zh-CN</language>
     <lastBuildDate>Sat, 25 Feb 2023 09:56:49 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>多媒体软件指南</title>
+      <link>/softUsage/otherSoft/imgSoft/</link>
+      <pubDate>Tue, 21 Nov 2023 20:20:31 +0900</pubDate>
+      
+      <guid>/softUsage/otherSoft/imgSoft/</guid>
+      <description>多媒体软件指南 #  ImageMagick #  将图片以多个文件名顺序转换为 PDF 文件，并设置临时的缓存目录
+当使用 Adobe Acrobat 或其他 PDF 编辑器创建 PDF 文件时，它们很可能都会强制压缩你的图片质量，并且要求必须将分辨率转换为为常见的纸张大小
+而就 Acrobat 来说，如果导入了太多图片后，还会提示「文件太大，无法保存」
+为了解决这些问题，你可以选择用 ImageMagick 来把图片转换为 PDF 文件， ImageMagick 不存在上述的限制
+下面列出一个用例，该用例是在 Windows 下进行演示，目的是把 D:\Input 里面所有的 jpg 文件 保留原始分辨率且无损 转换为 D:\output.pdf
+convert.exe -define registry:temporary-path=C:\temp -quality 100 D:\Input\*.jpg D:\output.pdf
+参数解释：
+ registry:temporary-path=C:\temp  把临时缓存目录设置为 C:\temp 当 ImageMagick 工作时，会为每一个输入文件都创建一个对应的临时文件 对于 Windows 来说一般是位于 %AppData% 里 如果你的用户目录所在的磁盘空间不足，可以使用本参数，指定一个别的位置
+  -quality 100  指定转换的质量， 100 为最高质量
+    上一级</description>
+    </item>
+    
+    <item>
+      <title>Android 虚拟机(模拟器)</title>
+      <link>/softUsage/otherSoft/androidEmulator/</link>
+      <pubDate>Tue, 21 Nov 2023 20:20:23 +0900</pubDate>
+      
+      <guid>/softUsage/otherSoft/androidEmulator/</guid>
+      <description>Android 虚拟机(模拟器) #  支持 Hyper-V 的 Android 虚拟机 #  大部分 Android 虚拟机都不与 Hyper-V 兼容，但 BlueStacks 可以，下面简述安装步骤
+ 进入国际版 BlueStacks 的支持页面 在搜索栏中输入 offline ，然后点击 Search 以搜索离线安装包
+通常最新版为结果的第一个 找到离线安装包的下载页面后，注意描述中是否带有 Nougat ，只有带有 Nougat 的才是支持 Hyper-V 的版本 用任意 http 下载工具下载你需要的版本 32 / 64 bit 打开 CMD 并使用 cd 命令进入到储存 BS 离线安装包的目录 然后运行 BlueStacksFullInstaller_XXXX_amd64_native.exe --defaultImageName Nougat64 --imageToLaunch Nougat64 要注意把 XXXX 替换成你下载到的版本号， 根据提示完成安装，安装完成后请先退出 BS 打开 *BlueStacks Multi-Instance Manager (BlueStacks 多开管理器) * 点击 多开管理器 左下角的 多开引擎 按钮，然后选择 全新多开引擎 在弹出 选择 Android 版本 时，选择你需要的版本，然后点击 下一步 如： 安卓11 64位 根据你的需要选择虚拟机的参数，然后点击右下角的 下载 按钮，并等待下载完成 然后在把你下载到的引擎设为默认</description>
+    </item>
+    
+    <item>
       <title>MacOS 使用技巧</title>
       <link>/softUsage/operatingSystem/macOS/tweaks/</link>
       <pubDate>Mon, 23 Oct 2023 21:14:35 +0900</pubDate>
@@ -407,7 +436,7 @@ A :
 找得到这个分支就意味着你也是懂技术的人
 我不希望因为玩某些游戏，或某些观点就招来特殊对待
 不喜欢就请退出本页面，不欢迎你来指指点点
-  游戏笔记 投资笔记    关于许可证 #  基本全为个人笔记和个人观点，采用CC BY SA许可证发布。
+  游戏笔记 投资笔记    关于许可证 #  基本全为个人笔记和个人观点，采用 CC BY SA 许可协议发布，许可协议的具体规条款请点击下方的 图片 进行查看
 你可以任意修改和再分发本资料，但必须采用同样的许可证。
 如有转载的资料或链接，请按照来源的许可证处理。</description>
     </item>
@@ -971,7 +1000,8 @@ NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址�
       
       <guid>/art/ants/humanBodyDesign/lesson1/</guid>
       <description>第一课
-出彩的比例与趋势 —— 内骨骼提炼 #  1. 学习误区 #    ❌ 在日常练习中练习了所有见到的动态，而不是「有用的动态」✔ 建议练习的应该是「日后工作中最常用的动态」
+出彩的比例与趋势 —— 内骨骼提炼 #  1. 学习误区 #    ❌ 在日常练习中练习了所有见到的动态，而不是「有用的动态」
+✔ 建议练习的应该是「日后工作中最常用的动态」
   ❌ 只会复制参考图，照抄照片
 ✔ 要用学到的知识在练习时优化参考图
   ❌ 同时学习多项技能，且平均分配精力
@@ -982,7 +1012,7 @@ NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址�
   对于不擅长的项目，接受的速度会比较慢，不利于推进学习进度
   ✔ 推荐的做法是：
   先找出自己擅长的项目，优先练习到「出彩」的程度
-因为擅长的项目接吸收来会更快，所以用的时间并不需要太多
+因为擅长的项目，接吸收来会更快，所以用的时间并不需要太多
   而其他项目前期只需要达到合格线即可，等擅长的项目 不再需要 太多精力应对时，再对弱项进行强化练习
   如果觉得自己都不擅长的话，就要多尝试不同的项目，尝试找到自己擅长的项目
     ❌ 以医学的严谨来学习肌肉

@@ -7,6 +7,8 @@ draft: false
 # 个人思考及经验笔记
 
 > 若觉得图片太小，可以右键点击该图片，然后选择「在新标签页中打开图片」以观看原图
+>
+> 十分自大地在各个笔记的前面加上了 [*HEX颜色代码* ](https://zh.wikipedia.org/zh-tw/%E7%BD%91%E9%A1%B5%E9%A2%9C%E8%89%B2)，看看我能坚持写到第几种颜色吧！
 
 ## <span style="color: #000000; text-shadow: #FFFFFF 1px 1px 5px">000000</span> 卷发的画法
 

@@ -18,7 +18,7 @@ draft: false
 + [常用技巧](./linux/tweaks)
 + [常用命令](./linux/commonCommands)
 
-## macOS 使用笔记目录
+## MacOS 使用笔记目录
 
 + [常用技巧](./macOS/tweaks)
 

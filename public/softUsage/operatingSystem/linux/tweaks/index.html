@@ -96,6 +96,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
+<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -119,6 +120,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/softUsage/">软件使用笔记</a>
 <ul>
 <li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+<li><a href="/softUsage/#otherSoft">其他软件</a></li>
 </ul>
 </li>
 </ul>
@@ -172,6 +174,9 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#一条命令调整文件与目录的权限-sup1sup">一条命令调整文件与目录的权限 <sup>[1]</sup></a></li>
     <li><a href="#lightdm-开机自动登陆用户账户-sup2sup">LightDM 开机自动登陆用户账户 <sup>[2]</sup></a></li>
+    <li><a href="#重建-gui-的字体缓存">重建 GUI 的字体缓存</a></li>
+    <li><a href="#重建-gui-的图标缓存">重建 GUI 的图标缓存</a></li>
+    <li><a href="#检查-ext4-文件系统错误并进行碎片整理-sup3-4sup">检查 ext4 文件系统错误，并进行碎片整理 <sup>[3] [4]</sup></a></li>
     <li><a href="#引用来源">引用来源：</a></li>
   </ul>
 </nav>
@@ -235,13 +240,38 @@ autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自�
 <p>⚠ 注意:</p>
 <p>LightDM 的配置文件内容相同的注释比较多，如果用搜索功能进行搜索的话，务必要看清楚自己修改的必须是 <code>[Seat:*]</code> 段落里面的内容，而不是其他注释说明中的内容！！</p>
 </blockquote>
-<h2 id="引用来源">
+<h2 id="重建-gui-的字体缓存">
+  重建 GUI 的字体缓存
+  <a class="anchor" href="#%e9%87%8d%e5%bb%ba-gui-%e7%9a%84%e5%ad%97%e4%bd%93%e7%bc%93%e5%ad%98">#</a>
+</h2>
+<p>以 <strong><i>root</i></strong> 身份运行 <code>fc-cache -r -v</code></p>
+<h2 id="重建-gui-的图标缓存">
+  重建 GUI 的图标缓存
+  <a class="anchor" href="#%e9%87%8d%e5%bb%ba-gui-%e7%9a%84%e5%9b%be%e6%a0%87%e7%bc%93%e5%ad%98">#</a>
+</h2>
+<p>以 <strong><i>root</i></strong> 身份运行 <code>update-icon-caches /usr/share/icons/*</code></p>
+<h2 id="检查-ext4-文件系统错误并进行碎片整理-sup3-4sup">
+  检查 ext4 文件系统错误，并进行碎片整理 <sup>[3] [4]</sup>
+  <a class="anchor" href="#%e6%a3%80%e6%9f%a5-ext4-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e9%94%99%e8%af%af%e5%b9%b6%e8%bf%9b%e8%a1%8c%e7%a2%8e%e7%89%87%e6%95%b4%e7%90%86-sup3-4sup">#</a>
+</h2>
+<blockquote>
+<p>这些操作都需要 <strong><i>root</i></strong> 权限</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># umount 你需要操作的&lt;分区&gt;</span>
+fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查文件系统是否有错误</span>
+fsck.ext4 -y -f -v -D /dev/&lt;分区&gt;  <span style="color:#75715e"># 优化目录结构</span>
+<span style="color:#75715e"># mount 你需要操作的&lt;分区&gt;</span>
+e4defrag -v /dev/&lt;分区&gt;            <span style="color:#75715e"># 对文件进行碎片整理</span>
+fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查到底优化了多少(非必要)</span>
+</code></pre></div><h2 id="引用来源">
   引用来源：
   <a class="anchor" href="#%e5%bc%95%e7%94%a8%e6%9d%a5%e6%ba%90">#</a>
 </h2>
 <ol>
 <li><a href="https://stackoverflow.com/questions/18817744/change-all-files-and-folders-permissions-of-a-directory-to-644-755">Change all files and folders permissions of a directory to 644/755</a></li>
 <li><a href="https://forums.linuxmint.com/viewtopic.php?t=286267">Enabling Auto Login</a></li>
+<li><a href="https://askubuntu.com/questions/221079/how-to-defrag-an-ext4-filesystem">How to defrag an ext4 filesystem</a></li>
+<li><a href="https://gist.github.com/rmi1974/108c58cdeaa4c1f8b29a2af68f6ca698">How to optimize / defrag ext4 filesystem</a></li>
 </ol>
 <hr>
 <p><a href="../..">上一级</a></p>
@@ -291,6 +321,9 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
   <ul>
     <li><a href="#一条命令调整文件与目录的权限-sup1sup">一条命令调整文件与目录的权限 <sup>[1]</sup></a></li>
     <li><a href="#lightdm-开机自动登陆用户账户-sup2sup">LightDM 开机自动登陆用户账户 <sup>[2]</sup></a></li>
+    <li><a href="#重建-gui-的字体缓存">重建 GUI 的字体缓存</a></li>
+    <li><a href="#重建-gui-的图标缓存">重建 GUI 的图标缓存</a></li>
+    <li><a href="#检查-ext4-文件系统错误并进行碎片整理-sup3-4sup">检查 ext4 文件系统错误，并进行碎片整理 <sup>[3] [4]</sup></a></li>
     <li><a href="#引用来源">引用来源：</a></li>
   </ul>
 </nav>

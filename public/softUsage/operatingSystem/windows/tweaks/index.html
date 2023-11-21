@@ -102,6 +102,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
+<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -125,6 +126,7 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="/softUsage/">软件使用笔记</a>
 <ul>
 <li><a href="/softUsage/#operatingSystem">操作系统</a></li>
+<li><a href="/softUsage/#otherSoft">其他软件</a></li>
 </ul>
 </li>
 </ul>
@@ -187,6 +189,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#启用或禁用基于虚拟化的安全性">启用或禁用「基于虚拟化的安全性」</a></li>
     <li><a href="#通过注册表降低网络延迟">通过注册表降低网络延迟</a></li>
     <li><a href="#删除-此电脑-里面的-3d-对象">删除 <em>此电脑</em> 里面的 <em>3D 对象</em></a></li>
+    <li><a href="#microsoft-store-应用安装失败无法为-app-创建-appcontainer-配置文件">Microsoft Store 应用安装失败，无法为 App 创建 AppContainer 配置文件</a></li>
   </ul>
 </nav>
 
@@ -404,6 +407,23 @@ bcdedit /set hypervisorlaunchtype auto
 </blockquote>
 <p>打开 <strong>注册表编辑器</strong> 然后定位到以下键  <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace</code></p>
 <p>然后删除名为 <code>{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}</code> 的键</p>
+<h2 id="microsoft-store-应用安装失败无法为-app-创建-appcontainer-配置文件">
+  Microsoft Store 应用安装失败，无法为 App 创建 AppContainer 配置文件
+  <a class="anchor" href="#microsoft-store-%e5%ba%94%e7%94%a8%e5%ae%89%e8%a3%85%e5%a4%b1%e8%b4%a5%e6%97%a0%e6%b3%95%e4%b8%ba-app-%e5%88%9b%e5%bb%ba-appcontainer-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">#</a>
+</h2>
+<p>错误截图如下：</p>
+<p><img src="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/operatingSystem/windows/img0002.png" alt="AppContainerError" /></p>
+<p>详细错误原因：</p>
+<p><code>应用安装失败，错误消息: 错误 0x80070005: Windows 无法为 AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa 程序包创建 AppContainer 配置文件。 (0x80070005)</code></p>
+<p>用 <strong><i>管理员身份</i></strong> 的 <em>PowerShell</em> 运行下方的命令即可：</p>
+<p><code>Get-AppXPackage -AllUsers -Name App包的PackageName | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register &quot;$($_.InstallLocation)\AppXManifest.xml&quot; -Verbose}</code></p>
+<p>在本例中， <strong><i>App包的PackageName</i></strong> 应该为 <code>AppleInc.iCloud</code> ， <em>App包的PackageName</em> 可以在错误原因里面查到</p>
+<p>示例输出：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">PS C:\Windows\system32&gt; Get-AppXPackage -AllUsers -Name AppleInc.iCloud | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register &#34;$($_.InstallLocation)\AppXManifest.xml&#34; -Verbose}
+
+详细信息: 正在目标“C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml”上执行操作“注册程序包”。
+详细信息: 操作完成: C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml
+</code></pre></div><p><sub> * . <a href="https://answers.microsoft.com/zh-hans/windows/forum/all/%E5%BE%AE%E8%BD%AF%E5%BA%94%E7%94%A8%E5%95%86/1ed45936-e599-4524-9616-5263c7031c13">引用来源</a> </sub></p>
 <hr>
 <p><a href="../..">上一级</a></p>
 <p><a href="/">笔记首页</a></p>
@@ -461,6 +481,7 @@ select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText
     <li><a href="#启用或禁用基于虚拟化的安全性">启用或禁用「基于虚拟化的安全性」</a></li>
     <li><a href="#通过注册表降低网络延迟">通过注册表降低网络延迟</a></li>
     <li><a href="#删除-此电脑-里面的-3d-对象">删除 <em>此电脑</em> 里面的 <em>3D 对象</em></a></li>
+    <li><a href="#microsoft-store-应用安装失败无法为-app-创建-appcontainer-配置文件">Microsoft Store 应用安装失败，无法为 App 创建 AppContainer 配置文件</a></li>
   </ul>
 </nav>
 

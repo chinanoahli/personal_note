@@ -239,13 +239,13 @@ draft: false
     4. Awoo Installer 游戏安装工具：[点此下载](https://github.com/Huntereb/Awoo-Installer/releases)
     5. TinFoil 游戏安装工具：[点此下载](https://tinfoil.io/Download) (下载NSP版本，用TinWoo或Awoo安装即可)
 
-17. \[非必要\]用Lockpick_RCM导出`prod.keys`
+17. \[非必要\]用Lockpick_RCM导出`prod.keys`</br>(此工具已被任天堂举报，现已更名为`Picklock_RCM`)
 
    > ~~官方仓库: [下载地址](https://github.com/shchmue/Lockpick_RCM)~~，已被老任举报
    >
    > 两个备用地址: [地址1](https://github.com/iczero/Lockpick_RCM) [地址2](https://github.com/s1204IT/Lockpick_RCM)
 
-   > 1. 下载`Lockpick_RCM.bin`(下载方法同第4步)
+   > 1. 下载`Picklock_RCM.bin`并更名为`Lockpick_RCM.bin`(下载方法同第4步)
    > 2. 将该文件放到`D:\SwitchCrack\bootloader\payloads`
    > 3. 开机进入hekate引导程序后，点击最上方的`Console Info`标签
    > 4. 点击 **SoC \& HW Info** 下方的`Lockpick`按钮，然后点击`Continue`按钮

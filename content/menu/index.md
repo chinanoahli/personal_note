@@ -19,6 +19,7 @@ headless = true
     - [自学笔记]({{< relref "/art#selfStudy" >}})
       - [Blender 学习笔记]({{< relref "/art/selfStudy/Blender" >}})
     - [个人思考及经验总结]({{< relref "/art#myArtNote" >}})
+    - [画画人资源库]({{< relref "/art#drawingAndAnimationResourcesLibrary" >}})
   - [音乐学习笔记]({{< relref "/music" >}})
     - [课程笔记]({{< relref "/music#onlineCourse" >}})
     - [自学笔记]({{< relref "/music#selfStudy" >}})
@@ -30,3 +31,4 @@ headless = true
     - [Nintendo Switch]({{< relref "/game#nSwitch" >}})
   - [软件使用笔记]({{< relref "/softUsage" >}})
     - [操作系统]({{< relref "/softUsage#operatingSystem" >}})
+    - [其他软件]({{< relref "/softUsage#otherSoft" >}})
