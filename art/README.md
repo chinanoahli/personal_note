@@ -29,6 +29,12 @@
 
 + [去看笔记](./myNote/README.md)
 
+## 画画人资源库
+
+因国内共享资料的方式比较困难（懂的都懂），于是便萌生了利用 *[Resilio Sync](https://www.resilio.com/individuals)* 来创建一个 *画画、动画参考资料同步库* 的想法，旨在方便同好更好地共享资料
+
+同步库的说明及使用请点击：[🎁🎁🎁](./drawingAndAnimationResources/README.md)
+
 ---
 
 [笔记首页](../README.md)

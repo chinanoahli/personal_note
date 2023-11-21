@@ -42,7 +42,7 @@
 
 ## 关于许可证
 
-基本全为个人笔记和个人观点，采用**CC BY SA**许可证发布。
+基本全为个人笔记和个人观点，采用 **CC BY SA** 许可协议发布，许可协议的具体规条款请点击下方的 *图片* 进行查看
 
 你可以任意修改和再分发本资料，但必须采用同样的许可证。
 
@@ -50,6 +50,6 @@
 
 [![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
 
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/deed.zh-hans
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
