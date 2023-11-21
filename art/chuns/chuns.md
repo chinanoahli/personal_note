@@ -13,6 +13,8 @@
 
 + 人物动态速写塑造课
 
+   > 虽然学过了，但目前的水平还没get到精髓，所以这部分先省略，过后再作补充
+
   + [第一课](./characterDynamicSketch/lesson1.md)
   + [第二课](./characterDynamicSketch/lesson2.md)
   + [第三课](./characterDynamicSketch/lesson3.md)

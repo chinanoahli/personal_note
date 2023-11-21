@@ -206,7 +206,7 @@ Windows Registry Editor Version 5.00
 
    ```
    REM /f 参数不是必须的，如果不加这个参数，删除时就会弹出确认选项
-   
+
    schtasks /delete /tn "\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE" /f
    ```
 

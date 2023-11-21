@@ -99,13 +99,13 @@
 假设最长的垂直边的长度为 **N**：
 
 1. 在 22.5°、67.5° 的立方体中，较长的一边约为 0.9 ~ 0.8N，较短的一边约为 0.6N
-    
+
 ![L2-12](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l2-12.png)
-    
+
 2. 在 45° 的立方体中，较短的一边约为 0.7N
-    
+
 ![L2-13](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/krenzArtwork/perspective/attachments/l2-13.png)
-    
+
 
 ### 小结
 
@@ -158,7 +158,7 @@
 ### 「视中轴」
 
 > 讨论「视中轴」所出现的情况，大多数都出现在画三点透视的情况中
-> 
+>
 
 假设有以下两个立方体：
 
@@ -228,3 +228,9 @@
 因为这个立方体的位置非常接近一般摄像机（人眼）观察视野的「视中轴」，从这个立方体推导出来的的其他物体的透视，不太容易发生大幅度的透视变型
 
 > ‼️ 此外，当视平线（水平线）不是水平出线在画面上，那么「视中轴」应该跟着水平线改变角度，而不是仍然垂直于画面
+
+---
+
+[上一级](../krenzArtwork.md)
+
+[笔记首页](../../../README.md)

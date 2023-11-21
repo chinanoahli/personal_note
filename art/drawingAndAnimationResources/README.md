@@ -12,7 +12,7 @@
 
 于是本了便打算利用家里的 NAS 为大家创建一个可以让大家都可以快乐使用，免费的资源共享库
 
-对比了几个共享工具，最后决定使用 *[Resilio Sync](https://www.resilio.com/individuals)* ，来作为资料库的共享平台，[原因见此处](#选择-Resilio-Sync-的原因)
+对比了几个共享工具，最后决定使用 *[Resilio Sync](https://www.resilio.com/individuals)* ，来作为资料库的共享平台，[原因见此处](#选择-resilio-sync-的原因)
 
 接下来就直接介绍资料库的使用办法：
 

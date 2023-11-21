@@ -72,7 +72,7 @@ sudo steamos-readonly enable
 
 下载地址: [GitHub Releases](https://github.com/GloriousEggroll/proton-ge-custom/releases)
 
-手动安装方法: 
+手动安装方法:
 
 1. 运行命令 `mkdir -p ~/.steam/root/compatibilitytools.d` 创建安装路径
 
@@ -90,7 +90,7 @@ sudo steamos-readonly enable
 
 下载地址: [GitHub Releases](https://github.com/GloriousEggroll/wine-ge-custom/releases)
 
-手动安装方法: 
+手动安装方法:
 
 1. 运行命令 `mkdir -p ~/.local/share/lutris/runners/wine` 创建安装路径
 
@@ -129,7 +129,7 @@ sudo pacman -Syy vim
 ## 安装Steam++(Watt Toolkit)
 
 > 到 2023-Jan-22 为止，该官方包仍存在问题，无法直接通过 `pacman` 命令安装
-> 
+>
 > 安装时会提示 `missing package metadata` 错误
 
 1. 下载ArchLinux适用的，后缀为`tar.zst`包
@@ -165,7 +165,7 @@ wget https://mirror.sjtu.edu.cn/flathub/flathub.gpg
 sudo flatpak remote-modify --gpg-import=flathub.gpg sjtu
 ```
 
-如果中断了某次软件包安装，而导致找不到文件的问题，请用下面的命令修复: 
+如果中断了某次软件包安装，而导致找不到文件的问题，请用下面的命令修复:
 
 ```shell
 flatpak repair
@@ -232,7 +232,7 @@ StartupNotify=false
 
    所以我们可以设置一个小一点的限制，以防日志占用太多空间
 
-   调整方法: 
+   调整方法:
 
    将 `/etc/systemd/journald.conf` 文件里面 `[Journal]` 段落的 `SystemMaxUse` 参数改为 `SystemMaxUse=50M`
 
@@ -241,11 +241,11 @@ StartupNotify=false
 2. 调整 Swap 的使用策略
 
    SteamOS 默认的 Swap 使用策略是`积极使用Swap`，这意味着系统在内存负载不高的情况下，也可能会产生大量磁盘I/O
-   
+
    在这里我们可以选择将 Swap 使用策略调整为最大限度地使用物理内存，以减轻这种情况
-   
-   调整方法: 
-   
+
+   调整方法:
+
       1. 将 `/etc/sysctl.d/swappiness.conf` 文件里面的 `vm.swappiness=100` 改为 `vm.swappiness=0`
 
       2. 然后重启系统
@@ -253,21 +253,21 @@ StartupNotify=false
 3. 关闭 CPU 熔断/幽灵漏洞的微码补丁
 
    > 在这里不扛安全性问题，掌机基本除了玩游戏不干其他事，基本绝大部分时间可以算为安全范畴
-   
+
    众所周知，熔断/幽灵补丁会降低 CPU 的性能，所以在这里我们可以把该补丁禁用掉，让 CPU 回到真正的能力水平
 
-   调整方法: 
-      
+   调整方法:
+
       1. 修改 `/etc/default/grub` 文件里面的 `GRUB_CMDLINE_LINUX_DEFAULT` 参数，在该参数的最后面加上 `mitigations=off`
-      
+
       2. 更新Grub，应用新的启动参数 `update-grub`
-      
+
       3. 重启系统
-   
-   查询方法: 
-   
+
+   查询方法:
+
       运行 `lscpu`  命令
-      
+
       > 如果打开了该补丁，会有类似的输出 (输出中带有`Mitigation`)
       >
       > ```text
