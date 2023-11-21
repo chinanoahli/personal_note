@@ -9,15 +9,15 @@
 在例如 115 ，虽然容量大，但基本不具备分享功能，使用不便等等……
 于是本了便打算利用家里的 NAS 为大家创建一个可以让大家都可以快乐使用，免费的资源共享库
 对比了几个共享工具，最后决定使用 Resilio Sync ，来作为资料库的共享平台，原因见此处
+同时，因为 Resilio Sync 可以进行 选择性同步 ，所以可以有效节约磁盘资源
+在文件目录被缓存下来后，还可以通过系统自带的搜索或 Everything 等搜索工具检索到没有被下载下来的文件，可以说是相当的方便
 接下来就直接介绍资料库的使用办法：
 资源库使用办法 #  首先进入 Resilio Sync 的官网下载并安装 Sync Home 软件(软件官网被墙，此处省略一万字，并提供备用连接)，并自行完成安装
 此处以Windows版作为示例，其他系统参考对照操作即可：
  打开 Resilio Sync 然后点击右上角的 ⚙️齿轮 图标进入设置
 在 General &gt; Language 里面把语言设置为 简体中文 然后关闭软件窗口，最后双击任务栏托盘区的 Resilio Sync 重新打开软件的窗口
 这样可以把软件改成中文的了
- 点击设置里面的 许可证 &gt; 应用许可证 ，并在弹出的选择文件窗口打开下载到的 ResilioSyncPro.btskey 文件，以便激活软件的高级功能
- 点击软件窗口左上角的 &#43; 按钮，然后选择 输入密钥或链接
- 然后在手动连接里面输入密钥 BNLPW4YZDIYO4NJNC6QP4NUXSOBJVWCGG ，并把 选择性同步 设为 On，然后点击 下一步 (若你想成为做种团队的一员，则不需要打开选择性同步，若不打开选择性同步，就会把整个资源库同步到硬盘上) 接下来软件会弹出 选择文件夹 窗口，在这里选择你要存放共享库的地方，例如在我的例子中是 E:\Resilio Sync\Drawing.">
+ 点击设置里面的 许可证 &gt; 应用许可证 ，并在弹出的选择文件窗口打开下载到的 ResilioSyncPro.btskey 文件，以便激活软件的高级功能">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="绘画、动画资料库" />
 <meta property="og:description" content="" />
@@ -204,6 +204,8 @@ https://github.com/alex-shpak/hugo-book
 <p>在例如 <em>115</em> ，虽然容量大，但基本不具备分享功能，使用不便等等……</p>
 <p>于是本了便打算利用家里的 NAS 为大家创建一个可以让大家都可以快乐使用，免费的资源共享库</p>
 <p>对比了几个共享工具，最后决定使用 <em><a href="https://www.resilio.com/individuals">Resilio Sync</a></em> ，来作为资料库的共享平台，<a href="#%e9%80%89%e6%8b%a9-resilio-sync-%e7%9a%84%e5%8e%9f%e5%9b%a0">原因见此处</a></p>
+<p>同时，因为 Resilio Sync 可以进行 <em>选择性同步</em> ，所以可以有效节约磁盘资源</p>
+<p>在文件目录被缓存下来后，还可以通过系统自带的搜索或 Everything 等搜索工具检索到没有被下载下来的文件，可以说是相当的方便</p>
 <p>接下来就直接介绍资料库的使用办法：</p>
 <h2 id="资源库使用办法">
   资源库使用办法
@@ -227,6 +229,14 @@ https://github.com/alex-shpak/hugo-book
   补充说明
   <a class="anchor" href="#%e8%a1%a5%e5%85%85%e8%af%b4%e6%98%8e">#</a>
 </h4>
+<blockquote>
+<p>部分文件名后面带有 6 个随机字符，例如：</p>
+<p><code>00.绘画教程\05.环境与场景\建筑思维的草图表达 [z4QuPM].pdf</code></p>
+<p>和</p>
+<p><code>03.动画参考资料\04.背景\建筑思维的草图表达 [z4QuPM].pdf</code></p>
+<p>这代表这两个在不同位置的文件的内容是完全相同的</p>
+<p>这样重复放置，是因为这个文件的内容符合两个不同分类，方便以不同的思维进行查找</p>
+</blockquote>
 <ul>
 <li>不强制要求做贡献！请不要有使用的心理负担，按照自己喜欢的方式使用即可 🥳🥳🥳</li>
 <li>⚠ 移动端用户请不要打开 <code>Use cellular data for sync (使用移动网络进行同步)</code>，这将会消耗很多流量，因为软件运行时会为其他用户上传文件</li>
@@ -241,7 +251,8 @@ https://github.com/alex-shpak/hugo-book
 <p>Resilio Sync 的工作原理类似与 BitTorrent ，也就是大家口中常说的 BT 下载，BT 下载的原理就不再解释了，如果有兴趣大家可以自行 Google 一下</p>
 <p>它还支持 Windows Linux Mac Android iOS 等常见的绝大部分的平台</p>
 <p>同时，它还能允许用户只同步自己想要的文件，而无须全部文件一次性下载完整</p>
-<p>因为它才用 BT 的技术，所以只要有一个用户尚在线，就可以保证文件的存活，当在线的用户越多，后来的下载者就可以获得越快的速度</p>
+<p>因为它采用类似 BT 的技术，所以只要有一个用户尚在线，就可以保证文件的存活（当然前提是该在线用户有你想要的文件的完整版本）</p>
+<p>当在线的用户越多，后来的下载者就可以获得越快的速度</p>
 <p>不过，我并不会强迫大家都来做种，如果大家愿意让这个资料库变得更好的话，可以利用空余时间，挂着 Resilio Sync 的客户端，就算是帮上大忙了</p>
 <p>我本人的 NAS 基本上除了夏天气温太高而需要关机以及需要拆机维护以外，基本上 7 × 24h 在线，虽然家里的宽带上传带宽没有太高，但仍可为文件保活，不过却不能保证提供太快的速度</p>
 <h2 id="软件下载">
@@ -249,7 +260,9 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e8%bd%af%e4%bb%b6%e4%b8%8b%e8%bd%bd">#</a>
 </h2>
 <p>Windows + Android ：<a href="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/drawingAndAnimationResources/attachments/ResilioSync.zip">点此下载</a></p>
+<p>MacOS 和 OSX (系统版本 10.8 以上)：<a href="https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/drawingAndAnimationResources/attachments/ResilioSync.dmg">点此下载</a></p>
 <p>iOS设备请直接在 AppStore 搜索 <a href="https://apps.apple.com/app/resilio-sync/id1126282325">Resilio Sync</a></p>
+<p>Linux：你已经是一个成熟的技术人员辣，应该学会自己解决问题！</p>
 <hr>
 <p><a href="..">上一级</a></p>
 <p><a href="/">笔记首页</a></p>

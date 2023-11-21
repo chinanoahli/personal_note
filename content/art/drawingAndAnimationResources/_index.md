@@ -20,6 +20,10 @@ draft: false
 
 对比了几个共享工具，最后决定使用 *[Resilio Sync](https://www.resilio.com/individuals)* ，来作为资料库的共享平台，[原因见此处](#选择-resilio-sync-的原因)
 
+同时，因为 Resilio Sync 可以进行 *选择性同步* ，所以可以有效节约磁盘资源
+
+在文件目录被缓存下来后，还可以通过系统自带的搜索或 Everything 等搜索工具检索到没有被下载下来的文件，可以说是相当的方便
+
 接下来就直接介绍资料库的使用办法：
 
 ## 资源库使用办法
@@ -41,6 +45,18 @@ draft: false
 
 #### 补充说明
 
+> 部分文件名后面带有 6 个随机字符，例如：
+>
+> `00.绘画教程\05.环境与场景\建筑思维的草图表达 [z4QuPM].pdf`
+>
+> 和
+>
+> `03.动画参考资料\04.背景\建筑思维的草图表达 [z4QuPM].pdf`
+>
+> 这代表这两个在不同位置的文件的内容是完全相同的
+>
+> 这样重复放置，是因为这个文件的内容符合两个不同分类，方便以不同的思维进行查找
+
 + 不强制要求做贡献！请不要有使用的心理负担，按照自己喜欢的方式使用即可 🥳🥳🥳
 + ⚠ 移动端用户请不要打开 `Use cellular data for sync (使用移动网络进行同步)`，这将会消耗很多流量，因为软件运行时会为其他用户上传文件
 + 文件列表会自动更新，无须反复添加共享文件夹
@@ -55,7 +71,9 @@ Resilio Sync 的工作原理类似与 BitTorrent ，也就是大家口中常说�
 
 同时，它还能允许用户只同步自己想要的文件，而无须全部文件一次性下载完整
 
-因为它才用 BT 的技术，所以只要有一个用户尚在线，就可以保证文件的存活，当在线的用户越多，后来的下载者就可以获得越快的速度
+因为它采用类似 BT 的技术，所以只要有一个用户尚在线，就可以保证文件的存活（当然前提是该在线用户有你想要的文件的完整版本）
+
+当在线的用户越多，后来的下载者就可以获得越快的速度
 
 不过，我并不会强迫大家都来做种，如果大家愿意让这个资料库变得更好的话，可以利用空余时间，挂着 Resilio Sync 的客户端，就算是帮上大忙了
 
@@ -65,7 +83,11 @@ Resilio Sync 的工作原理类似与 BitTorrent ，也就是大家口中常说�
 
 Windows + Android ：[点此下载](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/drawingAndAnimationResources/attachments/ResilioSync.zip)
 
+MacOS 和 OSX (系统版本 10.8 以上)：[点此下载](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/art/drawingAndAnimationResources/attachments/ResilioSync.dmg)
+
 iOS设备请直接在 AppStore 搜索 [Resilio Sync](https://apps.apple.com/app/resilio-sync/id1126282325)
+
+Linux：你已经是一个成熟的技术人员辣，应该学会自己解决问题！
 
 ---
 
