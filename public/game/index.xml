@@ -27,8 +27,10 @@
 SteamVR runtime failure! Timed out waiting for response from Mongoose. SteamVR needs to be restarted. 头显中能看到游戏标题的背景场景，但是菜单无法显示出来，且一点错误提示的 OK 游戏便会自动退出，重启串流驱动、SteamVR、Steam、电脑均无法解决
 解决方案：
 在 Steam 打开游戏设置，在启动参数中加入 -novid，然后再启动游戏即可
- 上一级
-笔记首页</description>
+Your Diary + #  DMM JP 上的 R18 补丁: 链接 ( 仅适用于中英文版本 )
+在 SteamOS 上游玩需要执行的操作 #   下载 GE-Proton7-43 ，并把它设置为游戏的兼容性工具 在 Steam 中运行一次游戏
+ ( 游戏会出错，不需要担心，这一步我们只是为了让 Steam 创建该游戏的 Proton 环境而已 ) 安装 Protontricks
+安装方法查考: GitHub 或 Flathub 打开你的代理软件，因为要安装的 wine 功能需要连接到外网获取</description>
     </item>
     
     <item>
