@@ -4,7 +4,7 @@
 >
 > 在删除本地电脑的私钥前，请确保自己已做好必要的备份操作！
 
-> 💡 前篇：[GnuPG 套件创建、管理密钥对](softUsage/devSoft/gnupg.md)
+> 💡 前篇：[GnuPG 套件创建、管理密钥对](../../softUsage/devSoft/gnupg.md)
 
 1. 创建一个授权用的密钥
 
