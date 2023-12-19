@@ -6,9 +6,9 @@
 
 > GnuPG 在生成密钥对时，默认会生成：
 >
-> 1. 一个可以用于 **<i>验证子密钥<sub>(<u>C</u>ertification)</sub></i>** 和 **<i>签名<sub>(<u>S</u>igning)</sub></i></i>** 的 **<i>主密钥<sub>(sec)</sub></i></i>**
+> 1. 一个可以用于 **<i>验证子密钥<sub>(<u>C</u>ertify)</sub></i>** 和 **<i>签名<sub>(<u>S</u>ign)</sub></i></i>** 的 **<i>主密钥<sub>(sec)</sub></i></i>**
 >
-> 2. 一个可以用于 **<i>加密<sub>(<u>E</u>ncryption)</sub></i>** 的 **<i>子密钥<sub>(ssb)</sub></i>**
+> 2. 一个可以用于 **<i>加密<sub>(<u>E</u>ncrypt)</sub></i>** 的 **<i>子密钥<sub>(ssb)</sub></i>**
 
 > ⚠ 安全警示：
 >
@@ -382,9 +382,10 @@
    [ultimate] (1)  Joshua Lee (Yubico) <chinanoahli@████.com>
    [ unknown] (2)* chinanoahli (New comment) <xxxxxxxxxxxx@████.com>
 
-   gpg> save                   # 保存并退出
+   gpg> save                   # 先保存当前的操作，让操作生效
 
    > gpg --key-edit 38ED████A21C
+                               # 重新进入密钥编辑状态
    gpg (GnuPG) 2.4.3; Copyright (C) 2023 g10 Code GmbH
    This is free software: you are free to change and redistribute it.
    There is NO WARRANTY, to the extent permitted by law.
@@ -416,7 +417,7 @@
    [ultimate] (1). chinanoahli (New comment) <xxxxxxxxxxxx@████.com>
                                # 旧的 uid 已被删除
 
-   gpg> save                   # 保存并退出
+   gpg> save                   # 操作完成后，保存退出
    ```
 
 19. 将公钥发送到密钥服务器上，方便别人对你发布的文件进行解密或验证
