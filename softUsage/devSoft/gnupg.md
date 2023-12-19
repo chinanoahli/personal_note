@@ -87,7 +87,7 @@
 
 8. 接下来系统会弹出一个窗口，要求用户设置一个 **<i>口令 <sub>(passphrase)</sub></i>** 用以保护密钥对
 
-gpg_img001.png
+   ![passphrase](https://github-share-1304366332.cos.ap-guangzhou.myqcloud.com/softUsage/devSoft/attachments/gpg_img001.png)
 
 9. 随便做点别的事，让 GnuPG 获取到足够生成密钥需要用到的信息熵<br>稍等片刻，直至密钥成功生成，请记下密钥的 **<i>KeyID</i>** ，本例中为 `4CC5████████EE6D38ED████A21C`
 
@@ -108,7 +108,7 @@ gpg_img001.png
    sub   rsa4096 2023-12-19 [E]
    ```
 
-10. 使用命令 `gpg --gen-revoke 4CC5████████EE6D38ED████A21C` 创建吊销密钥并备份好<br>若密钥不再使用或不幸泄漏，则可以使用吊销密钥将其吊销<br>吊销密钥的内容为包含 `-----BEGIN PGP PUBLIC KEY BLOCK-----` 行在内<br>到包含行 `-----END PGP PUBLIC KEY BLOCK-----` 为止，请手动复制下来保存
+10. 使用命令 `gpg --gen-revoke 4CC5████████EE6D38ED████A21C` 创建吊销密钥并备份在离线且安全的位置<br>若密钥不再使用或不幸泄漏，则可以使用吊销密钥将其吊销<br>吊销密钥的内容为包含 `-----BEGIN PGP PUBLIC KEY BLOCK-----` 行在内<br>到包含行 `-----END PGP PUBLIC KEY BLOCK-----` 为止，请手动复制下来
 
    ```text
    sec  rsa4096/38ED████A21C 2023-12-19 Joshua Lee (Yubico) <chinanoahli@████.com>
@@ -155,7 +155,7 @@ gpg_img001.png
    gpg --armor --output secret-key.txt --export-secret-keys 4CC5████████EE6D38ED████A21C
    ```
 
-12. 若你不需要在本机上执行解密和签发子密钥的操作，你应该使用下面的命令把私钥和吊销密钥从系统中删除<sub>(前提是你十分确定已经把它们备份在了安全的地方)</sub>
+12. 若你不需要在本机上执行解密和更新密钥等操作，你应该使用下面的命令把私钥从系统中删除<sub>(前提是你十分确定已经把它们备份在了安全的地方)</sub>
 
    ```shell
    > gpg --delete-secret-keys 4CC5████████EE6D38ED████A21C
