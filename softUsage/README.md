@@ -5,6 +5,8 @@
 + 开发工具使用笔记
 
    + [Git 使用技巧](./devSoft/gitUsage.md)
+   
+   + [GnuPG 套件创建、管理密钥对](./devSoft/gnupg.md)
 
 + 其他软件 
 
