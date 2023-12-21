@@ -30,9 +30,26 @@ git filter-branch --force --index-filter "git rm --cached --ignore-unmatch 你�
 git push --all --force
 ```
 
+
+## 调整 Log 的时间显示格式<sup>[2]</sup>
+
+```shell
+git config --global alias.lg "log --date=format-local:'%Y-%m-%d %p %I:%M:%S"
+```
+
+以上命令是通过 Git 本身的别名功能 <sub>(alias)</sub> 来把 `lg` 映射为带了指定时间格式参数的 `log`
+
+调整后的时间格式为：`年-月-日 上午 时:分:秒` ，小时为 12 小时制
+
+时间格式的具体含义，可以参考引用来源的链接
+
+> Git 的 *alias* 无法像 Shell 里面的一样直接替换原本就存在的关键词，例如把 `log` 映射成 `log --date=format-local:'%Y-%m-%d %H:%M:%S'` ，这种设置是不生效的，你必须指定一个新的关键词来进行映射
+
 ## 引用来源：
 
 1. [How to pull into multiple branches at once with git?](https://superuser.com/questions/623217/how-to-pull-into-multiple-branches-at-once-with-git)
+
+2. [How to change Git log date formats](https://stackoverflow.com/questions/7853332/how-to-change-git-log-date-formats)
 
 ---
 
