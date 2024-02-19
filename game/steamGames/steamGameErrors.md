@@ -38,6 +38,28 @@ DMM JP 上的 R18 补丁: [链接](https://dlsoft.dmm.co.jp/detail/cuffs_0022/) 
 8. 在 Steam 客户端中打开游戏设置，并把 `LANG=ja_JP.UTF-8 %command%` 填入启动参数
 9. 开始愉快地游玩
 
+### Beat Saber
+
+若想脱离 VR 模式，直接在普通屏幕上启动游戏<sub> (仅作调试用途，无法游玩游戏)</sub>
+
+请在 Steam 客户端上打开游戏属性，在 *通用*  →*启动选项* 中填入 `fpfc`
+
+并且修改 `C:\Users\<你的用户名>\AppData\LocalLow\Hyperbolic Magnetism\Beat Saber\settings.cfg` 配置文件中的分辨率参数
+
+如我的显示器为带鱼屏，所以改成：
+
+```text
+"windowResolutionWidth":3440,"windowResolutionHeight":1440,"editorResolutionWidth":3440,"editorResolutionHeight":1440
+```
+
+原参数为：
+
+```text
+"windowResolutionWidth":1280,"windowResolutionHeight":720,"editorResolutionWidth":1280,"editorResolutionHeight":720
+```
+
+修改后在 Steam 中启动游戏即可
+
 ---
 
 [上一级](../README.md)
