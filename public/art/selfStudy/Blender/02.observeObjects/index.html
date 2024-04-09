@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="02. 观察对象 #   以对象为中心旋转  按住 鼠标中键 不放并同时进行拖拽，这时观察者视角将会以对象的「原点」(在这里暂且称为「原点」，因为这个点用户可以根据自己的需要而改变位置) 当打开了 模拟3键鼠标 设置后，可以以「按住 Alt 不放并对画面进行拖拽」代替此操作 在 漫游器 上点击 鼠标左键 不放并同时进行拖拽     以对象为中心旋转
- 漫游器
-        平移视角  按住 Shift 不放并同时进行拖拽 以 鼠标左键 按住 移动视图 按钮不放并向需要的方向移动     平移视角
- 移动视图 按钮
-        视角推拉  向前滚动 滚轮 以拉近对象，向后滚动 滚轮 以推远对象 以 鼠标左键 按住 缩/放视图 按钮不放  向屏幕上方移动光标以拉近对象 向屏幕下方移动光标以推远对象       视角推拉">
+<meta name="description" content="02. 观察对象 # 以对象为中心旋转 按住 鼠标中键 不放并同时进行拖拽，这时观察者视角将会以对象的「原点」(在这里暂且称为「原点」，因为这个点用户可以根据自己的需要而改变位置) 当打开了 模拟3键鼠标 设置后，可以以「按住 Alt 不放并对画面进行拖拽」代替此操作 在 漫游器 上点击 鼠标左键 不放并同时进行拖拽 以对象为中心旋转
+漫游器
+平移视角 按住 Shift 不放并同时进行拖拽 以 鼠标左键 按住 移动视图 按钮不放并向需要的方向移动 平移视角
+移动视图 按钮
+视角推拉 向前滚动 滚轮 以拉近对象，向后滚动 滚轮 以推远对象 以 鼠标左键 按住 缩/放视图 按钮不放 向屏幕上方移动光标以拉近对象 向屏幕下方移动光标以推远对象 视角推拉
+缩/放视图 按钮
+摄像机视角 点击 切换摄像机视角 按钮 小键盘数字键 0 把当前的观察者视角设为摄像机视角: 先选中一个摄像机，然后使用快捷键 Ctrl &#43; Alt &#43; 0 (小键盘) 摄像机视角
+切换摄像机视角 按钮
+把当前的观察者视角设为摄像机视角
+正交视图 / 透视图 点击 切换当前视图为正交视图 / 透视图 按钮 小键盘数字键 5 正交视图 / 透视图">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记 02 观察对象" />
-<meta property="og:description" content="02. 观察对象 #   以对象为中心旋转  按住 鼠标中键 不放并同时进行拖拽，这时观察者视角将会以对象的「原点」(在这里暂且称为「原点」，因为这个点用户可以根据自己的需要而改变位置) 当打开了 模拟3键鼠标 设置后，可以以「按住 Alt 不放并对画面进行拖拽」代替此操作 在 漫游器 上点击 鼠标左键 不放并同时进行拖拽     以对象为中心旋转
- 漫游器
-        平移视角  按住 Shift 不放并同时进行拖拽 以 鼠标左键 按住 移动视图 按钮不放并向需要的方向移动     平移视角
- 移动视图 按钮
-        视角推拉  向前滚动 滚轮 以拉近对象，向后滚动 滚轮 以推远对象 以 鼠标左键 按住 缩/放视图 按钮不放  向屏幕上方移动光标以拉近对象 向屏幕下方移动光标以推远对象       视角推拉" />
+<meta property="og:description" content="02. 观察对象 # 以对象为中心旋转 按住 鼠标中键 不放并同时进行拖拽，这时观察者视角将会以对象的「原点」(在这里暂且称为「原点」，因为这个点用户可以根据自己的需要而改变位置) 当打开了 模拟3键鼠标 设置后，可以以「按住 Alt 不放并对画面进行拖拽」代替此操作 在 漫游器 上点击 鼠标左键 不放并同时进行拖拽 以对象为中心旋转
+漫游器
+平移视角 按住 Shift 不放并同时进行拖拽 以 鼠标左键 按住 移动视图 按钮不放并向需要的方向移动 平移视角
+移动视图 按钮
+视角推拉 向前滚动 滚轮 以拉近对象，向后滚动 滚轮 以推远对象 以 鼠标左键 按住 缩/放视图 按钮不放 向屏幕上方移动光标以拉近对象 向屏幕下方移动光标以推远对象 视角推拉
+缩/放视图 按钮
+摄像机视角 点击 切换摄像机视角 按钮 小键盘数字键 0 把当前的观察者视角设为摄像机视角: 先选中一个摄像机，然后使用快捷键 Ctrl &#43; Alt &#43; 0 (小键盘) 摄像机视角
+切换摄像机视角 按钮
+把当前的观察者视角设为摄像机视角
+正交视图 / 透视图 点击 切换当前视图为正交视图 / 透视图 按钮 小键盘数字键 5 正交视图 / 透视图" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/art/selfStudy/Blender/02.observeObjects/" />
+<meta property="og:url" content="/art/selfStudy/Blender/02.observeObjects/" /><meta property="article:section" content="art" />
 <meta property="article:published_time" content="2023-10-02T16:38:08+09:00" />
 <meta property="article:modified_time" content="2023-10-02T16:38:08+09:00" />
 <title>Blender 学习笔记 02 观察对象 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -88,7 +98,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -133,7 +142,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -373,9 +382,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

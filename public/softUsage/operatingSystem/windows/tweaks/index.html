@@ -3,40 +3,40 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Windows 常用技巧 #  修复文件或路径无权访问的情况 #  我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
+<meta name="description" content="Windows 常用技巧 # 修复文件或路径无权访问的情况 # 我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
 但是不久后，我发现，每次当我换不同的硬盘启动时，系统完成用户账户登录并进入桌面后，总会提示 某分区的回收站损坏
 起初我不以为意，认为是不同系统的用户UID不一样，所以造成了这个盘的回收站出现了一些问题
 所以我总是根据系统提示，把该盘符里面的回收站重建
 但是渐渐地，我发现事情不太对劲，这个盘符出现了以下情况
- 应用程序可以创建文件却无法写入
+应用程序可以创建文件却无法写入
 例如：用 OBS Studio 录屏，生成的文件始终是 0 KB 大小 应用程序无法读取文件
-例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题  经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
+例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题 经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
 因为盘符根目录是它里面所有子目录的父目录，所以 盘符根目录 的权限出错将会被继承到所有的子目录中，但是你在Explorer中却不能看出问题所在，而且一般来说，也不能一下子就想到竟然是 盘符根目录 的权限出现了错误
 为了修复这个错误，你可以通过拥有 管理员权限 的终端运行以下命令解决：
-takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 #  当电脑连接到一个新的网络环境时，Windows 总会提示：
+takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 # 当电脑连接到一个新的网络环境时，Windows 总会提示：
 想要允许你的电脑被此网络上的其他电脑和设备发现吗? 我们建议你在家庭和工作网络而非公共网络上启用此功能。 Do you want to allow your PC to be discoverable by other PCs and devices on this network?">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Windows 常用技巧" />
-<meta property="og:description" content="Windows 常用技巧 #  修复文件或路径无权访问的情况 #  我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
+<meta property="og:description" content="Windows 常用技巧 # 修复文件或路径无权访问的情况 # 我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
 但是不久后，我发现，每次当我换不同的硬盘启动时，系统完成用户账户登录并进入桌面后，总会提示 某分区的回收站损坏
 起初我不以为意，认为是不同系统的用户UID不一样，所以造成了这个盘的回收站出现了一些问题
 所以我总是根据系统提示，把该盘符里面的回收站重建
 但是渐渐地，我发现事情不太对劲，这个盘符出现了以下情况
- 应用程序可以创建文件却无法写入
+应用程序可以创建文件却无法写入
 例如：用 OBS Studio 录屏，生成的文件始终是 0 KB 大小 应用程序无法读取文件
-例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题  经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
+例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题 经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
 因为盘符根目录是它里面所有子目录的父目录，所以 盘符根目录 的权限出错将会被继承到所有的子目录中，但是你在Explorer中却不能看出问题所在，而且一般来说，也不能一下子就想到竟然是 盘符根目录 的权限出现了错误
 为了修复这个错误，你可以通过拥有 管理员权限 的终端运行以下命令解决：
-takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 #  当电脑连接到一个新的网络环境时，Windows 总会提示：
+takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 # 当电脑连接到一个新的网络环境时，Windows 总会提示：
 想要允许你的电脑被此网络上的其他电脑和设备发现吗? 我们建议你在家庭和工作网络而非公共网络上启用此功能。 Do you want to allow your PC to be discoverable by other PCs and devices on this network?" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/softUsage/operatingSystem/windows/tweaks/" />
+<meta property="og:url" content="/softUsage/operatingSystem/windows/tweaks/" /><meta property="article:section" content="softUsage" />
 <meta property="article:published_time" content="2023-05-05T19:53:27+09:00" />
 <meta property="article:modified_time" content="2023-05-05T19:53:27+09:00" />
 <title>Windows 常用技巧 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -102,7 +102,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -147,7 +146,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -222,22 +221,22 @@ https://github.com/alex-shpak/hugo-book
 <p>经过长时间搜索无果后，偶然看到了<a href="https://www.cfan.com.cn/2020/1013/134391.shtml">cfan上的一篇文章</a>，才确定是 <em><i>盘符根目录的权限出错</i></em> 所致</p>
 <p>因为盘符根目录是它里面所有子目录的父目录，所以 <em><i>盘符根目录</i></em> 的权限出错将会被继承到所有的子目录中，但是你在Explorer中却不能看出问题所在，而且一般来说，也不能一下子就想到竟然是 <em><i>盘符根目录</i></em> 的权限出现了错误</p>
 <p>为了修复这个错误，你可以通过拥有 <em><i>管理员权限</i></em>  的终端运行以下命令解决：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">takeown /f X: /A /R /D Y
-::         ^ 将 <span style="color:#e6db74">`</span>X<span style="color:#e6db74">`</span> 改为你出错的盘符
-</code></pre></div><h2 id="禁用新网络位置提示">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>takeown /f X: /A /R /D Y
+</span></span><span style="display:flex;"><span>::         ^ 将 <span style="color:#e6db74">`</span>X<span style="color:#e6db74">`</span> 改为你出错的盘符
+</span></span></code></pre></div><h2 id="禁用新网络位置提示">
   禁用新网络位置提示
   <a class="anchor" href="#%e7%a6%81%e7%94%a8%e6%96%b0%e7%bd%91%e7%bb%9c%e4%bd%8d%e7%bd%ae%e6%8f%90%e7%a4%ba">#</a>
 </h2>
 <p>当电脑连接到一个新的网络环境时，Windows 总会提示：</p>
-<pre><code>想要允许你的电脑被此网络上的其他电脑和设备发现吗?
+<pre tabindex="0"><code>想要允许你的电脑被此网络上的其他电脑和设备发现吗?
 
 我们建议你在家庭和工作网络而非公共网络上启用此功能。
-</code></pre><pre><code>Do you want to allow your PC to be discoverable by other PCs and devices on this network?
+</code></pre><pre tabindex="0"><code>Do you want to allow your PC to be discoverable by other PCs and devices on this network?
 
 We recommend allowing this on your home and work networks, but not public ones.
 </code></pre><p>如果你在某些虚拟机上使用Windows，那么很有可能，这个提示每次开机都会遇到</p>
 <p>你可以通过创建下面一个注册表 <em>项</em>，来禁用这个烦人的提示</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre tabindex="0"><code>Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Network\NewNetworkWindowOff]
 </code></pre><h2 id="将硬件时间设定为utc">
@@ -247,31 +246,31 @@ We recommend allowing this on your home and work networks, but not public ones.
 <p>Windows 默认将主板 RTC 模块的时间识别为当地时间，而 *UNIX 则是识别为 UTC 时间</p>
 <p>这样会导致 Windows 和 *UNIX 双系统使用时，总会有一个系统产生很大时差</p>
 <p>为了解决这个问题，可以通过新增下面的注册表<em>键值</em> 来解决</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre tabindex="0"><code>Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
-&quot;RealTimeUniversal&quot;=dword:00000001
+&#34;RealTimeUniversal&#34;=dword:00000001
 </code></pre><h2 id="自动卸载在内存中的dll">
   自动卸载在内存中的DLL
   <a class="anchor" href="#%e8%87%aa%e5%8a%a8%e5%8d%b8%e8%bd%bd%e5%9c%a8%e5%86%85%e5%ad%98%e4%b8%ad%e7%9a%84dll">#</a>
 </h2>
 <p><strong>DLL</strong> 是Windows系统的动态链接库文件，在一般情况下，Windows不会主动卸载已经装载在内存中的DLL</p>
 <p>你可以通过新增下面的注册表值来强制Windows自动卸载当前没有被程序调用的DLL</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre tabindex="0"><code>Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
-&quot;AlwaysUnloadDLL&quot;=dword:00000001
+&#34;AlwaysUnloadDLL&#34;=dword:00000001
 </code></pre><h2 id="禁用幽灵熔断漏洞的微码补丁">
   禁用幽灵&amp;熔断漏洞的微码补丁
   <a class="anchor" href="#%e7%a6%81%e7%94%a8%e5%b9%bd%e7%81%b5%e7%86%94%e6%96%ad%e6%bc%8f%e6%b4%9e%e7%9a%84%e5%be%ae%e7%a0%81%e8%a1%a5%e4%b8%81">#</a>
 </h2>
 <p>众所周知，禁用这两个漏洞的补丁，会导致安全问题</p>
 <p>但是总有希望尽可能发挥电脑全部性能的时候，这时你可以选择通过新增下面的注册表值来禁用该补丁</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre tabindex="0"><code>Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
-&quot;FeatureSettingsOverride&quot;=dword:00000003
-&quot;FeatureSettingsOverrideMask&quot;=dword:00000003
+&#34;FeatureSettingsOverride&#34;=dword:00000003
+&#34;FeatureSettingsOverrideMask&#34;=dword:00000003
 </code></pre><h2 id="通过注册表进行映像劫持">
   通过注册表进行映像劫持
   <a class="anchor" href="#%e9%80%9a%e8%bf%87%e6%b3%a8%e5%86%8c%e8%a1%a8%e8%bf%9b%e8%a1%8c%e6%98%a0%e5%83%8f%e5%8a%ab%e6%8c%81">#</a>
@@ -280,10 +279,10 @@ We recommend allowing this on your home and work networks, but not public ones.
 <p>下面以安装在  <code>C:\Program Files\7-Zip\7zFM.exe</code> 的 7Zip 注入到  <code>Explorer.exe</code> 作为例子讲解</p>
 <p>首先需要在 <code>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options]</code> 下创建一个名为 <code>explorer.exe</code> 的键</p>
 <p>然后再其内创建一个名为 <code>Debugger</code> 的值，类型为 <code>字符串值 (REG_SZ)</code>， 值则为 7Zip 的可执行文件完整路径</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre tabindex="0"><code>Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\explorer.exe]
-&quot;Debugger&quot;=&quot;C:\\Program Files\\7-Zip\\7zFM.exe&quot;
+&#34;Debugger&#34;=&#34;C:\\Program Files\\7-Zip\\7zFM.exe&#34;
 </code></pre><p>设置完成后，重启电脑，即可发现这时系统不再在登入用户账户后，自动启动 <code>explorer.exe</code> 所自带的桌面环境，转而启动了 7Zip</p>
 <h2 id="通过命令行工具管理服务项">
   通过命令行工具管理服务项
@@ -292,19 +291,19 @@ We recommend allowing this on your home and work networks, but not public ones.
 <ol>
 <li>
 <p>列出所有服务</p>
-<pre><code>sc query type= service state= all
+<pre tabindex="0"><code>sc query type= service state= all
 </code></pre></li>
 <li>
 <p>只列出所有服务名称</p>
-<pre><code>sc query type= service state= all | find /i &quot;SERVICE_NAME:&quot;
+<pre tabindex="0"><code>sc query type= service state= all | find /i &#34;SERVICE_NAME:&#34;
 </code></pre></li>
 <li>
 <p>查找特定的服务</p>
-<pre><code>sc query type= service state= all | find /i &quot;SERVICE_NAME: 要查找的服务名称&quot;
+<pre tabindex="0"><code>sc query type= service state= all | find /i &#34;SERVICE_NAME: 要查找的服务名称&#34;
 </code></pre></li>
 <li>
 <p>显示特定服务的详细情况</p>
-<pre><code>sc query 服务名称
+<pre tabindex="0"><code>sc query 服务名称
 </code></pre></li>
 <li>
 <p>查找正在运行的服务</p>
@@ -315,25 +314,25 @@ We recommend allowing this on your home and work networks, but not public ones.
 </li>
 <li>
 <p>查找所有停止的服务</p>
-<pre><code>sc query type= service state= inactive
+<pre tabindex="0"><code>sc query type= service state= inactive
 </code></pre></li>
 <li>
 <p>启动一项服务<br>⚠注意: 这里需要用的是 <strong><i>服务名称 (SERVICE_NAME)</i></strong> ，而非显示名称 (DISPLAY_NAME)</p>
-<pre><code>net start 服务名称
+<pre tabindex="0"><code>net start 服务名称
 </code></pre></li>
 <li>
 <p>停止一项服务<br>⚠注意: 这里需要用的是 <strong><i>服务名称 (SERVICE_NAME)</i></strong> ，而非显示名称 (DISPLAY_NAME)</p>
-<pre><code>net stop 服务名称
+<pre tabindex="0"><code>net stop 服务名称
 </code></pre></li>
 <li>
 <p>禁用一项服务<br>⚠注意: 这里需要用的是 <strong><i>服务名称 (SERVICE_NAME)</i></strong> ，而非显示名称 (DISPLAY_NAME)</p>
-<pre><code>sc config 服务名称 start= disabled
+<pre tabindex="0"><code>sc config 服务名称 start= disabled
 </code></pre></li>
 <li>
 <p>启用一项服务<br>⚠注意: 这里需要用的是 <strong><i>服务名称 (SERVICE_NAME)</i></strong> ，而非显示名称 (DISPLAY_NAME)</p>
 </li>
 </ol>
-<pre><code>REM delayed-auto = 自动(延迟启动)
+<pre tabindex="0"><code>REM delayed-auto = 自动(延迟启动)
 REM auto         = 自动
 REM demand       = 手动
 
@@ -341,7 +340,7 @@ sc config 服务名称 start= auto
 </code></pre><ol start="11">
 <li>删除一项服务<br>⚠注意: 这里需要用的是 <strong><i>服务名称 (SERVICE_NAME)</i></strong> ，而非显示名称 (DISPLAY_NAME)<br>⚠注意: 本操作不可逆，在删除一项系统自带的服务之前，你可以先通过在注册表的 <code>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services</code> 路径下，导出与服务名相同的注册表项作为备份</li>
 </ol>
-<pre><code>REM 需要管理员权限，若管理员权限仍然不够，那么你可能需要 TrustedInstaller 权限
+<pre tabindex="0"><code>REM 需要管理员权限，若管理员权限仍然不够，那么你可能需要 TrustedInstaller 权限
 sc delete 服务名称
 </code></pre><h2 id="通过命令行工具管理计划任务">
   通过命令行工具管理计划任务
@@ -350,26 +349,26 @@ sc delete 服务名称
 <ol>
 <li>
 <p>列出所有计划任务</p>
-<pre><code>schtasks /query
+<pre tabindex="0"><code>schtasks /query
 </code></pre><p>示例输出:</p>
-<pre><code>文件夹: \Microsoft\Windows\RecoveryEnvironment
+<pre tabindex="0"><code>文件夹: \Microsoft\Windows\RecoveryEnvironment
 任务名            下次运行时间       模式
 ================ ================ ================
 VerifyWinRE      N/A              已禁用
 </code></pre></li>
 <li>
 <p>删除特定计划任务<br>本例中使用上一条命令的输出作为示例，删除时需要提供 <strong><i>完整</i></strong> 的任务计划名（即文件夹 + 任务名）</p>
-<pre><code>REM /f 参数不是必须的，如果不加这个参数，删除时就会弹出确认选项
+<pre tabindex="0"><code>REM /f 参数不是必须的，如果不加这个参数，删除时就会弹出确认选项
 
-schtasks /delete /tn &quot;\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE&quot; /f
+schtasks /delete /tn &#34;\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE&#34; /f
 </code></pre></li>
 <li>
 <p>禁用特定的计划任务</p>
-<pre><code>schtasks /change /tn &quot;完整的任务计划名&quot; /disable
+<pre tabindex="0"><code>schtasks /change /tn &#34;完整的任务计划名&#34; /disable
 </code></pre></li>
 <li>
 <p>启用特定的计划任务</p>
-<pre><code>schtasks /change /tn &quot;完整的任务计划名&quot; /enable
+<pre tabindex="0"><code>schtasks /change /tn &#34;完整的任务计划名&#34; /enable
 </code></pre></li>
 </ol>
 <h2 id="启用或禁用基于虚拟化的安全性">
@@ -380,7 +379,7 @@ schtasks /delete /tn &quot;\Microsoft\Windows\RecoveryEnvironment\VerifyWinRE&qu
 <p>⚠ 注意：关闭后将会影响虚拟机的使用</p>
 </blockquote>
 <p>以管理员身份运行下面的命令</p>
-<pre><code>REM 关闭
+<pre tabindex="0"><code>REM 关闭
 bcdedit /set hypervisorlaunchtype off
 
 REM 打开
@@ -419,11 +418,11 @@ bcdedit /set hypervisorlaunchtype auto
 <p><code>Get-AppXPackage -AllUsers -Name App包的PackageName | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register &quot;$($_.InstallLocation)\AppXManifest.xml&quot; -Verbose}</code></p>
 <p>在本例中， <strong><i>App包的PackageName</i></strong> 应该为 <code>AppleInc.iCloud</code> ， <em>App包的PackageName</em> 可以在错误原因里面查到</p>
 <p>示例输出：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">PS C:\Windows\system32&gt; Get-AppXPackage -AllUsers -Name AppleInc.iCloud | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register &#34;$($_.InstallLocation)\AppXManifest.xml&#34; -Verbose}
-
-详细信息: 正在目标“C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml”上执行操作“注册程序包”。
-详细信息: 操作完成: C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml
-</code></pre></div><p><sub> * . <a href="https://answers.microsoft.com/zh-hans/windows/forum/all/%E5%BE%AE%E8%BD%AF%E5%BA%94%E7%94%A8%E5%95%86/1ed45936-e599-4524-9616-5263c7031c13">引用来源</a> </sub></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PS C:\Windows\system32&gt; Get-AppXPackage -AllUsers -Name AppleInc.iCloud | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register &#34;$($_.InstallLocation)\AppXManifest.xml&#34; -Verbose}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>详细信息: 正在目标“C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml”上执行操作“注册程序包”。
+</span></span><span style="display:flex;"><span>详细信息: 操作完成: C:\Program Files\WindowsApps\AppleInc.iCloud_14.2.108.0_x64__nzyj5cx40ttqa\AppXManifest.xml
+</span></span></code></pre></div><p><sub> * . <a href="https://answers.microsoft.com/zh-hans/windows/forum/all/%E5%BE%AE%E8%BD%AF%E5%BA%94%E7%94%A8%E5%95%86/1ed45936-e599-4524-9616-5263c7031c13">引用来源</a> </sub></p>
 <hr>
 <p><a href="../..">上一级</a></p>
 <p><a href="/">笔记首页</a></p>
@@ -443,9 +442,7 @@ bcdedit /set hypervisorlaunchtype auto
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

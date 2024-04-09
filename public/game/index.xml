@@ -13,7 +13,7 @@
       <pubDate>Mon, 23 Oct 2023 20:37:07 +0900</pubDate>
       
       <guid>/game/hide/</guid>
-      <description>原神 #   SteamOS 图形设置优化 抓取原神数据包的下载地址 抄作业进度 @ GitHub     隐藏的笔记目录
+      <description>原神 # SteamOS 图形设置优化 抓取原神数据包的下载地址 抄作业进度 @ GitHub 隐藏的笔记目录
 笔记首页</description>
     </item>
     
@@ -23,13 +23,13 @@
       <pubDate>Mon, 02 Oct 2023 18:08:06 +0900</pubDate>
       
       <guid>/game/steamGames/steamGameError/</guid>
-      <description>Steam 游戏疑难杂症什锦 #  Half-Life: Alyx #  游戏总是提示:
+      <description>Steam 游戏疑难杂症什锦 # Half-Life: Alyx # 游戏总是提示:
 SteamVR runtime failure! Timed out waiting for response from Mongoose. SteamVR needs to be restarted. 头显中能看到游戏标题的背景场景，但是菜单无法显示出来，且一点错误提示的 OK 游戏便会自动退出，重启串流驱动、SteamVR、Steam、电脑均无法解决
 解决方案：
 在 Steam 打开游戏设置，在启动参数中加入 -novid，然后再启动游戏即可
-Your Diary + #  DMM JP 上的 R18 补丁: 链接 ( 仅适用于中英文版本 )
-在 SteamOS 上游玩需要执行的操作 #   下载 GE-Proton7-43 ，并把它设置为游戏的兼容性工具 在 Steam 中运行一次游戏
- ( 游戏会出错，不需要担心，这一步我们只是为了让 Steam 创建该游戏的 Proton 环境而已 ) 安装 Protontricks
+Your Diary + # DMM JP 上的 R18 补丁: 链接 ( 仅适用于中英文版本 )
+在 SteamOS 上游玩需要执行的操作 # 下载 GE-Proton7-43 ，并把它设置为游戏的兼容性工具 在 Steam 中运行一次游戏
+( 游戏会出错，不需要担心，这一步我们只是为了让 Steam 创建该游戏的 Proton 环境而已 ) 安装 Protontricks
 安装方法查考: GitHub 或 Flathub 打开你的代理软件，因为要安装的 wine 功能需要连接到外网获取</description>
     </item>
     
@@ -39,23 +39,26 @@ Your Diary + #  DMM JP 上的 R18 补丁: 链接 ( 仅适用于中英文版本 )
       <pubDate>Fri, 05 May 2023 19:21:53 +0900</pubDate>
       
       <guid>/game/steamDeck/winDeckNotes/</guid>
-      <description>Windows on Deck 使用笔记 #   本篇只涉及 Windows on Deck 的使用
+      <description>Windows on Deck 使用笔记 # 本篇只涉及 Windows on Deck 的使用
 如果需要在 Steam Deck 上使用 SteamOS 的相关信息，请点击这里
- 官方资源快速链接 #  Windows驱动点此跳转 #  安装顺序(请参考下列文件名)：
- APU驱动程序
+官方资源快速链接 # Windows驱动点此跳转 # 安装顺序(请参考下列文件名)：
+APU驱动程序
 APU_XXX.zip
 Aerith Windows Driver_XXX.zip Wi-Fi驱动程序
 RTLWlanE_XXX.zip 蓝牙驱动程序
 RTBlueR_XXX.zip SD读卡器驱动程序
-BayHub_SD_STOR_XXX.zip 音频驱动程序  音频驱动程序1
+BayHub_SD_STOR_XXX.zip 音频驱动程序 音频驱动程序1
 cs35l41_XXX.zip 音频驱动程序2
-NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址均为项目本体GitHub链接，可能需要翻墙)  ViGEmBus
+NAU88L21_XXX.zip Windows第三方驱动 # 手柄驱动部分(下列地址均为项目本体GitHub链接，可能需要翻墙) ViGEmBus
 专为各种手柄设计的Windows内核驱动 HidHide
 对游戏隐藏指定的某个手柄插件 DS4Windows
 可以将任意型号的手柄伪装为PlayStation手柄或者Xbox手柄
 必须搭配ViGEmBus使用，建议同时用HidHide隐藏自带的手柄 Steamdeck WIndows Controller Driver (SWICD)
 第三方手柄驱动
-*. 暂时未知是否必须    Windows系统游戏体验提升小工具合集 #    Borderless Gaming</description>
+*. 暂时未知是否必须 Windows系统游戏体验提升小工具合集 # Borderless Gaming
+功能简介:
+以无边框方式启动软件 置顶任何窗口(不受全屏游戏影响) 设置窗口显示位置 设置窗口大小 使鼠标光标不可见 使任务栏不可见 Steam有售(赞助开发者)，亦可在GitHub直接下载，软件开源免费
+⚠ 本工具设置上有坑点，请参考使用攻略，确保读完全文再开始操作</description>
     </item>
     
     <item>
@@ -64,17 +67,20 @@ NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址�
       <pubDate>Fri, 05 May 2023 19:21:42 +0900</pubDate>
       
       <guid>/game/steamDeck/steamOSNotes/</guid>
-      <description>SteamOS 使用笔记 #   本篇只涉及 SteamOS (ArchLinux) 的使用
+      <description>SteamOS 使用笔记 # 本篇只涉及 SteamOS (ArchLinux) 的使用
 如果需要在 Steam Deck 上使用 Windows 的相关信息，请点击这里
- 首次开机无法更新 #   这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
+首次开机无法更新 # 这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
 需要一个 USB HUB 用于插入外置键盘
 引用来源: Reddit帖子
-   在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
+在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
 ⚠注意⚠：成功联网即可，千万不要点击下一步
-  同时按下键盘的 Ctrl + Alt + F4，进入 tty 模式
-  使用用户 deck 登录，默认无密码
-  passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
-  运行命令 sudo steamos-update，并根据提示输入刚才设置的密码</description>
+同时按下键盘的 Ctrl + Alt + F4，进入 tty 模式
+使用用户 deck 登录，默认无密码
+passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
+运行命令 sudo steamos-update，并根据提示输入刚才设置的密码
+如果有可用的更新，系统将会提示 Update available 并自动下载
+安装完成后会显示 Applied an update
+运行命令 sudo reboot 重启Deck，即可更新成功</description>
     </item>
     
     <item>
@@ -83,22 +89,32 @@ NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址�
       <pubDate>Fri, 05 May 2023 19:21:21 +0900</pubDate>
       
       <guid>/game/steamDeck/borderlessGamingUsage/</guid>
-      <description>Borderless Gaming 使用攻略 #   请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
+      <description>Borderless Gaming 使用攻略 # 请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
 请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
 请务必阅读完本文后再进行操作(包括 注意事项及操作步骤解释)
- 调整成中文UI #  软件默认是英文UI，可以在Options菜单中选择Select Language &amp;gt; 中文(中国)来调整显示语言
+调整成中文UI # 软件默认是英文UI，可以在Options菜单中选择Select Language &amp;gt; 中文(中国)来调整显示语言
 调整后，软件将会关闭，需要你重新启动一下本软件
-无边框、置顶显示Windows自带的屏幕键盘 #    打开软件后，请 ** 务必 ** 先在工具菜单勾选暂停自动处理
-  打开系统自带的屏幕键盘
-  在软件左边的应用程序框中右键点击屏幕键盘 [osk]
-  在弹出的菜单中选择添加到自动处理列表... &amp;gt; 以进程可折行文件名识别
-  在软件右边的自动处理列表中右键点击osk [Process]
-  在弹出的菜单中勾选尺寸不变
+无边框、置顶显示Windows自带的屏幕键盘 # 打开软件后，请 ** 务必 ** 先在工具菜单勾选暂停自动处理
+打开系统自带的屏幕键盘
+在软件左边的应用程序框中右键点击屏幕键盘 [osk]
+在弹出的菜单中选择添加到自动处理列表... &amp;gt; 以进程可折行文件名识别
+在软件右边的自动处理列表中右键点击osk [Process]
+在弹出的菜单中勾选尺寸不变
 这时的osk [Process]会变成osk [Process] [NoSize]
-  在软件右边的自动处理列表中右键点击osk [Process] [NoSize]
-  在弹出的菜单中勾选设置窗口尺寸
-  在弹出的「使用鼠标选择区域？」窗口中点击是
-  在弹出的「Draw Windows Rectangle」窗口中点击确定</description>
+在软件右边的自动处理列表中右键点击osk [Process] [NoSize]
+在弹出的菜单中勾选设置窗口尺寸
+在弹出的「使用鼠标选择区域？」窗口中点击是
+在弹出的「Draw Windows Rectangle」窗口中点击确定
+用鼠标框出你想要在哪里显示屏幕键盘(跟QQ截图一样操作)
+双击框里面的区域确定所选区域
+双击框外面的区域取消操作
+确定操作后osk [Process]会变成osk [Process] [你框选的位置信息]
+例如: osk [Process] [932x734-1607x956]
+在软件右边的自动处理列表中右键点击osk [Process] [你选择的区域信息]
+在弹出的菜单中勾选保持窗口在顶部，即可将屏幕键盘显示在所有窗口前方
+这时的osk [Process] [你框选的位置信息]会变成osk [Process] [Top] [你框选的位置信息]
+在工具菜单中取消勾选暂停自动处理
+如果屏幕键盘的显示位置没有变化，重启Borderless Gaming与屏幕键盘即可</description>
     </item>
     
     <item>
@@ -107,22 +123,32 @@ NAU88L21_XXX.zip    Windows第三方驱动 #   手柄驱动部分(下列地址�
       <pubDate>Sat, 25 Feb 2023 10:58:40 +0800</pubDate>
       
       <guid>/game/nintendo/switch/sxosToAtmosphere/</guid>
-      <description>Nintendo Switch SXOS 转 Atmosphere #   本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
+      <description>Nintendo Switch SXOS 转 Atmosphere # 本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
 SXOS生成的虚拟系统无需保留，因为要将其转换成Atmosphère能用的并不容易，建议删掉后重新使用 hekate - Nyx 创建虚拟系统
-   请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
+请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
 相关文件如下：
- boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项    如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
-  下载 SX Gear：下载地址 (需要翻墙)
- 这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
+boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项 如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
+下载 SX Gear：下载地址 (需要翻墙)
+这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
 如果你无法翻墙，可以直接点击下面的文件下载
 SX_Gear_v1.1.zip
-   下载 hekate - Nyx 破解引导程序：下载地址
+下载 hekate - Nyx 破解引导程序：下载地址
 进入网页后，点击页面右侧的Releases，在弹出的页面中，下载第一个Assets下面的hekate_ctcaer_X.X.X_Nyx_X.X.X.zip
- X.X.X 为版本号，下载最新的就行，下同
-   下载 Atmosphère 自制系统：下载地址
- 下载方法同第4步
+X.X.X 为版本号，下载最新的就行，下同
+下载 Atmosphère 自制系统：下载地址
+下载方法同第4步
 这里需要注意一下，除了下载 atmosphere-X.X.X-master-XXXXXXXXX+hbl-X.X.X+hbmenu-X.X.X.zip 以外，还需要下载 fusee.bin
-   下载 Signature Patches 签名补丁：</description>
+下载 Signature Patches 签名补丁：
+GitHub仓库：下载地址
+下载方法同第4步
+签名补丁是必须下载的，否则无法安装盗版游戏
+这里需要注意一下，这里只需要下载 fusee.zip 文件即可
+2022-09-27 Update
+上面的地址已经失效，如果要下载签名补丁，请前往这里(出处)或这里(整合站)
+解压路径参考下面 第11步，压缩包内atmosphere和bootloader文件要放对位置
+创建一个文件夹，这里以 D:\SwitchCrack 为例，最后需要将这个文件夹的所有内容覆盖到内存卡根目录，即可完成转换（后续更新版本方法是一样的）
+先备份原始的SXOS相关的文件
+将内存卡中的 boot.dat 复制到 D:\SwitchCrack 中并命名为 boot_sxos.</description>
     </item>
     
   </channel>

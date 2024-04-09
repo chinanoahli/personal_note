@@ -3,48 +3,68 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nintendo Switch SXOS 转 Atmosphere #   本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
+<meta name="description" content="Nintendo Switch SXOS 转 Atmosphere # 本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
 SXOS生成的虚拟系统无需保留，因为要将其转换成Atmosphère能用的并不容易，建议删掉后重新使用 hekate - Nyx 创建虚拟系统
-   请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
+请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
 相关文件如下：
- boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项    如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
-  下载 SX Gear：下载地址 (需要翻墙)
- 这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
+boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项 如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
+下载 SX Gear：下载地址 (需要翻墙)
+这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
 如果你无法翻墙，可以直接点击下面的文件下载
 SX_Gear_v1.1.zip
-   下载 hekate - Nyx 破解引导程序：下载地址
+下载 hekate - Nyx 破解引导程序：下载地址
 进入网页后，点击页面右侧的Releases，在弹出的页面中，下载第一个Assets下面的hekate_ctcaer_X.X.X_Nyx_X.X.X.zip
- X.X.X 为版本号，下载最新的就行，下同
-   下载 Atmosphère 自制系统：下载地址
- 下载方法同第4步
+X.X.X 为版本号，下载最新的就行，下同
+下载 Atmosphère 自制系统：下载地址
+下载方法同第4步
 这里需要注意一下，除了下载 atmosphere-X.X.X-master-XXXXXXXXX&#43;hbl-X.X.X&#43;hbmenu-X.X.X.zip 以外，还需要下载 fusee.bin
-   下载 Signature Patches 签名补丁：">
+下载 Signature Patches 签名补丁：
+GitHub仓库：下载地址
+下载方法同第4步
+签名补丁是必须下载的，否则无法安装盗版游戏
+这里需要注意一下，这里只需要下载 fusee.zip 文件即可
+2022-09-27 Update
+上面的地址已经失效，如果要下载签名补丁，请前往这里(出处)或这里(整合站)
+解压路径参考下面 第11步，压缩包内atmosphere和bootloader文件要放对位置
+创建一个文件夹，这里以 D:\SwitchCrack 为例，最后需要将这个文件夹的所有内容覆盖到内存卡根目录，即可完成转换（后续更新版本方法是一样的）
+先备份原始的SXOS相关的文件
+将内存卡中的 boot.dat 复制到 D:\SwitchCrack 中并命名为 boot_sxos.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Nintendo Switch SXOS 转 Atmosphere" />
-<meta property="og:description" content="Nintendo Switch SXOS 转 Atmosphere #   本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
+<meta property="og:description" content="Nintendo Switch SXOS 转 Atmosphere # 本教程不包含两个系统之间的虚拟系统互相转换教程，请转换前备份好各个游戏的存档
 SXOS生成的虚拟系统无需保留，因为要将其转换成Atmosphère能用的并不容易，建议删掉后重新使用 hekate - Nyx 创建虚拟系统
-   请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
+请先备份好所有你SXOS的启动文件以及许可证和启动文件，因为SXOS已经倒闭，其官网也无法再进入，一旦遗失你的许可证，你就永远无法再启动SXOS了
 相关文件如下：
- boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项    如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
-  下载 SX Gear：下载地址 (需要翻墙)
- 这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
+boot.dat → SXOS本体 license.dat → SXOS许可证，无论如何，请一定要备份好此文件 license-request.dat → 用于在SXOS官网重新下载许可证的文件，鉴于官网已经关停，所以可不备份此项 如果你曾经将虚拟系统安装到机器的自带储存里面的话，请现在将虚拟系统移动到内存卡
+下载 SX Gear：下载地址 (需要翻墙)
+这个工具允许SX硬破芯片加载不是由SX团队开发的第三方payload
 如果你无法翻墙，可以直接点击下面的文件下载
 SX_Gear_v1.1.zip
-   下载 hekate - Nyx 破解引导程序：下载地址
+下载 hekate - Nyx 破解引导程序：下载地址
 进入网页后，点击页面右侧的Releases，在弹出的页面中，下载第一个Assets下面的hekate_ctcaer_X.X.X_Nyx_X.X.X.zip
- X.X.X 为版本号，下载最新的就行，下同
-   下载 Atmosphère 自制系统：下载地址
- 下载方法同第4步
+X.X.X 为版本号，下载最新的就行，下同
+下载 Atmosphère 自制系统：下载地址
+下载方法同第4步
 这里需要注意一下，除了下载 atmosphere-X.X.X-master-XXXXXXXXX&#43;hbl-X.X.X&#43;hbmenu-X.X.X.zip 以外，还需要下载 fusee.bin
-   下载 Signature Patches 签名补丁：" />
+下载 Signature Patches 签名补丁：
+GitHub仓库：下载地址
+下载方法同第4步
+签名补丁是必须下载的，否则无法安装盗版游戏
+这里需要注意一下，这里只需要下载 fusee.zip 文件即可
+2022-09-27 Update
+上面的地址已经失效，如果要下载签名补丁，请前往这里(出处)或这里(整合站)
+解压路径参考下面 第11步，压缩包内atmosphere和bootloader文件要放对位置
+创建一个文件夹，这里以 D:\SwitchCrack 为例，最后需要将这个文件夹的所有内容覆盖到内存卡根目录，即可完成转换（后续更新版本方法是一样的）
+先备份原始的SXOS相关的文件
+将内存卡中的 boot.dat 复制到 D:\SwitchCrack 中并命名为 boot_sxos." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/game/nintendo/switch/sxosToAtmosphere/" />
+<meta property="og:url" content="/game/nintendo/switch/sxosToAtmosphere/" /><meta property="article:section" content="game" />
 <meta property="article:published_time" content="2023-02-25T10:58:40+08:00" />
 <meta property="article:modified_time" content="2023-02-25T10:58:40+08:00" />
 <title>Nintendo Switch SXOS 转 Atmosphere | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -110,7 +130,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -155,7 +174,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -285,7 +304,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>
 <p><strong>此时，你的 D:\SwitchCrack 应该有以下的内容</strong></p>
-<pre><code>D:\SwitchCrack
+<pre tabindex="0"><code>D:\SwitchCrack
 │  boot.dat                   # SX Gear 的启动文件
 │  boot.ini                   # SX Gear 的配置文件
 │  boot_sxos.dat              # SXOS 的启动文件
@@ -370,7 +389,7 @@ https://github.com/alex-shpak/hugo-book
 <li>[NormalSYS] → 进入原版非破解系统</li>
 </ol>
 </blockquote>
-<pre><code>[config]
+<pre tabindex="0"><code>[config]
 autoboot=0
 autoboot_list=0
 bootwait=3
@@ -411,7 +430,7 @@ icon=bootloader/res/icon_switch.bmp
 <li>emummc.txt</li>
 </ol>
 <p>并写入如下内容 (三个文件内容一样)：</p>
-<pre><code># Nintendo telemetry servers
+<pre tabindex="0"><code># Nintendo telemetry servers
 127.0.0.1 receive-%.dg.srv.nintendo.net receive-%.er.srv.nintendo.net
 127.0.0.1 *nintendo.*
 127.0.0.1 *nintendoswitch.*
@@ -423,7 +442,7 @@ icon=bootloader/res/icon_switch.bmp
 </li>
 <li>
 <p>打开 D:\SwitchCrack\boot.ini 修改成以下内容（X.X.X 替换成 hekate 的版本号）</p>
-<pre><code>[payload]
+<pre tabindex="0"><code>[payload]
 file=hekate_ctcaer_X.X.X.bin
 </code></pre></li>
 <li>
@@ -485,9 +504,7 @@ file=hekate_ctcaer_X.X.X.bin
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

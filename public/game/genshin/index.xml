@@ -13,7 +13,7 @@
       <pubDate>Fri, 05 May 2023 19:14:42 +0900</pubDate>
       
       <guid>/game/genshin/graphicSettings/</guid>
-      <description>游戏图形设置 for Deck #   FPS: 45 垂直同步: 关闭 渲染精细度: 1.0 阴影品质: 低 后期效果: 中 特效品质: 中 场景细节: 中 反锯齿: FSR2 体积雾: 关闭 反射: 关闭 动态模糊: 关闭 Bloom: 打开 人群密度: 高 多人游戏队友特效: 部份封锁 次表面反射: 关闭 各向异性采样: 1x   上一级
+      <description>游戏图形设置 for Deck # FPS: 45 垂直同步: 关闭 渲染精细度: 1.0 阴影品质: 低 后期效果: 中 特效品质: 中 场景细节: 中 反锯齿: FSR2 体积雾: 关闭 反射: 关闭 动态模糊: 关闭 Bloom: 打开 人群密度: 高 多人游戏队友特效: 部份封锁 次表面反射: 关闭 各向异性采样: 1x 上一级
 笔记首页</description>
     </item>
     
@@ -23,23 +23,27 @@
       <pubDate>Fri, 05 May 2023 19:14:32 +0900</pubDate>
       
       <guid>/game/genshin/downloadDataDirectly/</guid>
-      <description>抓取原神数据包的下载地址 #   参考链接：点我跳转(需翻墙)
+      <description>抓取原神数据包的下载地址 # 参考链接：点我跳转(需翻墙)
 这里原作者说方法已失效，实际上是错误的，直到3.3.0更新为止，本方法仍然有效
- 0x00 工具的准备 #  首先我们要准备工具，以从内存提取下载地址
+0x00 工具的准备 # 首先我们要准备工具，以从内存提取下载地址
 不用担心，这个过程是安全的，因为没有篡改游戏本身的文件，也不需要登录（只操作启动器），所以正常来说不会被封禁
 工具的名字叫 Process Hacker ，官方网站点这里，进入官网后，点击网页上蓝色的按钮 Download Process Hacker ，然后根据你的系统以及架构选择对应的 Portable 版本即可
- Portable 即便携版，不需要安装，下载后是一个zip压缩文件，解压到任意位置即可使用
- 0x01 启动 Process Hacker 的注意点 #  一定要记得用管理员身份运行Process Hacker，否则Process Hacker将无法读取原神启动器的内存，从而造成操作失败
-0x02 通过 Process Hacker 启动原神启动器 #  在解压出来的Process Hacker路径中找到ProcessHacker.exe，然后右键点击它，从弹出菜单中选择以管理员身份运行 (A)
- 请注意，如果你成功地以管理员身份运行了Process Hacker的话，它的标题栏是会显示Administrator的（见下图）
- 然后你将会看到Process Hacker的主窗口
+Portable 即便携版，不需要安装，下载后是一个zip压缩文件，解压到任意位置即可使用
+0x01 启动 Process Hacker 的注意点 # 一定要记得用管理员身份运行Process Hacker，否则Process Hacker将无法读取原神启动器的内存，从而造成操作失败
+0x02 通过 Process Hacker 启动原神启动器 # 在解压出来的Process Hacker路径中找到ProcessHacker.exe，然后右键点击它，从弹出菜单中选择以管理员身份运行 (A)
+请注意，如果你成功地以管理员身份运行了Process Hacker的话，它的标题栏是会显示Administrator的（见下图）
+然后你将会看到Process Hacker的主窗口
 现在，从菜单栏中找到Hacker &amp;gt; Run...，然后从弹出文件选择窗口中，选择原神启动器的launcher.exe以通过 Process Hacker 启动原神启动器
 然后让启动器开始下载数据文件，如初次安装游戏或进行预下载等等
 这时我们先将注意力放到Process Hacker的主窗口中，从进程列表里面找到原神图标的launcher.exe进程
 找到之后，在它上面点击鼠标右键，并从弹出菜单中选择Properties，打开启动器进程的属性窗口
 在属性窗口中，我们进入Memory标签，然后点击Strings...按钮
 接下来会弹出 String Search 字符串搜索窗口，这里我们不需要更改任何设置，直接点击OK按钮即可
-接着在弹出的 Results 结果窗口中，点击窗口左下角的Filter过滤器按钮，并在弹出的菜单中选择Conntains内容</description>
+接着在弹出的 Results 结果窗口中，点击窗口左下角的Filter过滤器按钮，并在弹出的菜单中选择Conntains内容
+然后在弹出的Filter过滤器窗口中填入autopatch这串字符，并点击OK按钮
+接下来，Process Hacker将会弹出新的 Results 结果窗口，我们可以看到很多以.zip结尾的文件链接
+如何选择下载链接，将会在下一段讲述，这里我们先学习一下如何把想要的链接复制出来
+首先我们在 Results 窗口点击一条想要复制的链接选中它，然后点击窗口右下角的Copy按钮即可将这条结果复制出来</description>
     </item>
     
   </channel>

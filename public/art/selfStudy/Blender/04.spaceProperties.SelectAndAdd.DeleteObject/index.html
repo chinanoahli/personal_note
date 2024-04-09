@@ -3,38 +3,44 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="04. 场景单位、对象的选择与添加对象 #  场景单位 #  在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
+<meta name="description" content="04. 场景单位、对象的选择与添加对象 # 场景单位 # 在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
 而这个数值的单位默认是 「米」，那有没有办法可以把这个「米」修改成别的单位呢？
 答案是肯定的，我们只需要在 Blender 窗口右侧的属性面板中找到 场景属性 面板，然后根据需要修改其中的 单位 &gt; 单位系统 即可
-对象的选择 #  与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
-通过 导航器 选择对象 #  在这里，先来说说 导航器 中选择对象的操作
+对象的选择 # 与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
+通过 导航器 选择对象 # 在这里，先来说说 导航器 中选择对象的操作
 导航器的操作相对直观，它与很多其他软件类似，提供了两种操作方式:
-  通过 Shift 进行快速选择在导航器中连续排列的对象
- 选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象    通过 Ctrl 实现跳跃式多选
- 按住 Ctrl 不放 逐一点击需要选中的对象    取消选择某一个对象
+通过 Shift 进行快速选择在导航器中连续排列的对象
+选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象 通过 Ctrl 实现跳跃式多选
+按住 Ctrl 不放 逐一点击需要选中的对象 取消选择某一个对象
 有时候我们需要从已经选择的多个工具中取消一些选中的对象，这时我们可以执行下列的操作
-  按住 Ctrl 不放">
+按住 Ctrl 不放
+逐一点击需要取消选中的对象
+⚠ 有时需要多点击一次才能取消选择，被选择的对象会被标记成 蓝色高亮
+从 3D 视图中选择对象 # 通过 Shift 进行选择 # 在 3D 视图中，我们可以通过按住 Shift 不放，逐一点击场景中需要选择的多个对象来进行多选，取消选择也是同理，只需要按住 Shift 不放，再次点击已经被选中的对象即可取消选择">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记 04 场景单位、对象的选择与添加对象" />
-<meta property="og:description" content="04. 场景单位、对象的选择与添加对象 #  场景单位 #  在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
+<meta property="og:description" content="04. 场景单位、对象的选择与添加对象 # 场景单位 # 在上一节 变换和移动对象 中提到，Blender 的部分组合键是可以嵌入数值来实现位移和变换对象
 而这个数值的单位默认是 「米」，那有没有办法可以把这个「米」修改成别的单位呢？
 答案是肯定的，我们只需要在 Blender 窗口右侧的属性面板中找到 场景属性 面板，然后根据需要修改其中的 单位 &gt; 单位系统 即可
-对象的选择 #  与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
-通过 导航器 选择对象 #  在这里，先来说说 导航器 中选择对象的操作
+对象的选择 # 与其他任何编辑类软件类似，Blender 也提供了非常人性化的 单选 、 多选 等选择对象的操作
+通过 导航器 选择对象 # 在这里，先来说说 导航器 中选择对象的操作
 导航器的操作相对直观，它与很多其他软件类似，提供了两种操作方式:
-  通过 Shift 进行快速选择在导航器中连续排列的对象
- 选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象    通过 Ctrl 实现跳跃式多选
- 按住 Ctrl 不放 逐一点击需要选中的对象    取消选择某一个对象
+通过 Shift 进行快速选择在导航器中连续排列的对象
+选择第一个需要选择的对象 按住 Shift 不放 选择最后一个需要选中的对象 通过 Ctrl 实现跳跃式多选
+按住 Ctrl 不放 逐一点击需要选中的对象 取消选择某一个对象
 有时候我们需要从已经选择的多个工具中取消一些选中的对象，这时我们可以执行下列的操作
-  按住 Ctrl 不放" />
+按住 Ctrl 不放
+逐一点击需要取消选中的对象
+⚠ 有时需要多点击一次才能取消选择，被选择的对象会被标记成 蓝色高亮
+从 3D 视图中选择对象 # 通过 Shift 进行选择 # 在 3D 视图中，我们可以通过按住 Shift 不放，逐一点击场景中需要选择的多个对象来进行多选，取消选择也是同理，只需要按住 Shift 不放，再次点击已经被选中的对象即可取消选择" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/art/selfStudy/Blender/04.spaceProperties.SelectAndAdd.DeleteObject/" />
+<meta property="og:url" content="/art/selfStudy/Blender/04.spaceProperties.SelectAndAdd.DeleteObject/" /><meta property="article:section" content="art" />
 <meta property="article:published_time" content="2023-10-02T16:38:25+09:00" />
 <meta property="article:modified_time" content="2023-10-02T16:38:25+09:00" />
 <title>Blender 学习笔记 04 场景单位、对象的选择与添加对象 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -100,7 +106,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -145,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -397,9 +402,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

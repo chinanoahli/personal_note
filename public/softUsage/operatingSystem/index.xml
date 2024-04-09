@@ -13,10 +13,13 @@
       <pubDate>Mon, 23 Oct 2023 21:14:35 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/macOS/tweaks/</guid>
-      <description>MacOS 使用技巧 #   收录一些MacOS系统目前遇到过的问题的解决方案。
-  sudo 要求输入管理员帐号的密码，输入密码时不会显示 ∙ 或 *，确保输入无误后按 enter/return 即可。
-  禁用 「App」尚未针对您的Mac优化 提示 #  打开 Terminal 根据需要运行以下命令
-   命令作用 命令 测试环境     禁用最佳化提示 defaults write -g CSUIDisable32BitWarning -boolean TRUE MacOS 10.14.6 (18G84) 通过   启用最佳化提示 defaults delete -g CSUIDisable32BitWarning 未测试   查看当前设置 defaults read -g CSUIDisable32BitWarning 未测试    来源： #   Apple官方介绍页面 How to suppress alert &amp;lsquo;this app is not optimized for your Mac&amp;rsquo;   修改 hostname #  本技巧可以在你的计算机名(Hostname)加入非英文字符。</description>
+      <description>MacOS 使用技巧 # 收录一些MacOS系统目前遇到过的问题的解决方案。
+sudo 要求输入管理员帐号的密码，输入密码时不会显示 ∙ 或 *，确保输入无误后按 enter/return 即可。
+禁用 「App」尚未针对您的Mac优化 提示 # 打开 Terminal 根据需要运行以下命令
+命令作用 命令 测试环境 禁用最佳化提示 defaults write -g CSUIDisable32BitWarning -boolean TRUE MacOS 10.14.6 (18G84) 通过 启用最佳化提示 defaults delete -g CSUIDisable32BitWarning 未测试 查看当前设置 defaults read -g CSUIDisable32BitWarning 未测试 来源： # Apple官方介绍页面 How to suppress alert &amp;rsquo;this app is not optimized for your Mac&amp;rsquo; 修改 hostname # 本技巧可以在你的计算机名(Hostname)加入非英文字符。
+至于在不同网络环境和不同系统通讯的情况下，非英文字符的兼容性还请自行测试。
+打开 Terminal 根据需要运行以下命令
+sudo scutil --set ComputerName 计算机名 sudo scutil --set HostName 计算机名 修改 Dock 图标大小 # 本技巧可以使强迫症患者不再需要跟无法量化的水平调节器打交道。</description>
     </item>
     
     <item>
@@ -25,7 +28,7 @@
       <pubDate>Fri, 05 May 2023 19:54:21 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/linux/commonCommands/</guid>
-      <description>Linux 常用命令 #   上一级
+      <description>Linux 常用命令 # 上一级
 笔记首页</description>
     </item>
     
@@ -35,15 +38,17 @@
       <pubDate>Fri, 05 May 2023 19:54:13 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/linux/tweaks/</guid>
-      <description>Linux 常用技巧 #  一条命令调整文件与目录的权限 [1] #   背景:
+      <description>Linux 常用技巧 # 一条命令调整文件与目录的权限 [1] # 背景:
 偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 0777，这是让人难以接受的
 以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了
- 有两个办法：
-  通过 find 命令
-# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644   通过 chmod 命令本身的参数控制
+有两个办法：
+通过 find 命令
+# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644 通过 chmod 命令本身的参数控制
 chmod -R u+rwX,go+rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这个参数可以为 目录 自动加入 可执行 权限
 但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 可执行 权限
-  文件本身是 可执行文件</description>
+文件本身是 可执行文件
+能 被当前用户(组) (取决于你这个 -X 放在命令中的哪一段) 检索到
+LightDM 开机自动登陆用户账户 [2] # 修改文件 /etc/lightdm/lightdm.</description>
     </item>
     
     <item>
@@ -52,7 +57,7 @@ chmod -R u+rwX,go+rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这�
       <pubDate>Fri, 05 May 2023 19:53:58 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/windows/componentsAndServices/</guid>
-      <description>页面施工中 #   上一级
+      <description>页面施工中 # 上一级
 笔记首页</description>
     </item>
     
@@ -62,10 +67,10 @@ chmod -R u+rwX,go+rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这�
       <pubDate>Fri, 05 May 2023 19:53:48 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/windows/dismCommands/</guid>
-      <description>DISM 命令速查 #   请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
+      <description>DISM 命令速查 # 请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
 请注意将 &amp;lt;Package.Name~xxxxx&amp;gt; Package包名按照实际情况修改
 { | } 代表可选项目，如 Package.{cab | msu} 可被展开为 Package.cab 或 Package.msu
- 挂载/卸载 保存映像 #   挂载映像  Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件  Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS  Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像  Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像  Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 #   导出映像其中一个index  Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.</description>
+挂载/卸载 保存映像 # 挂载映像 Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件 Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像 Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像 Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 # 导出映像其中一个index Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 追加已挂载的映像为新的index Dism /Capture-Image /ImageFile:WIMFilePath.wim /CaptureDir:\MountedPoint /Name:NewIndex Package 更新控制 # 获取已安装的 Package Dism /Image:\MountPoint /Get-Packages /Format:Table 查询 Package Dism /Image:\MountPoint /Get-PackageInfo /PackagePath:\Package.</description>
     </item>
     
     <item>
@@ -74,20 +79,22 @@ chmod -R u+rwX,go+rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这�
       <pubDate>Fri, 05 May 2023 19:53:40 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/windows/wimBoot/</guid>
-      <description>从Wim映像文件中启动Windows #   参考来源：Fadeer的日志
-  这里只简述步骤，具体原理可能以后补充，也可能不会补充
+      <description>从Wim映像文件中启动Windows # 参考来源：Fadeer的日志
+这里只简述步骤，具体原理可能以后补充，也可能不会补充
 如需要了解原理，请参考Windows Image File Boot (WimBoot)
 若此链接失效，请直接在Microsoft Lean中搜索wimboot即可
-  这里的例子会将Wim映像文件单独放到一个分区中，这个分区会被设置为恢复分区，默认情况下，不会显示在 Explorer 中
- 准备用于WimBoot的映像文件 #  默认情况下，微软提供的安装光盘中的系统映像是不可以直接用于WimBoot的
+这里的例子会将Wim映像文件单独放到一个分区中，这个分区会被设置为恢复分区，默认情况下，不会显示在 Explorer 中
+准备用于WimBoot的映像文件 # 默认情况下，微软提供的安装光盘中的系统映像是不可以直接用于WimBoot的
 我们需要先从安装光盘中找到 X:\sources\install.wim 文件，并将它复制到任意可读写的路径中
 然后在控制台中利用 Dism 命令将需要的映像导出为可以WimBoot的映像，注意，按需选择对应的 Index 即可
 Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 在导出对应的映像之后，推荐进行以下的操作（非必须）：
- 移除系统自带的 WinRE 环境，以减小映像文件体积
+移除系统自带的 WinRE 环境，以减小映像文件体积
 对应的文件在 MountPoint\Windows\Windows\System32\Recovery\winre.wim 按需加入语言包、.Net3.5、IE、补丁等 对映像进行清理并最佳化，以减小映像文件体积
-参见DISM命令速查  得到基本映像之后，我们还需要给加入WimBoot支持
+参见DISM命令速查 得到基本映像之后，我们还需要给加入WimBoot支持
 Dism /Export-Image /WIMBoot /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 准备好映像之后，我们可以通过以下的命令对映像进行检查
-Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1 若正确无误，返回中应包含 WIM Bootable : Yes 或 WIM 可引导: 是 字段</description>
+Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1 若正确无误，返回中应包含 WIM Bootable : Yes 或 WIM 可引导: 是 字段
+准备系统安装磁盘 # 接下来通过 WinPE 启动电脑，这里推荐使用系统安装光盘自带的PE或者Windows ADK提供的PE
+在我试验时，我一开始使用的是USM，但是USM把命令行工具 diskpart 精简掉了，导致无法继续操作</description>
     </item>
     
     <item>
@@ -96,17 +103,17 @@ Dism /Get-ImageInfo /ImageFile:\WIMFile.wim /Index:1 若正确无误，返回中
       <pubDate>Fri, 05 May 2023 19:53:27 +0900</pubDate>
       
       <guid>/softUsage/operatingSystem/windows/tweaks/</guid>
-      <description>Windows 常用技巧 #  修复文件或路径无权访问的情况 #  我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
+      <description>Windows 常用技巧 # 修复文件或路径无权访问的情况 # 我曾经在我电脑上用两个不同的硬盘安装了相同版本的 Windows 10 系统，并且使用了一个相同的用户名 chinanoahli
 但是不久后，我发现，每次当我换不同的硬盘启动时，系统完成用户账户登录并进入桌面后，总会提示 某分区的回收站损坏
 起初我不以为意，认为是不同系统的用户UID不一样，所以造成了这个盘的回收站出现了一些问题
 所以我总是根据系统提示，把该盘符里面的回收站重建
 但是渐渐地，我发现事情不太对劲，这个盘符出现了以下情况
- 应用程序可以创建文件却无法写入
+应用程序可以创建文件却无法写入
 例如：用 OBS Studio 录屏，生成的文件始终是 0 KB 大小 应用程序无法读取文件
-例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题  经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
+例如：用 VLC Player播放某些mkv文件，VCL总是提示文件无法读取，可能是权限问题 经过长时间搜索无果后，偶然看到了cfan上的一篇文章，才确定是 盘符根目录的权限出错 所致
 因为盘符根目录是它里面所有子目录的父目录，所以 盘符根目录 的权限出错将会被继承到所有的子目录中，但是你在Explorer中却不能看出问题所在，而且一般来说，也不能一下子就想到竟然是 盘符根目录 的权限出现了错误
 为了修复这个错误，你可以通过拥有 管理员权限 的终端运行以下命令解决：
-takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 #  当电脑连接到一个新的网络环境时，Windows 总会提示：
+takeown /f X: /A /R /D Y :: ^ 将 `X` 改为你出错的盘符 禁用新网络位置提示 # 当电脑连接到一个新的网络环境时，Windows 总会提示：
 想要允许你的电脑被此网络上的其他电脑和设备发现吗? 我们建议你在家庭和工作网络而非公共网络上启用此功能。 Do you want to allow your PC to be discoverable by other PCs and devices on this network?</description>
     </item>
     

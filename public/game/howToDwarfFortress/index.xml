@@ -13,7 +13,7 @@
       <pubDate>Fri, 05 May 2023 19:45:26 +0900</pubDate>
       
       <guid>/game/howToDwarfFortress/02.gameInstallation/</guid>
-      <description>游戏安装 #  游戏下载及安装 #  矮人要塞兼容 Windows / Linux / Mac 系统，且有各个平台 Legacy / SDL 两种不同的版本。
+      <description>游戏安装 # 游戏下载及安装 # 矮人要塞兼容 Windows / Linux / Mac 系统，且有各个平台 Legacy / SDL 两种不同的版本。
 这里主要以Windows平台进行演示，Linux以及Mac系统以后有空再安排。
 如果使用原版来自行安装插件的话，研究所需要的时间会比较久。
 所以这里采用了矮人要塞Wiki推荐的直接使用懒人新手包 (Lazy Newb Pack，简称 LNP)的方式安装游戏。
@@ -22,9 +22,9 @@ LNP可以快速更改游戏本体的各项参数、一键切换游戏图形包�
 在撰写本页面的时候，LNP最新版本为0.47.05-r06对应原版游戏的0.47.05版本。
 该版本的LNP包含的内容如下：
 游戏本体和游戏启动器
- Dwarf Fortress 0.47.05 PyLNP 0.14a  DFHack 插件加载及管理器 0.47.05-r3 (includes Stonesense)
- TwbT 0.47.05-r3  游戏插件
- Announcement Window v1.2b Armok Vision v0.21.0 DF Story Maker 1.0 Dorven Realms R1 Dwarf Mockup 1.2.0 Dwarf Portrait v2.1.0 Dwarf Therapist v41.2.2 Isoworld 2.</description>
+Dwarf Fortress 0.47.05 PyLNP 0.14a DFHack 插件加载及管理器 0.47.05-r3 (includes Stonesense)
+TwbT 0.47.05-r3 游戏插件
+Announcement Window v1.2b Armok Vision v0.21.0 DF Story Maker 1.0 Dorven Realms R1 Dwarf Mockup 1.2.0 Dwarf Portrait v2.1.0 Dwarf Therapist v41.2.2 Isoworld 2.1 Legends Browser 1.19.2 Legends Viewer 1.</description>
     </item>
     
     <item>
@@ -33,14 +33,14 @@ LNP可以快速更改游戏本体的各项参数、一键切换游戏图形包�
       <pubDate>Fri, 05 May 2023 19:42:50 +0900</pubDate>
       
       <guid>/game/howToDwarfFortress/01.gameIntroduction/</guid>
-      <description>游戏简介 #   《矮人要塞》（英语：Slaves to Armok: God of Blood Chapter II: Dwarf Fortress，全名“亚莫之奴：神与血第二章：矮人要塞”）是兼有经营模拟和roguelike特征的独立制作游戏。游戏为免费软件，在2002年开始开发，2006年alpha版释出，之后每隔2~3年有较大的更新。制作人是塔恩·亚当斯和札克·亚当斯兄弟，两人只靠玩家的捐款过活。游戏用特定算法随机产生奇幻世界，玩家控制一群矮人建立一个地底要塞，或是控制一个人物在这个世界中游荡。评论家对游戏的极端复杂度和衍生玩法给予正面评价，但对其难度反应不一。此游戏是我的世界的重要灵感来源，并在2012年被选入纽约现代艺术博物馆的电玩史展出。
+      <description>游戏简介 # 《矮人要塞》（英语：Slaves to Armok: God of Blood Chapter II: Dwarf Fortress，全名“亚莫之奴：神与血第二章：矮人要塞”）是兼有经营模拟和roguelike特征的独立制作游戏。游戏为免费软件，在2002年开始开发，2006年alpha版释出，之后每隔2~3年有较大的更新。制作人是塔恩·亚当斯和札克·亚当斯兄弟，两人只靠玩家的捐款过活。游戏用特定算法随机产生奇幻世界，玩家控制一群矮人建立一个地底要塞，或是控制一个人物在这个世界中游荡。评论家对游戏的极端复杂度和衍生玩法给予正面评价，但对其难度反应不一。此游戏是我的世界的重要灵感来源，并在2012年被选入纽约现代艺术博物馆的电玩史展出。
 游戏使用延伸ASCII图象作为界面，但玩家可以用简单的图案取代之。游戏是开放的，没有特定目的。在开始玩之前，程序会先必须产生一个有海洋、陆地、气候、生物相、历史、人物的地图。要塞模式让玩家在地图上找一个地点建立要塞，对抗自然环境和敌人，创造财富，并照顾矮人的食衣住行育乐。每个矮人有自己的个性、宗教、性向、体质、偏好、和工作技能。冒险模式是回合制的roguelike角色扮演游戏，玩家在这个世界中自由探索、交易、接受任务，甚至可以去参观要塞。战斗过程包括解剖学细节，可以刺穿各个内脏、挫伤脂肪、割断血管造成失血、或砍断四肢。
 在矮人要塞之前，塔恩·亚当斯做的是“亚莫之奴：神与血”，是一个等角立体的游戏。到2004年，游戏太难维持，亚当斯把重心转到矮人要塞。亚当斯称矮人要塞是他的毕生事业，并在2011年说游戏的1.0版可能要再过20年才会完成，而且就算到那时候他也会继续开发。矮人要塞有一群小众支持者和活跃的网络社群。因为游戏没有最终目标，几乎每一场游戏最后都会灭亡，所以社群中有个非官方的口号：输了才好玩（losing is fun）。
 2019年为了酬医疗费，官方推出了一个有图装的版本在Steam上贩售。
 &amp;ndash; &amp;ndash; 维基百科 2022-05-08
-  游戏画面截图 #    原版游戏画面
-        使用了Tergel图形包后的游戏画面
-         上一级
+游戏画面截图 # 原版游戏画面
+使用了Tergel图形包后的游戏画面
+上一级
 笔记首页</description>
     </item>
     

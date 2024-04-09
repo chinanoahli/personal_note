@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="乐理学习笔记 #   ⚠ 本笔记基本上是基于 三分钟音乐社@Bilibili 的 视频 BV14p4y1e7TV 进行学习
-  💡 大部分钢琴示意图都是 SVG 矢量格式，如果看不清，你可以右键点击图片，并在新标签页中打开，然后就可以任意缩小放大
+<meta name="description" content="乐理学习笔记 # ⚠ 本笔记基本上是基于 三分钟音乐社@Bilibili 的 视频 BV14p4y1e7TV 进行学习
+💡 大部分钢琴示意图都是 SVG 矢量格式，如果看不清，你可以右键点击图片，并在新标签页中打开，然后就可以任意缩小放大
 ⚠ 部分 SVG 会在打开了 强制黑暗模式 / Auto Dark Mode for Web Contents 的Chorme 浏览器中出现色彩错误的现象，你可以暂时关闭该模式，或使用其他浏览器进行浏览
-  💡 乐理的学习通常以钢琴作为演示，原因是因为钢琴的结构更简单更直观，可以更容易地解释乐理知识
+💡 乐理的学习通常以钢琴作为演示，原因是因为钢琴的结构更简单更直观，可以更容易地解释乐理知识
 乐理通用于所有乐器，所以并不会出现在学习乐理时使用钢琴，学完后却不会使用其他乐器的情况
-  ⚠ 本篇笔记在大多数情况下都使用了 科学音高记号法 来标识音名
-  需要先行解释的词汇概念 #  音高 #  音高是指人类心理上对音符基本频率的感受，不同的音符（可以先简单理解为钢琴琴键）有不同的音高
-音名 #  音名，即音高的名字，为了方便音乐交流，通常以字母 C D E F G A B 来表示
-音域 #  音域是指特定一种乐器（包括人声），能够演奏出来的 所有 的 音高 的总和">
+⚠ 本篇笔记在大多数情况下都使用了 科学音高记号法 来标识音名
+需要先行解释的词汇概念 # 音高 # 音高是指人类心理上对音符基本频率的感受，不同的音符（可以先简单理解为钢琴琴键）有不同的音高
+音名 # 音名，即音高的名字，为了方便音乐交流，通常以字母 C D E F G A B 来表示
+音域 # 音域是指特定一种乐器（包括人声），能够演奏出来的 所有 的 音高 的总和
+钢琴的音域为 A ~ C8 （音乐符号的解释详见后文）
+未经专业训练的大部分人声，音域通常为 G3 ~ D5
+音列 # 在音乐体系中，取若干个音，并有序地排列起来，这串音的序列，就是 音列">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="乐理学习笔记" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/music/selfStudy/musicTheory/" />
-<meta property="og:updated_time" content="2023-10-02T16:54:28+09:00" />
 <title>乐理学习笔记 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><link rel="alternate" type="application/rss+xml" href="/music/selfStudy/musicTheory/index.xml" title="chinanoahli's note" />
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><link rel="alternate" type="application/rss+xml" href="/music/selfStudy/musicTheory/index.xml" title="chinanoahli's note" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -88,7 +90,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -133,7 +134,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -689,9 +690,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

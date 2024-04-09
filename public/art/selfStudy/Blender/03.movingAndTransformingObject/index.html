@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="03. 变换和移动物体 #  移动物体 #  使用 Blender UI 上的按钮 #  在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
+<meta name="description" content="03. 变换和移动物体 # 移动物体 # 使用 Blender UI 上的按钮 # 在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
 细心的小伙伴可能会注意到，在任意 两条轴的中间 ，还会有一个带颜色的小方格
 只需要拖动这个小方格就可以在 这两条轴所形成的平面上 任意移动物体，而不再受单一轴向的影响，注意观看下图方块的三轴座标变化
-通过快捷键移动 #  在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
-让物体在指定轴向上移动 #  如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
- 按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键  这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
+通过快捷键移动 # 在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
+让物体在指定轴向上移动 # 如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
+按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键 这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
 (其他轴也是同理，需要锁定在 Y 轴，则按 Y)
-让物体在某两轴组成的平面上移动 #  假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
- 按下键盘的 G 键，进入物体移动模式 按下快捷键  Shift &#43; Z 来锁定物体的 Z 轴座标  这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置">
+让物体在某两轴组成的平面上移动 # 假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
+按下键盘的 G 键，进入物体移动模式 按下快捷键 Shift &#43; Z 来锁定物体的 Z 轴座标 这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记 03 变换和移动物体" />
-<meta property="og:description" content="03. 变换和移动物体 #  移动物体 #  使用 Blender UI 上的按钮 #  在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
+<meta property="og:description" content="03. 变换和移动物体 # 移动物体 # 使用 Blender UI 上的按钮 # 在 Blender 视图左侧找到并点击进入 移动 模式，此时再点击任何物体，Blender 将会以物体的「原点」为基准，显示一个可操作的三轴操作杆(操作杆的末端为箭头状)，这时我们只需要用鼠标按住其中一个轴并在其轴向上拖移，即可在此轴上移动物体
 细心的小伙伴可能会注意到，在任意 两条轴的中间 ，还会有一个带颜色的小方格
 只需要拖动这个小方格就可以在 这两条轴所形成的平面上 任意移动物体，而不再受单一轴向的影响，注意观看下图方块的三轴座标变化
-通过快捷键移动 #  在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
-让物体在指定轴向上移动 #  如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
- 按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键  这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
+通过快捷键移动 # 在用鼠标点选物体之后，再按下键盘的 G 键，物体便会跟随鼠标的光标进行移动，当移动到合适的位置之后，按下鼠标的左键，即可确认物体当前的位置，若要中途推出移动物体的操作，只需要按下键盘的 Esc 键或 鼠标右键 即可
+让物体在指定轴向上移动 # 如果需要让物体仅能在 X 轴上进行移动，则可以使用下列的快捷键操作:
+按下键盘的 G 键，进入物体移动模式，此时物体可以随着光标任意移动 因为是需要把物体限定在 X 轴上移动，所以此时我们继续按下键盘的 X 键 这时候再移动光标，我们就能发现，物体仅能在 X 轴上改变位置
 (其他轴也是同理，需要锁定在 Y 轴，则按 Y)
-让物体在某两轴组成的平面上移动 #  假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
- 按下键盘的 G 键，进入物体移动模式 按下快捷键  Shift &#43; Z 来锁定物体的 Z 轴座标  这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置" />
+让物体在某两轴组成的平面上移动 # 假设我们先在需要把物体锁定在 X 和 Y 轴所组成的平面上(也就是说 Z 轴座标不变)进行移动的话，我们则可以通过:
+按下键盘的 G 键，进入物体移动模式 按下快捷键 Shift &#43; Z 来锁定物体的 Z 轴座标 这时候再移动光标，我们就能发现，物体仅能在 X 和 Y 轴所组成的平面上改变位置" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/art/selfStudy/Blender/03.movingAndTransformingObject/" />
+<meta property="og:url" content="/art/selfStudy/Blender/03.movingAndTransformingObject/" /><meta property="article:section" content="art" />
 <meta property="article:published_time" content="2023-10-02T16:38:16+09:00" />
 <meta property="article:modified_time" content="2023-10-02T16:38:16+09:00" />
 <title>Blender 学习笔记 03 变换和移动物体 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -96,7 +96,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -141,7 +140,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -354,9 +353,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

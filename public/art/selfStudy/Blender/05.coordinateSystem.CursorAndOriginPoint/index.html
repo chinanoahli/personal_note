@@ -3,38 +3,44 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="05. 座标系、游标与原点 #  通过快捷键切换不同的座标系 #  在 3D 视图中，只需要按下 , 即可快速呼出座标系饼型菜单，此时你可以通过下列任一操作:
- 移动光标到对应的方向，再按下鼠标左键
-(光标无需在饼型菜单项上点击，当项目高亮时按下鼠标左键即可) 根据饼型菜单的数字提示按下对应的数字键(字母键上方的数字键)  来激活想要的座标系
- ⚠ 本快捷操作的饼型菜单不会列出自定义座标系
- 通过 Blender UI 切换不同的座标系 #  你也可以通过 3D 视图上方的 变换座标系 工具来选择需要的座标系
-不同座标系的解释 #  全局(世界座标系) #  全局座标系，也即整个场景的座标系，它不会因为对象的朝向、角度等改变而改变，原点和方向永远固定
-局部 #  以每一个对象自身作为参照的座标系，会随着对象的移动和旋转等因素改变原点和方向
+<meta name="description" content="05. 座标系、游标与原点 # 通过快捷键切换不同的座标系 # 在 3D 视图中，只需要按下 , 即可快速呼出座标系饼型菜单，此时你可以通过下列任一操作:
+移动光标到对应的方向，再按下鼠标左键
+(光标无需在饼型菜单项上点击，当项目高亮时按下鼠标左键即可) 根据饼型菜单的数字提示按下对应的数字键(字母键上方的数字键) 来激活想要的座标系
+⚠ 本快捷操作的饼型菜单不会列出自定义座标系
+通过 Blender UI 切换不同的座标系 # 你也可以通过 3D 视图上方的 变换座标系 工具来选择需要的座标系
+不同座标系的解释 # 全局(世界座标系) # 全局座标系，也即整个场景的座标系，它不会因为对象的朝向、角度等改变而改变，原点和方向永远固定
+局部 # 以每一个对象自身作为参照的座标系，会随着对象的移动和旋转等因素改变原点和方向
 当我们需要直到一个对象的局部座标系的时候，我们可以先选中对象，然后在 物体属性 面板里面勾选 视图显示 &gt; 轴向 即可让该对象显示局部座标系
-法向 #  法向可以让我们在进入对象的 编辑模式 的 面选择模式 ，并操作对象上的某一个面时所用到的座标系的 Z 轴永远垂直与该面
- 可以先点选对象，然后按键盘上的 Tab 进入编辑模式，或通过 Blender 的 UI 进入对象编辑模式
-  编辑模式">
+法向 # 法向可以让我们在进入对象的 编辑模式 的 面选择模式 ，并操作对象上的某一个面时所用到的座标系的 Z 轴永远垂直与该面
+可以先点选对象，然后按键盘上的 Tab 进入编辑模式，或通过 Blender 的 UI 进入对象编辑模式
+编辑模式
+选择模式
+万向 # 万象座标轴比较抽象，这里只会简单提一下，以后如果用到的话，会详细展开讲
+假设我们这里有一台单车，单车的前轮是嵌在前叉(把前叉设为 Z 轴)上的，单车前轮的转向已经被限定必须跟随前叉的转向而 转向 (也就是说前轮 转向 只能是在 Z 轴上转)">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记 05 座标系、游标与原点" />
-<meta property="og:description" content="05. 座标系、游标与原点 #  通过快捷键切换不同的座标系 #  在 3D 视图中，只需要按下 , 即可快速呼出座标系饼型菜单，此时你可以通过下列任一操作:
- 移动光标到对应的方向，再按下鼠标左键
-(光标无需在饼型菜单项上点击，当项目高亮时按下鼠标左键即可) 根据饼型菜单的数字提示按下对应的数字键(字母键上方的数字键)  来激活想要的座标系
- ⚠ 本快捷操作的饼型菜单不会列出自定义座标系
- 通过 Blender UI 切换不同的座标系 #  你也可以通过 3D 视图上方的 变换座标系 工具来选择需要的座标系
-不同座标系的解释 #  全局(世界座标系) #  全局座标系，也即整个场景的座标系，它不会因为对象的朝向、角度等改变而改变，原点和方向永远固定
-局部 #  以每一个对象自身作为参照的座标系，会随着对象的移动和旋转等因素改变原点和方向
+<meta property="og:description" content="05. 座标系、游标与原点 # 通过快捷键切换不同的座标系 # 在 3D 视图中，只需要按下 , 即可快速呼出座标系饼型菜单，此时你可以通过下列任一操作:
+移动光标到对应的方向，再按下鼠标左键
+(光标无需在饼型菜单项上点击，当项目高亮时按下鼠标左键即可) 根据饼型菜单的数字提示按下对应的数字键(字母键上方的数字键) 来激活想要的座标系
+⚠ 本快捷操作的饼型菜单不会列出自定义座标系
+通过 Blender UI 切换不同的座标系 # 你也可以通过 3D 视图上方的 变换座标系 工具来选择需要的座标系
+不同座标系的解释 # 全局(世界座标系) # 全局座标系，也即整个场景的座标系，它不会因为对象的朝向、角度等改变而改变，原点和方向永远固定
+局部 # 以每一个对象自身作为参照的座标系，会随着对象的移动和旋转等因素改变原点和方向
 当我们需要直到一个对象的局部座标系的时候，我们可以先选中对象，然后在 物体属性 面板里面勾选 视图显示 &gt; 轴向 即可让该对象显示局部座标系
-法向 #  法向可以让我们在进入对象的 编辑模式 的 面选择模式 ，并操作对象上的某一个面时所用到的座标系的 Z 轴永远垂直与该面
- 可以先点选对象，然后按键盘上的 Tab 进入编辑模式，或通过 Blender 的 UI 进入对象编辑模式
-  编辑模式" />
+法向 # 法向可以让我们在进入对象的 编辑模式 的 面选择模式 ，并操作对象上的某一个面时所用到的座标系的 Z 轴永远垂直与该面
+可以先点选对象，然后按键盘上的 Tab 进入编辑模式，或通过 Blender 的 UI 进入对象编辑模式
+编辑模式
+选择模式
+万向 # 万象座标轴比较抽象，这里只会简单提一下，以后如果用到的话，会详细展开讲
+假设我们这里有一台单车，单车的前轮是嵌在前叉(把前叉设为 Z 轴)上的，单车前轮的转向已经被限定必须跟随前叉的转向而 转向 (也就是说前轮 转向 只能是在 Z 轴上转)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/art/selfStudy/Blender/05.coordinateSystem.CursorAndOriginPoint/" />
+<meta property="og:url" content="/art/selfStudy/Blender/05.coordinateSystem.CursorAndOriginPoint/" /><meta property="article:section" content="art" />
 <meta property="article:published_time" content="2023-10-02T16:38:35+09:00" />
 <meta property="article:modified_time" content="2023-10-02T16:38:35+09:00" />
 <title>Blender 学习笔记 05 座标系、游标与原点 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -100,7 +106,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -145,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -349,9 +354,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

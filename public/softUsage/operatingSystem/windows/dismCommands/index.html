@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DISM 命令速查 #   请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
+<meta name="description" content="DISM 命令速查 # 请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
 请注意将 &lt;Package.Name~xxxxx&gt; Package包名按照实际情况修改
 { | } 代表可选项目，如 Package.{cab | msu} 可被展开为 Package.cab 或 Package.msu
- 挂载/卸载 保存映像 #   挂载映像  Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件  Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS  Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像  Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像  Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 #   导出映像其中一个index  Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.">
+挂载/卸载 保存映像 # 挂载映像 Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件 Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像 Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像 Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 # 导出映像其中一个index Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 追加已挂载的映像为新的index Dism /Capture-Image /ImageFile:WIMFilePath.wim /CaptureDir:\MountedPoint /Name:NewIndex Package 更新控制 # 获取已安装的 Package Dism /Image:\MountPoint /Get-Packages /Format:Table 查询 Package Dism /Image:\MountPoint /Get-PackageInfo /PackagePath:\Package.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="DISM 命令速查" />
-<meta property="og:description" content="DISM 命令速查 #   请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
+<meta property="og:description" content="DISM 命令速查 # 请注意将映像文件 \WIMFilePath.wim 、和挂载路径 \MountPoint 按照你的实际情况修改
 请注意将 &lt;Package.Name~xxxxx&gt; Package包名按照实际情况修改
 { | } 代表可选项目，如 Package.{cab | msu} 可被展开为 Package.cab 或 Package.msu
- 挂载/卸载 保存映像 #   挂载映像  Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件  Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS  Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像  Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像  Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 #   导出映像其中一个index  Dism /Export-Image /SourceImageFile:\SourceWIMFilePath." />
+挂载/卸载 保存映像 # 挂载映像 Dism /Mount-Image /ImageFile:\WIMFilePath.wim /Index:1 /MountDir:\MountPoint 清理映像SP更新包备份文件 Dism /Image:\MountPoint /Cleanup-Image /SPSuperseded /HideSP 清理映像WinSxS Dism /Image:\MountPoint /Cleanup-Image /StartComponentCleanup /ResetBase 最佳化映像 Dism /Optimize-Image /ImageFile:\WIMFilePath.wim 保存并卸载映像 Dism /Unmount-Image /MountDir:\MountPoint /Commit 映像编辑 # 导出映像其中一个index Dism /Export-Image /SourceImageFile:\SourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:\DestinationWIMFilePath.wim 追加已挂载的映像为新的index Dism /Capture-Image /ImageFile:WIMFilePath.wim /CaptureDir:\MountedPoint /Name:NewIndex Package 更新控制 # 获取已安装的 Package Dism /Image:\MountPoint /Get-Packages /Format:Table 查询 Package Dism /Image:\MountPoint /Get-PackageInfo /PackagePath:\Package." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/softUsage/operatingSystem/windows/dismCommands/" />
+<meta property="og:url" content="/softUsage/operatingSystem/windows/dismCommands/" /><meta property="article:section" content="softUsage" />
 <meta property="article:published_time" content="2023-05-05T19:53:48+09:00" />
 <meta property="article:modified_time" content="2023-05-05T19:53:48+09:00" />
 <title>DISM 命令速查 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -86,7 +86,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -131,7 +130,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -195,101 +194,101 @@ https://github.com/alex-shpak/hugo-book
 <ol>
 <li>挂载映像</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Mount-Image /ImageFile:<span style="color:#ae81ff">\W</span>IMFilePath.wim /Index:1 /MountDir:<span style="color:#ae81ff">\M</span>ountPoint
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Mount-Image /ImageFile:<span style="color:#ae81ff">\W</span>IMFilePath.wim /Index:1 /MountDir:<span style="color:#ae81ff">\M</span>ountPoint
+</span></span></code></pre></div><ol start="2">
 <li>清理映像SP更新包备份文件</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Cleanup-Image /SPSuperseded /HideSP
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Cleanup-Image /SPSuperseded /HideSP
+</span></span></code></pre></div><ol start="3">
 <li>清理映像WinSxS</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Cleanup-Image /StartComponentCleanup /ResetBase
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Cleanup-Image /StartComponentCleanup /ResetBase
+</span></span></code></pre></div><ol start="4">
 <li>最佳化映像</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Optimize-Image /ImageFile:<span style="color:#ae81ff">\W</span>IMFilePath.wim
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Optimize-Image /ImageFile:<span style="color:#ae81ff">\W</span>IMFilePath.wim
+</span></span></code></pre></div><ol start="5">
 <li>保存并卸载映像</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Unmount-Image /MountDir:<span style="color:#ae81ff">\M</span>ountPoint /Commit
-</code></pre></div><h2 id="映像编辑">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Unmount-Image /MountDir:<span style="color:#ae81ff">\M</span>ountPoint /Commit
+</span></span></code></pre></div><h2 id="映像编辑">
   映像编辑
   <a class="anchor" href="#%e6%98%a0%e5%83%8f%e7%bc%96%e8%be%91">#</a>
 </h2>
 <ol>
 <li>导出映像其中一个index</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Export-Image /SourceImageFile:<span style="color:#ae81ff">\S</span>ourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:<span style="color:#ae81ff">\D</span>estinationWIMFilePath.wim
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Export-Image /SourceImageFile:<span style="color:#ae81ff">\S</span>ourceWIMFilePath.wim /SourceIndex:1 /DestinationImageFile:<span style="color:#ae81ff">\D</span>estinationWIMFilePath.wim
+</span></span></code></pre></div><ol start="2">
 <li>追加已挂载的映像为新的index</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Capture-Image /ImageFile:WIMFilePath.wim /CaptureDir:<span style="color:#ae81ff">\M</span>ountedPoint /Name:NewIndex
-</code></pre></div><h2 id="package-更新控制">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Capture-Image /ImageFile:WIMFilePath.wim /CaptureDir:<span style="color:#ae81ff">\M</span>ountedPoint /Name:NewIndex
+</span></span></code></pre></div><h2 id="package-更新控制">
   Package 更新控制
   <a class="anchor" href="#package-%e6%9b%b4%e6%96%b0%e6%8e%a7%e5%88%b6">#</a>
 </h2>
 <ol>
 <li>获取已安装的 Package</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-Packages /Format:Table
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-Packages /Format:Table
+</span></span></code></pre></div><ol start="2">
 <li>查询 Package</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-PackageInfo /PackagePath:<span style="color:#ae81ff">\P</span>ackage.cab
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-PackageInfo /PackageName:&lt;Package.Name~xxxxx&gt;
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-PackageInfo /PackagePath:<span style="color:#ae81ff">\P</span>ackage.cab
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-PackageInfo /PackageName:&lt;Package.Name~xxxxx&gt;
+</span></span></code></pre></div><ol start="3">
 <li>追加 Package</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Add-Package /PackagePath:<span style="color:#ae81ff">\P</span>ackage.<span style="color:#f92672">{</span>cab | msu<span style="color:#f92672">}</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Add-Package /PackagePath:<span style="color:#ae81ff">\P</span>ackage.<span style="color:#f92672">{</span>cab | msu<span style="color:#f92672">}</span>
+</span></span></code></pre></div><ol start="4">
 <li>移除 Package</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Remove-Package /PackageName:&lt;Package.Name~xxxxx&gt;
-</code></pre></div><h2 id="windows-features-控制">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Remove-Package /PackageName:&lt;Package.Name~xxxxx&gt;
+</span></span></code></pre></div><h2 id="windows-features-控制">
   Windows Features 控制
   <a class="anchor" href="#windows-features-%e6%8e%a7%e5%88%b6">#</a>
 </h2>
 <ol>
 <li>获取已安装的 Windows Features</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-Features /Format:Table
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-Features /Format:Table
+</span></span></code></pre></div><ol start="2">
 <li>查询 Windows Features 信息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-FeatureInfo /FeatureName:TFTP
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-FeatureInfo /FeatureName:TFTP
+</span></span></code></pre></div><ol start="3">
 <li>启用 Windows Features</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Enable-Feature /FeatureName:TFTP /All
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Enable-Feature /FeatureName:TFTP /All
+</span></span></code></pre></div><ol start="4">
 <li>禁用并删除 Windows Features</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Disable-Feature /FeatureName:TFTP /Remove
-</code></pre></div><h2 id="appx-控制">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Disable-Feature /FeatureName:TFTP /Remove
+</span></span></code></pre></div><h2 id="appx-控制">
   Appx 控制
   <a class="anchor" href="#appx-%e6%8e%a7%e5%88%b6">#</a>
 </h2>
 <ol>
 <li>获取 Appx 信息</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-ProvisionedAppxPackages
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Get-ProvisionedAppxPackages
+</span></span></code></pre></div><ol start="2">
 <li>Appx 追加</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">DISM /Image:<span style="color:#ae81ff">\M</span>ountPoint /Add-ProvisionedAppxPackage /PackagePath:<span style="color:#ae81ff">\A</span>ppxPackage.<span style="color:#f92672">{</span>appx | appxbundle<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>/SkipLicense | /LicensePath:<span style="color:#ae81ff">\P</span>ackageLicense.xml<span style="color:#f92672">}</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>DISM /Image:<span style="color:#ae81ff">\M</span>ountPoint /Add-ProvisionedAppxPackage /PackagePath:<span style="color:#ae81ff">\A</span>ppxPackage.<span style="color:#f92672">{</span>appx | appxbundle<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>/SkipLicense | /LicensePath:<span style="color:#ae81ff">\P</span>ackageLicense.xml<span style="color:#f92672">}</span>
+</span></span></code></pre></div><ol start="3">
 <li>Appx目录 追加</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Add-ProvisionedAppxPackage /FolderPath:<span style="color:#ae81ff">\A</span>ppxDirPath  <span style="color:#f92672">{</span>/SkipLicense | /LicensePath:<span style="color:#ae81ff">\P</span>ackageLicense.xml<span style="color:#f92672">}</span>
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Add-ProvisionedAppxPackage /FolderPath:<span style="color:#ae81ff">\A</span>ppxDirPath  <span style="color:#f92672">{</span>/SkipLicense | /LicensePath:<span style="color:#ae81ff">\P</span>ackageLicense.xml<span style="color:#f92672">}</span>
+</span></span></code></pre></div><ol start="4">
 <li>Appx 删除</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Remove-ProvisionedAppxPackage /PackageName:&lt;package.name_xxxx&gt;
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Remove-ProvisionedAppxPackage /PackageName:&lt;package.name_xxxx&gt;
+</span></span></code></pre></div><ol start="5">
 <li>优化 Appx</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Optimize-ProvisionedAppxPackages
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Dism /Image:<span style="color:#ae81ff">\M</span>ountPoint /Optimize-ProvisionedAppxPackages
+</span></span></code></pre></div><hr>
 <p><a href="../..">上一级</a></p>
 <p><a href="/">笔记首页</a></p>
 </article>
@@ -308,9 +307,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

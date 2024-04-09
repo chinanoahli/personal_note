@@ -3,38 +3,44 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SteamOS 使用笔记 #   本篇只涉及 SteamOS (ArchLinux) 的使用
+<meta name="description" content="SteamOS 使用笔记 # 本篇只涉及 SteamOS (ArchLinux) 的使用
 如果需要在 Steam Deck 上使用 Windows 的相关信息，请点击这里
- 首次开机无法更新 #   这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
+首次开机无法更新 # 这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
 需要一个 USB HUB 用于插入外置键盘
 引用来源: Reddit帖子
-   在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
+在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
 ⚠注意⚠：成功联网即可，千万不要点击下一步
-  同时按下键盘的 Ctrl &#43; Alt &#43; F4，进入 tty 模式
-  使用用户 deck 登录，默认无密码
-  passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
-  运行命令 sudo steamos-update，并根据提示输入刚才设置的密码">
+同时按下键盘的 Ctrl &#43; Alt &#43; F4，进入 tty 模式
+使用用户 deck 登录，默认无密码
+passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
+运行命令 sudo steamos-update，并根据提示输入刚才设置的密码
+如果有可用的更新，系统将会提示 Update available 并自动下载
+安装完成后会显示 Applied an update
+运行命令 sudo reboot 重启Deck，即可更新成功">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="SteamOS 使用笔记" />
-<meta property="og:description" content="SteamOS 使用笔记 #   本篇只涉及 SteamOS (ArchLinux) 的使用
+<meta property="og:description" content="SteamOS 使用笔记 # 本篇只涉及 SteamOS (ArchLinux) 的使用
 如果需要在 Steam Deck 上使用 Windows 的相关信息，请点击这里
- 首次开机无法更新 #   这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
+首次开机无法更新 # 这个方法可以解决更新卡 正在安装 / Installing 或 剩余1秒 / 1 second remaining
 需要一个 USB HUB 用于插入外置键盘
 引用来源: Reddit帖子
-   在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
+在进入首次开机设置后，先根据提示连接互联网，Wi-Fi 或 有线网络 均可
 ⚠注意⚠：成功联网即可，千万不要点击下一步
-  同时按下键盘的 Ctrl &#43; Alt &#43; F4，进入 tty 模式
-  使用用户 deck 登录，默认无密码
-  passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
-  运行命令 sudo steamos-update，并根据提示输入刚才设置的密码" />
+同时按下键盘的 Ctrl &#43; Alt &#43; F4，进入 tty 模式
+使用用户 deck 登录，默认无密码
+passwd 更改 deck 用户的密码 (参考后面 设置密码 的部分)
+运行命令 sudo steamos-update，并根据提示输入刚才设置的密码
+如果有可用的更新，系统将会提示 Update available 并自动下载
+安装完成后会显示 Applied an update
+运行命令 sudo reboot 重启Deck，即可更新成功" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/game/steamDeck/steamOSNotes/" />
+<meta property="og:url" content="/game/steamDeck/steamOSNotes/" /><meta property="article:section" content="game" />
 <meta property="article:published_time" content="2023-05-05T19:21:42+09:00" />
 <meta property="article:modified_time" content="2023-05-05T19:21:42+09:00" />
 <title>SteamOS 使用笔记 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -100,7 +106,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -145,7 +150,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -253,38 +258,38 @@ https://github.com/alex-shpak/hugo-book
   官方资源快速链接
   <a class="anchor" href="#%e5%ae%98%e6%96%b9%e8%b5%84%e6%ba%90%e5%bf%ab%e9%80%9f%e9%93%be%e6%8e%a5">#</a>
 </h2>
-恢复镜像<h3 id="恢复镜像点此跳转需要翻墙httpshelpsteampoweredcomzh-cnfaqsview1b71-edf2-eb6d-2bb3">
-  <a href="https://help.steampowered.com/zh-cn/faqs/view/1B71-EDF2-EB6D-2BB3">点此跳转(需要翻墙)</a>
+<h3 id="恢复镜像点此跳转需要翻墙httpshelpsteampoweredcomzh-cnfaqsview1b71-edf2-eb6d-2bb3">
+  恢复镜像<a href="https://help.steampowered.com/zh-cn/faqs/view/1B71-EDF2-EB6D-2BB3">点此跳转(需要翻墙)</a>
   <a class="anchor" href="#%e6%81%a2%e5%a4%8d%e9%95%9c%e5%83%8f%e7%82%b9%e6%ad%a4%e8%b7%b3%e8%bd%ac%e9%9c%80%e8%a6%81%e7%bf%bb%e5%a2%99httpshelpsteampoweredcomzh-cnfaqsview1b71-edf2-eb6d-2bb3">#</a>
 </h3>
 <blockquote>
 <p>如果无法跳转，请再点一次，此链接似乎会根据IP跳转到不同的页面</p>
 </blockquote>
 <p>Linux dd 快速写盘命令参考</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 注意要将 /dev/sdX 设成你的USB设备)</span>
-
-bzcat steamdeck-recovery-4.img.bz2 | dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/stdin of<span style="color:#f92672">=</span>/dev/sdX oflag<span style="color:#f92672">=</span>sync status<span style="color:#f92672">=</span>progress bs<span style="color:#f92672">=</span>128M
-</code></pre></div><h2 id="为deck用户设置密码及取消密码">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 注意要将 /dev/sdX 设成你的USB设备)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>bzcat steamdeck-recovery-4.img.bz2 | dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/stdin of<span style="color:#f92672">=</span>/dev/sdX oflag<span style="color:#f92672">=</span>sync status<span style="color:#f92672">=</span>progress bs<span style="color:#f92672">=</span>128M
+</span></span></code></pre></div><h2 id="为deck用户设置密码及取消密码">
   为<em>deck</em>用户设置密码(及取消密码)
   <a class="anchor" href="#%e4%b8%badeck%e7%94%a8%e6%88%b7%e8%ae%be%e7%bd%ae%e5%af%86%e7%a0%81%e5%8f%8a%e5%8f%96%e6%b6%88%e5%af%86%e7%a0%81">#</a>
 </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 设置密码 (输入时不会显示 · 或 *)，根据提示重复输入2次即可</span>
-passwd
-
-<span style="color:#75715e"># 取消密码</span>
-passwd -d deck
-</code></pre></div><h2 id="如何禁用系统分区的只读属性">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 设置密码 (输入时不会显示 · 或 *)，根据提示重复输入2次即可</span>
+</span></span><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 取消密码</span>
+</span></span><span style="display:flex;"><span>passwd -d deck
+</span></span></code></pre></div><h2 id="如何禁用系统分区的只读属性">
   如何禁用系统分区的只读属性
   <a class="anchor" href="#%e5%a6%82%e4%bd%95%e7%a6%81%e7%94%a8%e7%b3%bb%e7%bb%9f%e5%88%86%e5%8c%ba%e7%9a%84%e5%8f%aa%e8%af%bb%e5%b1%9e%e6%80%a7">#</a>
 </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 需要先为 deck 用户设置密码，请参考上一条</span>
-
-<span style="color:#75715e"># 禁用</span>
-sudo steamos-readonly disable
-
-<span style="color:#75715e"># 启用</span>
-sudo steamos-readonly enable
-</code></pre></div><h2 id="proton-ge-custom">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 需要先为 deck 用户设置密码，请参考上一条</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 禁用</span>
+</span></span><span style="display:flex;"><span>sudo steamos-readonly disable
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启用</span>
+</span></span><span style="display:flex;"><span>sudo steamos-readonly enable
+</span></span></code></pre></div><h2 id="proton-ge-custom">
   proton-ge-custom
   <a class="anchor" href="#proton-ge-custom">#</a>
 </h2>
@@ -330,8 +335,8 @@ sudo steamos-readonly enable
   安装Flathub版的Lutris
   <a class="anchor" href="#%e5%ae%89%e8%a3%85flathub%e7%89%88%e7%9a%84lutris">#</a>
 </h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flatpak install flathub net.lutris.Lutris
-</code></pre></div><h2 id="初始化pacman包管理器">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>flatpak install flathub net.lutris.Lutris
+</span></span></code></pre></div><h2 id="初始化pacman包管理器">
   初始化pacman包管理器
   <a class="anchor" href="#%e5%88%9d%e5%a7%8b%e5%8c%96pacman%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8">#</a>
 </h2>
@@ -341,16 +346,16 @@ sudo steamos-readonly enable
 <ol>
 <li>初始化pacman的keyring</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman-key --init
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman-key --init
+</span></span></code></pre></div><ol start="2">
 <li>在keyring中加入默认的密钥</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman-key --populate archlinux
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman-key --populate archlinux
+</span></span></code></pre></div><ol start="3">
 <li>更新软件包缓存并安装软件包</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pacman -Syy vim
-</code></pre></div><h2 id="安装steamwatt-toolkit">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pacman -Syy vim
+</span></span></code></pre></div><h2 id="安装steamwatt-toolkit">
   安装Steam++(Watt Toolkit)
   <a class="anchor" href="#%e5%ae%89%e8%a3%85steamwatt-toolkit">#</a>
 </h2>
@@ -366,12 +371,12 @@ sudo steamos-readonly enable
 <p>使用pacman命令安装该软件包</p>
 </li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装</span>
-sudo pacman -U Steam++_linux_x64_vX.X.X.tar.zst
-
-<span style="color:#75715e"># 移除</span>
-sudo pacamn -R Steam++
-</code></pre></div><h2 id="为flathub软件商城添加国内源-交大源已经与flathub官方合并换了还是慢时快时慢">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 安装</span>
+</span></span><span style="display:flex;"><span>sudo pacman -U Steam++_linux_x64_vX.X.X.tar.zst
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 移除</span>
+</span></span><span style="display:flex;"><span>sudo pacamn -R Steam++
+</span></span></code></pre></div><h2 id="为flathub软件商城添加国内源-交大源已经与flathub官方合并换了还是慢时快时慢">
   为Flathub软件商城添加国内源 (交大源已经与Flathub官方合并，换了还是慢，时快时慢)
   <a class="anchor" href="#%e4%b8%baflathub%e8%bd%af%e4%bb%b6%e5%95%86%e5%9f%8e%e6%b7%bb%e5%8a%a0%e5%9b%bd%e5%86%85%e6%ba%90-%e4%ba%a4%e5%a4%a7%e6%ba%90%e5%b7%b2%e7%bb%8f%e4%b8%8eflathub%e5%ae%98%e6%96%b9%e5%90%88%e5%b9%b6%e6%8d%a2%e4%ba%86%e8%bf%98%e6%98%af%e6%85%a2%e6%97%b6%e5%bf%ab%e6%97%b6%e6%85%a2">#</a>
 </h2>
@@ -386,15 +391,15 @@ sudo pacamn -R Steam++
 <p><code>sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo</code></p>
 </blockquote>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 添加源</span>
-sudo flatpak remote-add --if-not-exists sjtu https://mirror.sjtu.edu.cn/flathub
-<span style="color:#75715e"># 下载源服务器公钥</span>
-wget https://mirror.sjtu.edu.cn/flathub/flathub.gpg
-<span style="color:#75715e"># 导入源服务器公钥</span>
-sudo flatpak remote-modify --gpg-import<span style="color:#f92672">=</span>flathub.gpg sjtu
-</code></pre></div><p>如果中断了某次软件包安装，而导致找不到文件的问题，请用下面的命令修复:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">flatpak repair
-</code></pre></div><h2 id="通过flathub软件商店安装ryujinx或yuzu模拟器">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 添加源</span>
+</span></span><span style="display:flex;"><span>sudo flatpak remote-add --if-not-exists sjtu https://mirror.sjtu.edu.cn/flathub
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 下载源服务器公钥</span>
+</span></span><span style="display:flex;"><span>wget https://mirror.sjtu.edu.cn/flathub/flathub.gpg
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入源服务器公钥</span>
+</span></span><span style="display:flex;"><span>sudo flatpak remote-modify --gpg-import<span style="color:#f92672">=</span>flathub.gpg sjtu
+</span></span></code></pre></div><p>如果中断了某次软件包安装，而导致找不到文件的问题，请用下面的命令修复:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>flatpak repair
+</span></span></code></pre></div><h2 id="通过flathub软件商店安装ryujinx或yuzu模拟器">
   通过Flathub软件商店安装RyujinX或Yuzu模拟器
   <a class="anchor" href="#%e9%80%9a%e8%bf%87flathub%e8%bd%af%e4%bb%b6%e5%95%86%e5%ba%97%e5%ae%89%e8%a3%85ryujinx%e6%88%96yuzu%e6%a8%a1%e6%8b%9f%e5%99%a8">#</a>
 </h2>
@@ -402,40 +407,40 @@ sudo flatpak remote-modify --gpg-import<span style="color:#f92672">=</span>flath
 <p>不推荐时候用Flathub安装，因为实在太慢了，建议使用 <a href="https://github.com/EmuDeck/emudeck-electron/releases">EmuDeck</a></p>
 <p>Ryujinx 需要的配置很高，Deck上体验较差，可以只选用Yuzu</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Ryujinx</span>
-flatpak install flathub org.ryujinx.Ryujinx
-
-<span style="color:#75715e"># Yuzu</span>
-flatpak install flathub org.yuzu_emu.yuzu
-</code></pre></div><h2 id="安装卸载decky-loader插件管理器">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Ryujinx</span>
+</span></span><span style="display:flex;"><span>flatpak install flathub org.ryujinx.Ryujinx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Yuzu</span>
+</span></span><span style="display:flex;"><span>flatpak install flathub org.yuzu_emu.yuzu
+</span></span></code></pre></div><h2 id="安装卸载decky-loader插件管理器">
   安装/卸载Decky Loader插件管理器
   <a class="anchor" href="#%e5%ae%89%e8%a3%85%e5%8d%b8%e8%bd%bddecky-loader%e6%8f%92%e4%bb%b6%e7%ae%a1%e7%90%86%e5%99%a8">#</a>
 </h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 安装稳定版</span>
-curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/install_release.sh | sh
-
-<span style="color:#75715e"># 安装预发布(或称预览版、测试版)</span>
-curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/install_prerelease.sh | sh
-
-<span style="color:#75715e"># 卸载</span>
-curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/uninstall.sh | sh
-
-<span style="color:#75715e"># 翻墙问题自理</span>
-</code></pre></div><p>完全手动安装，请参考<a href="https://github.com/SteamDeckHomebrew/decky-loader/blob/main/dist/install_release.sh">安装脚本</a>，安装脚本很短，有经验的Linux使用者应该可以完全读懂</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 安装稳定版</span>
+</span></span><span style="display:flex;"><span>curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/install_release.sh | sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 安装预发布(或称预览版、测试版)</span>
+</span></span><span style="display:flex;"><span>curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/install_prerelease.sh | sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 卸载</span>
+</span></span><span style="display:flex;"><span>curl -L https://github.com/SteamDeckHomebrew/decky-loader/raw/main/dist/uninstall.sh | sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 翻墙问题自理</span>
+</span></span></code></pre></div><p>完全手动安装，请参考<a href="https://github.com/SteamDeckHomebrew/decky-loader/blob/main/dist/install_release.sh">安装脚本</a>，安装脚本很短，有经验的Linux使用者应该可以完全读懂</p>
 <h2 id="找回消失的-return-to-gaming-mode">
   找回消失的 <code>Return to Gaming Mode</code>
   <a class="anchor" href="#%e6%89%be%e5%9b%9e%e6%b6%88%e5%a4%b1%e7%9a%84-return-to-gaming-mode">#</a>
 </h2>
 <p>SteamOS 在 桌面模式 的桌面会有一个图标，让玩家可以立即退出桌面模式并回到游戏模式，但是因为某些原因，这个图标偶尔会被莫名其妙地删除掉</p>
 <p>这时只需要在桌面新建一个文件名为 <code>Return.desktop</code> 的文件(注意后缀应该为 <code>.desktop</code> )，内容为下面的内容，即可找回该功能</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Desktop Entry]
-Name=Return to Gaming Mode
-Exec=qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logout
-Icon=steamdeck-gaming-return
-Terminal=false
-Type=Application
-StartupNotify=false
-</code></pre></div><h2 id="steamos-默认设置调优">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[Desktop Entry]
+</span></span><span style="display:flex;"><span>Name=Return to Gaming Mode
+</span></span><span style="display:flex;"><span>Exec=qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logout
+</span></span><span style="display:flex;"><span>Icon=steamdeck-gaming-return
+</span></span><span style="display:flex;"><span>Terminal=false
+</span></span><span style="display:flex;"><span>Type=Application
+</span></span><span style="display:flex;"><span>StartupNotify=false
+</span></span></code></pre></div><h2 id="steamos-默认设置调优">
   SteamOS 默认设置调优
   <a class="anchor" href="#steamos-%e9%bb%98%e8%ae%a4%e8%ae%be%e7%bd%ae%e8%b0%83%e4%bc%98">#</a>
 </h2>
@@ -491,16 +496,16 @@ StartupNotify=false
 <p>运行 <code>lscpu</code>  命令</p>
 <blockquote>
 <p>如果打开了该补丁，会有类似的输出 (输出中带有<code>Mitigation</code>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Vulnerabilities:
-Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl and seccomp
-Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer sanitization
-Spectre v2:            Mitigation; Full AMD retpoline, IBPB conditional, IBRS_FW, STIBP conditional, RSB filling
-</code></pre></div><p>如果关闭了该补丁，会有类似的输出 (输出中带有<code>Vulnerable</code>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Vulnerabilities:
-Spec store bypass:     Vulnerable
-Spectre v1:            Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers
-Spectre v2:            Vulnerable, IBPB: disabled, STIBP: disabled
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Vulnerabilities:
+</span></span><span style="display:flex;"><span>Spec store bypass:     Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+</span></span><span style="display:flex;"><span>Spectre v1:            Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+</span></span><span style="display:flex;"><span>Spectre v2:            Mitigation; Full AMD retpoline, IBPB conditional, IBRS_FW, STIBP conditional, RSB filling
+</span></span></code></pre></div><p>如果关闭了该补丁，会有类似的输出 (输出中带有<code>Vulnerable</code>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Vulnerabilities:
+</span></span><span style="display:flex;"><span>Spec store bypass:     Vulnerable
+</span></span><span style="display:flex;"><span>Spectre v1:            Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers
+</span></span><span style="display:flex;"><span>Spectre v2:            Vulnerable, IBPB: disabled, STIBP: disabled
+</span></span></code></pre></div></blockquote>
 </li>
 </ol>
 <hr>
@@ -522,9 +527,7 @@ Spectre v2:            Vulnerable, IBPB: disabled, STIBP: disabled
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

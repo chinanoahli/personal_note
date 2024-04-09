@@ -3,36 +3,38 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="多媒体软件指南 #  ImageMagick #  将图片以多个文件名顺序转换为 PDF 文件，并设置临时的缓存目录
+<meta name="description" content="多媒体软件指南 # ImageMagick # 将图片以多个文件名顺序转换为 PDF 文件，并设置临时的缓存目录
 当使用 Adobe Acrobat 或其他 PDF 编辑器创建 PDF 文件时，它们很可能都会强制压缩你的图片质量，并且要求必须将分辨率转换为为常见的纸张大小
 而就 Acrobat 来说，如果导入了太多图片后，还会提示「文件太大，无法保存」
 为了解决这些问题，你可以选择用 ImageMagick 来把图片转换为 PDF 文件， ImageMagick 不存在上述的限制
 下面列出一个用例，该用例是在 Windows 下进行演示，目的是把 D:\Input 里面所有的 jpg 文件 保留原始分辨率且无损 转换为 D:\output.pdf
 convert.exe -define registry:temporary-path=C:\temp -quality 100 D:\Input\*.jpg D:\output.pdf
 参数解释：
- registry:temporary-path=C:\temp  把临时缓存目录设置为 C:\temp 当 ImageMagick 工作时，会为每一个输入文件都创建一个对应的临时文件 对于 Windows 来说一般是位于 %AppData% 里 如果你的用户目录所在的磁盘空间不足，可以使用本参数，指定一个别的位置
-  -quality 100  指定转换的质量， 100 为最高质量
-    上一级">
+registry:temporary-path=C:\temp 把临时缓存目录设置为 C:\temp 当 ImageMagick 工作时，会为每一个输入文件都创建一个对应的临时文件 对于 Windows 来说一般是位于 %AppData% 里 如果你的用户目录所在的磁盘空间不足，可以使用本参数，指定一个别的位置
+-quality 100 指定转换的质量， 100 为最高质量
+上一级
+笔记首页">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="多媒体软件指南" />
-<meta property="og:description" content="多媒体软件指南 #  ImageMagick #  将图片以多个文件名顺序转换为 PDF 文件，并设置临时的缓存目录
+<meta property="og:description" content="多媒体软件指南 # ImageMagick # 将图片以多个文件名顺序转换为 PDF 文件，并设置临时的缓存目录
 当使用 Adobe Acrobat 或其他 PDF 编辑器创建 PDF 文件时，它们很可能都会强制压缩你的图片质量，并且要求必须将分辨率转换为为常见的纸张大小
 而就 Acrobat 来说，如果导入了太多图片后，还会提示「文件太大，无法保存」
 为了解决这些问题，你可以选择用 ImageMagick 来把图片转换为 PDF 文件， ImageMagick 不存在上述的限制
 下面列出一个用例，该用例是在 Windows 下进行演示，目的是把 D:\Input 里面所有的 jpg 文件 保留原始分辨率且无损 转换为 D:\output.pdf
 convert.exe -define registry:temporary-path=C:\temp -quality 100 D:\Input\*.jpg D:\output.pdf
 参数解释：
- registry:temporary-path=C:\temp  把临时缓存目录设置为 C:\temp 当 ImageMagick 工作时，会为每一个输入文件都创建一个对应的临时文件 对于 Windows 来说一般是位于 %AppData% 里 如果你的用户目录所在的磁盘空间不足，可以使用本参数，指定一个别的位置
-  -quality 100  指定转换的质量， 100 为最高质量
-    上一级" />
+registry:temporary-path=C:\temp 把临时缓存目录设置为 C:\temp 当 ImageMagick 工作时，会为每一个输入文件都创建一个对应的临时文件 对于 Windows 来说一般是位于 %AppData% 里 如果你的用户目录所在的磁盘空间不足，可以使用本参数，指定一个别的位置
+-quality 100 指定转换的质量， 100 为最高质量
+上一级
+笔记首页" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/softUsage/otherSoft/imgSoft/" />
+<meta property="og:url" content="/softUsage/otherSoft/imgSoft/" /><meta property="article:section" content="softUsage" />
 <meta property="article:published_time" content="2023-11-21T20:20:31+09:00" />
 <meta property="article:modified_time" content="2023-11-21T20:20:31+09:00" />
 <title>多媒体软件指南 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -98,7 +100,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -143,7 +144,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -233,9 +234,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

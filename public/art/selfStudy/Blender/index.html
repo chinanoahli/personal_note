@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Blender 学习笔记 #   ❓假如你是在GitHub观看本篇笔记，并发现有一些图片无法显示
+<meta name="description" content="Blender 学习笔记 # ❓假如你是在GitHub观看本篇笔记，并发现有一些图片无法显示
 这是正常的，GitHub在引用外部资源的时候会检查引用资源的大小，如果超过大小，就不会被加载，而本篇笔记正好有比较多的大文件GIF
 你可以选择到 仓库首页 &gt; About 里面的网址观看完整的版本
-  ⚠ 本笔记基本上是基于 只剩一瓶辣椒酱@Bilibili 的 视频 BV1zh411Y7LX 进行学习，如果你希望获取到关于本笔记的附件资源，请移步他的视频页面，并于视频的简介中查找链接，进行下载
-  💡 同时本篇笔记还使用了很多我自行创造的词语，可能与传统的 3D 建模软件教程有所出入，可能会造成读者有所不适，你可以通过本笔记的 GitHub Discussions 页面提出改进建议
-  ⚠ 注意: 在使用快捷键组合的时候，鼠标光标所在的位置十分重要，当鼠标光标处于不同的子窗口时，快捷键的效果将会完全不一样
-  ❓ 如果你在 Windows 10 下使用 Blender 你可能会发现有时候 Blender 的快捷键全都失效了
+⚠ 本笔记基本上是基于 只剩一瓶辣椒酱@Bilibili 的 视频 BV1zh411Y7LX 进行学习，如果你希望获取到关于本笔记的附件资源，请移步他的视频页面，并于视频的简介中查找链接，进行下载
+💡 同时本篇笔记还使用了很多我自行创造的词语，可能与传统的 3D 建模软件教程有所出入，可能会造成读者有所不适，你可以通过本笔记的 GitHub Discussions 页面提出改进建议
+⚠ 注意: 在使用快捷键组合的时候，鼠标光标所在的位置十分重要，当鼠标光标处于不同的子窗口时，快捷键的效果将会完全不一样
+❓ 如果你在 Windows 10 下使用 Blender 你可能会发现有时候 Blender 的快捷键全都失效了
 这其实是因为 Win 10 新设计的输入法跟 Blender 不兼容所造成的，因为有一些字符被输入(大概率是在中文输入状态下按快捷键造成的后果)，但是 Blender 未能正确识别成快捷键，从而堵塞了操作
 此时再切换会英语输入模式也无济于事
 解决方法也很简单，你只需要激活任意一个可以输入字符的输入框，例如 Blender 右上角导航器的搜索框，就可以把堵塞的字符去掉，然后快捷键就会恢复正常
-  下载与偏好设置 观察物体 中变换和移动物体 场景单位与物体的选择 座标系、游标与原点   上一级
+下载与偏好设置 观察物体 中变换和移动物体 场景单位与物体的选择 座标系、游标与原点 上一级
 笔记首页">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Blender 学习笔记" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/art/selfStudy/Blender/" />
-<meta property="og:updated_time" content="2023-10-02T16:37:47+09:00" />
 <title>Blender 学习笔记 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><link rel="alternate" type="application/rss+xml" href="/art/selfStudy/Blender/index.xml" title="chinanoahli's note" />
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><link rel="alternate" type="application/rss+xml" href="/art/selfStudy/Blender/index.xml" title="chinanoahli's note" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -91,7 +90,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -136,7 +134,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -227,9 +225,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  

@@ -3,34 +3,38 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Linux 常用技巧 #  一条命令调整文件与目录的权限 [1] #   背景:
+<meta name="description" content="Linux 常用技巧 # 一条命令调整文件与目录的权限 [1] # 背景:
 偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 0777，这是让人难以接受的
 以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了
- 有两个办法：
-  通过 find 命令
-# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644   通过 chmod 命令本身的参数控制
+有两个办法：
+通过 find 命令
+# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644 通过 chmod 命令本身的参数控制
 chmod -R u&#43;rwX,go&#43;rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这个参数可以为 目录 自动加入 可执行 权限
 但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 可执行 权限
-  文件本身是 可执行文件">
+文件本身是 可执行文件
+能 被当前用户(组) (取决于你这个 -X 放在命令中的哪一段) 检索到
+LightDM 开机自动登陆用户账户 [2] # 修改文件 /etc/lightdm/lightdm.">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="Linux 常用技巧" />
-<meta property="og:description" content="Linux 常用技巧 #  一条命令调整文件与目录的权限 [1] #   背景:
+<meta property="og:description" content="Linux 常用技巧 # 一条命令调整文件与目录的权限 [1] # 背景:
 偶尔会接受到来自 Windows 系统的目录与文件，但是这些文件的权限经常全部都是 0777，这是让人难以接受的
 以前会考虑写个脚本来遍历目录调整权限，但是脚本都没有保留，所以这次就直接谷歌了
- 有两个办法：
-  通过 find 命令
-# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644   通过 chmod 命令本身的参数控制
+有两个办法：
+通过 find 命令
+# for directories find /path/to/dir -type d -print0 | xargs -0 chmod 0755 # for files find /path/to/dir -type f -print0 | xargs -0 chmod 0644 通过 chmod 命令本身的参数控制
 chmod -R u&#43;rwX,go&#43;rX,go-w /path/to/dir 这里主要是用到了 -X 参数，这个参数可以为 目录 自动加入 可执行 权限
 但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 可执行 权限
-  文件本身是 可执行文件" />
+文件本身是 可执行文件
+能 被当前用户(组) (取决于你这个 -X 放在命令中的哪一段) 检索到
+LightDM 开机自动登陆用户账户 [2] # 修改文件 /etc/lightdm/lightdm." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/softUsage/operatingSystem/linux/tweaks/" />
+<meta property="og:url" content="/softUsage/operatingSystem/linux/tweaks/" /><meta property="article:section" content="softUsage" />
 <meta property="article:published_time" content="2023-05-05T19:54:13+09:00" />
 <meta property="article:modified_time" content="2023-05-05T19:54:13+09:00" />
 <title>Linux 常用技巧 | chinanoahli&#39;s note</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.716d4b848265c9ee6b261c3ac980c9169636a3adfefad4e093b6852674a71f23.css" ><!--
+<link rel="stylesheet" href="/book.min.4f0117e74e5337280f18eb9641eae520cb4b25adcf5dd64fafad4664145a5957.css" ><!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
@@ -96,7 +100,6 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><a href="/art/#myArtNote">个人思考及经验总结</a></li>
-<li><a href="/art/#drawingAndAnimationResourcesLibrary">画画人资源库</a></li>
 </ul>
 </li>
 <li><a href="/music/">音乐学习笔记</a>
@@ -141,7 +144,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -207,16 +210,16 @@ https://github.com/alex-shpak/hugo-book
 <ol>
 <li>
 <p>通过 <em>find</em> 命令</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># for directories</span>
-find /path/to/dir -type d -print0 | xargs -0 chmod <span style="color:#ae81ff">0755</span>
-
-<span style="color:#75715e"># for files</span>
-find /path/to/dir -type f -print0 | xargs -0 chmod <span style="color:#ae81ff">0644</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># for directories</span>
+</span></span><span style="display:flex;"><span>find /path/to/dir -type d -print0 | xargs -0 chmod <span style="color:#ae81ff">0755</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for files</span>
+</span></span><span style="display:flex;"><span>find /path/to/dir -type f -print0 | xargs -0 chmod <span style="color:#ae81ff">0644</span>
+</span></span></code></pre></div></li>
 <li>
 <p>通过 <em>chmod</em> 命令本身的参数控制</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">chmod -R u+rwX,go+rX,go-w /path/to/dir
-</code></pre></div><p>这里主要是用到了 <code>-X</code> 参数，这个参数可以为 <em>目录</em> 自动加入 <strong>可执行</strong> 权限</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod -R u+rwX,go+rX,go-w /path/to/dir
+</span></span></code></pre></div><p>这里主要是用到了 <code>-X</code> 参数，这个参数可以为 <em>目录</em> 自动加入 <strong>可执行</strong> 权限</p>
 <p>但是对于文件，它会检查文件是否符合下列条件，只有符合条件的文件才会被赋予 <strong>可执行</strong> 权限</p>
 <ol>
 <li>
@@ -234,7 +237,7 @@ find /path/to/dir -type f -print0 | xargs -0 chmod <span style="color:#ae81ff">0
 </h2>
 <p>修改文件 <code>/etc/lightdm/lightdm.conf</code></p>
 <p>在 <code>[Seat:*]</code> 下方跟添加</p>
-<pre><code>autologin-user=chinanoahli    # 以 chinanoahli 用户作为例子，请修改为你自己的用户名
+<pre tabindex="0"><code>autologin-user=chinanoahli    # 以 chinanoahli 用户作为例子，请修改为你自己的用户名
 autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自动登陆
 </code></pre><blockquote>
 <p>⚠ 注意:</p>
@@ -257,13 +260,13 @@ autologin-user-timeout=60     # 先等待 60 秒，若误操作，再进行自�
 <blockquote>
 <p>这些操作都需要 <strong><i>root</i></strong> 权限</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># umount 你需要操作的&lt;分区&gt;</span>
-fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查文件系统是否有错误</span>
-fsck.ext4 -y -f -v -D /dev/&lt;分区&gt;  <span style="color:#75715e"># 优化目录结构</span>
-<span style="color:#75715e"># mount 你需要操作的&lt;分区&gt;</span>
-e4defrag -v /dev/&lt;分区&gt;            <span style="color:#75715e"># 对文件进行碎片整理</span>
-fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查到底优化了多少(非必要)</span>
-</code></pre></div><h2 id="引用来源">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># umount 你需要操作的&lt;分区&gt;</span>
+</span></span><span style="display:flex;"><span>fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查文件系统是否有错误</span>
+</span></span><span style="display:flex;"><span>fsck.ext4 -y -f -v -D /dev/&lt;分区&gt;  <span style="color:#75715e"># 优化目录结构</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># mount 你需要操作的&lt;分区&gt;</span>
+</span></span><span style="display:flex;"><span>e4defrag -v /dev/&lt;分区&gt;            <span style="color:#75715e"># 对文件进行碎片整理</span>
+</span></span><span style="display:flex;"><span>fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查到底优化了多少(非必要)</span>
+</span></span></code></pre></div><h2 id="引用来源">
   引用来源：
   <a class="anchor" href="#%e5%bc%95%e7%94%a8%e6%9d%a5%e6%ba%90">#</a>
 </h2>
@@ -292,9 +295,7 @@ fsck.ext4 -y -f -v /dev/&lt;分区&gt;     <span style="color:#75715e"># 检查�
 
 
 
-  <script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){if(window.getSelection().toString()){return;}
-select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script>
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
 
 
  
