@@ -21,6 +21,14 @@
 + `-quality 100`
    >指定转换的质量， `100` 为最高质量
 
+## FFmpeg
+
+将 gif 输出成序列帧: `ffmpeg.exe -i path\to\input.gif path\for\output\frame_%d.png`
+
+> 其中 `-i` 参数指定的文件为输入文件，避免产生输入输出方向错误，建议加上
+>
+> 输出文件名中的 `%d` 可以让输出的每一帧图片文件名带上数字序号
+
 ---
 
 [上一级](../README.md)
