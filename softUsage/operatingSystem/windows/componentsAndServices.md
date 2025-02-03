@@ -263,14 +263,56 @@
 |MapsBroker|Downloaded Maps Manager|2|4|10|<u>供应用程序访问已下载地图的 Windows 服务。此服务由访问已下载地图的应用程序按需启动。禁用此服务将阻止应用访问地图。</u>|
 |mausbhost|MA-USB Host Controller Driver<br>MA-USB 主机控制器驱动程序|3|-|1||
 |mausbip|MA-USB IP Filter Driver<br>MA-USB IP 筛选器驱动程序|3|-|1||
+|MbbCx|MBB Network Adapter Class Extension|3||1|微软开发的 Windows Mobile Broadband Class Extension，待测试|
+|megasas||0|4|1|博通 Avago MEGASAS RAID 控制器驱动|
+|megasas2i||0|4|1|博通 Avago MEGASAS RAID 控制器驱动|
+|megasas35i||0|4|1|博通 Avago MEGASAS RAID 控制器驱动|
+|megasr||0|4|1|LSI MegaRAID Software RAID 驱动|
+|MessagingService|MessagingService|3|4|60|<u>支持短信及相关功能的服务。</u>|
+|Microsoft_Bluetooth_AvrcpTransport|Microsoft Bluetooth Avrcp Transport Driver<br>Microsoft 蓝牙 AVRCP 传输驱动程序|3|-|1||
+|MixedRealityOpenXRSvc|Windows Mixed Reality OpenXR Service|3||20|<u>Enables Mixed Reality OpenXR runtime functionality</u><br>待测试， VR 相关|
+|mlx4_bus|Mellanox ConnectX Bus Enumerator<br>Mellanox ConnectX 总线枚举器|3|-|1||
+|MMCSS|Multimedia Class Scheduler|2||1|<u>Enables relative prioritization of work based on system-wide task priorities. This is intended mainly for multimedia applications.  If this service is stopped, individual tasks resort to their default priority.</u><br>待测试|
+|Modem||3||1|待测试，微软开发的 Modem 驱动|
+|monitor|Microsoft Monitor Class Function Driver Service|3||1|显示器相关|
+|mouclass|Mouse Class Driver|3|-|1||
+|mouhid|Mouse HID Driver|3|-|1||
+|mountmgr|Mount Point Manager|0|-|1|<u>负责维护永久性驱动器号和卷名的驱动程序</u><br>更改此项服务将会导致系统 **无法启动**|
+|mpsdrv|Windows Defender Firewall Authorization Driver|3||1|<u>Windows Defender Firewall Authorization Driver is a kernel mode driver that provides deep inspection services on inbound and outbound network traffic.</u><br>待测试|
+|mpssvc|Windows Defender Firewall|2|4|20|<u>Windows Defender 防火墙通过阻止未授权用户通过 Internet 或网络访问你的计算机来帮助保护计算机。</u>|
+|MRxDAV|WebDav Client Redirector Driver|3|-|2|<u>为 WebClient 服务提供 WebDAV 文件访问权限的网络重定向程序</u>|
+|mrxsmb|SMB MiniRedirector Wrapper and Engine|3|-|2|<u>执行 SMB 文件系统重定向程序的框架</u>|
+|mrxsmb20|SMB 2.0 MiniRedirector|3|-|2|<u>执行 SMB 2.0 协议，该协议提供与 Windows Vista 以及更高版本的服务器上的网络资源的连接</u>|
+|MsBridge|Microsoft MAC Bridge<br>Microsoft MAC 桥|3|-|1||
+|MSDTC|Distributed Transaction Coordinator|3||10|<u>协调跨多个数据库、消息队列、文件系统等资源管理器的事务。如果停止此服务，这些事务将会失败。如果禁用此服务，显式依赖此服务的其他服务将无法启动。</u><br>待测试|
+|Msfs||1|-|2||
+|msgpiowin32|Common Driver for Buttons, DockMode and Laptop/Slate IndicatorU<br>用于按钮、停靠模式和笔记本电脑/平板电脑指示器的通用驱动程序|3|-|1||
+|mshidkmdf|Pass-through HID to KMDF Filter Driver|3|-|1|<u>Device Filter to provide pass-through interface between HIDCLASS and KMDF</u>|
+|mshidumdf|Pass-through HID to UMDF Driver|3|-|1|<u>设备驱动程序在 HIDCLASS 和 UMDF 之间提供传递接口</u>|
+|msisadrv||0|-|1|微软开发的 ISA 驱动<br>更改此项服务将会导致系统 **无法启动**|
+|MSiSCSI|Microsoft iSCSI Initiator Service|3|4|20|<u>管理从这台计算机到远程 iSCSI 目标设备的 Internet SCSI (iSCSI)会话。如果该服务已停止，则该计算机将无法登录或访问 iSCSI 目标设备。如果该服务已禁用，则所有显式依赖于该服务的服务将不会启动。</u>|
+|msiserver|Windows Installer|3|-|10|<u>添加、修改和删除作为 Windows Installer 程序包(*.msi、*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</>|
+|MSKSSRV|Microsoft Streaming Service Proxy<br>Microsoft 流服务代理|3|-|1|音视频流媒体支持|
+|MsLldp|Microsoft Link-Layer Discovery Protocol<br>Microsoft 链路层发现协议|2|-|1|<u>Microsoft 链路层发现协议驱动程序</u>|
+|MSPCLOCK|Microsoft Streaming Clock Proxy<br>Microsoft 流时钟代理|3|-|1|音视频流媒体支持|
+|MSPQM|Microsoft Streaming Quality Manager Proxy<br>Microsoft 流质量管理器代理|3|-|1|音视频流媒体支持|
+|MsQuic||3|-|1|QUIC 网络协议支持|
+|MsRPC||3|-|1||
+|MsSecFlt|Microsoft Security Events Component Minifilter<br>Microsoft 安全事件组件微筛选器|0|4|1|<u>Microsoft 安全事件组件文件系统筛选器驱动程序</u>，待测试|
+|mssmbios|Microsoft System Management BIOS Driver|1|-|1||
+|MSTEE|Microsoft Streaming Tee/Sink-to-Sink Converter<br>Microsoft 流 Tee/Sink-to-Sink 转换器|3|-|1|音视频流媒体支持|
+|MTConfig|Microsoft Input Configuration Driver|3|-|1||
+|Mup|MUP|0|-|2|<u>多个 UNC 提供程序驱动程序</u>|
+|mvumis||0|4|1|待测试，Marvell Flash 控制器驱动|
+|NativeWifiP|NativeWiFi Filter<br>NativeWiFi 筛选器|3|-|1||
 |SecurityHealthService|Windows 安全中心服务|3|4|10|<u>Windows 安全中心服务处理统一的设备保护和运行状况信息</u><br>Windows Defender 相关，建议禁用|
 
 #### 其他查找不到信息的未知服务
 
 |服务名称<sup>1</sup>|显示名称 (EN)<sup>2</sup>|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6</sup>|
 |----|----|----|----|----|----|
-|amdgpio2|AMD GPIO Client Driver<br>AMD GPIO 客户端驱动程序|3||1|<u></u>|
-|amdi2c|AMD I2C Controller Service<br>AMD I2C 控制器服务|3||1|<u></u>|
+|amdgpio2|AMD GPIO Client Driver<br>AMD GPIO 客户端驱动程序|3||1||
+|amdi2c|AMD I2C Controller Service<br>AMD I2C 控制器服务|3||1||
 |AmdK8|AMD K8 Processor Driver|3||1||
 |AmdPPM|AMD Processor Driver|3||1||
 |amdsata||0||1||
