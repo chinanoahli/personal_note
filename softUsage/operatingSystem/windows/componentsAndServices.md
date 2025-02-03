@@ -79,7 +79,7 @@
 |BDESVC|BitLocker Drive Encryption Service|3|4|20|<u>BDESVC 承载 BitLocker 驱动器加密服务。BitLocker 驱动器加密为操作系统提供安全启动保障，并为 OS、固定卷和可移动卷提供全卷加密功能。使用此服务，BitLocker 可以提示用户执行与已安装卷相关的各种操作，并自动解锁卷而无需用户交互。此外，它还会将恢复信息存储至 Active Directory (如果这种方法可用并且需要这样做)，并确保使用最新的恢复证书。停止或禁用该服务可以防止用户使用此功能。</u>|
 |bcmfn2|bcmfn2 Service|3|-|1|BCM Function 2 Device Driver by Windows (R) Win 7 DDK provider??|
 |Beep|Beep|2|3|1|可能是主板的蜂鸣器驱动？|
-|BFE|Base Filtering Engine|2|3|20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u>|
+|BFE|Base Filtering Engine|2|4|20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u>|
 |bindflt|Windows Bind Filter Driver|2|-|2|<u>Binds filesystem namespaces to different locations and hides this remapping from the user</u><br>将文件系统命名空间绑定到不同位置，并向用户隐藏这种重新映射??|
 |BITS|Background Intelligent Transfer Service|2|4|20|<u>使用空闲网络带宽在后台传送文件。如果该服务被禁用，则依赖于 BITS 的任何应用程序(如 Windows 更新或 MSN Explorer)将无法自动下载程序和其他信息。</u><sup>8</sup>|
 |BluetoothUserService|Bluetooth User Support Service<br>蓝牙用户支持服务|3|-|60|<u>蓝牙用户服务支持与每个用户会话相关的蓝牙功能的正确运行。</u>|
@@ -137,7 +137,7 @@
 |DevQueryBroker|DevQuery Background Discovery Broker|3|-|10|<u>使应用能够发现具有后台任务的设备</u><br>经典巨硬式不说人话翻译，人话：后台定期扫描，以发现新设备，并通知系统自动注册新设备|
 |Dfsc|DFS Namespace Client Driver|1|-|2|<u>用于访问 DFS 命名空间的客户端驱动程序</u><br>Windows 共享网络别名支持，如 `\\Contoso\Public` 等|
 |Dhcp|DHCP Client|2|-|20|<u>将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>你上网吗？|
-|diagnosticshub.standardcollector.service|Microsoft (R) 诊断中心标准收集器服务|3|4|10|<u>诊断中心标准收集器服务。运行时，此服务会收集实时 ETW 事件，并对其进行处理。</u>|
+|diagnosticshub.standardcollector.service|Microsoft (R) 诊断中心标准收集器服务|3|4|10|<u>诊断中心标准收集器服务。运行时，此服务会收集实时 ETW 事件，并对其进行处理。</u><br>诊断不了故障的故障诊断功能支持|
 |diagsvc|Diagnostic Execution Service|3|4|20|<u>Executes diagnostic actions for troubleshooting support</u><br>诊断不了故障的故障诊断功能支持|
 |DiagTrack|Connected User Experiences and Telemetry|2|4|10|<u>Connected User Experiences and Telemetry</u><br>用户体验数据收集|
 |disk|Disk Driver<br>磁盘驱动程序|0|-|1||
@@ -156,7 +156,7 @@
 |DXGKrnl|LDDM Graphics Subsystem|1|-|1|<u>Controls the underlying video driver stacks to provide fully-featured display capabilities.</u><br>DirectX 图形内核子系统|
 |Eaphost|Extensible Authentication Protocol|3|-|20|<u>可扩展的身份验证协议(EAP)服务在以下情况下提供网络身份验证: 802.1x 有线和无线、VPN 和网络访问保护(NAP)。EAP 在身份验证过程中也提供网络访问客户端使用的应用程序编程接口(API)，包括无线客户端和 VPN 客户端。如果禁用此服务，该计算机将无法访问需要 EAP 身份验证的网络。</u>|
 |ebdrv|QLogic 10 Gigabit Ethernet Adapter VBD|0|4|1|QLogic 10G 网卡驱动|
-|EFS|Encrypting File System (EFS)|3|4|20|<u>密技术。如果停止或禁用此服务，则应用程序将无法访问加密的文件。</u><br>目测与 BitLocker 相关|
+|EFS|Encrypting File System (EFS)|3|4|20|<u>提供用于在 NTFS 文件系统卷上存储加密文件的核心文件加密技术。如果停止或禁用此服务，则应用程序将无法访问加密的文件。</u><br>待测试，目测与 BitLocker 相关|
 |EhStorClass|Enhanced Storage Filter Driver|0|-|1|<u>Enhanced Storage Filter Driver</u><br>待测试，目测与加密相关|
 |EhStorTcgDrv|Microsoft driver for storage devices supporting IEEE 1667 and TCG protocols<br>支持 IEEE 1667 和 TCG 协议的 Microsoft 存储设备驱动程序|1|-|1|待测试，目测与加密相关|
 |embeddedmode|Embedded Mode<br>嵌入模式|3|4|20|<u>嵌入模式服务启用与后台应用程序相关的方案。禁用此服务会阻止激活后台应用程序。</u><br>IoT 版本的特殊功能|
@@ -171,7 +171,7 @@
 |fdPHost|Function Discovery Provider Host|3|4|20|<u>FDPHOST 服务承载功能发现(FD)网络发现提供程序。这些 FD 提供程序为简单服务发现协议(SSDP)和 Web 服务发现(WS-D)协议提供网络发现服务。使用 FD 时停止或禁用 FDPHOST 服务将禁用这些协议的网络发现。当该服务不可用时，使用 FD 和依靠这些发现协议的网络服务将无法找到网络服务或资源。</u><br>网络发现功能|
 |FDResPub|Function Discovery Resource Publication|3|4|20|<u>发布该计算机以及连接到该计算机的资源，以便能够在网络上发现这些资源。如果该服务被停止，将不再发布网络资源，网络上的其他计算机将无法发现这些资源。</u><br>若在本 PC 共享，本服务可以让该共享资源被其他 PC 发现|
 |fhsvc|File History Service|3|4|20|<u>将用户文件复制到备份位置以防意外丢失</u>|
-|FileCrypt|FileCrypt|1|4|2|<u>Windows sandboxing and encryption filter.</u>待测试|
+|FileCrypt|FileCrypt|1|4|2|<u>Windows sandboxing and encryption filter.</u><br>待测试|
 |FileInfo|File Information FS MiniFilter|0|-|2|<u>Collects information about files in memory to be consumed by other system services.</u>|
 |Filetrace|FileTrace|3|-|2|<u>ETW File Trace Filter</u><br>待测试，目测与系统调试有关， ETW = Event Trace for Windows|
 |flpydisk|Floppy Disk DriverU<br>软盘驱动程序|3|4|1|今昔是何年|
@@ -185,16 +185,92 @@
 |GPIOClx0101|Microsoft GPIO Class Extension Driver|3|-|1||
 |gpsvc|Group Policy Client|2|-|20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u>|
 |GpuEnergyDrv|GPU Energy Driver|1|-|1|<u>Computes energy consumed by GPU</u>|
-|GraphicsPerfSvc|GraphicsPerfSvc|3|4|20|<u>Graphics performance monitor service</u><br>绝大多数的 Windows 10 版本都不包含|
+|GraphicsPerfSvc|GraphicsPerfSvc|3|4|20|<u>Graphics performance monitor service</u><br>Windows 10 Home, Pro, Education, Enterprise (1507, 1511, 1607, 1703) 以上各版本都不包含，禁用之|
 |HdAudAddService|Microsoft 1.1 UAA Function Driver for High Definition Audio Service<br>用于 High Definition Audio 服务的 Microsoft 1.1 UAA 函数驱动程序|3|-|1|音频驱动|
+|HDAudBus|Microsoft UAA Bus Driver for High Definition Audio<br>用于 High Definition Audio 的 Microsoft UAA 总线驱动程序|3|-|1|音频驱动|
+|HidBatt|HID UPS Battery Driver<br>HID UPS 电池驱动程序|3|-|1||
+|HidBth|Microsoft Bluetooth HID Miniport|3|-|1|蓝牙相关|
+|hidi2c|Microsoft I2C HID Miniport Driver<br>Microsoft I2C HID 微型端口驱动程序|3|-|1||
+|hidinterrupt|Common Driver for HID Buttons implemented with interrupts<br>通过中断实施的 HID 按钮的通用驱动程序|3|-|1||
+|HidIr|Microsoft Infrared HID Driver|3|4|1|红外线驱动|
+|hidserv|Human Interface Device Service|3|-|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u>|
+|hidspi|Microsoft SPI HID Miniport Driver<br>Microsoft SPI HID 微型端口驱动程序|3|-|1||
+|HidUsb|Microsoft HID Class Driver|3|-|1||
+|HpSAMD||0||1|HP SAS / SATA 控制器驱动<br>待测试，RAID 卡驱动吗？|
+|HTTP|HTTP Service|3||1||
+|hvcrash||4|-|1|目测是 Hyper-V 相关服务|
+|HvHost|HV 主机服务|3|-|20|<u>为 Hyper-V 虚拟机监控程序提供接口，以便为主机操作系统提供单分区性能计数器。</u>|
+|hvservice|Hypervisor/Virtual Machine Support Driver|3|-|1||
+|HwNClx0101|Microsoft Hardware Notifications Class Extension Driver|3|4|1|Windows 10 Home, Pro, Education, Enterprise (1507, 1511, 1607, 1703) 以上各版本都不包含，禁用之|
+|hwpolicy|Hardware Policy Driver|0|-|1|<u>Contains Processor and other policies</u>|
+|hyperkbd||3|-|1|Microsoft VMBus Synthetic Keyboard Driver|
+|HyperVideo||3|-|1|Microsoft VMBus Video Device Miniport Driver|
+|i8042prt|i8042 Keyboard and PS/2 Mouse Port Driver<br>i8042 键盘和 PS/2 鼠标端口驱动程序|3|-|1||
+|iagpio|Intel Serial IO GPIO Controller Driver<br>Intel 串行 IO GPIO 控制器驱动程序|3|-|1||
+|iai2c|Intel(R) Serial IO I2C Host Controller<br>Intel(R) 串行 IO I2C 主机控制器|3|-|1||
+|iaLPSS2i_GPIO2|Intel(R) Serial IO GPIO Driver v2<br>Intel(R) 串行 IO GPIO 驱动程序 v2|3|-|1||
+|iaLPSS2i_GPIO2_BXT_P|Intel(R) Serial IO GPIO Driver v2<br>Intel(R) 串行 IO GPIO 驱动程序 v2|3|-|1||
+|iaLPSS2i_GPIO2_CNL|Intel(R) Serial IO GPIO Driver v2<br>Intel(R) 串行 IO GPIO 驱动程序 v2|3|-|1||
+|iaLPSS2i_GPIO2_GLK|Intel(R) Serial IO GPIO Driver v2<br>Intel(R) 串行 IO GPIO 驱动程序 v2|3|-|1||
+|iaLPSS2i_I2C|Intel(R) Serial IO I2C Driver v2<br>Intel(R) 串行 IO I2C 驱动程序 v2|3|-|1||
+|iaLPSS2i_I2C_BXT_P|Intel(R) Serial IO I2C Driver v2<br>Intel(R) 串行 IO I2C 驱动程序 v2|3|-|1||
+|iaLPSS2i_I2C_CNL|Intel(R) Serial IO I2C Driver v2<br>Intel(R) 串行 IO I2C 驱动程序 v2|3|-|1||
+|iaLPSS2i_I2C_GLK|Intel(R) Serial IO I2C Driver v2<br>Intel(R) 串行 IO I2C 驱动程序 v2|3|-|1||
+|iaLPSSi_GPIO|Intel(R) 串行 IO GPIO 主机控制器驱动程序<br>Intel(R) Serial IO GPIO Controller Driver|3|-|1||
+|iaLPSSi_I2C|Intel(R) Serial IO I2C Controller Driver<br>Intel(R) 串行 IO I2C 控制器驱动程序|3|-|1||
+|iaStorAVC|Intel Chipset SATA RAID Controller<br>Intel 芯片集 SATA RAID 控制器|0|-|1||
+|iaStorV|Intel RAID Controller Windows 7|0|-|1||
+|ibbus|Mellanox InfiniBand Bus/AL (Filter Driver)<br>Mellanox InfiniBand 总线/AL (筛选器驱动程序)|3|-|1||
+|icssvc|Windows Mobile Hotspot Service<br>Windows 移动热点服务|3|-|20|<u>提供与其他设备共享手机网络数据连接的功能。</u>|
+|IKEEXT|IKE and AuthIP IPsec Keying Modules|3|-|32|<u>IKEEXT 服务托管 Internet 密钥交换(IKE)和身份验证 Internet 协议(AuthIP)键控模块。这些键控模块用于 Internet 协议安全(IPSec)中的身份验证和密钥交换。停止或禁用 IKEEXT 服务将禁用与对等计算机的 IKE/AuthIP 密钥交换。通常将 IPSec 配置为使用 IKE 或 AuthIP，因此停止或禁用 IKEEXT 服务将导致 IPSec 故障并且危及系统的安全。强烈建议运行 IKEEXT 服务。</u>|
+|IndirectKmd|Indirect Displays Kernel-Mode Driver<br>Indirect Displays 内核模式驱动程序|3|-|1|<u>实现了 Indirect Displays 框架的内核模式驱动程序。</u><br>虚拟显示器支持|
+|InstallService|Microsoft Store Install Service<br>Microsoft Store 安装服务|3||10|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如被禁用，则安装将无法正常运行。</u><br>待测试，不知是否影响本地 Appx 文件的安装|
+|intelide||0|-|1|微软开发的 Intel PCI IDE Driver<br>更改此项服务将会导致系统 **无法启动**|
+|intelpmax|Intel(R) Dynamic Device Peak Power Manager Driver|3|-|1|微软开发的 Intel Power Limit Driver<br>电源限制驱动？|
+|intelppm|Intel Processor Driver|3|-|1||
+|iorate|Disk I/O Rate Filter Driver<br>磁盘 I/O 速率筛选器驱动程序|0|-|1|<u>为磁盘 I/O 流量提供速率控制。</u><br>更改此项服务将会导致系统 **无法启动**|
+|IpFilterDriver|IP Traffic Filter Driver<br>IP 流量筛选器驱动程序|3|-|10||
+|iphlpsvc|IP Helper|2|-|20|<u>使用 IPv6 转换技术(6to4、ISATAP、端口代理和 Teredo)和 IP-HTTPS 提供隧道连接。如果停止该服务，则计算机将不具备这些技术提供的增强连接优势。</u>|
+|IPMIDRV||3|4|1|微软开发的 WMI IPMI 驱动，企业远程控制相关|
+|IPNAT|IP Network Address Translator|3|-|1||
+|IPT||2||1|待测试，Intel 处理器的调试追踪功能<sup>13</sup>|
+|IpxlatCfgSvc|IP Translation Configuration Service<br>IP 转换配置服务|3|-|20|<u>配置和启用从 v4 到 v6 的转换，反之亦然</u>|
+|isapnp||0|-|1|更改此项服务将会导致系统 **无法启动**<br>微软开发的 PNP ISA Bus 驱动|
+|iScsiPrt|IScsiPort Driver<br>iScsiPort 驱动程序|3|-|1||
+|ItSas35i||0|4|1|博通 Avago SAS Gen3.5 驱动，待测试|
+|kbdclass|Keyboard Class Driver|3|-|1||
+|kbdhid|Keyboard HID Driver|3|-|1||
+|kdnic|Microsoft Kernel Debug Network Miniport (NDIS 6.20)<br>Microsoft 内核调试网络微型端口(NDIS 6.20)|3|-|1||
+|KeyIso|CNG Key Isolation|3|-|10|<u>CNG 密钥隔离服务宿主在 LSA 进程中。如一般原则所要求，该服务为私钥和相关加密操作提供密钥进程隔离。该服务在与一般原则要求相一致的安全进程中存储和使用生存期长的密钥。</u><br>参见 **CNG**|
+|KSecDD||0|-|1|微软开发的 Kernel Security Support Provider 接口<br>更改此项服务将会导致系统 **无法启动**|
+|KSecPkg||0|-|1|微软开发的 Kernel Security Support Provider 接口<br>更改此项服务将会导致系统 **无法启动**|
+|ksthunk|Kernel Streaming Thunks|3|-|1|音视频流媒体支持|
+|KtmRm|KtmRm for Distributed Transaction Coordinator|3|-|20|<u>协调分布式事务处理协调器(MSDTC)和内核事务管理器(KTM)之间的事务。如果不需要，建议保持该服务的停止状态。如果需要，MSDTC 和 KTM 将自动启动该服务。如果此服务已禁用，任何与内核资源管理器交互的 MSDTC 事务将失败，并且任何显式依赖它的服务将无法启动。</u>|
+|LanmanServer|Server|2|-|20|<u>支持此计算机通过网络的文件、打印、和命名管道共享。如果服务停止，这些功能不可用。如果服务被禁用，任何直接依赖于此服务的服务将无法启动。</u>|
+|LanmanWorkstation|Workstation|2|-|20|<u>使用 SMB 协议创建并维护客户端网络与远程服务器之间的连接。如果此服务已停止，这些连接将无法使用。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
+|lfsvc|Geolocation Service|3|4|20|<u>此服务将监视系统的当前位置并管理地理围栏(具有关联事件的地理位置)。如果你禁用此服务，应用程序将无法使用或接收有关地理位置或地理围栏的通知。</u>|
+|LicenseManager|Windows License Manager Service<br>Windows 许可证管理器服务|3|-|20|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如果禁用此服务，则通过 Microsoft Store 获得的内容将无法正常运行。</u>|
+|lltdio|Link-Layer Topology Discovery Mapper I/O Driver<br>链路层拓扑发现映射器 I/O 驱动程序|2|-|1||
+|lltdsvc|Link-Layer Topology Discovery Mapper|3|-|10|<u>创建网络映射，它由电脑和设备拓扑(连接)信息以及说明每个电脑和设备的元数据组成。如果禁用此服务，则网络映射将不能正常工作。</u>|
+|lmhosts|TCP/IP NetBIOS Helper|3|-|20|<u>提供 TCP/IP (NetBT) 服务上的 NetBIOS 和网络上客户端的 NetBIOS 名称解析的支持，从而使用户能够共享文件、打印和登录到网络。如果此服务被停用，这些功能可能不可用。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|LSI_SAS||0|4|1|LSI Fusion-MPT SAS 驱动|
+|LSI_SAS2i||0|4|1|LSI SAS Gen2 驱动|
+|LSI_SAS3i||0|4|1|博通 Avago SAS Gen3 驱动|
+|LSI_SSS||0|4|1|LSI SSS PCIe/Flash|
+|LSM|Local Session Manager|2|-|20|<u>管理本地用户会话的核心 Windows 服务。停止或禁用此服务将导致系统不稳定。</u>|
+|luafv|UAC File Virtualization|2|-|2|<u>虚拟化每个用户位置的文件写入失败。</u>|
+|LxpSvc|Language Experience Service<br>语言体验服务|3|-|20|<u>为部署和配置 Windows 本地化资源提供基础结构支持。此服务将按需启动，如果禁用，其他 Windows 语言将不会部署到系统，Windows 可能无法正常工作。</u>|
+|MapsBroker|Downloaded Maps Manager|2|4|10|<u>供应用程序访问已下载地图的 Windows 服务。此服务由访问已下载地图的应用程序按需启动。禁用此服务将阻止应用访问地图。</u>|
+|mausbhost|MA-USB Host Controller Driver<br>MA-USB 主机控制器驱动程序|3|-|1||
+|mausbip|MA-USB IP Filter Driver<br>MA-USB IP 筛选器驱动程序|3|-|1||
 |SecurityHealthService|Windows 安全中心服务|3|4|10|<u>Windows 安全中心服务处理统一的设备保护和运行状况信息</u><br>Windows Defender 相关，建议禁用|
 
 #### 其他查找不到信息的未知服务
 
 |服务名称<sup>1</sup>|显示名称 (EN)<sup>2</sup>|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6</sup>|
 |----|----|----|----|----|----|
-|amdgpio2|AMD GPIO Client Driver<br>AMD GPIO 客户端驱动程序|3||1||
-|amdi2c|AMD I2C Controller Service<br>AMD I2C 控制器服务|3||1||
+|amdgpio2|AMD GPIO Client Driver<br>AMD GPIO 客户端驱动程序|3||1|<u></u>|
+|amdi2c|AMD I2C Controller Service<br>AMD I2C 控制器服务|3||1|<u></u>|
 |AmdK8|AMD K8 Processor Driver|3||1||
 |AmdPPM|AMD Processor Driver|3||1||
 |amdsata||0||1||
@@ -207,12 +283,13 @@
 4. 优化建议仅针对非公司环境的个人电脑
 5. 该值为 *注册表 (Regedit.exe)* 中的 **16 进制** 值(打开值编辑时的默认选项)
 6. 资料来源为 [batcmd](https://batcmd.com/windows/10/services/) 、 [Revert Service](https://revertservice.com/10/) 以及个人实机测试
-7. 带下划线的为 **Microsoft官方中文描述**
+7. 带下划线的为 **Microsoft官方中文描述** (GitHub 不支持显示下划线)
 8. 禁用 Windows Update 相关后，无法从 Microsoft Store 安装和更新应用，但你可以通过 [Microsoft Store - Generation Project (v1.2.3) \[by @rgadguard & mkuba50\]](https://store.rg-adguard.net) ，来下载想要安装应用的 Appx 软件包进行本地安装
 9. 该服务无描述，官方描述取自 [Microsoft 在线文档](https://learn.microsoft.com/zh-cn/windows/win32/seccng/cng-features)
 10. 该服务无描述，参考链接 [file.net](https://www.file.net/process/compositebus.sys.html)
 11. 描述节取自 [Microsoft 在线文档](https://learn.microsoft.com/en-us/windows/compatibility/desktop-activity-moderator)
 12. 参考链接 [serverfault](https://serverfault.com/questions/829782/what-exactly-is-the-data-sharing-service-in-windows-server-2016)
+13. 参考链接 [GitHbu](https://github.com/ionescu007/winipt)
 
 [上一级](../README.md)
 
