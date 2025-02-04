@@ -535,57 +535,57 @@
 |USBXHCI|USB xHCI Compliant Host Controller<br>符合 USB xHCI 的主机控制器|3|-|1||
 |UserDataSvc|User Data Access|3|4|60|<u>提供对结构化用户数据(包括联系人信息、日历、消息和其他内容)的应用访问。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
 |UserManager|User Manager|2|-|20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>如果禁用这个服务，会造成用户账户管理异常，不建议进行改动|
-|UsoSvc||||||
-|VacSvc||||||
-|VaultSvc||||||
-|vdrvroot||||||
-|vds||||||
-|VerifierExt||||||
-|vhdmp||||||
-|vhf||||||
-|Vid||||||
-|VirtualRender||||||
-|vmbus||||||
-|VMBusHID||||||
-|vmgid||||||
-|vmicguestinterface||||||
-|vmicheartbeat||||||
-|vmickvpexchange||||||
-|vmicrdv||||||
-|vmicshutdown||||||
-|vmictimesync||||||
-|vmicvmsession||||||
-|vmicvss||||||
-|volmgr||||||
-|volmgrx||||||
-|volsnap||||||
-|volume||||||
-|vpci||||||
-|vsmraid||||||
-|VSS||||||
-|VSTXRAID||||||
-|vwifibus||||||
-|vwififlt||||||
-|W32Time||||||
-|WaaSMedicSvc||||||
-|WacomPen||||||
-|WalletService||||||
-|wanarp||||||
-|wanarpv6||||||
-|WarpJITSvc||||||
-|wbengine||||||
-|WbioSrvc||||||
-|wcifs||||||
-|Wcmsvc||||||
-|wcncsvc||||||
-|wcnfs||||||
-|WdBoot||||||
-|Wdf01000||||||
-|WdFilter||||||
-|WdiServiceHost||||||
-|WdiSystemHost||||||
-|wdiwifi||||||
-|WdmCompanionFilter||||||
+|UsoSvc|Update Orchestrator Service<br>更新 Orchestrator 服务|2|4|20|<u>管理 Windows 更新。如果已停止，你的设备将无法下载和安装最新更新。</u><sup>8</sup>|
+|VacSvc|Volumetric Audio Compositor Service<br>立体音频组合器服务|3|-|10|<u>用于混合现实音频仿真的主机空间分析。</u><br>待测试，VR 相关|
+|VaultSvc|Credential Manager|3|-|20|<u>为用户、应用程序和安全服务包提供凭据的安全存储和检索。</u><br>用于储存如 Samba 服务器、网站等的账号和密码|
+|vdrvroot|Microsoft Virtual Drive Enumerator<br>Microsoft 虚拟驱动器枚举器|0|-|1|更改此项服务将会导致系统 **无法启动**|
+|vds|Virtual Disk|3|-|10|<u>提供用于磁盘、卷、文件系统和存储阵列的管理服务。</u>|
+|VerifierExt|Driver Verifier Extension<br>驱动程序验证程序扩展|4||1||
+|vhdmp||3||1|微软开发的 VHD Miniport 驱动|
+|vhf|Virtual HID Framework (VHF) Driver<br>虚拟 HID 框架(VHF)驱动程序|3||1|<u>实现虚拟 HID 框架(VHF)的内核模式驱动程序</u><br>VR 相关|
+|Vid||1||1|Hyper-V Virtualization Infrastructure 驱动|
+|VirtualRender||3||1|Hyper-V 相关|
+|vmbus|Virtual Machine Bus<br>虚拟机总线|0||1|Hyper-V 相关|
+|VMBusHID||3||1|Hyper-V 相关|
+|vmgid|Microsoft Hyper-V Guest Infrastructure Driver<br>Microsoft Hyper-V 来宾基础结构驱动程序|3||1||
+|vmicguestinterface|Hyper-V Guest Service Interface<br>|3||20|<u>为 Hyper-V 主机提供一个接口，以便与虚拟机内运行的特定服务进行交互。</u>|
+|vmicheartbeat|Hyper-V Heartbeat Service|3||20|<u>通过定期报告检测信号来监视此虚拟机的状态。此服务有助于你识别哪些运行的虚拟机已停止响应。</u>|
+|vmickvpexchange|Hyper-V Data Exchange Service|3||20|<u>提供一种机制，用于在虚拟机和运行在物理计算机上的操作系统之间交换数据。</u>|
+|vmicrdv|Hyper-V Remote Desktop Virtualization Service<br>Hyper-V 远程桌面虚拟化服务|3||20|<u>提供一个平台以在虚拟机和物理计算机上运行的操作系统之间进行通信。</u>|
+|vmicshutdown|Hyper-V Guest Shutdown Service|3||20|<u>提供一种机制，用于从物理计算机上的管理界面关闭此虚拟机的操作系统。</u>|
+|vmictimesync|Hyper-V Time Synchronization Service|3||20|<u>将此虚拟机的系统时间与物理计算机的系统时间同步。</u>|
+|vmicvmsession|Hyper-V PowerShell Direct Service|3||20|<u>提供了一种在不使用虚拟网络的情况下，通过 VM 会话使用 PowerShell 管理虚拟机的机制。</u>|
+|vmicvss|Hyper-V Volume Shadow Copy Requestor<br>Hyper-V 卷影复制请求程序|3||20|<u>协调使用卷影复制服务所需的通讯，以从物理计算机上的操作系统备份此虚拟机上的应用程序和数据。</u>|
+|volmgr|Volume Manager Driver<br>卷管理器驱动程序|0|-|1|更改此项服务将会导致系统 **无法启动**|
+|volmgrx|Dynamic Volume Manager|0|-|1|<u>管理动态磁盘上软件 RAID 卷(跨区卷、带区卷、镜像卷、RAID-5)的卷管理器驱动程序扩展</u><br>更改此项服务将会导致系统 **无法启动**|
+|volsnap|Volume Shadow Copy driver<br>卷映像复制驱动程序|0|-|1|<u>用于撷取和管理快照的卷类别筛选器驱动程序。</u><br>更改此项服务将会导致系统 **无法启动**|
+|volume|Volume driver<br>卷驱动程序|0|-|1|更改此项服务将会导致系统 **无法启动**|
+|vpci|Microsoft Hyper-V Virtual PCI Bus<br>Microsoft Hyper-V 虚拟 PCI 总线|0||1||
+|vsmraid||0|4|1|VIA RAID 卡驱动|
+|VSS|Volume Shadow Copy|3||10|<u>管理并执行用于备份和其它用途的卷影复制。如果此服务被终止，备份将没有卷影复制，并且备份会失败。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|VSTXRAID|VIA StorX Storage RAID Controller Windows Driver|0|4|1||
+|vwifibus|Virtual Wireless Bus Driver|3|-|1|<u>Implements bus functionality for Virtual Wireless</u><br>Wi-Fi 相关|
+|vwififlt|Virtual WiFi Filter Driver|1|-|1|Wi-Fi 相关|
+|W32Time|Windows Time|3||20|<u>维护在网络上的所有客户端和服务器的时间和日期同步。如果此服务被停止，时间和日期的同步将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>`Parameters\NtpServer` 中可以修改默认的 NTP 服务器|
+|WaaSMedicSvc|Windows Update Medic Service<br>Windows 更新医生服务|3|4|20|<u>启用 Windows 更新组件的修正和保护。</u><sup>8</sup>|
+|WacomPen|Wacom Serial Pen HID Driver<br>Wacom Serial Pen HID 驱动程序|3|-|1|牛逼， Wacom 有内置驱动|
+|WalletService|WalletService|3||20|<u>电子钱包客户端使用的主机对象</u><br>待测试，可能影响 UWP|
+|wanarp|Remote Access IP ARP Driver<br>远程访问 IP ARP 驱动程序|3|4|1||
+|wanarpv6|Remote Access IPv6 ARP Driver<br>远程访问 IPv6 ARP 驱动程序|3|4|1||
+|WarpJITSvc|WarpJITSvc|3|-|10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算专为针对 CPU 运行|
+|wbengine|Block Level Backup Engine Service|3|4|10|<u>Windows 备份使用 WBENGINE 服务执行备份和恢复操作。如果用户停止了此服务，这可能会导致当前运行的备份或恢复操作失败。使用此计算机上的 Windows 备份禁用此服务可能会禁用备份和恢复操作。</u>|
+|WbioSrvc|Windows Biometric Service|3||20|<u>Windows 生物识别服务使客户端应用程序能够捕获、比较、操纵和存储生物特征数据，而无需直接访问任何生物识别硬件或示例。该服务宿主在某个特权 SVCHOST 进程中。</u><br>待测试，不知是否会影响 Yubico 的使用|
+|wcifs|Windows Container Isolation|2||2|<u>Provides a virtual filesystem view for processes running within Windows Containers</u>|
+|Wcmsvc|Windows Connection Manager|2|-|10|<u>根据电脑当前可用的网络连接选项做出自动连接/断开连接决策，并根据“组策略”设置启用网络连接管理。</u>|
+|wcncsvc|Windows Connect Now - Config Registrar|3|-|20|<u>WCNCSVC 承载 Windows 立即连接配置，该配置是 Microsoft 执行的无线保护设置(WPS)协议。该配置用于配置接入点(AP)或无线设备的无线 LAN 设置。该服务根据需要有计划地启动。</u>|
+|wcnfs|Windows Container Name Virtualization|3||2|<u>Virtualizes file system names for processes running within Windows Containers</u>|
+|WdBoot|Microsoft Defender Antivirus Boot Driver|0|4|1|<u>Microsoft Defender 防病毒启动驱动程序</u><br>待测试|
+|Wdf01000|Kernel Mode Driver Frameworks service|0|-|1|共享与各个驱动程序之间的可复用代码|
+|WdFilter|Microsoft Defender Antivirus Mini-Filter Driver|0|4|2|<u>Microsoft Defender 防病毒访问恶意软件防护微筛选器驱动程序</u><br>待测试|
+|WdiServiceHost|Diagnostic Service Host|3||20|<u>诊断服务主机被诊断策略服务用来承载需要在本地服务上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u><br>诊断不了故障的故障诊断功能支持？|
+|WdiSystemHost|Diagnostic System Host|3||20|<u>诊断系统主机被诊断策略服务用来承载需要在本地系统上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u><br>诊断不了故障的故障诊断功能支持？|
+|wdiwifi|WDI Driver Framework|3|-|1|Wi-Fi 相关驱动|
+|WdmCompanionFilter||3|-|1|视频、图形驱动相关|
 |WdNisDrv||||||
 |WdNisSvc||||||
 |WebClient||||||
