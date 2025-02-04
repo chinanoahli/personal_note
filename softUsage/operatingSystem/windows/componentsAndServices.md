@@ -34,20 +34,20 @@
 
 ### 服务列表
 
-|服务名称<sup>1</sup>|显示名称<sup>2</sup>|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
 |1394ohci|1394 OHCI Compliant Host Controller|3|-|1|微软开发的 1394 驱动|
 |3ware||0|3|1|LSI 3ware SCSI 驱动|
 |AarSvc|Agent Activation Runtime|3||60|<u>Runtime for activating conversational agent applications</u>|
-|ACPI|Microsoft ACPI Driver|0|-|1|ACPI Driver for NT by Microsoft Corporation<br>更改此项服务将会导致系统 **无法启动**|
-|AcpiDev|ACPI Devices driver<br>ACPI 设备驱动程序|3|-|1|微软开发的 ACPI 驱动|
-|acpiex|Microsoft ACPIEx Driver|0|-|1|ACPIEx Driver by Microsoft Corporation<br>更改此项服务将会导致系统 **无法启动**|
-|acpipagr|ACPI Processor Aggregator Driver<br>ACPI 处理器聚合器驱动程序|3|-|1|微软开发的 ACPI 驱动|
-|AcpiPmi|ACPI Power Meter Driver<br>ACPI 电源表驱动程序|3|-|1|微软开发的 ACPI 驱动|
-|acpitime|ACPI Wake Alarm Driver<br>ACPI 唤醒警报驱动程序|3|-|1|微软开发的 ACPI 驱动|
-|Acx01000||3|-|1|Audio KMDF Class Extension by Microsoft Corporation|
-|ADP80XX||0|3|1|PMC-Sierra Storport Driver For SPC8x6G SAS/SATA controller by PMC-Sierra|
-|AFD|Ancillary Function Driver for Winsock|1|-|1|<u>Ancillary Function Driver for Winsoc</u><br>未测试，可能影响所有网络 Winsock ，不建议禁用|
+|ACPI|Microsoft ACPI Driver|0|-|1|微软开发的 ACPI NT 驱动<br>更改此项服务将会导致系统 **无法启动**|
+|AcpiDev|ACPI Devices driver<br>ACPI 设备驱动程序|3|-|1||
+|acpiex|Microsoft ACPIEx Driver|0|-|1|微软开发的 ACPIEx 驱动<br>更改此项服务将会导致系统 **无法启动**|
+|acpipagr|ACPI Processor Aggregator Driver<br>ACPI 处理器聚合器驱动程序|3|-|1||
+|AcpiPmi|ACPI Power Meter Driver<br>ACPI 电源表驱动程序|3|-|1||
+|acpitime|ACPI Wake Alarm Driver<br>ACPI 唤醒警报驱动程序|3|-|1||
+|Acx01000||3|-|1|微软开发的音频 KMDF Class 扩展|
+|ADP80XX||0|3|1|PMC-Sierra SPC8x6G SAS/SATA 控制器的驱动|
+|AFD|Ancillary Function Driver for Winsock|1|-|1|<u>Ancillary Function Driver for Winsock</u><br>未测试，可能影响所有网络 Winsock ，不建议禁用|
 |afunix|afunix|1||1|???|
 |ahcache|Application Compatibility Cache|1|-|1|<u>Cache Compatibility Data and Attributes for Individual PE File</u>禁用后 **开始菜单** 无法打开<br>UWP 功能将受影响|
 |AJRouter|AllJoyn Router Service|3|-|20|<u>路由本地 AllJoyn 客户端的 AllJoyn 消息。如果停止此服务，则自身没有捆绑路由器的 AllJoyn 客户端将无法运行。</u><br>会被 NTLite 精简，可禁用|
@@ -119,9 +119,9 @@
 |cnghwassist|CNG Hardware Assist algorithm provider|4|-|1|参见 **CNG**|
 |CompositeBus|Composite Bus Enumerator Driver<br>复合总线枚举器驱动程序|3|-|1|可能于 MTP 设备驱动有关<sup>10</sup>|
 |COMSysApp|COM+ System Application|3|-|10|<u>停止该服务，则大多数基于 COM+ 的组件将不能正常工作。如果禁用该服务，则任何明确依赖它的服务都将无法启动。</u>|
-|condrv|Console Driver|3|-|1|处理各种终端模拟器 ( CMD 、 PowerShell 等 ) 与终端 ( conhost.exe ) 之间的通讯|
+|condrv|Console Driver|3|-|1|处理各种终端前端 ( CMD 、 PowerShell 等 ) 与终端后端 ( conhost.exe ) 之间的通讯|
 |ConsentUxUserSvc|ConsentUX User Service<br>ConsentUX|3|4|60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>ConnectUX 已被弃用|
-|CoreMessagingRegistrar|CoreMessaging|2|-|20|<u>Manages communication between system components.</u>|
+|CoreMessagingRegistrar|CoreMessaging|2|-|20|<u>Manages communication between system components.</u><br>管理系统组件之间的通信。|
 |CredentialEnrollmentManagerUserSvc|CredentialEnrollmentManagerUserSvc|3|-|50|<u>凭据注册管理器</u>|
 |CryptSvc|Cryptographic Services|2|-|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
 |CSC|Offline Files Driver|1|4|1|<u>允许在本地计算机处于脱机状态时使用网络文件。</u><br>Home 版不存在，可禁用之|
@@ -447,7 +447,7 @@
 |SNMPTRAP|SNMP Trap<br>SNMP 陷阱|3|4|10|<u>接收本地或远程简单网络管理协议 (SNMP) 代理程序生成的陷阱消息并将消息转发到此计算机上运行的 SNMP 管理程序。如果此服务被停用，此计算机上基于 SNMP 的程序将不会接收 SNMP trap 消息。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
 |spaceparser|Space Parser|3|-|1|<u>Provides parsing for spaces devices.</u><br>更改此项服务将会导致系统 **无法启动**|
 |spaceport|Storage Spaces Driver<br>存储空间驱动程序|0|-|1|<br>更改此项服务将会导致系统 **无法启动**|
-|SpatialGraphFilter|Holographic Spatial Graph Filter|3|4|1|微软自家的 AR 眼镜支持？|
+|SpatialGraphFilter|Holographic Spatial Graph Filter|3|4|1|微软自家的 HoloLens AR 眼镜支持？|
 |SpbCx|Simple Peripheral Bus Support Library|3|-|1|硬件驱动设计相关|
 |spectrum|Windows Perception Service<br>Windows 感知服务|3|4|10|<u>启用空间感知、空间输入和全息绘制。</u>|
 |Spooler|Print Spooler|2|-|110|<u>该服务在后台执行打印作业并处理与打印机的交互。如果关闭该服务，则无法进行打印或查看打印机。</u>|
@@ -483,17 +483,166 @@
 |Telemetry|Intel(R) Telemetry Service<br>Intel(R) 遥测服务|0|4|1||
 |terminpt|Microsoft Remote Desktop Input Driver<br>Microsoft 远程桌面输入驱动程序|3|4|1||
 |TermService|Remote Desktop Services|3|4|20|<u>允许用户以交互方式连接到远程计算机。远程桌面和远程桌面会话主机服务器依赖此服务。若要防止远程使用此计算机，请清除“系统”属性控制面板项目的“远程”选项卡上的复选框。</u>|
-|Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u>待测试，我不确定在 Windows 10 及以上版本中禁用这个服务有什么影响，至少看起来没有什么影响<br>不过在 Windows 7 中禁用它，将会让你的系统无法使用 Aero 主题，并自动回退到经典主题，可以节省一些系统资源，但部分应用会要求必须使用 Aero 主题，例如 CCtalk|
+|Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u><br>待测试，我不确定在 Windows 10 及以上版本中禁用这个服务有什么影响，至少看起来没有什么影响<br>不过在 Windows 7 中禁用它，将会禁用 Aero 效果，并自动回退到经典主题，可以节省一些系统资源，但部分应用会要求必须使用 Aero 主题，例如 CCtalk<br>到 Windows 8 时代，因为 Aero 被优化，所以就算禁用本服务，也不会再禁用 Aero 效果|
 |TieringEngineService|Storage Tiers Management|3|4|10|<u>优化系统中所有分层存储空间的存储层中的数据放置。</u><br>企业储存管理相关功能|
 |TimeBrokerSvc|Time Broker|3|-|20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>Runtime Broker 也是你？ UWP 相关|
 |TokenBroker|Web 帐户管理器|3|-|20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
 |TPM|TPM|3|-|1|<u>TPM 驱动程序</u>|
 |TrkWks|Distributed Link Tracking Client|2|4|20|<u>维护某个计算机内或某个网络中的计算机的 NTFS 文件之间的链接。</u>|
 |TroubleshootingSvc|Recommended Troubleshooting Service<br>建议疑难解答服务|3|4|20|<u>通过应用建议疑难解答启用针对已知问题的自动缓解。如果停止，你的设备将不会获得针对设备上问题的建议疑难解答。</u><br>解答不了疑难的疑难解答服务|
+|TrustedInstaller|Windows Modules Installer|2|-|10|<u>启用 Windows 更新和可选组件的安装、修改和移除。如果此服务被禁用，则此计算机的 Windows 更新的安装或卸载可能会失败。</u>|
+|||||||
+|TsUsbFlt|Remote Desktop USB Hub Class Filter Driver|3||1||
+|TsUsbGD|远程桌面通用 USB 设备<br>Remote Desktop Generic USB Device|3||1||
+|tsusbhub|Remote Desktop USB Hub|3||1|<u>远程桌面 USB 重定向驱动程序</u>|
+|tunnel|Microsoft Tunnel Miniport Adapter Driver<br>Microsoft Tunnel Miniport 适配器驱动程序|3||1||
+|tzautoupdate|Auto Time Zone Updater<br>自动时区更新程序|4||20|<u>自动设置系统时区。</u>|
+|UASPStor|USB Attached SCSI (UAS) Driver<br>USB Attached SCSI (UAS) 驱动程序|3||1||
+|UcmCx0101|USB Connector Manager KMDF Class Extension|3|-|1||
+|UcmTcpciCx0101|UCM-TCPCI KMDF Class Extension|3|-|1||
+|UcmUcsiAcpiClient|UCM-UCSI ACPI Client<br>UCM-UCSI ACPI 客户端|3|-|1||
+|UcmUcsiCx0101|UCM-UCSI KMDF Class Extension|3|-|1||
+|Ucx01000|USB Host Support Library|3|-|1||
+|UdeCx|USB Device Emulation Support Library|3|-|1||
+|udfs|udfs|4||2|<u>Reads/Writes UDF 1.02,1.5,2.0x,2.5 disc formats, usually found on C/DVD discs. (Core) (All pieces)</u>|
+|UdkUserSvc|Udk User Service<br>Udk 用户服务|3||3|允许微软为新的桌面 Shell 新增功能的一个服务|
+|UEFI|Microsoft UEFI Driver<br>Microsoft UEFI 驱动程序|3||10||
+|UevAgentDriver|UevAgentDriver|4||2|<u>User Experience Virtualization Agent Driver</u><br>用于保存用户的语言、桌面背景、字体大小、颜色等设定|
+|UevAgentService|User Experience Virtualization Service|4||10|<u>为应用程序和 OS 设置漫游提供支持</u>|
+|Ufx01000|USB Function Class Extension|3|-|1||
+|UfxChipidea|USB Chipidea Controller<br>USB Chipidea 控制器|3|-|1||
+|ufxsynopsys|USB Synopsys 控制器<br>USB Synopsys Controller|3|-|1||
+|umbus|UMBus Enumerator Driver|3|-|1||
+|UmPass|Microsoft UMPass Driver<br>Microsoft UMPass 驱动程序|3|-|1||
+|UmRdpService|Remote Desktop Services UserMode Port Redirector|3||20|<u>允许为 RDP 连接重定向打印机/驱动程序/端口</u>|
+|UnistoreSvc|User Data Storage|3||60|<u>处理结构化用户数据(包括联系人信息、日历、消息和其他内容)的存储。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
+|upnphost|UPnP Device Host|3|-|20|<u>允许 UPnP 设备宿主在此计算机上。如果停止此服务，则所有宿主的 UPnP 设备都将停止工作，并且不能添加其他宿主设备。如果禁用此服务，则任何显式依赖于它的服务将都无法启动。</u>|
+|UrsChipidea|Chipidea USB Role-Switch Driver<br>Chipidea USB 角色切换驱动程序|3|-|1||
+|UrsCx01000|USB Role-Switch Support Library|3|-|1||
+|UrsSynopsys|Synopsys USB Role-Switch Driver<br>Synopsys USB 角色切换驱动程序|3|-|1||
+|usbaudio|USB Audio Driver (WDM)|3|-|1|USB 音频驱动|
+|usbaudio2|USB Audio 2.0 Service<br>USB 音频 2.0 服务|3|-|1|USB 音频|
+|usbccgp|Microsoft USB Generic Parent Driver<br>Microsoft USB 通用父驱动程序|3|-|1||
+|usbcir|eHome Infrared Receiver (USBCIR)|3|4|1|USB eHome 红外线接收器|
+|usbehci|Microsoft USB 2.0 Enhanced Host Controller Miniport Driver|3|-|1||
+|usbhub|Microsoft USB Standard Hub Driver<br>Microsoft USB 标准集线器驱动程序|3|-|1||
+|USBHUB3|SuperSpeed Hub<br>SuperSpeed 集线器|3|-|1||
+|usbohci|Microsoft USB Open Host Controller Miniport Driver|3|-|1||
+|usbprint|Microsoft USB PRINTER Class|3|-|1||
+|usbser|Microsoft USB Serial Driver<br>Microsoft USB 串行驱动程序|3|-|1||
+|USBSTOR|USB Mass Storage Driver<br>USB 大容量存储驱动程序|3|-|1||
+|usbuhci|Microsoft USB Universal Host Controller Miniport Driver|3|-|1||
+|USBXHCI|USB xHCI Compliant Host Controller<br>符合 USB xHCI 的主机控制器|3|-|1||
+|UserDataSvc|User Data Access|3|4|60|<u>提供对结构化用户数据(包括联系人信息、日历、消息和其他内容)的应用访问。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
+|UserManager|User Manager|2|-|20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>如果禁用这个服务，会造成用户账户管理异常，不建议进行改动|
+|UsoSvc||||||
+|VacSvc||||||
+|VaultSvc||||||
+|vdrvroot||||||
+|vds||||||
+|VerifierExt||||||
+|vhdmp||||||
+|vhf||||||
+|Vid||||||
+|VirtualRender||||||
+|vmbus||||||
+|VMBusHID||||||
+|vmgid||||||
+|vmicguestinterface||||||
+|vmicheartbeat||||||
+|vmickvpexchange||||||
+|vmicrdv||||||
+|vmicshutdown||||||
+|vmictimesync||||||
+|vmicvmsession||||||
+|vmicvss||||||
+|volmgr||||||
+|volmgrx||||||
+|volsnap||||||
+|volume||||||
+|vpci||||||
+|vsmraid||||||
+|VSS||||||
+|VSTXRAID||||||
+|vwifibus||||||
+|vwififlt||||||
+|W32Time||||||
+|WaaSMedicSvc||||||
+|WacomPen||||||
+|WalletService||||||
+|wanarp||||||
+|wanarpv6||||||
+|WarpJITSvc||||||
+|wbengine||||||
+|WbioSrvc||||||
+|wcifs||||||
+|Wcmsvc||||||
+|wcncsvc||||||
+|wcnfs||||||
+|WdBoot||||||
+|Wdf01000||||||
+|WdFilter||||||
+|WdiServiceHost||||||
+|WdiSystemHost||||||
+|wdiwifi||||||
+|WdmCompanionFilter||||||
+|WdNisDrv||||||
+|WdNisSvc||||||
+|WebClient||||||
+|Wecsvc||||||
+|WEPHOSTSVC||||||
+|wercplsupport||||||
+|WerSvc||||||
+|WFDSConMgrSvc||||||
+|WFPLWFS||||||
+|WiaRpc||||||
+|WIMMount||||||
+|WinDefend||||||
+|WindowsTrustedRT||||||
+|WindowsTrustedRTProxy||||||
+|WinHttpAutoProxySvc||||||
+|WinMad||||||
+|Winmgmt||||||
+|WinNat||||||
+|WinRM||||||
+|Winsock||||||
+|WinSock2||||||
+|WINUSB||||||
+|WinVerbs||||||
+|wisvc||||||
+|WlanSvc||||||
+|wlidsvc||||||
+|wlpasvc||||||
+|WManSvc||||||
+|WmiAcpi||||||
+|WmiApRpl||||||
+|wmiApSrv||||||
+|WMPNetworkSvc||||||
+|Wof||||||
+|workfolderssvc||||||
+|WpcMonSvc||||||
+|WPDBusEnum||||||
+|WpdUpFltr||||||
+|WpnService||||||
+|WpnUserService||||||
+|ws2ifsl||||||
+|wscsvc||||||
+|WSearch||||||
+|wuauserv||||||
+|WudfPf||||||
+|WUDFRd||||||
+|WwanSvc||||||
+|XblAuthManager||||||
+|XblGameSave||||||
+|xboxgip||||||
+|XboxGipSvc||||||
+|XboxNetApiSvc||||||
+|xinputhid||||||
+|xmlprov||||||
 
 #### 其他查找不到信息的未知服务
 
-|服务名称<sup>1</sup>|显示名称 (EN)<sup>2</sup>|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6</sup>|
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6</sup>|
 |----|----|----|----|----|----|
 |amdgpio2|AMD GPIO Client Driver<br>AMD GPIO 客户端驱动程序|3||1||
 |amdi2c|AMD I2C Controller Service<br>AMD I2C 控制器服务|3||1||
