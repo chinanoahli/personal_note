@@ -472,6 +472,24 @@
 |swenum|Software Bus Driver<br>软件总线驱动程序|3|-|1|即插即用设备驱动|
 |swprv|Microsoft Software Shadow Copy Provider|3|4|10|<u>管理卷影复制服务制作的基于软件的卷影副本。如果该服务被停止，将无法管理基于软件的卷影副本。如果该服务被禁用，任何依赖它的服务将无法启动。</u><br>Windows 备份相关的一些底层的东西，不好用且用不上|
 |Synth3dVsc||3||1|Hyper-V 、远程桌面相关|
+|SysMain|SysMain|2|4|20|<u>维护和提高一段时间内的系统性能。</u><br>SuperFetch 功能，有用但作用不大|
+|SystemEventsBroker|System Events Broker|2||20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>待测试，禁用后会让 UWP 无法在后台工作|
+|TabletInputService|Touch Keyboard and Handwriting Panel Service|3|-|20|<u>启用触摸键盘和手写面板笔和墨迹功能</u><br>禁用后会造成输入法指示器失灵、输入法不能切换、触屏工作不正常，不建议禁用|
+|TapiSrv|Telephony|3|4|20|<u>提供电话服务 API (TAPI)支持，以便各程序控制本地计算机上的电话服务设备以及通过 LAN 同样运行该服务的服务器上的设备。</u>|
+|Tcpip|TCP/IP Protocol Driver|0|-|1|<u>TCP/IP 协议驱动程序</u>|
+|Tcpip6|Microsoft IPv6 Protocol Driver|3|-|1||
+|tcpipreg|TCP/IP Registry Compatibility|2|-|1|<u>Provides compatibility for legacy applications which interact with TCP/IP through the registry. If this service is stopped, certain applications may have impaired functionality.</u>|
+|tdx|NetIO Legacy TDI Support Driver<br>NetIO 旧 TDI 支持驱动程序|1|-|1||
+|Telemetry|Intel(R) Telemetry Service<br>Intel(R) 遥测服务|0|4|1||
+|terminpt|Microsoft Remote Desktop Input Driver<br>Microsoft 远程桌面输入驱动程序|3|4|1||
+|TermService|Remote Desktop Services|3|4|20|<u>允许用户以交互方式连接到远程计算机。远程桌面和远程桌面会话主机服务器依赖此服务。若要防止远程使用此计算机，请清除“系统”属性控制面板项目的“远程”选项卡上的复选框。</u>|
+|Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u>待测试，我不确定在 Windows 10 及以上版本中禁用这个服务有什么影响，至少看起来没有什么影响<br>不过在 Windows 7 中禁用它，将会让你的系统无法使用 Aero 主题，并自动回退到经典主题，可以节省一些系统资源，但部分应用会要求必须使用 Aero 主题，例如 CCtalk|
+|TieringEngineService|Storage Tiers Management|3|4|10|<u>优化系统中所有分层存储空间的存储层中的数据放置。</u><br>企业储存管理相关功能|
+|TimeBrokerSvc|Time Broker|3|-|20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>Runtime Broker 也是你？ UWP 相关|
+|TokenBroker|Web 帐户管理器|3|-|20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
+|TPM|TPM|3|-|1|<u>TPM 驱动程序</u>|
+|TrkWks|Distributed Link Tracking Client|2|4|20|<u>维护某个计算机内或某个网络中的计算机的 NTFS 文件之间的链接。</u>|
+|TroubleshootingSvc|Recommended Troubleshooting Service<br>建议疑难解答服务|3|4|20|<u>通过应用建议疑难解答启用针对已知问题的自动缓解。如果停止，你的设备将不会获得针对设备上问题的建议疑难解答。</u><br>解答不了疑难的疑难解答服务|
 
 #### 其他查找不到信息的未知服务
 
