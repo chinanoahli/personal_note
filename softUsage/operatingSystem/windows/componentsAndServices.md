@@ -136,7 +136,7 @@
 |DevicesFlowUserSvc|DevicesFlow|3|-|60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>待测试，ConnectUX 已被弃用|
 |DevQueryBroker|DevQuery Background Discovery Broker|3|-|10|<u>使应用能够发现具有后台任务的设备</u><br>经典巨硬式不说人话翻译，人话：后台定期扫描，以发现新设备，并通知系统自动注册新设备|
 |Dfsc|DFS Namespace Client Driver|1|-|2|<u>用于访问 DFS 命名空间的客户端驱动程序</u><br>Windows 共享网络别名支持，如 `\\Contoso\Public` 等|
-|Dhcp|DHCP Client|2|-|20|<u>将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>你上网吗？|
+|Dhcp|DHCP Client|2|-|20|<u>为此计算机注册并更新 IP 地址。如果此服务停止，计算机将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>你上网吗？|
 |diagnosticshub.standardcollector.service|Microsoft (R) 诊断中心标准收集器服务|3|4|10|<u>诊断中心标准收集器服务。运行时，此服务会收集实时 ETW 事件，并对其进行处理。</u><br>诊断不了故障的故障诊断功能支持|
 |diagsvc|Diagnostic Execution Service|3|4|20|<u>Executes diagnostic actions for troubleshooting support</u><br>诊断不了故障的故障诊断功能支持|
 |DiagTrack|Connected User Experiences and Telemetry|2|4|10|<u>Connected User Experiences and Telemetry</u><br>用户体验数据收集|
@@ -180,7 +180,7 @@
 |FrameServer|Windows Camera Frame Server|3|-|20|<u>允许多个客户端从相机设备访问视频帧。</u><br>摄像头相关|
 |FsDepends|File System Dependency Minifilter|3|-|2|<u>This minifilter tracks the dependencies associated with the various nested volumes/filesystems</u><br>更改此项服务将会导致系统 **无法启动**|
 |fvevol|BitLocker Drive Encryption Filter Driver|0|-|1|更改此项服务将会导致系统 **无法启动**|
-|gencounter|Microsoft Hyper-V Generation Counter|3|-|1|<u>Microsoft Hyper-V 生成计数器</u>|
+|gencounter|Microsoft Hyper-V Generation Counter<br>Microsoft Hyper-V 生成计数器|3|-|1||
 |genericusbfn|Generic USB Function Class<br>通用 USB 函数类|3|-|1||
 |GPIOClx0101|Microsoft GPIO Class Extension Driver|3|-|1||
 |gpsvc|Group Policy Client|2|-|20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u>|
@@ -291,7 +291,7 @@
 |mshidumdf|Pass-through HID to UMDF Driver|3|-|1|<u>设备驱动程序在 HIDCLASS 和 UMDF 之间提供传递接口</u>|
 |msisadrv||0|-|1|微软开发的 ISA 驱动<br>更改此项服务将会导致系统 **无法启动**|
 |MSiSCSI|Microsoft iSCSI Initiator Service|3|4|20|<u>管理从这台计算机到远程 iSCSI 目标设备的 Internet SCSI (iSCSI)会话。如果该服务已停止，则该计算机将无法登录或访问 iSCSI 目标设备。如果该服务已禁用，则所有显式依赖于该服务的服务将不会启动。</u>|
-|msiserver|Windows Installer|3|-|10|<u>添加、修改和删除作为 Windows Installer 程序包(*.msi、*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</>|
+|msiserver|Windows Installer|3|-|10|<u>添加、修改和删除作为 Windows Installer 程序包(\*.msi、\*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</u>|
 |MSKSSRV|Microsoft Streaming Service Proxy<br>Microsoft 流服务代理|3|-|1|音视频流媒体支持|
 |MsLldp|Microsoft Link-Layer Discovery Protocol<br>Microsoft 链路层发现协议|2|-|1|<u>Microsoft 链路层发现协议驱动程序</u>|
 |MSPCLOCK|Microsoft Streaming Clock Proxy<br>Microsoft 流时钟代理|3|-|1|音视频流媒体支持|
@@ -305,6 +305,96 @@
 |Mup|MUP|0|-|2|<u>多个 UNC 提供程序驱动程序</u>|
 |mvumis||0|4|1|待测试，Marvell Flash 控制器驱动|
 |NativeWifiP|NativeWiFi Filter<br>NativeWiFi 筛选器|3|-|1||
+|NaturalAuthentication|Natural Authentication<br>自然身份验证|3|4|20|<u>信号聚合器服务，用于根据时间、网络、地理位置、蓝牙和 CDF 因素评估信号。支持的功能包括设备解锁、动态锁定和动态 MDM 策略</u>|
+|NcaSvc|Network Connectivity Assistant|3|4|20|<u>提供 UI 组件的 DirectAccess 状态通知</u>|
+|NcbService|Network Connection Broker|3|-|20|<u>允许 Windows 应用商店应用从 Internet 接收通知的代理连接。</u>|
+|NcdAutoSetup|Network Connected Devices Auto-Setup|3|-|20|<u>网络连接设备自动安装服务会监视和安装连接到合格网络的合格设备。停止或禁用此服务将阻止 Windows 自动发现和安装合格的网络连接设备。用户仍然可以通过用户界面将网络连接设备手动添加到电脑。</u>|
+|ndfltr|NetworkDirect Service<br>NetworkDirect 服务|3|4|1|待测试，作用不明，禁用之|
+|NDIS|NDIS System Driver|0|-|1|<u>NDIS 系统驱动程序</u><br>更改此项服务将会导致系统 **无法启动**<br>微软的网络驱动程序接口规范|
+|NdisCap|Microsoft NDIS 捕获|1|-|1|参见 **NDIS**|
+|NdisImPlatform|Microsoft Network Adapter Multiplexor Protocol<br>Microsoft 网络适配器多路传送器协议|3|-|1|参见 **NDIS**|
+|NdisTapi|Remote Access NDIS TAPI Driver<br>远程访问 NDIS TAPI 驱动程序|3||10|参见 **NDIS**<br>待测试，远程控制相关，应该是可以被禁用的|
+|Ndisuio|NDIS Usermode I/O Protocol|3|-|1|参见 **NDIS**|
+|NdisVirtualBus|Microsoft Virtual Network Adapter Enumerator<br>Microsoft 虚拟网络适配器枚举器|3|-|1|参见 **NDIS**|
+|NdisWan|Remote Access NDIS WAN Driver<br>远程访问 NDIS WAN 驱动程序|3|-|1|参见 **NDIS**<br>待测试，远程控制相关，应该是可以被禁用的|
+|ndiswanlegacy|Remote Access LEGACY NDIS WAN Driver<br>远程访问旧版 NDIS WAN 驱动程序|3||1|参见 **NdisWan**<br>待测试，远程控制相关，应该是可以被禁用的|
+|NDKPing|NDKPing Driver|3|4|1|RDMA(Remote Direct Memory Access) 连接质量测试|
+|ndproxy|NDIS Proxy Driver|3|-|1|参见 **NDIS**|
+|Ndu|Windows Network Data Usage Monitoring Driver|2||1|<u>This service provides network data usage monitoring functionality</u><br>该服务提供网络数据使用监控功能<br>待测试，是否影响其他流量监控工具|
+|NetAdapterCx|Network Adapter Wdf Class Extension Library|3|-|1||
+|NetBIOS|NetBIOS Interface|1|-|2|影响 Windows 共享功能，不建议优化|
+|NetBT|NETBT|1|-|1|<u>This service implements NetBios over TCP/IP.</u>参见 **NetBIOS**|
+|Netlogon|Netlogon|3|4|20|<u>为用户和服务身份验证维护此计算机和域控制器之间的安全通道。如果此服务被停用，计算机可能无法验证用户和服务身份并且域控制器无法注册 DNS 记录。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|Netman|Network Connections|3|-|20|<u>管理“网络和拨号连接”文件夹中对象，在其中你可以查看局域网和远程连接。</u>|
+|netprofm|Network List Service|3|-|20|<u>识别计算机已连接的网络，收集和存储这些网络的属性，并在更改这些属性时通知应用程序。</u>|
+|NetSetupSvc|Network Setup Service|2|-|20|<u>网络安装服务用于管理网络驱动程序的安装，并允许配置低级别网络设置。如果停止此服务，可能会取消正在进行的所有驱动程序安装。</u>|
+|NetTcpPortSharing|Net.Tcp Port Sharing Service|4||20|<u>提供通过 net.tcp 协议共享 TCP 端口的功能。</u>|
+|netvsc||3|-|1|参见 **NDIS**<br>微软开发的 Virtual NDIS Miniport|
+|NgcCtnrSvc|Microsoft Passport Container|3|-|20|<u>管理用于针对标识提供者及 TPM 虚拟智能卡为用户进行身份验证的本地用户标识密钥。如果禁用了此服务，则将无法访问本地用户标识密钥和 TPM 虚拟智能卡。建议你不要重新配置此服务。</u>|
+|NgcSvc|Microsoft Passport|3|-|20|<u>为用于对用户关联的标识提供者进行身份验证的加密密钥提供进程隔离。如果禁用了此服务，则这些密钥的所有使用和管理将无法进行，其中包括应用和网站的计算机登录和单一登录。此服务自动启动和停止。建议你不要重新配置此服务。</u>|
+|NlaSvc|Network Location Awareness|2|-|20|<u>收集和存储网络的配置信息，并在此信息被修改时向程序发出通知。如果停止此服务，则配置信息可能不可用；如果禁用此服务，则显式依赖此服务的所有服务都将无法启动。</u>|
+|Npfs||1|-|2||
+|npsvctrigc|Named pipe service trigger provider|1|-|1|**请勿更改此项服务**|
+|nsi|Network Store Interface Service|2|-|20|<u>此服务向用户模式客户端发送网络通知(例如，添加/删除接口等)。停止此服务将导致丢失网络连接。如果禁用此服务，则显式依赖此服务的所有其他服务都将无法启动。</u>|
+|nsiproxy|NSI Proxy Service Driver|1|-|1|参见 **nsi**|
+|Ntfs||3|-|2||
+|Null||1|-|1||
+|nvdimm|Microsoft NVDIMM 设备驱动程序|0||1|待测试，非易失性内存驱动，可能与 SSD 有关|
+|nvraid||0||1|待测试，NVIDIA RAID 驱动|
+|nvstor||0||1|待测试，NVIDIA SATA 驱动|
+|OneSyncSvc|Sync Host|2|4|60|待测试，被精简了，需要用虚拟机检查信息|
+|p2pimsvc|Peer Networking Identity Manager|3|-|20|<u>向对等名称解析协议(PNRP)和对等分组服务提供标识服务。如果禁用该功能，对等名称解析协议和对等分组服务可能无法正常运行，且某些应用程序(如家庭组和远程协助)可能无法正常运行。</u>|
+|p2psvc|Peer Networking Grouping|3|-|20|<u>使用对等分组启用多方通信。如果禁用该功能，某些应用程序(如家庭组)可能无法正常运行。</u>|
+|Parport|Parallel port driver|3|4|1|17针插口，现在已经很少见到，禁用之|
+|partmgr|Partition driver|0|-|1|<u>用于管理分区并向卷管理器拍卖分区的磁盘类筛选器驱动程序。</u>|
+|PcaSvc|Program Compatibility Assistant Service|3|4|20|<u>此服务为程序兼容性助手(PCA)提供支持。PCA 监视由用户安装和运行的程序，并检测已知兼容性问题。如果停止此服务，PCA 将无法正常运行。</u>|
+|pci|PCI Bus Driver<br>PCI 总线驱动程序|0|-|1|更改此项服务将会导致系统 **无法启动**|
+|pciide||0|-|1|更改此项服务将会导致系统 **无法启动**|
+|pcmcia||0|4|1|PCMCIA 又叫 PC卡 已绝种的一种接口，禁用之|
+|pcw|Performance Counters for Windows Driver|0||1|待测试，性能计数器驱动|
+|pdc|PDC<br>电源相关性协调器驱动程序|0|-|1|更改此项服务将会导致系统 **无法启动**|
+|PEAUTH||2||1|待测试， IoT 版特有功能，官方文档表示可以被[移除](https://learn.microsoft.com/zh-tw/windows/iot/iot-enterprise/optimize/removable-packages/microsoft-windows-peauth-onecore)|
+|PeerDistSvc|BranchCache|3|4|20|<u>此服务缓存来自本地子网上对等方的网络内容。</u><br>用于优化大型企业的内部网络压力的工具|
+|perceptionsimulation|Windows Perception Simulation Service<br>Windows 感知模拟服务|3|4|10|<u>实现空间感知模拟、虚拟相机管理和空间输入模拟。</u><br>可能与 VR 相关|
+|percsas2i||0|4|1|博通 Avago MEGASAS RAID 控制器驱动|
+|percsas3i||0|4|1|博通 Avago MEGASAS RAID 控制器驱动|
+|PerfHost|Performance Counter DLL Host|3|-|10|<u>使远程用户和 64 位进程能够查询 32 位 DLL 提供的性能计数器。如果停止此服务，则只有本地用户和 32 位进程能够查询 32 位 DLL 提供的性能计数器。</u>|
+|PhoneSvc|Phone Service|3|4|20|<u>在设备上管理电话服务状态</u>|
+|PimIndexMaintenanceSvc|Contact Data|3|4|60|<u>为联系人数据编制索引以进行快速联系人搜索。如果停止或禁用此服务，你的搜索结果中可能会缺少联系人。</u>|
+|PktMon|Packet Monitor Driver|3||1|待测试，内置的网络诊断工具 ( [pktmon.exe](https://learn.microsoft.com/zh-cn/windows-server/networking/technologies/pktmon/pktmon) )|
+|pla|Performance Logs & Alerts|3|4|20|<u>性能日志和警报根据预配置的计划参数从本地或远程计算机收集性能数据，然后将该数据写入日志或触发警报。如果停止此服务，将不收集性能信息。如果禁用此服务，则明确依赖它的所有服务将无法启动。</u>|
+|PlugPlay|Plug and Play|3|-|20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u>|
+|pmem||0|4|1|待测试，非易失性内存驱动，可能与 SSD 有关|
+|PNPMEM|Microsoft Memory Module Driver|3|-|1|即插即用 ( Plug and Play ) 储存器驱动|
+|PNRPAutoReg|PNRP Machine Name Publication Service|3|-|20|<u>此服务使用对等名称解析协议发布计算机名称。配置是通过 Netsh 上下文“p2p pnrp peer”管理的</u>|
+|PNRPsvc|Peer Name Resolution Protocol|3|-|20|<u>使用对等名称解析协议(PNRP)在 Internet 上启用无服务器对等名称解析。如果禁用该功能，则某些对等应用程序和协作应用程序(如远程协助)可能无法运行。</u>|
+|PolicyAgent|IPsec Policy Agent|3|-|20|<u>Internet 协议安全(IPsec)支持网络级别的对等身份验证、数据原始身份验证、数据完整性、数据机密性(加密)以及重播保护。此服务强制执行通过 IP 安全策略管理单元或命令行工具 "netsh ipsec" 创建的 IPsec 策略。停止此服务时，如果策略需要连接使用 IPsec，可能会遇到网络连接问题。同样，此服务停止时，Windows Defender 防火墙的远程管理也不再可用。</u>|
+|portcfg||3|-|1||
+|Power|Power|2|-|20|<u>管理电源策略和电源策略通知传递。</u>|
+|PptpMiniport|WAN Miniport (PPTP)<br>WAN 微型端口(PPTP)|3|-|1||
+|PrintWorkflowUserSvc|PrintWorkflow|3||60|<u>提供对打印工作流应用程序的支持。如果关闭此服务，可能无法成功打印。</u><br>待测试|
+|Processor|Processor Driver<br>处理器驱动程序|3|-|1||
+|ProfSvc|User Profile Service|2|-|20|<u>此服务负责加载和卸载用户配置文件。如果已停止或禁用此服务，用户将无法再成功登录或注销，应用在获取用户数据时可能会出问题，而且为接收配置文件事件通知注册的组件将无法接收这些通知。</u>|
+|Psched|QoS Packet Scheduler<br>QoS 数据包计划程序|1|4|1|电脑用不上，又不用电脑来做路由器，懂行按自己需要打开即可|
+|PushToInstall|Windows PushToInstall Service<br>Windows PushToInstall 服务|3|4|20|<u>为 Microsoft Store 提供基础结构支持。此服务自动启动，如果禁用，则远程安装将无法正常运行。</u><br>也与 Windows Update 有关，禁用之|
+|QWAVE|Quality Windows Audio Video Experience|3|-|20|<u>优质 Windows 音频视频体验(qWave)是用于 IP 家庭网络上的音频视频(AV)流应用程序的网络平台。通过确保 AV 应用程序的网络服务质量(QoS)，qWave 增强了 AV 流的性能和可靠性。它提供了许可控制机制、运行时监视和实施、应用程序反馈以及流量优先顺序。</u>|
+|QWAVEdrv|QWAVE driver|3|-|1|<u>质量 Windows 音频/视频体验组件驱动程序</u>|
+|Ramdisk|Windows RAM Disk Driver|0||1|待测试，内存盘驱动，一般而言用不上|
+|RasAcd|Remote Access Auto Connection Driver|3|4|1||
+|RasAgileVpn|WAN Miniport (IKEv2)<br>WAN 微型端口(IKEv2)|3||1|待测试，与 VPN 有关|
+|RasAuto|Remote Access Auto Connection Manager|3|-|20|<u>无论什么时候，当某个程序引用一个远程 DNS 或者 NetBIOS 名称或者地址，就创建一个到远程的连接。</u>|
+|Rasl2tp|WAN Miniport (L2TP)<br>WAN 微型端口(L2TP)|3|4|1|部分网络环境会用到，例如校园网，我用不到，就先禁用|
+|RasMan|Remote Access Connection Manager|3||20|<u>管理从这台计算机到 Internet 或其他远程网络的拨号和虚拟专用网络(VPN)连接。如果禁用该项服务，则明确依赖该服务的任何服务都将无法启动。</u><br>待测试|
+|RasPppoe|Remote Access PPPOE Driver<br>远程访问 PPPOE 驱动程序|3|-|1|国内最普遍的宽带拨号方法，不排除有人直接用电脑拨号而不是用路由器，故保留|
+|RasSstp|WAN Miniport (SSTP)<br>WAN 微型端口(SSTP)|3|4|1||
+|rdbss|Redirected Buffering Sub System|1|-|2|<u>为网络微型重定向程序提供框架</u>|
+|rdpbus|Remote Desktop Device Redirector Bus Driver<br>远程桌面设备重定向程序总线驱动程序|3|4|1||
+|RDPDR|Remote Desktop Device Redirector Driver|3|4|1|<u>远程桌面设备重定向程序驱动程序</u>|
+|RdpVideoMiniport|Remote Desktop Video Miniport Driver|3|4|1||
+|rdyboost|ReadyBoost|0|4|1|一个已被弃用的旧技术，在机械硬盘配 USB 3.0 的远古时代，微软想出了一个将 USB 3.0 U盘作为系统缓存以提升系统流畅性的精神病优化方法|
+|ReFS||3|4|2|一个下一代(历经10年尚未完成开发)的微软文件系统，一旦升级到 ReFS 将无法回退至 NTFS ，而且 ReFS 本身新旧版本就不太兼容，禁用保平安|
+|ReFSv1||3|4|2|参见 **ReFS**|
+|RemoteAccess|Routing and Remote Access|4||20|<u>在局域网以及广域网环境中为企业提供路由服务。</u>|
 |SecurityHealthService|Windows 安全中心服务|3|4|10|<u>Windows 安全中心服务处理统一的设备保护和运行状况信息</u><br>Windows Defender 相关，建议禁用|
 
 #### 其他查找不到信息的未知服务
