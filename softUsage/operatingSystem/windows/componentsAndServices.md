@@ -30,7 +30,7 @@
 |Share|20|
 |User own process template|50|
 |User share process template|60|
-|||
+|Interact|110|
 
 ### 服务列表
 
@@ -395,7 +395,83 @@
 |ReFS||3|4|2|一个下一代(历经10年尚未完成开发)的微软文件系统，一旦升级到 ReFS 将无法回退至 NTFS ，而且 ReFS 本身新旧版本就不太兼容，禁用保平安|
 |ReFSv1||3|4|2|参见 **ReFS**|
 |RemoteAccess|Routing and Remote Access|4||20|<u>在局域网以及广域网环境中为企业提供路由服务。</u>|
-|SecurityHealthService|Windows 安全中心服务|3|4|10|<u>Windows 安全中心服务处理统一的设备保护和运行状况信息</u><br>Windows Defender 相关，建议禁用|
+|RemoteRegistry|Remote Registry|4||20|<u>使远程用户能修改此计算机上的注册表设置。如果此服务被终止，只有此计算机上的用户才能修改注册表。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|RetailDemo||3|4|20|被精简了，后面补|
+|RFCOMM|Bluetooth Device (RFCOMM Protocol TDI)|3||1|蓝牙相关|
+|rhproxy|Resource Hub proxy driver<br>资源中心代理驱动程序|3|4|1|IoT 版本直接访问定制硬件的功能|
+|RmSvc|Radio Management Service<br>无线电管理服务|3|-|20|<u>无线电管理和飞行模式服务</u><br>注意：开启飞行模式后， Wi-Fi 将会无论如何都连接不上|
+|RpcEptMapper|RPC Endpoint Mapper|2|-|20|<u>解析 RPC 接口标识符以传输端点。如果此服务被停止或禁用，使用远程过程调用(RPC)服务的程序将无法正常运行。</u><br>很多服务依赖这项服务，故必须保留|
+|RpcLocator|Remote Procedure Call (RPC) Locator|3|-|10|<u>在 Windows 2003 和 Windows 的早期版本中，远程过程调用(RPC)定位器服务可管理 RPC 名称服务数据库。在 Windows Vista 和 Windows 的更新版本中，此服务不提供任何功能，但可用于应用程序兼容性。</u><br>很多服务依赖这项服务，故必须保留|
+|RpcSs|Remote Procedure Call (RPC)|2|-|20|<u>RPCSS 服务是 COM 和 DCOM 服务器的服务控制管理器。它执行 COM 和 DCOM 服务器的对象激活请求、对象导出程序解析和分布式垃圾回收。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 RPCSS 服务。</u><br>很多服务依赖这项服务，故必须保留|
+|rspndr|Link-Layer Topology Discovery Responder<br>链路层拓扑发现响应程序|2|-|1||
+|s3cap||3||1|Hyper-V 相关服务|
+|SamSs|Security Accounts Manager|2|-|20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u>|
+|sbp2port|SBP-2 Transport/Protocol Bus Driver|0|-|1|电子音乐制作、效果器相关|
+|SCardSvr|Smart Card|3|-|20|<u>管理此计算机对智能卡的取读访问。如果此服务被终止，此计算机将无法取读智能卡。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|ScDeviceEnum|Smart Card Device Enumeration Service|3|-|20|<u>为给定会话可访问的所有智能卡读卡器创建软件设备节点。如果已禁用此服务，则 WinRT API 将无法枚举智能卡读卡器。</u>|
+|scfilter|Smart card PnP Class Filter Driver|3|-|1|<u>启用智能卡 PnP 的智能卡读卡器筛选驱动程序。</u>|
+|Schedule|Task Scheduler|2|-|20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>计划任务相关|
+|scmbus|Microsoft Storage Class Memory Bus Driver<br>Microsoft 存储类内存总线驱动程序|0||1|待测试，非易失性内存驱动|
+|SCPolicySvc|Smart Card Removal Policy|3|-|20|<u>允许系统配置为移除智能卡时锁定用户桌面</u>|
+|sdbus||3|-|1|SD 储存卡相关|
+|SDFRd|SDF Reflector<br>SDF 反射器|3||1|待测试，作用不明|
+|SDRSVC|Windows Backup<br>Windows 备份|3|4|10|<u>提供 Windows 备份和还原功能。</u><br>真的有用吗？|
+|sdstor|SD Storage Port Driver<br>SD 存储端口驱动程序|3|-|1|SD 储存卡相关|
+|seclogon|Secondary Logon|3|-|20|<u>在不同凭据下启用启动过程。如果此服务被停止，这种类型的登录访问将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>影响所有「以其他用户身份运行」功能以及以非当前登入用户身份运行的服务项，请勿随意修改|
+|SecurityHealthService|Windows Security Service<br>Windows 安全中心服务|3|4|10|<u>Windows 安全中心服务处理统一的设备保护和运行状况信息</u><br>Windows Defender 相关，建议禁用|
+|SEMgrSvc|Payments and NFC/SE Manager<br>付款和 NFC/SE 管理器|3|4|10|<u>管理付款和基于近场通信(NFC)的安全元件。</u><br>真的有人在 Windows 下用 NFC 付款吗？|
+|SENS|System Event Notification Service|2|-|20|<u>监视系统事件并通知订户这些事件的 COM+ 事件系统。</u>|
+|Sense|Windows Defender Advanced Threat Protection Service|3|4|10|<u>Windows Defender 高级威胁防护服务通过监视和报告计算机上发生的安全事件来防范高级威胁。</u>|
+|SensorDataService|Sensor Data Service|3|4|10|<u>从各种传感器传送数据</u>|
+|SensorService|Sensor Service|3|4|20|<u>一项用于管理各种传感器的功能的传感器服务。管理传感器的简单设备方向(SDO)和历史记录。加载对设备方向变化进行报告的 SDO 传感器。如果停止或禁用了此服务，则将不会加载 SDO 传感器，因此不会发生自动旋转。来自传感器的历史记录收集也将停止。</u>|
+|SensrSvc|Sensor Monitoring Service|3|-|20|<u>监视各种传感器，以公开数据和适应系统和用户状态。如果此服务停止或禁用，显示器亮度将不根据照明条件进行调节。停止此服务还可能会影响其他系统功能和特性。</u>|
+|SerCx|Serial UART Support Library|3|-|1|串口 UART 相关，虽然现在的电脑大多已经不配备用户可以接入的串口，但实际上很多主板上的控制还会用到串口，例如灯光控制等|
+|SerCx2|Serial UART Support Library|3|-|1|参见 **SerCx**|
+|Serenum|Serenum Filter Driver|3|-|1|微软开发的 Serial Port Enumerator|
+|Serial|Serial port driver<br>串行端口驱动程序|3|-|1||
+|sermouse|Serial Mouse Driver<br>串行鼠标驱动程序|3|-|1||
+|SessionEnv|Remote Desktop Configuration|3|4|20|<u>远程桌面配置服务(RDCS)负责需要 SYSTEM 上下文的所有远程桌面服务和远程桌面相关的配置和会话维护活动。这些包括每会话临时文件夹、RD 主题和 RD 证书。</u>|
+|sfloppy|High-Capacity Floppy Disk Drive<br>大容量软盘驱动器|3|4|1|今昔是何年|
+|SgrmAgent|System Guard Runtime Monitor Agent|0|4|1|<u>System Guard Runtime Monitor Agent Driver</u><br>Windows Defender 相关，建议禁用|
+|SgrmBroker|System Guard 运行时监视代理|2|4|10|<u>监视并证明 Windows 平台的完整性。</u><br>Windows Defender 相关，建议禁用|
+|SharedAccess|Internet Connection Sharing (ICS)|3|-|20|<u>为家庭和小型办公网络提供网络地址转换、寻址、名称解析和/或入侵保护服务。</u><br>网络共享相关|
+|SharedRealitySvc|Spatial Data Service<br>空间数据服务|3|4|20|<u>此服务用于空间感知方案</u>|
+|ShellHWDetection|Shell Hardware Detection|2|4|20|<u>为自动播放硬件事件提供通知。</u><br>有可能导致外置存储无法弹出，禁用之|
+|shpamsvc|Shared PC Account Manager|4||20|<u>Manages profiles and accounts on a SharedPC configured device</u>|
+|SiSRaid2||0|4|1|SiS RAID 卡驱动|
+|SiSRaid4||0|4|1|SiS RAID 卡驱动|
+|SmartSAMD||0|4|1|RAID 相关|
+|smbdirect||3|4|2|SMB Direct 共享相关|
+|smphost|Microsoft Storage Spaces SMP|3|4|10|<u>Microsoft 存储空间管理提供程序的主机服务。如果阻止或禁用这项服务，则无法管理存储空间。</u><br>企业管理功能|
+|SmsRouter|Microsoft Windows SMS Router Service.<br>Microsoft Windows SMS 路由器服务。|3|4|20|<u>根据规则将消息路由到相应客户端。</u><br>手机短信相关功能|
+|SNMPTRAP|SNMP Trap<br>SNMP 陷阱|3|4|10|<u>接收本地或远程简单网络管理协议 (SNMP) 代理程序生成的陷阱消息并将消息转发到此计算机上运行的 SNMP 管理程序。如果此服务被停用，此计算机上基于 SNMP 的程序将不会接收 SNMP trap 消息。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|spaceparser|Space Parser|3|-|1|<u>Provides parsing for spaces devices.</u><br>更改此项服务将会导致系统 **无法启动**|
+|spaceport|Storage Spaces Driver<br>存储空间驱动程序|0|-|1|<br>更改此项服务将会导致系统 **无法启动**|
+|SpatialGraphFilter|Holographic Spatial Graph Filter|3|4|1|微软自家的 AR 眼镜支持？|
+|SpbCx|Simple Peripheral Bus Support Library|3|-|1|硬件驱动设计相关|
+|spectrum|Windows Perception Service<br>Windows 感知服务|3|4|10|<u>启用空间感知、空间输入和全息绘制。</u>|
+|Spooler|Print Spooler|2|-|110|<u>该服务在后台执行打印作业并处理与打印机的交互。如果关闭该服务，则无法进行打印或查看打印机。</u>|
+|sppsvc|Software Protection|2|4|10|<u>启用 Windows 和 Windows 应用程序的数字许可证的下载、安装和实施。如果禁用该服务，操作系统和许可的应用程序可能以通知模式运行。强烈建议你不要禁用软件保护服务。</u><br>Windows Defender 相关，建议禁用|
+|srv2|Server SMB 2.xxx Driver|3|-|2|<u>支持与 Windows Vista 以及更高版本的客户端的连接</u>|
+|srvnet||3|-|2|网络共享相关|
+|SSDPSRV|SSDP Discovery|3|-|20|<u>当发现了使用 SSDP 协议的网络设备和服务，如 UPnP 设备，同时还报告了运行在本地计算机上使用的 SSDP 设备和服务。如果停止此服务，基于 SSDP 的设备将不会被发现。如果禁用此服务，任何依赖此服务的服务都无法正常启动。</u>|
+|ssh-agent|OpenSSH Authentication Agent|4||10|<u>Agent to hold private keys used for public key authentication.</u><br>从 Windows 10 的某个版本开始内置的 SSH 服务，不过并不好用|
+|sshd|OpenSSH SSH Server|3||10|<u>SSH protocol based service to provide secure encrypted communications between two untrusted hosts over an insecure network.</u><br>从 Windows 10 的某个版本开始内置的 SSH 服务，不过并不好用|
+|SstpSvc|Secure Socket Tunneling Protocol Service|3|4|20|<u>提供使用 VPN 连接到远程计算机的安全套接字隧道协议(SSTP)的支持。如果该服务被禁用，则用户将无法使用 SSTP 访问远程服务器。</u>|
+|StateRepository|State Repository Service|3|4|20|<u>为应用程序模型提供所需的基础结构支持。</u><br>Windows 10 与 Edge 新增的一些神秘功能，会导致一些 Bug ，禁用之|
+|stexstor||0|4|1|Promise SuperTrak EX 系列 RAID 卡驱动|
+|stisvc|Windows Image Acquisition (WIA)|3|-|10|<u>为扫描仪和照相机提供图像采集服务</u>|
+|storahci|Microsoft Standard SATA AHCI Driver<br>Microsoft 标准 SATA AHCI 驱动程序|0|-|1||
+|storflt|Microsoft Hyper-V Storage Accelerator<br>Microsoft Hyper-V 存储加速器|0||1||
+|stornvme|Microsoft Standard NVM Express Driver|0||1||
+|storqosflt|Storage QoS Filter Driver|3|-|2|<u>为存储 I/O 通信提供服务质量。</u>|
+|StorSvc|Storage Service|2|-|10|<u>为存储设置和外部存储扩展提供启用服务</u>|
+|storufs|Microsoft Universal Flash Storage (UFS) Driver<br>Microsoft 通用闪存(UFS)驱动程序|0|-|1||
+|storvsc||0||1|待测试，不知道是什么东西，根据名称推测是某种文件系统驱动|
+|svsvc|Spot Verifier|3|4|20|<u>验证潜在的文件系统损坏。</u>|
+|swenum|Software Bus Driver<br>软件总线驱动程序|3|-|1|即插即用设备驱动|
+|swprv|Microsoft Software Shadow Copy Provider|3|4|10|<u>管理卷影复制服务制作的基于软件的卷影副本。如果该服务被停止，将无法管理基于软件的卷影副本。如果该服务被禁用，任何依赖它的服务将无法启动。</u><br>Windows 备份相关的一些底层的东西，不好用且用不上|
+|Synth3dVsc||3||1|Hyper-V 、远程桌面相关|
 
 #### 其他查找不到信息的未知服务
 
