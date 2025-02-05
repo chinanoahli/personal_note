@@ -36,33 +36,36 @@
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
-||||||✰ 开头的是直接显示在 **计算机管理** 中的服务项<br>按 **照服务名称** 排列|
-|✰ AarSvc|Agent Activation Runtime|3||60|<u>Runtime for activating conversational agent applications</u>|
-|✰ AJRouter|AllJoyn Router Service|3|-|20|<u>路由本地 AllJoyn 客户端的 AllJoyn 消息。如果停止此服务，则自身没有捆绑路由器的 AllJoyn 客户端将无法运行。</u><br>会被 NTLite 精简，可禁用|
-|✰ ALG|Application Layer Gateway Service|3|-|10|<u>为 Internet 连接共享提供第三方协议插件的支持</u><br>会被 NTLite 精简，可禁用|
-|✰ AppIDSvc|Application Identity|3|-|20|<u>确定并验证应用程序的标识。禁用此服务将阻止强制执行 AppLocker。</u><br>UWP 相关|
-|✰ Appinfo|Application Information|3|-|20|<u>使用辅助管理权限便于交互式应用程序的运行。如果停止此服务，用户将无法使用辅助管理权限启动应用程序，而执行所需用户任务可能需要这些权限。</u><br>UWP 相关<br>影响需要管理员权限的应用软件启动|
-|✰ AppMgmt|Application Management|3|-|20|<u>为通过组策略部署的软件处理安装、删除以及枚举请求。如果该服务被禁用，则用户将不能安装、删除或枚举通过组策略部署的软件。如果此服务被禁用，则直接依赖于它的所有服务都将无法启动。</u><br>与安装卸载程序，及安装卸载过程中枚举组策略项目有关|
-|✰ AppReadiness|App Readiness|3|4|20|<u>当用户初次登录到这台电脑和添加新应用(UWP?)时，使应用进入就绪可用的状态。</u><br>本服务在某些情况下会导致桌面黑屏 Bug ，具体请自行 Google|
-|✰ AppVClient|Microsoft App-V Client|4|-|10|<u>Manages App-V users and virtual applications</u><br>会被 NTLite 精简，可禁用|
-|✰ AppXSvc|AppX Deployment Service (AppXSVC)|3|-|20|<u>为部署 Microsoft Store 应用程序提供基础结构支持。此服务根据需要启动，如果已禁用的 Microsoft Store 应用程序未部署到系统，此服务可能无法正常工作。</u><br>UWP 相关|
-|✰ AssignedAccessManagerSvc|AssignedAccessManager Service<br>AssignedAccessManager 服务|3|4|20|<u>AssignedAccessManager 服务支持 Windows 中的展台体验。</u><br>会被 NTLite 精简，可禁用|
-|✰ AudioEndpointBuilder|Windows Audio Endpoint Builder|2|-|20|<u>管理 Windows 音频服务的音频设备。如果停止了此服务，音频设备和效果将无法正常工作。如果禁用了此服务，任何明确依赖它的服务将无法启动</u>|
-|✰ Audiosrv|Windows Audio|2|-|10|<u>管理基于 Windows 的程序的音频。如果此服务被停止，音频设备和效果将不能正常工作。如果此服务被禁用，任何依赖它的服务将无法启动</u>|
-|✰ autotimesvc|Cellular Time<br>手机网络时间|3|4|10|<u>此服务基于移动网络中的 NITZ 消息设置时间</u><br>手机的蜂窝网络时间，嘲讽一下 NTLite 的中文翻译，翻译成「细胞时间」实在太过可笑|
-|✰ AxInstSV|ActiveX Installer (AxInstSV)|3|-|20|<u>为从 Internet 安装 ActiveX 控件提供用户帐户控制验证，并基于组策略设置启用对 ActiveX 控件安装的管理。此服务根据要求启动，是否禁用 ActiveX 控件的安装取决于默认浏览器设置。</u><br>UAC 控制相关?|
-|✰ BcastDVRUserService|GameDVR and Broadcast User Service<br>GameDVR 和广播用户服务|3|4|60|<u>此用户服务用于游戏录制和实况广播</u>|
-|✰ BFE|Base Filtering Engine|2|4|20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u>|
-|✰ BITS|Background Intelligent Transfer Service|2|4|20|<u>使用空闲网络带宽在后台传送文件。如果该服务被禁用，则依赖于 BITS 的任何应用程序(如 Windows 更新或 MSN Explorer)将无法自动下载程序和其他信息。</u><sup>8</sup>|
-|✰ BluetoothUserService|Bluetooth User Support Service<br>蓝牙用户支持服务|3|-|60|<u>蓝牙用户服务支持与每个用户会话相关的蓝牙功能的正确运行。</u>|
-|✰ BrokerInfrastructure|Background Tasks Infrastructure Service|2|-|20|<u>控制哪些后台任务可以在系统上运行的 Windows 基础结构服务。</u>|
-|✰ BTAGService|Bluetooth Audio Gateway Service<br>蓝牙音频网关服务|3|-|20|<u>支持蓝牙免提配置文件的音频网关角色的服务。</u>|
-|✰ BthAvctpSvc|AVCTP service<br>AVCTP 服务|3|-|20|<u>这是音频视频控制传输协议服务</u>|
-|✰ bthserv|Bluetooth Support Service<br>蓝牙支持服务|3|-|20|<u>蓝牙服务支持发现和关联远程蓝牙设备。停止或禁用此服务可能会导致已安装的蓝牙设备无法正常运行，并使新设备无法被发现或关联。</u>|
-|✰ camsvc|Capability Access Manager Service<br>功能访问管理器服务|3|-|20|<u>提供设施，用于管理 UWP 应用对应用功能的访问权限以及检查应用的特定应用功能访问权限</u>|
-|✰ CaptureService|CaptureService|3|-|60|<u>为调用 Windows.Graphics.Capture API 的应用程序启用可选的屏幕捕获功能。</u>|
-|✰ cbdhsvc|Clipboard User Service<br>剪贴板用户服务|3|4|60|<u>此用户服务用于剪贴板方案</u><br>会被 NTLite 精简，可禁用，可用开源的 [CopyQ](https://github.com/hluk/CopyQ) 代替|
-|✰ CDPSvc|Connected Devices Platform Service<br>连接设备平台服务|2|3|20|<u>此服务用于连接设备平台方案</u><br>可能与打印机、扫描仪相关，但不确定<br>也有说法是仅在与 Xbox 连接时有用<br>待测试，可以先禁用看看|
+||||||带 ✰ 的是直接显示在 **计算机管理** 中的服务项<br>按照 **服务名称** 排列|
+|必须保留的服务项||||||
+|✰ AudioEndpointBuilder|Windows Audio Endpoint Builder|2|必须保留|20|<u>管理 Windows 音频服务的音频设备。如果停止了此服务，音频设备和效果将无法正常工作。如果禁用了此服务，任何明确依赖它的服务将无法启动</u>|
+|✰ Audiosrv|Windows Audio|2|必须保留|10|<u>管理基于 Windows 的程序的音频。如果此服务被停止，音频设备和效果将不能正常工作。如果此服务被禁用，任何依赖它的服务将无法启动</u>|
+|✰ BluetoothUserService|Bluetooth User Support Service<br>蓝牙用户支持服务|3|必须保留|60|<u>蓝牙用户服务支持与每个用户会话相关的蓝牙功能的正确运行。</u>|
+|✰ BTAGService|Bluetooth Audio Gateway Service<br>蓝牙音频网关服务|3|必须保留|20|<u>支持蓝牙免提配置文件的音频网关角色的服务。</u>|
+|✰ BthAvctpSvc|AVCTP service<br>AVCTP 服务|3|必须保留|20|<u>这是音频视频控制传输协议服务</u>|
+|✰ bthserv|Bluetooth Support Service<br>蓝牙支持服务|3|必须保留|20|<u>蓝牙服务支持发现和关联远程蓝牙设备。停止或禁用此服务可能会导致已安装的蓝牙设备无法正常运行，并使新设备无法被发现或关联。</u>|
+|已测试的服务||||||
+|✰ AarSvc|Agent Activation Runtime|3|4 = 可 SysPrep, oobe|60|<u>Runtime for activating conversational agent applications</u>|
+|✰ AJRouter|AllJoyn Router Service|3|4 = 可 SysPrep, oobe|20|<u>路由本地 AllJoyn 客户端的 AllJoyn 消息。如果停止此服务，则自身没有捆绑路由器的 AllJoyn 客户端将无法运行。</u>|
+|✰ ALG|Application Layer Gateway Service|3|4 = 可 SysPrep, oobe|10|<u>为 Internet 连接共享提供第三方协议插件的支持</u>|
+|✰ AppIDSvc|Application Identity|3|4 = 可 SysPrep, oobe|20|<u>确定并验证应用程序的标识。禁用此服务将阻止强制执行 AppLocker。</u><br>UWP 相关|
+|✰ Appinfo|Application Information|3|4 = 可 SysPrep, oobe<br>无法运行任何需要提升为管理员权限的软件(就算是管理员账户)<br>最高只能设为 3|20|<u>使用辅助管理权限便于交互式应用程序的运行。如果停止此服务，用户将无法使用辅助管理权限启动应用程序，而执行所需用户任务可能需要这些权限。</u>|
+|✰ AppMgmt|Application Management|3|4 = 可 SysPrep, oobe|20|<u>为通过组策略部署的软件处理安装、删除以及枚举请求。如果该服务被禁用，则用户将不能安装、删除或枚举通过组策略部署的软件。如果此服务被禁用，则直接依赖于它的所有服务都将无法启动。</u>|
+|✰ AppReadiness|App Readiness|3|4 = 可 SysPrep, 不可 oobe<br>最高只能设为 3|20|<u>当用户初次登录到这台电脑和添加新应用(UWP?)时，使应用进入就绪可用的状态。</u><br>本服务在某些情况下会导致桌面黑屏 Bug ，具体请自行 Google|
+|✰ AppVClient|Microsoft App-V Client|4||10|<u>Manages App-V users and virtual applications</u>|
+|✰ AppXSvc|AppX Deployment Service (AppXSVC)|3|4 = 可 SysPrep, 不可 oobe<br>最高只能设为 3|20|<u>为部署 Microsoft Store 应用程序提供基础结构支持。此服务根据需要启动，如果已禁用的 Microsoft Store 应用程序未部署到系统，此服务可能无法正常工作。</u><br>UWP 相关|
+|✰ AssignedAccessManagerSvc|AssignedAccessManager Service<br>AssignedAccessManager 服务|3|4 = 可 SysPrep, oobe|20|<u>AssignedAccessManager 服务支持 Windows 中的展台体验。</u>|
+|✰ autotimesvc|Cellular Time<br>手机网络时间|3|4 = 可 SysPrep, oobe|10|<u>此服务基于移动网络中的 NITZ 消息设置时间</u><br>手机的蜂窝网络时间，嘲讽一下 NTLite 的中文翻译，翻译成「细胞时间」实在太过可笑|
+|✰ AxInstSV|ActiveX Installer (AxInstSV)|3|4 = 可 SysPrep, oobe|20|<u>为从 Internet 安装 ActiveX 控件提供用户帐户控制验证，并基于组策略设置启用对 ActiveX 控件安装的管理。此服务根据要求启动，是否禁用 ActiveX 控件的安装取决于默认浏览器设置。</u><br>UAC 控制相关?|
+|✰ BcastDVRUserService|GameDVR and Broadcast User Service<br>GameDVR 和广播用户服务|3|4 = 可 SysPrep, oobe|60|<u>此用户服务用于游戏录制和实况广播</u>|
+|✰ BFE|Base Filtering Engine|2|4 = 可 SysPrep, 不可 oobe<br>最高只能设为 3|20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u>|
+|✰ BITS|Background Intelligent Transfer Service|2|4 = 可 SysPrep, oobe|20|<u>使用空闲网络带宽在后台传送文件。如果该服务被禁用，则依赖于 BITS 的任何应用程序(如 Windows 更新或 MSN Explorer)将无法自动下载程序和其他信息。</u><sup>8</sup>|
+|✰ BrokerInfrastructure|Background Tasks Infrastructure Service|2|3 = 可 SysPrep, 不可 oobe<br>最高只能设为 2|20|<u>控制哪些后台任务可以在系统上运行的 Windows 基础结构服务。</u>|
+|✰ camsvc|Capability Access Manager Service<br>功能访问管理器服务|3|4 = 可 SysPrep, 不可 oobe<br>最高只能设为 3|20|<u>提供设施，用于管理 UWP 应用对应用功能的访问权限以及检查应用的特定应用功能访问权限</u>|
+|✰ CaptureService|CaptureService|3|4 = 可 SysPrep, oobe|60|<u>为调用 Windows.Graphics.Capture API 的应用程序启用可选的屏幕捕获功能。</u>|
+|✰ cbdhsvc|Clipboard User Service<br>剪贴板用户服务|3|4 = 可 SysPrep, oobe|60|<u>此用户服务用于剪贴板方案</u><br>会被 NTLite 精简，可禁用，可用开源的 [CopyQ](https://github.com/hluk/CopyQ) 代替|
+|✰ CDPSvc|Connected Devices Platform Service<br>连接设备平台服务|2|4 = 可 SysPrep, oobe|20|<u>此服务用于连接设备平台方案</u><br>可能与打印机、扫描仪相关，但不确定<br>也有说法是仅在与 Xbox 连接时有用<br>待测试，可以先禁用看看|
+|待测试的服务||||||
 |✰ CDPUserSvc|Connected Devices Platform User Service<br>连接设备平台用户服务|2|3|60|<u>此用户服务用于连接设备平台方案</u><br>可能与打印机、扫描仪相关，但不确定<br>也有说法是仅在与 Xbox 连接时有用<br>待测试，可以先禁用看看|
 |✰ CertPropSvc|Certificate Propagation|3|-|20|<u>将用户证书和根证书从智能卡复制到当前用户的证书存储，检测智能卡何时插入到智能卡读卡器中，并在需要时安装智能卡即插即用微型驱动器。</u>|
 |✰ ClipSVC|Client License Service (ClipSVC)|3|-|20|<u>提供对 Microsoft Store 的基础结构支持。此服务按需启动，并且如果禁用了此服务，则使用 Windows Store 购买的应用程序将无法正常运行。</u>|
