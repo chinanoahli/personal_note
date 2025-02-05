@@ -572,7 +572,7 @@
 |WalletService|WalletService|3||20|<u>电子钱包客户端使用的主机对象</u><br>待测试，可能影响 UWP|
 |wanarp|Remote Access IP ARP Driver<br>远程访问 IP ARP 驱动程序|3|4|1||
 |wanarpv6|Remote Access IPv6 ARP Driver<br>远程访问 IPv6 ARP 驱动程序|3|4|1||
-|WarpJITSvc|WarpJITSvc|3|-|10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算专为针对 CPU 运行|
+|WarpJITSvc|WarpJITSvc|3|-|10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算转为针对 CPU 运行|
 |wbengine|Block Level Backup Engine Service|3|4|10|<u>Windows 备份使用 WBENGINE 服务执行备份和恢复操作。如果用户停止了此服务，这可能会导致当前运行的备份或恢复操作失败。使用此计算机上的 Windows 备份禁用此服务可能会禁用备份和恢复操作。</u>|
 |WbioSrvc|Windows Biometric Service|3||20|<u>Windows 生物识别服务使客户端应用程序能够捕获、比较、操纵和存储生物特征数据，而无需直接访问任何生物识别硬件或示例。该服务宿主在某个特权 SVCHOST 进程中。</u><br>待测试，不知是否会影响 Yubico 的使用|
 |wcifs|Windows Container Isolation|2||2|<u>Provides a virtual filesystem view for processes running within Windows Containers</u>|
@@ -586,59 +586,55 @@
 |WdiSystemHost|Diagnostic System Host|3||20|<u>诊断系统主机被诊断策略服务用来承载需要在本地系统上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u><br>诊断不了故障的故障诊断功能支持？|
 |wdiwifi|WDI Driver Framework|3|-|1|Wi-Fi 相关驱动|
 |WdmCompanionFilter||3|-|1|视频、图形驱动相关|
-|WdNisDrv||||||
-|WdNisSvc||||||
-|WebClient||||||
-|Wecsvc||||||
-|WEPHOSTSVC||||||
-|wercplsupport||||||
-|WerSvc||||||
-|WFDSConMgrSvc||||||
-|WFPLWFS||||||
-|WiaRpc||||||
-|WIMMount||||||
-|WinDefend||||||
-|WindowsTrustedRT||||||
-|WindowsTrustedRTProxy||||||
-|WinHttpAutoProxySvc||||||
-|WinMad||||||
-|Winmgmt||||||
-|WinNat||||||
-|WinRM||||||
-|Winsock||||||
-|WinSock2||||||
-|WINUSB||||||
-|WinVerbs||||||
-|wisvc||||||
-|WlanSvc||||||
-|wlidsvc||||||
-|wlpasvc||||||
-|WManSvc||||||
-|WmiAcpi||||||
-|WmiApRpl||||||
-|wmiApSrv||||||
-|WMPNetworkSvc||||||
-|Wof||||||
-|workfolderssvc||||||
-|WpcMonSvc||||||
-|WPDBusEnum||||||
-|WpdUpFltr||||||
-|WpnService||||||
-|WpnUserService||||||
-|ws2ifsl||||||
-|wscsvc||||||
-|WSearch||||||
-|wuauserv||||||
-|WudfPf||||||
-|WUDFRd||||||
-|WwanSvc||||||
-|XblAuthManager||||||
-|XblGameSave||||||
-|xboxgip||||||
-|XboxGipSvc||||||
-|XboxNetApiSvc||||||
-|xinputhid||||||
-|xmlprov||||||
+|WdNisDrv|Microsoft Defender Antivirus Network Inspection System Driver<br>|1|4|3|<u>帮助防止针对网络协议中的已知和新发现的漏洞发起的入侵企图</u>|
+|WdNisSvc|Microsoft Defender Antivirus Network Inspection Service|3|4|10|<u>帮助防止针对网络协议中的已知和新发现的漏洞发起的入侵企图</u>|
+|WebClient|WebClient|3||20|<u>使基于 Windows 的程序能创建、访问和修改基于 Internet 的文件。如果此服务被停止，这些功能将不可用。如果此服务被禁用，则明确依赖该服务的任何服务都将无法启动。</u><br>微软开发的 WebDav，已被微软弃用|
+|Wecsvc|Windows Event Collector|3||20|<u>此服务将管理对支持 WS-Management 协议的远程源中事件的永久订阅。这包括 Windows Vista 事件日志、硬件以及启用 IPMI 的事件源。该服务将转发的事件存储在本地活动日志中。如果停止或禁用此服务，将无法创建事件订阅，并且无法接受转发的事件。</u>|
+|WEPHOSTSVC|Windows Encryption Provider Host Service|3||10|<u>Windows Encryption Provider 主机服务代理加密相关功能 - 从第三方加密提供程序到需要评估和应用 EAS 策略的进程。停止此服务将损害连接的邮件帐户已经建立的合规检查</u>|
+|wercplsupport|Problem Reports Control Panel Support|3||20|<u>此服务支持查看、发送和删除“问题报告”控制面板的系统级问题报告。</u>|
+|WerSvc|Windows Error Reporting Service|3||10|<u>允许在程序停止运行或停止响应时报告错误，并允许提供现有解决方案。还允许为诊断和修复服务生成日志。如果此服务被停止，则错误报告将无法正确运行，而且可能不显示诊断服务和修复的结果。</u>|
+|WFDSConMgrSvc|Wi-Fi Direct Services Connection Manager Service<br>WLAN Direct 服务连接管理器服务|3||20|<u>管理与无线服务(包括无线显示和插接)的连接。</u>|
+|WFPLWFS|Microsoft Windows Filtering Platform<br>Microsoft Windows 筛选平台|0||1|与 Windows 自带的防火墙有关|
+|WiaRpc|Still Image Acquisition Events|3|-|20|<u>启动与静态映像获取事件关联的应用程序。</u><br>与摄像头、打印机、扫描仪等图像输入输出设备有关|
+|WIMMount|WIMMount|3||2|<u>WIM Image mount service driver</u>|
+|WinDefend|Microsoft Defender Antivirus Service|2|4|10|<u>帮助用户防止恶意软件及其他潜在的垃圾软件。</u>|
+|WindowsTrustedRT|Windows Trusted Execution Environment Class Extension|0|-|1|更改此项服务将会导致系统 **无法启动**|
+|WindowsTrustedRTProxy|Microsoft Windows Trusted Runtime Secure Service<br>Microsoft Windows 可信运行时安全服务|0|-|1|参见 **WindowsTrustedRT**|
+|WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3||20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u>|
+|WinMad|WinMad Service<br>WinMad 服务|3|-|1|与摄像头、打印机、扫描仪等图像输入输出设备有关|
+|Winmgmt|Windows Management Instrumentation|2|4?|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>企业管理功能|
+|WinNat|Windows NAT Driver|3|-|1|<u>此服务提供网络地址转换功能</u>|
+|WinRM|Windows Remote Management (WS-Management)|3|4|20|<u>Windows 远程管理(WinRM)服务执行 WS-Management 协议来实现远程管理。WS-Management 是用于远程软件和硬件管理的标准 Web 服务协议。WinRM 服务侦听网络上的 WS-Management 请求并对它们进行处理。通过组策略或使用 winrm.cmd 命令行工具的侦听程序，来配置 WinRM 服务，以使其可通过网络侦听。WinRM 服务提供对 WMI 数据的访问并启用事件集合。事件集合及对事件的订阅需要服务处于运行状态。传输 WinRM 消息时使用 HTTP 和 HTTPS 协议。WinRM 服务不依赖于 IIS ，但在同一计算机上预配置为与 IIS 共享端口。WinRM 服务保留 /wsman URL 前缀。若要防止与 IIS 发生冲突，管理员应确保 IIS 上承载的所有网站均不使用 /wsman URL 前缀。</u><br>企业管理功能|
+|WINUSB|WinUsb Driver<br>WinUsb 驱动程序|3|-|1|<u>USB 设备的通用驱动程序</u>|
+|WinVerbs|WinVerbs Service<br>WinVerbs 服务|3|-|1|**依赖于 <u>ibbus</u>**<br>**被 <u>WinMad</u> 依赖**<br>与摄像头、打印机、扫描仪等图像输入输出设备有关|
+|wisvc|Windows Insider Service<br>Windows 预览体验成员服务|3|4|20|<u>为 Windows 预览体验计划提供基础结构支持。此服务必须保持启用状态，Windows 预览体验计划才能正常运行。</u><br>恭喜你成为了付费测试的一员，正式成为巨硬旗下的正版受害者大冤种|
+|WlanSvc|WLAN AutoConfig|3||10|<u>WLANSVC 服务提供配置、发现、连接、断开与 IEEE 802.11 标准定义的无线局域网(WLAN)的连接所需的逻辑。它还包含将计算机变成软件访问点的逻辑，以便其他设备或计算机可以使用支持它的 WLAN 适配器无线连接到计算机。停止或禁用 WLANSVC 服务将使得计算机上的所有 WLAN 适配器无法访问 Windows 网络连接 UI。强烈建议: 如果你的计算机具有 WLAN 适配器，则运行 WLANSVC 服务。</u>|
+|wlidsvc|Microsoft Account Sign-in Assistant|1|4|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
+|wlpasvc|Local Profile Assistant Service<br>本地配置文件助手服务|3|-|20|<u>此服务为订户标识模块提供配置文件管理</u>|
+|WManSvc|Windows Management Service|3||20|WMI 企业远程控制相关|
+|WmiAcpi|Microsoft Windows Management Interface for ACPI|3||1|企业远程控制相关|
+|wmiApSrv|WMI Performance Adapter|3||10|<u>向网络上的客户端提供 Windows Management Instrumentation (WMI) 提供程序中的性能库信息。只有在激活了性能数据助手时，才会运行此服务。</u><br>企业远程控制相关|
+|WMPNetworkSvc|Windows Media Player Network Sharing Service|3||10|<u>使用通用即插即用设备与其他网络播放机和媒体设备共享 Windows Media Player 媒体库</u>|
+|Wof|Windows Overlay File System Filter Driver|0|-|2|对 WimBoot 的底层支持<sup>15<sup>|
+|workfolderssvc|Work Folders|3|4|20|被精简了，过后补充|
+|WpcMonSvc|Parental Controls<br>家长控制|3||10|<u>对 Windows 中的子帐户强制执行家长控制。如果此服务被停止或禁用，家长控制可能无法强制执行。</u><br>这个功能是黑人开发的吗？为什么「Mom」直接等同于「家长」|
+|WPDBusEnum|Portable Device Enumerator Service|3|-|20|<u>强制可移动大容量存储设备的组策略。使应用程序(如 Windows Media Player 和图像导入向导)能够使用可移动大容量存储设备传输和同步内容。</u>|
+|WpdUpFltr|WPD Upper Class Filter Driver|3|-|1|影响通过 USB 或网络连接的 PTP 、 MTP 、 大容量存储设备等|
+|WpnService|Windows Push Notifications System Service<br>Windows 推送通知系统服务|2|4|20|<u>此服务在会话 0 中运行，并托管通知平台和连接提供程序(用于处理设备与 WNS 服务器之间的连接)。</u><br>用于接收来自云端的开发者推送通知，打扰能力 Max ，禁用之|
+|WpnUserService|Windows Push Notifications User Service|2|4|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>参见 **WpnService**|
+|ws2ifsl|Winsock IFS Driver|4||1|<u></u>与 WinSocket 相关的驱动程序<sup>16</sup>|
+|wscsvc|Security Center|2|4|20|<u>WSCSVC(Windows 安全中心)服务监视并报告计算机上的安全健康设置。健康设置包括防火墙(打开/关闭)、防病毒(打开/关闭/过期)、反间谍软件(打开/关闭/过期)、Windows 更新(自动/手动下载并安装更新)、用户帐户控制(打开/关闭)以及 Internet 设置(推荐/不推荐)。该服务为独立软件供应商提供 COM API 以便向安全中心服务注册并记录其产品的状态。安全和维护 UI 使用该服务在“安全和维护”控制面板中提供 systray 警报和安全健康状况的图形视图。网络访问保护(NAP)使用该服务向 NAP 网络策略服务器报告客户端的安全健康状况，以便进行网络隔离决策。该服务还提供一个公共 API，以允许外部客户以编程方式检索系统的聚合安全健康状况。</u>|
+|WSearch|Windows Search|2||20|<u>为文件、电子邮件和其他内容提供内容索引、属性缓存和搜索结果。</u><br>待测试，禁用后会导致任务栏卡顿(十分明显且频繁)，非必要请勿禁用|
+|wuauserv|Windows Update|3|4|20|<u>启用检测、下载和安装 Windows 和其他程序的更新。如果此服务被禁用，这台计算机的用户将无法使用 Windows 更新或其自动更新功能， 并且这些程序将无法使用 Windows 更新代理(WUA) API。</u>|
+|WudfPf|User Mode Driver Frameworks Platform Driver|3|-|1|<u> kernel mode driver that uses message-based interprocess communication mechanism to communicate with the driver manager and secure host process to facilitate secure companions</u><br>让部分驱动运行在用户态，增强系统安全性|
+|WUDFRd|Windows Driver Foundation - User-mode Driver Framework Reflector|3|-|1|<u>A kernel mode driver that uses message-based interprocess communication mechanism to communicate with the driver manager and host process to facilitate UMDF drivers</u><br>参见 **WudfPf**|
+|WwanSvc|WWAN AutoConfig|3||20|<u>该服务管理移动宽带(GSM 和 CDMA)数据卡/嵌入式模块适配器和自动配置网络的连接。强烈建议: 保持运行此服务，以便获取移动宽带设备的最佳用户体验。</u>|
+|XblAuthManager|Xbox Live 身份验证管理器|3|-|20|虽然我现在不玩 X 盒，但是万一呢？|
+|XblGameSave|Xbox Live 游戏保存|3|-|20|<u>此服务为 Xbox Live 可保存游戏同步保存数据。如果此服务被停止，游戏保存数据将不会上传至 Xbox Live 或从 Xbox Live 下载。</u><br>虽然我现在不玩 X 盒，但是万一呢？|
+|xboxgip|Xbox Game Input Protocol Driver<br>Xbox 游戏输入协议驱动程序|1|-|1|各品牌的第三方手柄都会用到|
+|XboxGipSvc|Xbox Accessory Management Service|3|-|20|<u>This service manages connected Xbox Accessories.</u><br>虽然我现在不玩 X 盒，但是万一呢？|
+|XboxNetApiSvc|Xbox Live 网络服务|3|-|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u><br>虽然我现在不玩 X 盒，但是万一呢？|
+|xinputhid|XINPUT HID Filter Driver<br>XINPUT HID 筛选器驱动程序|3|-|1|各品牌的第三方手柄都会用到|
 
 #### 其他查找不到信息的未知服务
 
@@ -664,7 +660,10 @@
 10. 该服务无描述，参考链接 [file.net](https://www.file.net/process/compositebus.sys.html)
 11. 描述节取自 [Microsoft 在线文档](https://learn.microsoft.com/en-us/windows/compatibility/desktop-activity-moderator)
 12. 参考链接 [serverfault](https://serverfault.com/questions/829782/what-exactly-is-the-data-sharing-service-in-windows-server-2016)
-13. 参考链接 [GitHbu](https://github.com/ionescu007/winipt)
+13. 参考链接 [GitHub](https://github.com/ionescu007/winipt)
+14. 参考链接 [维基百科](https://zh.wikipedia.org/wiki/Winsock)
+15. 参考链接 [微软开发博客](https://devblogs.microsoft.com/oldnewthing/20190618-00/?p=102597)
+16. 参考链接 [安全 KER 的漏洞分析](https://www.anquanke.com/post/id/196893)
 
 [上一级](../README.md)
 
