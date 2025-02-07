@@ -44,6 +44,17 @@
 |✰ BTAGService|Bluetooth Audio Gateway Service<br>蓝牙音频网关服务|3|必须保留|20|<u>支持蓝牙免提配置文件的音频网关角色的服务。</u>|
 |✰ BthAvctpSvc|AVCTP service<br>AVCTP 服务|3|必须保留|20|<u>这是音频视频控制传输协议服务</u>|
 |✰ bthserv|Bluetooth Support Service<br>蓝牙支持服务|3|必须保留|20|<u>蓝牙服务支持发现和关联远程蓝牙设备。停止或禁用此服务可能会导致已安装的蓝牙设备无法正常运行，并使新设备无法被发现或关联。</u>|
+|✰ CertPropSvc|Certificate Propagation|3||20|<u>将用户证书和根证书从智能卡复制到当前用户的证书存储，检测智能卡何时插入到智能卡读卡器中，并在需要时安装智能卡即插即用微型驱动器。</u>|
+|✰ Dhcp|DHCP Client|2|必须保留|20|<u>为此计算机注册并更新 IP 地址。如果此服务停止，计算机将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>你上网吗？|
+|✰ DisplayEnhancementService|Display Enhancement Service<br>显示增强服务|3|笔记本保留|20|<u>用于管理显示增强(如亮度控制)的服务。</u>|
+|✰ Dnscache|DNS Client|2|必须保留|20|<u>DNS 客户端服务(dnscache)缓存域名系统(DNS)名称并注册该计算机的完整计算机名。如果该服务被停止，将继续解析 DNS 名称。然而，将不缓存 DNS 名称的查询结果，且不注册计算机名。如果该服务被禁用，则任何明确依赖于它的服务都将无法启动。</u>|
+|✰ FontCache|Windows Font Cache Service|2|4 = 可 SysPrep, oobe<br>具体影响需要测试|20|<u>通过缓存常用字体数据优化应用程序的性能。如果尚未运行该服务，则应用程序将启动该服务。也可以禁用该服务，但是这样做会降低应用程序性能。</u><br>待测试，真的会降低性能吗？用 Photoshop 2018 测测看|
+|✰ FrameServer|Windows Camera Frame Server|3|4 = 可 SysPrep, oobe<br>偶尔用摄像头，保留|20|<u>允许多个客户端从相机设备访问视频帧。</u><br>摄像头相关|
+|✰ InstallService|Microsoft Store Install Service<br>Microsoft Store 安装服务|3|4 = 可 SysPrep, oobe|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如被禁用，则安装将无法正常运行。</u><br>待测试，不知是否影响本地 Appx 文件的安装|
+|✰ iphlpsvc|IP Helper|2|必须保留？|20|<u>使用 IPv6 转换技术(6to4、ISATAP、端口代理和 Teredo)和 IP-HTTPS 提供隧道连接。如果停止该服务，则计算机将不具备这些技术提供的增强连接优势。</u>|
+|✰ IpxlatCfgSvc|IP Translation Configuration Service<br>IP 转换配置服务|3|必须保留|20|<u>配置和启用从 v4 到 v6 的转换，反之亦然</u>|
+|✰ LxpSvc|Language Experience Service<br>语言体验服务|3|4 = 可 SysPrep, oobe<br>不会影响系统切换语言，不过还是保留吧|20|<u>为部署和配置 Windows 本地化资源提供基础结构支持。此服务将按需启动，如果禁用，其他 Windows 语言将不会部署到系统，Windows 可能无法正常工作。</u>|
+|✰ msiserver|Windows Installer|3|必须保留|10|<u>添加、修改和删除作为 Windows Installer 程序包(\*.msi、\*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</u>|
 |已测试的服务||||||
 |✰ AarSvc|Agent Activation Runtime|3|4 = 可 SysPrep, oobe|60|<u>Runtime for activating conversational agent applications</u>|
 |✰ AJRouter|AllJoyn Router Service|3|4 = 可 SysPrep, oobe|20|<u>路由本地 AllJoyn 客户端的 AllJoyn 消息。如果停止此服务，则自身没有捆绑路由器的 AllJoyn 客户端将无法运行。</u>|
@@ -65,78 +76,67 @@
 |✰ CaptureService|CaptureService|3|4 = 可 SysPrep, oobe|60|<u>为调用 Windows.Graphics.Capture API 的应用程序启用可选的屏幕捕获功能。</u>|
 |✰ cbdhsvc|Clipboard User Service<br>剪贴板用户服务|3|4 = 可 SysPrep, oobe|60|<u>此用户服务用于剪贴板方案</u><br>会被 NTLite 精简，可禁用，可用开源的 [CopyQ](https://github.com/hluk/CopyQ) 代替|
 |✰ CDPSvc|Connected Devices Platform Service<br>连接设备平台服务|2|4 = 可 SysPrep, oobe|20|<u>此服务用于连接设备平台方案</u><br>可能与打印机、扫描仪相关，但不确定<br>也有说法是仅在与 Xbox 连接时有用<br>待测试，可以先禁用看看|
+|✰ CDPUserSvc|Connected Devices Platform User Service<br>连接设备平台用户服务|2|4 = 可 SysPrep, oobe|60|<u>此用户服务用于连接设备平台方案</u><br>可能与打印机、扫描仪相关，但不确定<br>也有说法是仅在与 Xbox 连接时有用<br>待测试，可以先禁用看看|
+|✰ ClipSVC|Client License Service (ClipSVC)|3|4 = 可 SysPrep, 不可 oobe<br>最高只能设为 3|20|<u>提供对 Microsoft Store 的基础结构支持。此服务按需启动，并且如果禁用了此服务，则使用 Windows Store 购买的应用程序将无法正常运行。</u>|
+|✰ COMSysApp|COM+ System Application|3|4 = 可 SysPrep, oobe|10|<u>停止该服务，则大多数基于 COM+ 的组件将不能正常工作。如果禁用该服务，则任何明确依赖它的服务都将无法启动。</u>|
+|✰ ConsentUxUserSvc|ConsentUX User Service<br>ConsentUX|3|4 = 可 SysPrep, oobe|60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>ConnectUX 已被弃用|
+|✰ CoreMessagingRegistrar|CoreMessaging|2|4 = 不可 SysPrep<br>最高只能设为 3|20|<u>Manages communication between system components.</u><br>管理系统组件之间的通信。|
+|✰ CredentialEnrollmentManagerUserSvc|CredentialEnrollmentManagerUserSvc|3|4 = 可 SysPrep, oobe|50|<u>凭据注册管理器</u>|
+|✰ CryptSvc|Cryptographic Services|2|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
+|✰ CscService|Offline Files|4|4 = 可 SysPrep, oobe|20|<u>脱机文件服务在脱机文件缓存中执行维护活动，响应用户登录和注销事件，实现公共 API 的内部部分，并将相关的事件分配给关心脱机文件活动和缓存更改的用户。</u><br>Home 版不存在，可禁用之|
+|✰ DcomLaunch|DCOM Server Process Launcher|2|4 = 不可 SysPrep<br>最高只能设为 3|20|<u>DCOMLAUNCH 服务可启动 COM 和 DCOM 服务器，以响应对象激活请求。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 DCOMLAUNCH 服务。</u>|
+|✰ defragsvc|Optimize drives|3|4 = 可 SysPrep, oobe|10|<u>通过优化存储驱动器上的文件来帮助计算机更高效地运行。</u><br>经典巨硬式不说人话翻译，人话：定期运行 **磁盘碎片整理** 对于 SSD 有害无利，禁用之|
+|✰ DeviceAssociationBrokerSvc|DeviceAssociationBroker|3|4 = 可 SysPrep, oobe|60|<u>Enables apps to pair devices</u><br>待测试，1903 之前不存在，估计是允许 UWP 与某些硬件配对|
+|✰ DeviceAssociationService|Device Association Service|3|4 = 可 SysPrep, oobe|20|<u>在系统与有线或无线设备之间启用匹配。</u>|
+|✰ DeviceInstall|Device Install Service|3|4 = 可 SysPrep, oobe|20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u>|
+|✰ DevicePickerUserSvc|DevicePicker|3|4 = 可 SysPrep, oobe|60|<u>此用户服务用于管理 Miracast、DLNA 和拨号用户界面</u><br>会被 NTLite 精简，可禁用|
+|✰ DevicesFlowUserSvc|DevicesFlow|3|4 = 可 SysPrep, oobe|60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>待测试，ConnectUX 已被弃用|
+|✰ DevQueryBroker|DevQuery Background Discovery Broker|3|4 = 可 SysPrep, oobe|10|<u>使应用能够发现具有后台任务的设备</u><br>经典巨硬式不说人话翻译，人话：后台定期扫描，以发现新设备，并通知系统自动注册新设备|
+|✰ diagnosticshub.standardcollector.service|Microsoft (R) 诊断中心标准收集器服务|3|4 = 可 SysPrep, oobe|10|<u>诊断中心标准收集器服务。运行时，此服务会收集实时 ETW 事件，并对其进行处理。</u><br>诊断不了故障的故障诊断功能支持|
+|✰ diagsvc|Diagnostic Execution Service|3|4 = 可 SysPrep, oobe|20|<u>Executes diagnostic actions for troubleshooting support</u><br>诊断不了故障的故障诊断功能支持|
+|✰ DiagTrack|Connected User Experiences and Telemetry|2|4 = 可 SysPrep, oobe|10|<u>Connected User Experiences and Telemetry</u><br>用户体验数据收集|
+|✰ DispBrokerDesktopSvc|Display Policy Service<br>显示策略服务|2|4 = 可 SysPrep, oobe<br>不影响 VirtualBox 显卡驱动安装以及任意缩放|20|待测试，远程显示器支持|
+|✰ DmEnrollmentSvc|Device Management Enrollment Service<br>设备管理注册服务|3|4 = 可 SysPrep, 不可 oobe<br>oobe 卡在设定网络后<br>最高只能设为 3|10|<u>为设备管理执行设备注册活动</u><br>企业远程系统配置及硬件管理|
+|✰ dmwappushservice|Device Management Wireless Application Protocol (WAP) Push message Routing Service<br>设备管理无线应用程序协议 (WAP) 推送消息路由服务|3|4 = 不可 SysPrep<br>最高只能设为 3|20|<u>路由设备收到的无线应用程序协议 (WAP) 推送消息并同步设备管理会话</u>|
+|✰ DoSvc|Delivery Optimization|3|4 = 可 SysPrep, oobe<br>Windows Update 相关|20|<u>执行内容传递优化任务</u><sup>8</sup>|
+|✰ dot3svc|Wired AutoConfig|3|4 = 可 SysPrep, oobe|20|<u>有线自动配置(DOT3SVC)服务负责对以太网接口执行 IEEE 802.1X 身份验证。如果当前有线网络部署强制执行 802.1X 身份验证，则应配置 DOT3SVC 服务运行以用于建立第 2 层连接性和/或用于提供对网络资源的访问权限。DOT3SVC 服务会影响到强制执行 802.1X 身份验证的有线网络。</u>|
+|✰ DPS|Diagnostic Policy Service|2|4 = 可 SysPrep, oobe|20|<u>诊断策略服务启用了 Windows 组件的问题检测、疑难解答和解决方案。如果该服务被停止，诊断将不再运行。</u>|
+|✰ DsmSvc|Device Setup Manager|3|4 = 可 SysPrep, oobe|20|<u>支持检测、下载和安装与设备相关的软件。如果此服务被禁用，则可能使用过期软件对设备进行配置，因此设备可能无法正常工作。</u><br>用于通过 Windows Update 来自动更新驱动，会造成 CPU 占用异常高的情况，建议禁用|
+|✰ DsSvc|Data Sharing Service|3|4 = 可 SysPrep, oobe|20|<u>提供应用程序之间的数据代理。</u><br>待测试，连巨硬员工都不知道这是什么东西的神秘服务<br>根据搜索，与 Samba 共享有关，若提供(还是访问也需要?) Samba 服务，此服务必须开启<sup>12</sup>|
+|✰ DusmSvc|Data Usage<br>数据使用量|2|4 = 可 SysPrep, oobe|10|<u>网络数据使用量，流量上限，限制背景数据，按流量计费的网络。</u>|
+|✰ Eaphost|Extensible Authentication Protocol|3|4 = 可 SysPrep, oobe|20|<u>可扩展的身份验证协议(EAP)服务在以下情况下提供网络身份验证: 802.1x 有线和无线、VPN 和网络访问保护(NAP)。EAP 在身份验证过程中也提供网络访问客户端使用的应用程序编程接口(API)，包括无线客户端和 VPN 客户端。如果禁用此服务，该计算机将无法访问需要 EAP 身份验证的网络。</u>|
+|✰ EFS|Encrypting File System (EFS)|3|4 = 可 SysPrep, oobe|20|<u>提供用于在 NTFS 文件系统卷上存储加密文件的核心文件加密技术。如果停止或禁用此服务，则应用程序将无法访问加密的文件。</u><br>待测试，目测与 BitLocker 相关|
+|✰ embeddedmode|Embedded Mode<br>嵌入模式|3|4 = 可 SysPrep, oobe|20|<u>嵌入模式服务启用与后台应用程序相关的方案。禁用此服务会阻止激活后台应用程序。</u><br>IoT 版本的特殊功能|
+|✰ EntAppSvc|Enterprise App Management Service|3|4 = 可 SysPrep, oobe|20|<u>启用企业应用程序管理。</u>|
+|✰ EventLog|Windows Event Log|2|4 = 可 SysPrep, oobe|20|<u>此服务管理事件和事件日志。它支持日志记录事件、查询事件、订阅事件、归档事件日志以及管理事件元数据。它可以用 XML 和纯文本两种格式显示事件。停止该服务可能危及系统的安全性和可靠性。</u>|
+|✰ EventSystem|COM+ Event System|2|4 = 可 SysPrep, oobe|20|<u>支持系统事件通知服务 (SENS)，此服务为订阅的组件对象模型 (COM) 组件提供自动分布事件功能。如果停止此服务，SENS 将关闭，而且不能提供登录和注销通知。如果禁用此服务，显式依赖此服务的其他服务都将无法启动。</u>|
+|✰ Fax|Fax|3|4 = 可 SysPrep, oobe|10|<u>Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network.</u><br>待测试，不知是否会影响扫描仪工作|
+|✰ fdPHost|Function Discovery Provider Host|3|4 = 可 SysPrep, oobe|20|<u>FDPHOST 服务承载功能发现(FD)网络发现提供程序。这些 FD 提供程序为简单服务发现协议(SSDP)和 Web 服务发现(WS-D)协议提供网络发现服务。使用 FD 时停止或禁用 FDPHOST 服务将禁用这些协议的网络发现。当该服务不可用时，使用 FD 和依靠这些发现协议的网络服务将无法找到网络服务或资源。</u><br>网络发现功能|
+|✰ FDResPub|Function Discovery Resource Publication|3|4 = 可 SysPrep, oobe|20|<u>发布该计算机以及连接到该计算机的资源，以便能够在网络上发现这些资源。如果该服务被停止，将不再发布网络资源，网络上的其他计算机将无法发现这些资源。</u><br>若在本 PC 共享，本服务可以让该共享资源被其他 PC 发现|
+|✰ fhsvc|File History Service|3|4 = 可 SysPrep, oobe|20|<u>将用户文件复制到备份位置以防意外丢失</u>|
+|✰ fvevol|BitLocker Drive Encryption Filter Driver|0|只能为 0|1|更改此项服务将会导致 **BSOD**|
+|✰ gpsvc|Group Policy Client|2|4 = 可 SysPrep, oobe|20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u>|
+|✰ hidserv|Human Interface Device Service|3|4 = 可 SysPrep, oobe|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u>|
+|✰ HvHost|HV 主机服务|3|4 = 可 SysPrep, oobe|20|<u>为 Hyper-V 虚拟机监控程序提供接口，以便为主机操作系统提供单分区性能计数器。</u>|
+|✰ icssvc|Windows Mobile Hotspot Service<br>Windows 移动热点服务|4 = 可 SysPrep, oobe|可禁用<br>3 = 不会被拉起|20|<u>提供与其他设备共享手机网络数据连接的功能。</u>|
+|✰ IKEEXT|IKE and AuthIP IPsec Keying Modules|3|4 = 可 SysPrep, oobe|32|<u>IKEEXT 服务托管 Internet 密钥交换(IKE)和身份验证 Internet 协议(AuthIP)键控模块。这些键控模块用于 Internet 协议安全(IPSec)中的身份验证和密钥交换。停止或禁用 IKEEXT 服务将禁用与对等计算机的 IKE/AuthIP 密钥交换。通常将 IPSec 配置为使用 IKE 或 AuthIP，因此停止或禁用 IKEEXT 服务将导致 IPSec 故障并且危及系统的安全。强烈建议运行 IKEEXT 服务。</u>|
+|✰ KeyIso|CNG Key Isolation|3|4 = 可 SysPrep, oobe|10|<u>CNG 密钥隔离服务宿主在 LSA 进程中。如一般原则所要求，该服务为私钥和相关加密操作提供密钥进程隔离。该服务在与一般原则要求相一致的安全进程中存储和使用生存期长的密钥。</u><br>参见 **CNG**|
+|✰ KtmRm|KtmRm for Distributed Transaction Coordinator|3|4 = 可 SysPrep, oobe|20|<u>协调分布式事务处理协调器(MSDTC)和内核事务管理器(KTM)之间的事务。如果不需要，建议保持该服务的停止状态。如果需要，MSDTC 和 KTM 将自动启动该服务。如果此服务已禁用，任何与内核资源管理器交互的 MSDTC 事务将失败，并且任何显式依赖它的服务将无法启动。</u>|
+|✰ LanmanServer|Server|2|4 = 可 SysPrep, oobe|20|<u>支持此计算机通过网络的文件、打印、和命名管道共享。如果服务停止，这些功能不可用。如果服务被禁用，任何直接依赖于此服务的服务将无法启动。</u>|
+|✰ LanmanWorkstation|Workstation|2|4 = 可 SysPrep, oobe|20|<u>使用 SMB 协议创建并维护客户端网络与远程服务器之间的连接。如果此服务已停止，这些连接将无法使用。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
+|✰ lfsvc|Geolocation Service|3|4 = 可 SysPrep, oobe|20|<u>此服务将监视系统的当前位置并管理地理围栏(具有关联事件的地理位置)。如果你禁用此服务，应用程序将无法使用或接收有关地理位置或地理围栏的通知。</u>|
+|✰ LicenseManager|Windows License Manager Service<br>Windows 许可证管理器服务|3|4 = 可 SysPrep, oobe|20|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如果禁用此服务，则通过 Microsoft Store 获得的内容将无法正常运行。</u>|
+|✰ lltdsvc|Link-Layer Topology Discovery Mapper|3|4 = 可 SysPrep, oobe|10|<u>创建网络映射，它由电脑和设备拓扑(连接)信息以及说明每个电脑和设备的元数据组成。如果禁用此服务，则网络映射将不能正常工作。</u>|
+|✰ lmhosts|TCP/IP NetBIOS Helper|3|4 = 可 SysPrep, oobe|20|<u>提供 TCP/IP (NetBT) 服务上的 NetBIOS 和网络上客户端的 NetBIOS 名称解析的支持，从而使用户能够共享文件、打印和登录到网络。如果此服务被停用，这些功能可能不可用。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ LSM|Local Session Manager|2|3 = 可 SysPrep, oobe<br>4 = 不可 SysPrep|20|<u>管理本地用户会话的核心 Windows 服务。停止或禁用此服务将导致系统不稳定。</u>|
+|✰ MapsBroker|Downloaded Maps Manager|2|4 = 可 SysPrep, oobe|10|<u>供应用程序访问已下载地图的 Windows 服务。此服务由访问已下载地图的应用程序按需启动。禁用此服务将阻止应用访问地图。</u>|
+|✰ MessagingService|MessagingService|3|4 = 可 SysPrep, oobe|60|<u>支持短信及相关功能的服务。</u>|
+|✰ MixedRealityOpenXRSvc|Windows Mixed Reality OpenXR Service|3|4 = 可 SysPrep, oobe|20|<u>Enables Mixed Reality OpenXR runtime functionality</u><br>待测试， VR 相关|
+|✰ mpssvc|Windows Defender Firewall|2|3 = 可 SysPrep (会被拉起), oobe<br>4 = 不可 oobe|20|<u>Windows Defender 防火墙通过阻止未授权用户通过 Internet 或网络访问你的计算机来帮助保护计算机。</u>|
+|✰ MSiSCSI|Microsoft iSCSI Initiator Service|3|4 = 可 SysPrep, oobe|20|<u>管理从这台计算机到远程 iSCSI 目标设备的 Internet SCSI (iSCSI)会话。如果该服务已停止，则该计算机将无法登录或访问 iSCSI 目标设备。如果该服务已禁用，则所有显式依赖于该服务的服务将不会启动。</u>|
+|✰ NaturalAuthentication|Natural Authentication<br>自然身份验证|3|4 = 可 SysPrep, oobe|20|<u>信号聚合器服务，用于根据时间、网络、地理位置、蓝牙和 CDF 因素评估信号。支持的功能包括设备解锁、动态锁定和动态 MDM 策略</u>|
+|✰ NcaSvc|Network Connectivity Assistant|3|4 = 可 SysPrep, oobe|20|<u>提供 UI 组件的 DirectAccess 状态通知</u>|
 |待测试的服务||||||
-|✰ CDPUserSvc|Connected Devices Platform User Service<br>连接设备平台用户服务|2|3|60|<u>此用户服务用于连接设备平台方案</u><br>可能与打印机、扫描仪相关，但不确定<br>也有说法是仅在与 Xbox 连接时有用<br>待测试，可以先禁用看看|
-|✰ CertPropSvc|Certificate Propagation|3|-|20|<u>将用户证书和根证书从智能卡复制到当前用户的证书存储，检测智能卡何时插入到智能卡读卡器中，并在需要时安装智能卡即插即用微型驱动器。</u>|
-|✰ ClipSVC|Client License Service (ClipSVC)|3|-|20|<u>提供对 Microsoft Store 的基础结构支持。此服务按需启动，并且如果禁用了此服务，则使用 Windows Store 购买的应用程序将无法正常运行。</u>|
-|✰ COMSysApp|COM+ System Application|3|-|10|<u>停止该服务，则大多数基于 COM+ 的组件将不能正常工作。如果禁用该服务，则任何明确依赖它的服务都将无法启动。</u>|
-|✰ ConsentUxUserSvc|ConsentUX User Service<br>ConsentUX|3|4|60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>ConnectUX 已被弃用|
-|✰ CoreMessagingRegistrar|CoreMessaging|2|-|20|<u>Manages communication between system components.</u><br>管理系统组件之间的通信。|
-|✰ CredentialEnrollmentManagerUserSvc|CredentialEnrollmentManagerUserSvc|3|-|50|<u>凭据注册管理器</u>|
-|✰ CryptSvc|Cryptographic Services|2|-|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
-|✰ CscService|Offline Files|4|4|20|<u>脱机文件服务在脱机文件缓存中执行维护活动，响应用户登录和注销事件，实现公共 API 的内部部分，并将相关的事件分配给关心脱机文件活动和缓存更改的用户。</u><br>Home 版不存在，可禁用之|
-|✰ DcomLaunch|DCOM Server Process Launcher|2|-|20|<u>DCOMLAUNCH 服务可启动 COM 和 DCOM 服务器，以响应对象激活请求。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 DCOMLAUNCH 服务。</u>|
-|✰ defragsvc|Optimize drives|3|4|10|<u>通过优化存储驱动器上的文件来帮助计算机更高效地运行。</u><br>经典巨硬式不说人话翻译，人话：定期运行 **磁盘碎片整理** 对于 SSD 有害无利，禁用之|
-|✰ DeviceAssociationBrokerSvc|DeviceAssociationBroker|3|-|60|<u>Enables apps to pair devices</u><br>待测试，1903 之前不存在，估计是允许 UWP 与某些硬件配对|
-|✰ DeviceAssociationService|Device Association Service|3|-|20|<u>在系统与有线或无线设备之间启用匹配。</u>|
-|✰ DeviceInstall|Device Install Service|3|-|20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u>|
-|✰ DevicePickerUserSvc|DevicePicker|3|4|3|<u>此用户服务用于管理 Miracast、DLNA 和拨号用户界面</u><br>会被 NTLite 精简，可禁用|
-|✰ DevicesFlowUserSvc|DevicesFlow|3|-|60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>待测试，ConnectUX 已被弃用|
-|✰ DevQueryBroker|DevQuery Background Discovery Broker|3|-|10|<u>使应用能够发现具有后台任务的设备</u><br>经典巨硬式不说人话翻译，人话：后台定期扫描，以发现新设备，并通知系统自动注册新设备|
-|✰ Dhcp|DHCP Client|2|-|20|<u>为此计算机注册并更新 IP 地址。如果此服务停止，计算机将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>你上网吗？|
-|✰ diagnosticshub.standardcollector.service|Microsoft (R) 诊断中心标准收集器服务|3|4|10|<u>诊断中心标准收集器服务。运行时，此服务会收集实时 ETW 事件，并对其进行处理。</u><br>诊断不了故障的故障诊断功能支持|
-|✰ diagsvc|Diagnostic Execution Service|3|4|20|<u>Executes diagnostic actions for troubleshooting support</u><br>诊断不了故障的故障诊断功能支持|
-|✰ DiagTrack|Connected User Experiences and Telemetry|2|4|10|<u>Connected User Experiences and Telemetry</u><br>用户体验数据收集|
-|✰ DispBrokerDesktopSvc|Display Policy Service<br>显示策略服务|2|3|20|待测试，远程显示器支持|
-|✰ DisplayEnhancementService|Display Enhancement Service<br>显示增强服务|3|-|20|<u>用于管理显示增强(如亮度控制)的服务。</u>|
-|✰ DmEnrollmentSvc|Device Management Enrollment Service<br>设备管理注册服务|3|-|10|<u>为设备管理执行设备注册活动</u><br>企业远程系统配置及硬件管理|
-|✰ dmwappushservice|Device Management Wireless Application Protocol (WAP) Push message Routing Service<br>设备管理无线应用程序协议 (WAP) 推送消息路由服务|3|-|20|<u>路由设备收到的无线应用程序协议 (WAP) 推送消息并同步设备管理会话</u>|
-|✰ Dnscache|DNS Client|2|-|20|<u>DNS 客户端服务(dnscache)缓存域名系统(DNS)名称并注册该计算机的完整计算机名。如果该服务被停止，将继续解析 DNS 名称。然而，将不缓存 DNS 名称的查询结果，且不注册计算机名。如果该服务被禁用，则任何明确依赖于它的服务都将无法启动。</u>|
-|✰ DoSvc|Delivery Optimization|3|4|20|<u>执行内容传递优化任务</u><sup>8</sup>|
-|✰ dot3svc|Wired AutoConfig|3|-|20|<u>有线自动配置(DOT3SVC)服务负责对以太网接口执行 IEEE 802.1X 身份验证。如果当前有线网络部署强制执行 802.1X 身份验证，则应配置 DOT3SVC 服务运行以用于建立第 2 层连接性和/或用于提供对网络资源的访问权限。DOT3SVC 服务会影响到强制执行 802.1X 身份验证的有线网络。</u>|
-|✰ DPS|Diagnostic Policy Service|2|4|20|<u>诊断策略服务启用了 Windows 组件的问题检测、疑难解答和解决方案。如果该服务被停止，诊断将不再运行。</u>|
-|✰ DsmSvc|Device Setup Manager|3|4|20|<u>支持检测、下载和安装与设备相关的软件。如果此服务被禁用，则可能使用过期软件对设备进行配置，因此设备可能无法正常工作。</u><br>用于通过 Windows Update 来自动更新驱动，会造成 CPU 占用异常高的情况，建议禁用|
-|✰ DsSvc|Data Sharing Service|3|4|20|<u>提供应用程序之间的数据代理。</u><br>待测试，连巨硬员工都不知道这是什么东西的神秘服务<br>根据搜索，与 Samba 共享有关，若提供(还是访问也需要?) Samba 服务，此服务必须开启<sup>12</sup>|
-|✰ DusmSvc|Data Usage<br>数据使用量|2|4|10|<u>网络数据使用量，流量上限，限制背景数据，按流量计费的网络。</u>|
-|✰ Eaphost|Extensible Authentication Protocol|3|-|20|<u>可扩展的身份验证协议(EAP)服务在以下情况下提供网络身份验证: 802.1x 有线和无线、VPN 和网络访问保护(NAP)。EAP 在身份验证过程中也提供网络访问客户端使用的应用程序编程接口(API)，包括无线客户端和 VPN 客户端。如果禁用此服务，该计算机将无法访问需要 EAP 身份验证的网络。</u>|
-|✰ EFS|Encrypting File System (EFS)|3|4|20|<u>提供用于在 NTFS 文件系统卷上存储加密文件的核心文件加密技术。如果停止或禁用此服务，则应用程序将无法访问加密的文件。</u><br>待测试，目测与 BitLocker 相关|
-|✰ embeddedmode|Embedded Mode<br>嵌入模式|3|4|20|<u>嵌入模式服务启用与后台应用程序相关的方案。禁用此服务会阻止激活后台应用程序。</u><br>IoT 版本的特殊功能|
-|✰ EntAppSvc|Enterprise App Management Service|3|4|20|<u>启用企业应用程序管理。</u>|
-|✰ EventLog|Windows Event Log|2|-|20|<u>此服务管理事件和事件日志。它支持日志记录事件、查询事件、订阅事件、归档事件日志以及管理事件元数据。它可以用 XML 和纯文本两种格式显示事件。停止该服务可能危及系统的安全性和可靠性。</u><br>待测试|
-|✰ EventSystem|COM+ Event System|2|-|20|<u>支持系统事件通知服务 (SENS)，此服务为订阅的组件对象模型 (COM) 组件提供自动分布事件功能。如果停止此服务，SENS 将关闭，而且不能提供登录和注销通知。如果禁用此服务，显式依赖此服务的其他服务都将无法启动。</u>|
-|✰ Fax|Fax|3|4|10|<u>Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network.</u><br>待测试，不知是否会影响扫描仪工作|
-|✰ fdPHost|Function Discovery Provider Host|3|4|20|<u>FDPHOST 服务承载功能发现(FD)网络发现提供程序。这些 FD 提供程序为简单服务发现协议(SSDP)和 Web 服务发现(WS-D)协议提供网络发现服务。使用 FD 时停止或禁用 FDPHOST 服务将禁用这些协议的网络发现。当该服务不可用时，使用 FD 和依靠这些发现协议的网络服务将无法找到网络服务或资源。</u><br>网络发现功能|
-|✰ FDResPub|Function Discovery Resource Publication|3|4|20|<u>发布该计算机以及连接到该计算机的资源，以便能够在网络上发现这些资源。如果该服务被停止，将不再发布网络资源，网络上的其他计算机将无法发现这些资源。</u><br>若在本 PC 共享，本服务可以让该共享资源被其他 PC 发现|
-|✰ fhsvc|File History Service|3|4|20|<u>将用户文件复制到备份位置以防意外丢失</u>|
-|✰ FontCache|Windows Font Cache Service|2||20|<u>通过缓存常用字体数据优化应用程序的性能。如果尚未运行该服务，则应用程序将启动该服务。也可以禁用该服务，但是这样做会降低应用程序性能。</u><br>待测试，真的会降低性能吗？用 Photoshop 2018 测测看|
-|✰ FrameServer|Windows Camera Frame Server|3|-|20|<u>允许多个客户端从相机设备访问视频帧。</u><br>摄像头相关|
-|✰ fvevol|BitLocker Drive Encryption Filter Driver|0|-|1|更改此项服务将会导致系统 **无法启动**|
-|✰ gpsvc|Group Policy Client|2|-|20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u>|
-|✰ hidserv|Human Interface Device Service|3|-|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u>|
-|✰ HvHost|HV 主机服务|3|-|20|<u>为 Hyper-V 虚拟机监控程序提供接口，以便为主机操作系统提供单分区性能计数器。</u>|
-|✰ icssvc|Windows Mobile Hotspot Service<br>Windows 移动热点服务|3|-|20|<u>提供与其他设备共享手机网络数据连接的功能。</u>|
-|✰ IKEEXT|IKE and AuthIP IPsec Keying Modules|3|-|32|<u>IKEEXT 服务托管 Internet 密钥交换(IKE)和身份验证 Internet 协议(AuthIP)键控模块。这些键控模块用于 Internet 协议安全(IPSec)中的身份验证和密钥交换。停止或禁用 IKEEXT 服务将禁用与对等计算机的 IKE/AuthIP 密钥交换。通常将 IPSec 配置为使用 IKE 或 AuthIP，因此停止或禁用 IKEEXT 服务将导致 IPSec 故障并且危及系统的安全。强烈建议运行 IKEEXT 服务。</u>|
-|✰ InstallService|Microsoft Store Install Service<br>Microsoft Store 安装服务|3||10|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如被禁用，则安装将无法正常运行。</u><br>待测试，不知是否影响本地 Appx 文件的安装|
-|✰ iphlpsvc|IP Helper|2|-|20|<u>使用 IPv6 转换技术(6to4、ISATAP、端口代理和 Teredo)和 IP-HTTPS 提供隧道连接。如果停止该服务，则计算机将不具备这些技术提供的增强连接优势。</u>|
-|✰ IpxlatCfgSvc|IP Translation Configuration Service<br>IP 转换配置服务|3|-|20|<u>配置和启用从 v4 到 v6 的转换，反之亦然</u>|
-|✰ KeyIso|CNG Key Isolation|3|-|10|<u>CNG 密钥隔离服务宿主在 LSA 进程中。如一般原则所要求，该服务为私钥和相关加密操作提供密钥进程隔离。该服务在与一般原则要求相一致的安全进程中存储和使用生存期长的密钥。</u><br>参见 **CNG**|
-|✰ KtmRm|KtmRm for Distributed Transaction Coordinator|3|-|20|<u>协调分布式事务处理协调器(MSDTC)和内核事务管理器(KTM)之间的事务。如果不需要，建议保持该服务的停止状态。如果需要，MSDTC 和 KTM 将自动启动该服务。如果此服务已禁用，任何与内核资源管理器交互的 MSDTC 事务将失败，并且任何显式依赖它的服务将无法启动。</u>|
-|✰ LanmanServer|Server|2|-|20|<u>支持此计算机通过网络的文件、打印、和命名管道共享。如果服务停止，这些功能不可用。如果服务被禁用，任何直接依赖于此服务的服务将无法启动。</u>|
-|✰ LanmanWorkstation|Workstation|2|-|20|<u>使用 SMB 协议创建并维护客户端网络与远程服务器之间的连接。如果此服务已停止，这些连接将无法使用。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
-|✰ lfsvc|Geolocation Service|3|4|20|<u>此服务将监视系统的当前位置并管理地理围栏(具有关联事件的地理位置)。如果你禁用此服务，应用程序将无法使用或接收有关地理位置或地理围栏的通知。</u>|
-|✰ LicenseManager|Windows License Manager Service<br>Windows 许可证管理器服务|3|-|20|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如果禁用此服务，则通过 Microsoft Store 获得的内容将无法正常运行。</u>|
-|✰ lltdsvc|Link-Layer Topology Discovery Mapper|3|-|10|<u>创建网络映射，它由电脑和设备拓扑(连接)信息以及说明每个电脑和设备的元数据组成。如果禁用此服务，则网络映射将不能正常工作。</u>|
-|✰ lmhosts|TCP/IP NetBIOS Helper|3|-|20|<u>提供 TCP/IP (NetBT) 服务上的 NetBIOS 和网络上客户端的 NetBIOS 名称解析的支持，从而使用户能够共享文件、打印和登录到网络。如果此服务被停用，这些功能可能不可用。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
-|✰ LSM|Local Session Manager|2|-|20|<u>管理本地用户会话的核心 Windows 服务。停止或禁用此服务将导致系统不稳定。</u>|
-|✰ LxpSvc|Language Experience Service<br>语言体验服务|3|-|20|<u>为部署和配置 Windows 本地化资源提供基础结构支持。此服务将按需启动，如果禁用，其他 Windows 语言将不会部署到系统，Windows 可能无法正常工作。</u>|
-|✰ MapsBroker|Downloaded Maps Manager|2|4|10|<u>供应用程序访问已下载地图的 Windows 服务。此服务由访问已下载地图的应用程序按需启动。禁用此服务将阻止应用访问地图。</u>|
-|✰ MessagingService|MessagingService|3|4|60|<u>支持短信及相关功能的服务。</u>|
-|✰ MixedRealityOpenXRSvc|Windows Mixed Reality OpenXR Service|3||20|<u>Enables Mixed Reality OpenXR runtime functionality</u><br>待测试， VR 相关|
-|✰ mpssvc|Windows Defender Firewall|2|4|20|<u>Windows Defender 防火墙通过阻止未授权用户通过 Internet 或网络访问你的计算机来帮助保护计算机。</u>|
-|✰ MSiSCSI|Microsoft iSCSI Initiator Service|3|4|20|<u>管理从这台计算机到远程 iSCSI 目标设备的 Internet SCSI (iSCSI)会话。如果该服务已停止，则该计算机将无法登录或访问 iSCSI 目标设备。如果该服务已禁用，则所有显式依赖于该服务的服务将不会启动。</u>|
-|✰ msiserver|Windows Installer|3|-|10|<u>添加、修改和删除作为 Windows Installer 程序包(\*.msi、\*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</u>|
-|✰ NaturalAuthentication|Natural Authentication<br>自然身份验证|3|4|20|<u>信号聚合器服务，用于根据时间、网络、地理位置、蓝牙和 CDF 因素评估信号。支持的功能包括设备解锁、动态锁定和动态 MDM 策略</u>|
-|✰ NcaSvc|Network Connectivity Assistant|3|4|20|<u>提供 UI 组件的 DirectAccess 状态通知</u>|
 |✰ NcbService|Network Connection Broker|3|-|20|<u>允许 Windows 应用商店应用从 Internet 接收通知的代理连接。</u>|
 |✰ NcdAutoSetup|Network Connected Devices Auto-Setup|3|-|20|<u>网络连接设备自动安装服务会监视和安装连接到合格网络的合格设备。停止或禁用此服务将阻止 Windows 自动发现和安装合格的网络连接设备。用户仍然可以通过用户界面将网络连接设备手动添加到电脑。</u>|
 |✰ Netlogon|Netlogon|3|4|20|<u>为用户和服务身份验证维护此计算机和域控制器之间的安全通道。如果此服务被停用，计算机可能无法验证用户和服务身份并且域控制器无法注册 DNS 记录。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
