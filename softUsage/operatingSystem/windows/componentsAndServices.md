@@ -49,17 +49,28 @@
 |✰ DisplayEnhancementService|Display Enhancement Service<br>显示增强服务|3|笔记本保留|20|<u>用于管理显示增强(如亮度控制)的服务。</u>|
 |✰ Dnscache|DNS Client|2|必须保留|20|<u>DNS 客户端服务(dnscache)缓存域名系统(DNS)名称并注册该计算机的完整计算机名。如果该服务被停止，将继续解析 DNS 名称。然而，将不缓存 DNS 名称的查询结果，且不注册计算机名。如果该服务被禁用，则任何明确依赖于它的服务都将无法启动。</u>|
 |✰ FrameServer|Windows Camera Frame Server|3|4 = 可 SysPrep, oobe<br>偶尔用摄像头，保留|20|<u>允许多个客户端从相机设备访问视频帧。</u><br>摄像头相关|
-|✰ InstallService|Microsoft Store Install Service<br>Microsoft Store 安装服务|3|4 = 可 SysPrep, oobe|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如被禁用，则安装将无法正常运行。</u><br>待测试，不知是否影响本地 Appx 文件的安装|
 |✰ iphlpsvc|IP Helper|2|必须保留？|20|<u>使用 IPv6 转换技术(6to4、ISATAP、端口代理和 Teredo)和 IP-HTTPS 提供隧道连接。如果停止该服务，则计算机将不具备这些技术提供的增强连接优势。</u>|
 |✰ IpxlatCfgSvc|IP Translation Configuration Service<br>IP 转换配置服务|3|必须保留|20|<u>配置和启用从 v4 到 v6 的转换，反之亦然</u>|
 |✰ msiserver|Windows Installer|3|必须保留|10|<u>添加、修改和删除作为 Windows Installer 程序包(\*.msi、\*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</u>|
 |✰ Power|Power|2||20|<u>管理电源策略和电源策略通知传递。</u>|
 |✰ QWAVE|Quality Windows Audio Video Experience|3|必须保留|20|<u>优质 Windows 音频视频体验(qWave)是用于 IP 家庭网络上的音频视频(AV)流应用程序的网络平台。通过确保 AV 应用程序的网络服务质量(QoS)，qWave 增强了 AV 流的性能和可靠性。它提供了许可控制机制、运行时监视和实施、应用程序反馈以及流量优先顺序。</u>|
-|✰ SCardSvr|Smart Card|3|4 = 可 SysPrep, oobe|20|<u>管理此计算机对智能卡的取读访问。如果此服务被终止，此计算机将无法取读智能卡。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>个人有在用 Yubico ，所以智能卡相关会保留|
-|✰ ScDeviceEnum|Smart Card Device Enumeration Service|3|4 = 可 SysPrep, oobe|20|<u>为给定会话可访问的所有智能卡读卡器创建软件设备节点。如果已禁用此服务，则 WinRT API 将无法枚举智能卡读卡器。</u><br>个人有在用 Yubico ，所以智能卡相关会保留|
-|✰ SCPolicySvc|Smart Card Removal Policy|3|4 = 可 SysPrep, oobe|20|<u>允许系统配置为移除智能卡时锁定用户桌面</u>|
+|✰ StorSvc|Storage Service|2|4 = 可 SysPrep, oobe|10|<u>为存储设置和外部存储扩展提供启用服务</u>|
+|✰ TrustedInstaller|Windows Modules Installer|2|必须保留|10|<u>启用 Windows 更新和可选组件的安装、修改和移除。如果此服务被禁用，则此计算机的 Windows 更新的安装或卸载可能会失败。</u>|
+|✰ W32Time|Windows Time|3|NTP 还是要保留的|20|<u>维护在网络上的所有客户端和服务器的时间和日期同步。如果此服务被停止，时间和日期的同步将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>`Parameters\NtpServer` 中可以修改默认的 NTP 服务器|
+|✰ WarpJITSvc|WarpJITSvc|3|4 = 可 SysPrep, oobe|10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算转为针对 CPU 运行|
+|✰ Wcmsvc|Windows Connection Manager|2|4 = 可 SysPrep, oobe|10|<u>根据电脑当前可用的网络连接选项做出自动连接/断开连接决策，并根据“组策略”设置启用网络连接管理。</u>|
+|✰ wcncsvc|Windows Connect Now - Config Registrar|3|4 = 可 SysPrep, oobe|20|<u>WCNCSVC 承载 Windows 立即连接配置，该配置是 Microsoft 执行的无线保护设置(WPS)协议。该配置用于配置接入点(AP)或无线设备的无线 LAN 设置。该服务根据需要有计划地启动。</u>|
+|✰ WlanSvc|WLAN AutoConfig|3|必须保留|10|<u>WLANSVC 服务提供配置、发现、连接、断开与 IEEE 802.11 标准定义的无线局域网(WLAN)的连接所需的逻辑。它还包含将计算机变成软件访问点的逻辑，以便其他设备或计算机可以使用支持它的 WLAN 适配器无线连接到计算机。停止或禁用 WLANSVC 服务将使得计算机上的所有 WLAN 适配器无法访问 Windows 网络连接 UI。强烈建议: 如果你的计算机具有 WLAN 适配器，则运行 WLANSVC 服务。</u>|
+|个人需求的服务项||||||
+|✰ SCardSvr|Smart Card|3|4 = 可 SysPrep, oobe<br>我用 Yubico|20|<u>管理此计算机对智能卡的取读访问。如果此服务被终止，此计算机将无法取读智能卡。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ ScDeviceEnum|Smart Card Device Enumeration Service|3|4 = 可 SysPrep, oobe<br>我用 Yubico|20|<u>为给定会话可访问的所有智能卡读卡器创建软件设备节点。如果已禁用此服务，则 WinRT API 将无法枚举智能卡读卡器。</u>|
+|✰ SCPolicySvc|Smart Card Removal Policy|3|4 = 可 SysPrep, oobe<br>我用 Yubico|20|<u>允许系统配置为移除智能卡时锁定用户桌面</u>|
+|✰ Spooler|Print Spooler|2|4 = 可 SysPrep, oobe<br>我用打印机|110|<u>该服务在后台执行打印作业并处理与打印机的交互。如果关闭该服务，则无法进行打印或查看打印机。</u>|
+|✰ stisvc|Windows Image Acquisition (WIA)|3|4 = 可 SysPrep, oobe<br>我用扫描仪|10|<u>为扫描仪和照相机提供图像采集服务</u>|
+|✰ WiaRpc|Still Image Acquisition Events|3|4 = 可 SysPrep, oobe<br>摄像头、打印机、扫描仪相关|20|<u>启动与静态映像获取事件关联的应用程序。</u>|
 |需后续测试禁用后有什么影响的服务项||||||
 |✰ FontCache|Windows Font Cache Service|2|4 = 可 SysPrep, oobe<br>具体影响需要测试|20|<u>通过缓存常用字体数据优化应用程序的性能。如果尚未运行该服务，则应用程序将启动该服务。也可以禁用该服务，但是这样做会降低应用程序性能。</u><br>待测试，真的会降低性能吗？用 Photoshop 2018 测测看|
+|✰ InstallService|Microsoft Store Install Service<br>Microsoft Store 安装服务|3|4 = 可 SysPrep, oobe|10|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如被禁用，则安装将无法正常运行。</u><br>待测试，不知是否影响本地 Appx 文件的安装|
 |✰ LxpSvc|Language Experience Service<br>语言体验服务|3|4 = 可 SysPrep, oobe<br>不会影响系统切换语言，不过还是保留吧|20|<u>为部署和配置 Windows 本地化资源提供基础结构支持。此服务将按需启动，如果禁用，其他 Windows 语言将不会部署到系统，Windows 可能无法正常工作。</u>|
 |✰ Netman|Network Connections|3|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>管理“网络和拨号连接”文件夹中对象，在其中你可以查看局域网和远程连接。</u>|
 |✰ NetSetupSvc|Network Setup Service|2|4 = 可 SysPrep, oobe|20|<u>网络安装服务用于管理网络驱动程序的安装，并允许配置低级别网络设置。如果停止此服务，可能会取消正在进行的所有驱动程序安装。</u>|
@@ -71,6 +82,14 @@
 |✰ PrintWorkflowUserSvc|PrintWorkflow|3|4 = 可 SysPrep, oobe|60|<u>提供对打印工作流应用程序的支持。如果关闭此服务，可能无法成功打印。</u><br>待测试|
 |✰ RasAuto|Remote Access Auto Connection Manager|3|4 = 可 SysPrep, oobe|20|<u>无论什么时候，当某个程序引用一个远程 DNS 或者 NetBIOS 名称或者地址，就创建一个到远程的连接。</u>|
 |✰ RasMan|Remote Access Connection Manager|3|4 = 可 SysPrep, oobe|20|<u>管理从这台计算机到 Internet 或其他远程网络的拨号和虚拟专用网络(VPN)连接。如果禁用该项服务，则明确依赖该服务的任何服务都将无法启动。</u>|
+|✰ TabletInputService|Touch Keyboard and Handwriting Panel Service|3|4 = 可 SysPrep, oobe|20|<u>启用触摸键盘和手写面板笔和墨迹功能</u><br>禁用后会造成输入法指示器失灵、输入法不能切换、触屏工作不正常，不建议禁用|
+|✰ VaultSvc|Credential Manager|3|4 = 可 SysPrep, oobe|20|<u>为用户、应用程序和安全服务包提供凭据的安全存储和检索。</u><br>用于储存如 Samba 服务器、网站等的账号和密码|
+|✰ vds|Virtual Disk|3||10|<u>提供用于磁盘、卷、文件系统和存储阵列的管理服务。</u><br>会影响 ISO 和 VHD 挂载吗…？|
+|✰ WalletService|WalletService|3|4 = 可 SysPrep, oobe|20|<u>电子钱包客户端使用的主机对象</u><br>待测试，可能影响 UWP|
+|✰ WbioSrvc|Windows Biometric Service|3|4 = 可 SysPrep, oobe|20|<u>Windows 生物识别服务使客户端应用程序能够捕获、比较、操纵和存储生物特征数据，而无需直接访问任何生物识别硬件或示例。该服务宿主在某个特权 SVCHOST 进程中。</u><br>待测试，不知是否会影响 Yubico 的使用|
+|✰ WEPHOSTSVC|Windows Encryption Provider Host Service|3|4 = 可 SysPrep, oobe|10|<u>Windows Encryption Provider 主机服务代理加密相关功能 - 从第三方加密提供程序到需要评估和应用 EAS 策略的进程。停止此服务将损害连接的邮件帐户已经建立的合规检查</u>|
+|✰ WFDSConMgrSvc|Wi-Fi Direct Services Connection Manager Service<br>WLAN Direct 服务连接管理器服务|3|4 = 可 SysPrep, oobe|20|<u>管理与无线服务(包括无线显示和插接)的连接。</u>|
+|✰ WPDBusEnum|Portable Device Enumerator Service|3|4 = 可 SysPrep, oobe|20|<u>强制可移动大容量存储设备的组策略。使应用程序(如 Windows Media Player 和图像导入向导)能够使用可移动大容量存储设备传输和同步内容。</u>|
 |已测试的服务项||||||
 |✰ AarSvc|Agent Activation Runtime|3|4 = 可 SysPrep, oobe|60|<u>Runtime for activating conversational agent applications</u>|
 |✰ AJRouter|AllJoyn Router Service|3|4 = 可 SysPrep, oobe|20|<u>路由本地 AllJoyn 客户端的 AllJoyn 消息。如果停止此服务，则自身没有捆绑路由器的 AllJoyn 客户端将无法运行。</u>|
@@ -154,7 +173,7 @@
 |✰ NcaSvc|Network Connectivity Assistant|3|4 = 可 SysPrep, oobe|20|<u>提供 UI 组件的 DirectAccess 状态通知</u>|
 |✰ NcbService|Network Connection Broker|3|4 = 可 SysPrep, oobe|20|<u>允许 Windows 应用商店应用从 Internet 接收通知的代理连接。</u>|
 |✰ NcdAutoSetup|Network Connected Devices Auto-Setup|3|4 = 可 SysPrep, oobe<br>待测试是否影响即插即用网卡安装|20|<u>网络连接设备自动安装服务会监视和安装连接到合格网络的合格设备。停止或禁用此服务将阻止 Windows 自动发现和安装合格的网络连接设备。用户仍然可以通过用户界面将网络连接设备手动添加到电脑。</u>|
-|✰✰ Netlogon|Netlogon|3|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>为用户和服务身份验证维护此计算机和域控制器之间的安全通道。如果此服务被停用，计算机可能无法验证用户和服务身份并且域控制器无法注册 DNS 记录。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ Netlogon|Netlogon|3|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>为用户和服务身份验证维护此计算机和域控制器之间的安全通道。如果此服务被停用，计算机可能无法验证用户和服务身份并且域控制器无法注册 DNS 记录。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
 |✰ netprofm|Network List Service|3|4 = 可 SysPrep, oobe|20|<u>识别计算机已连接的网络，收集和存储这些网络的属性，并在更改这些属性时通知应用程序。</u>|
 |✰ NetTcpPortSharing|Net.Tcp Port Sharing Service|4|默认为 4 无需测试|20|<u>提供通过 net.tcp 协议共享 TCP 端口的功能。</u>|
 |✰ OneSyncSvc|Sync Host<br>同步主机|2|4 = 可 SysPrep, oobe|60|<u>此服务将同步邮件、联系人、日历和各种其他用户数据。此服务没有运行时，依赖于此功能的邮件和其他应用程序将无法正常工作。</u>|
@@ -195,96 +214,80 @@
 |✰ SharedAccess|Internet Connection Sharing (ICS)|3|4 = 可 SysPrep, oobe|20|<u>为家庭和小型办公网络提供网络地址转换、寻址、名称解析和/或入侵保护服务。</u><br>网络共享相关|
 |✰ SharedRealitySvc|Spatial Data Service<br>空间数据服务|3|4 = 可 SysPrep, oobe|20|<u>此服务用于空间感知方案</u>|
 |✰ ShellHWDetection|Shell Hardware Detection|2|4 = 可 SysPrep, oobe|20|<u>为自动播放硬件事件提供通知。</u><br>有可能导致外置存储无法弹出，禁用之|
-|待测试的服务||||||
 |✰ shpamsvc|Shared PC Account Manager|4||20|<u>Manages profiles and accounts on a SharedPC configured device</u>|
-|✰ smphost|Microsoft Storage Spaces SMP|3|4|10|<u>Microsoft 存储空间管理提供程序的主机服务。如果阻止或禁用这项服务，则无法管理存储空间。</u><br>企业管理功能|
-|✰ SmsRouter|Microsoft Windows SMS Router Service.<br>Microsoft Windows SMS 路由器服务。|3|4|20|<u>根据规则将消息路由到相应客户端。</u><br>手机短信相关功能|
-|✰ SNMPTRAP|SNMP Trap<br>SNMP 陷阱|3|4|10|<u>接收本地或远程简单网络管理协议 (SNMP) 代理程序生成的陷阱消息并将消息转发到此计算机上运行的 SNMP 管理程序。如果此服务被停用，此计算机上基于 SNMP 的程序将不会接收 SNMP trap 消息。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
-|✰ spectrum|Windows Perception Service<br>Windows 感知服务|3|4|10|<u>启用空间感知、空间输入和全息绘制。</u>|
-|✰ Spooler|Print Spooler|2|-|110|<u>该服务在后台执行打印作业并处理与打印机的交互。如果关闭该服务，则无法进行打印或查看打印机。</u>|
-|✰ sppsvc|Software Protection|2|4|10|<u>启用 Windows 和 Windows 应用程序的数字许可证的下载、安装和实施。如果禁用该服务，操作系统和许可的应用程序可能以通知模式运行。强烈建议你不要禁用软件保护服务。</u><br>Windows Defender 相关，建议禁用|
-|✰ SSDPSRV|SSDP Discovery|3|-|20|<u>当发现了使用 SSDP 协议的网络设备和服务，如 UPnP 设备，同时还报告了运行在本地计算机上使用的 SSDP 设备和服务。如果停止此服务，基于 SSDP 的设备将不会被发现。如果禁用此服务，任何依赖此服务的服务都无法正常启动。</u>|
+|✰ smphost|Microsoft Storage Spaces SMP|3|4 = 可 SysPrep, oobe|10|<u>Microsoft 存储空间管理提供程序的主机服务。如果阻止或禁用这项服务，则无法管理存储空间。</u><br>企业管理功能|
+|✰ SmsRouter|Microsoft Windows SMS Router Service.<br>Microsoft Windows SMS 路由器服务。|3|4 = 可 SysPrep, oobe|20|<u>根据规则将消息路由到相应客户端。</u><br>手机短信相关功能|
+|✰ SNMPTRAP|SNMP Trap<br>SNMP 陷阱|3|4 = 可 SysPrep, oobe|10|<u>接收本地或远程简单网络管理协议 (SNMP) 代理程序生成的陷阱消息并将消息转发到此计算机上运行的 SNMP 管理程序。如果此服务被停用，此计算机上基于 SNMP 的程序将不会接收 SNMP trap 消息。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ spectrum|Windows Perception Service<br>Windows 感知服务|3|4 = 可 SysPrep, oobe|10|<u>启用空间感知、空间输入和全息绘制。</u>|
+|✰ sppsvc|Software Protection|2|4 = 可 SysPrep, oobe|10|<u>启用 Windows 和 Windows 应用程序的数字许可证的下载、安装和实施。如果禁用该服务，操作系统和许可的应用程序可能以通知模式运行。强烈建议你不要禁用软件保护服务。</u><br>Windows Defender 相关，建议禁用|
+|✰ SSDPSRV|SSDP Discovery|3|4 = 可 SysPrep, oobe|20|<u>当发现了使用 SSDP 协议的网络设备和服务，如 UPnP 设备，同时还报告了运行在本地计算机上使用的 SSDP 设备和服务。如果停止此服务，基于 SSDP 的设备将不会被发现。如果禁用此服务，任何依赖此服务的服务都无法正常启动。</u>|
 |✰ ssh-agent|OpenSSH Authentication Agent|4||10|<u>Agent to hold private keys used for public key authentication.</u><br>从 Windows 10 的某个版本开始内置的 SSH 服务，不过并不好用|
-|✰ sshd|OpenSSH SSH Server|3||10|<u>SSH protocol based service to provide secure encrypted communications between two untrusted hosts over an insecure network.</u><br>从 Windows 10 的某个版本开始内置的 SSH 服务，不过并不好用|
-|✰ SstpSvc|Secure Socket Tunneling Protocol Service|3|4|20|<u>提供使用 VPN 连接到远程计算机的安全套接字隧道协议(SSTP)的支持。如果该服务被禁用，则用户将无法使用 SSTP 访问远程服务器。</u>|
-|✰ StateRepository|State Repository Service|3|4|20|<u>为应用程序模型提供所需的基础结构支持。</u><br>Windows 10 与 Edge 新增的一些神秘功能，会导致一些 Bug ，禁用之|
-|✰ stisvc|Windows Image Acquisition (WIA)|3|-|10|<u>为扫描仪和照相机提供图像采集服务</u>|
-|✰ StorSvc|Storage Service|2|-|10|<u>为存储设置和外部存储扩展提供启用服务</u>|
-|✰ svsvc|Spot Verifier|3|4|20|<u>验证潜在的文件系统损坏。</u>|
-|✰ swprv|Microsoft Software Shadow Copy Provider|3|4|10|<u>管理卷影复制服务制作的基于软件的卷影副本。如果该服务被停止，将无法管理基于软件的卷影副本。如果该服务被禁用，任何依赖它的服务将无法启动。</u><br>Windows 备份相关的一些底层的东西，不好用且用不上|
-|✰ SysMain|SysMain|2|4|20|<u>维护和提高一段时间内的系统性能。</u><br>SuperFetch 功能，有用但作用不大|
-|✰ SystemEventsBroker|System Events Broker|2||20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>待测试，禁用后会让 UWP 无法在后台工作|
-|✰ TabletInputService|Touch Keyboard and Handwriting Panel Service|3|-|20|<u>启用触摸键盘和手写面板笔和墨迹功能</u><br>禁用后会造成输入法指示器失灵、输入法不能切换、触屏工作不正常，不建议禁用|
-|✰ TapiSrv|Telephony|3|4|20|<u>提供电话服务 API (TAPI)支持，以便各程序控制本地计算机上的电话服务设备以及通过 LAN 同样运行该服务的服务器上的设备。</u>|
-|✰ TermService|Remote Desktop Services|3|4|20|<u>允许用户以交互方式连接到远程计算机。远程桌面和远程桌面会话主机服务器依赖此服务。若要防止远程使用此计算机，请清除“系统”属性控制面板项目的“远程”选项卡上的复选框。</u>|
-|✰ Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u><br>待测试，我不确定在 Windows 10 及以上版本中禁用这个服务有什么影响，至少看起来没有什么影响<br>不过在 Windows 7 中禁用它，将会禁用 Aero 效果，并自动回退到经典主题，可以节省一些系统资源，但部分应用会要求必须使用 Aero 主题，例如 CCtalk<br>到 Windows 8 时代，因为 Aero 被优化，所以就算禁用本服务，也不会再禁用 Aero 效果|
-|✰ TieringEngineService|Storage Tiers Management|3|4|10|<u>优化系统中所有分层存储空间的存储层中的数据放置。</u><br>企业储存管理相关功能|
-|✰ TimeBrokerSvc|Time Broker|3|-|20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>Runtime Broker 也是你？ UWP 相关|
-|✰ TokenBroker|Web 帐户管理器|3|-|20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
-|✰ TroubleshootingSvc|Recommended Troubleshooting Service<br>建议疑难解答服务|3|4|20|<u>通过应用建议疑难解答启用针对已知问题的自动缓解。如果停止，你的设备将不会获得针对设备上问题的建议疑难解答。</u><br>解答不了疑难的疑难解答服务|
-|✰ TrustedInstaller|Windows Modules Installer|2|-|10|<u>启用 Windows 更新和可选组件的安装、修改和移除。如果此服务被禁用，则此计算机的 Windows 更新的安装或卸载可能会失败。</u>|
+|✰ sshd|OpenSSH SSH Server|3|4 = 可 SysPrep, oobe|10|<u>SSH protocol based service to provide secure encrypted communications between two untrusted hosts over an insecure network.</u><br>从 Windows 10 的某个版本开始内置的 SSH 服务，不过并不好用|
+|✰ SstpSvc|Secure Socket Tunneling Protocol Service|3|4 = 可 SysPrep, oobe|20|<u>提供使用 VPN 连接到远程计算机的安全套接字隧道协议(SSTP)的支持。如果该服务被禁用，则用户将无法使用 SSTP 访问远程服务器。</u>|
+|✰ StateRepository|State Repository Service|3|4 = 可不 SysPrep<br>最高只能设为 3|20|<u>为应用程序模型提供所需的基础结构支持。</u><br>Windows 10 与 Edge 新增的一些神秘功能，会导致一些 Bug ，禁用之|
+|✰ svsvc|Spot Verifier|3|4 = 可 SysPrep, oobe|20|<u>验证潜在的文件系统损坏。</u>|
+|✰ swprv|Microsoft Software Shadow Copy Provider|3|4 = 可 SysPrep, oobe|10|<u>管理卷影复制服务制作的基于软件的卷影副本。如果该服务被停止，将无法管理基于软件的卷影副本。如果该服务被禁用，任何依赖它的服务将无法启动。</u><br>Windows 备份相关的一些底层的东西，不好用且用不上|
+|✰ SysMain|SysMain|2|4 = 可 SysPrep, oobe|20|<u>维护和提高一段时间内的系统性能。</u><br>SuperFetch 功能，有用但作用不大，机械硬盘时代的遗老|
+|✰ SystemEventsBroker|System Events Broker|2|3 = 可 SysPrep, oobe (不会造成任何问题，会被拉起)<br>4 = 可 SysPrep, 不可 oobe (每个步骤都出错，而且输入法失效，无法输入用户名)|20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>待测试，禁用后会让 UWP 无法在后台工作|
+|✰ TapiSrv|Telephony|3|4 = 可 SysPrep, oobe|20|<u>提供电话服务 API (TAPI)支持，以便各程序控制本地计算机上的电话服务设备以及通过 LAN 同样运行该服务的服务器上的设备。</u>|
+|✰ TermService|Remote Desktop Services|3|4 = 可 SysPrep, oobe|20|<u>允许用户以交互方式连接到远程计算机。远程桌面和远程桌面会话主机服务器依赖此服务。若要防止远程使用此计算机，请清除“系统”属性控制面板项目的“远程”选项卡上的复选框。</u>|
+|✰ Themes|Themes|2|最高只能为 2|20|<u>为用户提供使用主题管理的体验。</u><br>在 Windows 10 中禁用本服务会导致部分新设计的窗口无法被移动，无法最大化最小化窗口化，如 Explorer.exe 的窗口<br>而非新设计的窗口则不受影响，如 Taskmgr.exe 、 mmc.exe 等|
+|✰ TieringEngineService|Storage Tiers Management|3|4 = 可 SysPrep, oobe|10|<u>优化系统中所有分层存储空间的存储层中的数据放置。</u><br>企业储存管理相关功能|
+|✰ TimeBrokerSvc|Time Broker|3|最高只能设为 3<br>4 = 可 SysPrep, 不可 oobe (每个步骤都出错，而且输入法失效，无法输入用户名)|20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>Runtime Broker 也是你？ UWP 相关|
+|✰ TokenBroker|Web 帐户管理器|3|最高只能设为 3<br>4 = 可 SysPrep, 不可 oobe|20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
+|✰ TroubleshootingSvc|Recommended Troubleshooting Service<br>建议疑难解答服务|3|4 = 可 SysPrep, oobe|20|<u>通过应用建议疑难解答启用针对已知问题的自动缓解。如果停止，你的设备将不会获得针对设备上问题的建议疑难解答。</u><br>解答不了疑难的疑难解答服务|
 |✰ tzautoupdate|Auto Time Zone Updater<br>自动时区更新程序|4||20|<u>自动设置系统时区。</u>|
-|✰ UdkUserSvc|Udk User Service<br>Udk 用户服务|3||3|允许微软为新的桌面 Shell 新增功能的一个服务|
+|✰ UdkUserSvc|Udk User Service<br>Udk 用户服务|3|4 = 可 SysPrep, oobe|3|允许微软为新的桌面 Shell 新增功能的一个服务|
 |✰ UevAgentDriver|UevAgentDriver|4||2|<u>User Experience Virtualization Agent Driver</u><br>用于保存用户的语言、桌面背景、字体大小、颜色等设定|
-|✰ UmRdpService|Remote Desktop Services UserMode Port Redirector|3||20|<u>允许为 RDP 连接重定向打印机/驱动程序/端口</u>|
-|✰ UnistoreSvc|User Data Storage|3||60|<u>处理结构化用户数据(包括联系人信息、日历、消息和其他内容)的存储。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
-|✰ upnphost|UPnP Device Host|3|-|20|<u>允许 UPnP 设备宿主在此计算机上。如果停止此服务，则所有宿主的 UPnP 设备都将停止工作，并且不能添加其他宿主设备。如果禁用此服务，则任何显式依赖于它的服务将都无法启动。</u>|
-|✰ UserDataSvc|User Data Access|3|4|60|<u>提供对结构化用户数据(包括联系人信息、日历、消息和其他内容)的应用访问。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
-|✰ UserManager|User Manager|2|-|20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>如果禁用这个服务，会造成用户账户管理异常，不建议进行改动|
-|✰ UsoSvc|Update Orchestrator Service<br>更新 Orchestrator 服务|2|4|20|<u>管理 Windows 更新。如果已停止，你的设备将无法下载和安装最新更新。</u><sup>8</sup>|
-|✰ VacSvc|Volumetric Audio Compositor Service<br>立体音频组合器服务|3|-|10|<u>用于混合现实音频仿真的主机空间分析。</u><br>待测试，VR 相关|
-|✰ VaultSvc|Credential Manager|3|-|20|<u>为用户、应用程序和安全服务包提供凭据的安全存储和检索。</u><br>用于储存如 Samba 服务器、网站等的账号和密码|
-|✰ vds|Virtual Disk|3|-|10|<u>提供用于磁盘、卷、文件系统和存储阵列的管理服务。</u>|
-|✰ vmicguestinterface|Hyper-V Guest Service Interface<br>|3||20|<u>为 Hyper-V 主机提供一个接口，以便与虚拟机内运行的特定服务进行交互。</u>|
-|✰ vmicheartbeat|Hyper-V Heartbeat Service|3||20|<u>通过定期报告检测信号来监视此虚拟机的状态。此服务有助于你识别哪些运行的虚拟机已停止响应。</u>|
-|✰ vmickvpexchange|Hyper-V Data Exchange Service|3||20|<u>提供一种机制，用于在虚拟机和运行在物理计算机上的操作系统之间交换数据。</u>|
-|✰ vmicrdv|Hyper-V Remote Desktop Virtualization Service<br>Hyper-V 远程桌面虚拟化服务|3||20|<u>提供一个平台以在虚拟机和物理计算机上运行的操作系统之间进行通信。</u>|
-|✰ vmicshutdown|Hyper-V Guest Shutdown Service|3||20|<u>提供一种机制，用于从物理计算机上的管理界面关闭此虚拟机的操作系统。</u>|
-|✰ vmictimesync|Hyper-V Time Synchronization Service|3||20|<u>将此虚拟机的系统时间与物理计算机的系统时间同步。</u>|
-|✰ vmicvmsession|Hyper-V PowerShell Direct Service|3||20|<u>提供了一种在不使用虚拟网络的情况下，通过 VM 会话使用 PowerShell 管理虚拟机的机制。</u>|
-|✰ vmicvss|Hyper-V Volume Shadow Copy Requestor<br>Hyper-V 卷影复制请求程序|3||20|<u>协调使用卷影复制服务所需的通讯，以从物理计算机上的操作系统备份此虚拟机上的应用程序和数据。</u>|
-|✰ VSS|Volume Shadow Copy|3||10|<u>管理并执行用于备份和其它用途的卷影复制。如果此服务被终止，备份将没有卷影复制，并且备份会失败。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
-|✰ W32Time|Windows Time|3||20|<u>维护在网络上的所有客户端和服务器的时间和日期同步。如果此服务被停止，时间和日期的同步将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>`Parameters\NtpServer` 中可以修改默认的 NTP 服务器|
-|✰ WaaSMedicSvc|Windows Update Medic Service<br>Windows 更新医生服务|3|4|20|<u>启用 Windows 更新组件的修正和保护。</u><sup>8</sup>|
-|✰ WalletService|WalletService|3||20|<u>电子钱包客户端使用的主机对象</u><br>待测试，可能影响 UWP|
-|✰ WarpJITSvc|WarpJITSvc|3|-|10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算转为针对 CPU 运行|
-|✰ wbengine|Block Level Backup Engine Service|3|4|10|<u>Windows 备份使用 WBENGINE 服务执行备份和恢复操作。如果用户停止了此服务，这可能会导致当前运行的备份或恢复操作失败。使用此计算机上的 Windows 备份禁用此服务可能会禁用备份和恢复操作。</u>|
-|✰ WbioSrvc|Windows Biometric Service|3||20|<u>Windows 生物识别服务使客户端应用程序能够捕获、比较、操纵和存储生物特征数据，而无需直接访问任何生物识别硬件或示例。该服务宿主在某个特权 SVCHOST 进程中。</u><br>待测试，不知是否会影响 Yubico 的使用|
-|✰ Wcmsvc|Windows Connection Manager|2|-|10|<u>根据电脑当前可用的网络连接选项做出自动连接/断开连接决策，并根据“组策略”设置启用网络连接管理。</u>|
-|✰ wcncsvc|Windows Connect Now - Config Registrar|3|-|20|<u>WCNCSVC 承载 Windows 立即连接配置，该配置是 Microsoft 执行的无线保护设置(WPS)协议。该配置用于配置接入点(AP)或无线设备的无线 LAN 设置。该服务根据需要有计划地启动。</u>|
-|✰ WdiServiceHost|Diagnostic Service Host|3||20|<u>诊断服务主机被诊断策略服务用来承载需要在本地服务上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u><br>诊断不了故障的故障诊断功能支持？|
-|✰ WdiSystemHost|Diagnostic System Host|3||20|<u>诊断系统主机被诊断策略服务用来承载需要在本地系统上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u><br>诊断不了故障的故障诊断功能支持？|
-|✰ WdNisSvc|Microsoft Defender Antivirus Network Inspection Service|3|4|10|<u>帮助防止针对网络协议中的已知和新发现的漏洞发起的入侵企图</u>|
-|✰ WebClient|WebClient|3||20|<u>使基于 Windows 的程序能创建、访问和修改基于 Internet 的文件。如果此服务被停止，这些功能将不可用。如果此服务被禁用，则明确依赖该服务的任何服务都将无法启动。</u><br>微软开发的 WebDav，已被微软弃用|
-|✰ WEPHOSTSVC|Windows Encryption Provider Host Service|3||10|<u>Windows Encryption Provider 主机服务代理加密相关功能 - 从第三方加密提供程序到需要评估和应用 EAS 策略的进程。停止此服务将损害连接的邮件帐户已经建立的合规检查</u>|
-|✰ wercplsupport|Problem Reports Control Panel Support|3||20|<u>此服务支持查看、发送和删除“问题报告”控制面板的系统级问题报告。</u>|
-|✰ WerSvc|Windows Error Reporting Service|3||10|<u>允许在程序停止运行或停止响应时报告错误，并允许提供现有解决方案。还允许为诊断和修复服务生成日志。如果此服务被停止，则错误报告将无法正确运行，而且可能不显示诊断服务和修复的结果。</u>|
-|✰ WFDSConMgrSvc|Wi-Fi Direct Services Connection Manager Service<br>WLAN Direct 服务连接管理器服务|3||20|<u>管理与无线服务(包括无线显示和插接)的连接。</u>|
-|✰ WiaRpc|Still Image Acquisition Events|3|-|20|<u>启动与静态映像获取事件关联的应用程序。</u><br>与摄像头、打印机、扫描仪等图像输入输出设备有关|
-|✰ WinDefend|Microsoft Defender Antivirus Service|2|4|10|<u>帮助用户防止恶意软件及其他潜在的垃圾软件。</u>|
-|✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3||20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u>|
-|✰ Winmgmt|Windows Management Instrumentation|2|4?|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>企业管理功能|
-|✰ WinRM|Windows Remote Management (WS-Management)|3|4|20|<u>Windows 远程管理(WinRM)服务执行 WS-Management 协议来实现远程管理。WS-Management 是用于远程软件和硬件管理的标准 Web 服务协议。WinRM 服务侦听网络上的 WS-Management 请求并对它们进行处理。通过组策略或使用 winrm.cmd 命令行工具的侦听程序，来配置 WinRM 服务，以使其可通过网络侦听。WinRM 服务提供对 WMI 数据的访问并启用事件集合。事件集合及对事件的订阅需要服务处于运行状态。传输 WinRM 消息时使用 HTTP 和 HTTPS 协议。WinRM 服务不依赖于 IIS ，但在同一计算机上预配置为与 IIS 共享端口。WinRM 服务保留 /wsman URL 前缀。若要防止与 IIS 发生冲突，管理员应确保 IIS 上承载的所有网站均不使用 /wsman URL 前缀。</u><br>企业管理功能|
-|✰ wisvc|Windows Insider Service<br>Windows 预览体验成员服务|3|4|20|<u>为 Windows 预览体验计划提供基础结构支持。此服务必须保持启用状态，Windows 预览体验计划才能正常运行。</u><br>恭喜你成为了付费测试的一员，正式成为巨硬旗下的正版受害者大冤种|
-|✰ WlanSvc|WLAN AutoConfig|3||10|<u>WLANSVC 服务提供配置、发现、连接、断开与 IEEE 802.11 标准定义的无线局域网(WLAN)的连接所需的逻辑。它还包含将计算机变成软件访问点的逻辑，以便其他设备或计算机可以使用支持它的 WLAN 适配器无线连接到计算机。停止或禁用 WLANSVC 服务将使得计算机上的所有 WLAN 适配器无法访问 Windows 网络连接 UI。强烈建议: 如果你的计算机具有 WLAN 适配器，则运行 WLANSVC 服务。</u>|
-|✰ wlidsvc|Microsoft Account Sign-in Assistant|1|4|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
-|✰ wlpasvc|Local Profile Assistant Service<br>本地配置文件助手服务|3|-|20|<u>此服务为订户标识模块提供配置文件管理</u>|
-|✰ WManSvc|Windows Management Service<br>Windows 管理服务|3||20|<u>执行包括预配和注册活动的管理操作</u><br>WMI 企业远程控制相关|
-|✰ wmiApSrv|WMI Performance Adapter|3||10|<u>向网络上的客户端提供 Windows Management Instrumentation (WMI) 提供程序中的性能库信息。只有在激活了性能数据助手时，才会运行此服务。</u><br>企业远程控制相关|
-|✰ WMPNetworkSvc|Windows Media Player Network Sharing Service|3||10|<u>使用通用即插即用设备与其他网络播放机和媒体设备共享 Windows Media Player 媒体库</u>|
-|✰ workfolderssvc|Work Folders|3|4|20|<u>此服务将与工作文件夹服务器同步文件，从而使你能够使用已设置工作文件夹的任何电脑和设备上的文件。</u>|
-|✰ WpcMonSvc|Parental Controls<br>家长控制|3||10|<u>对 Windows 中的子帐户强制执行家长控制。如果此服务被停止或禁用，家长控制可能无法强制执行。</u><br>这个功能是黑人开发的吗？为什么「Mom」直接等同于「家长」|
-|✰ WPDBusEnum|Portable Device Enumerator Service|3|-|20|<u>强制可移动大容量存储设备的组策略。使应用程序(如 Windows Media Player 和图像导入向导)能够使用可移动大容量存储设备传输和同步内容。</u>|
-|✰ WpnService|Windows Push Notifications System Service<br>Windows 推送通知系统服务|2|4|20|<u>此服务在会话 0 中运行，并托管通知平台和连接提供程序(用于处理设备与 WNS 服务器之间的连接)。</u><br>用于接收来自云端的开发者推送通知，打扰能力 Max ，禁用之|
-|✰ WpnUserService|Windows Push Notifications User Service|2|4|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>参见 **WpnService**|
-|✰ wscsvc|Security Center|2|4|20|<u>WSCSVC(Windows 安全中心)服务监视并报告计算机上的安全健康设置。健康设置包括防火墙(打开/关闭)、防病毒(打开/关闭/过期)、反间谍软件(打开/关闭/过期)、Windows 更新(自动/手动下载并安装更新)、用户帐户控制(打开/关闭)以及 Internet 设置(推荐/不推荐)。该服务为独立软件供应商提供 COM API 以便向安全中心服务注册并记录其产品的状态。安全和维护 UI 使用该服务在“安全和维护”控制面板中提供 systray 警报和安全健康状况的图形视图。网络访问保护(NAP)使用该服务向 NAP 网络策略服务器报告客户端的安全健康状况，以便进行网络隔离决策。该服务还提供一个公共 API，以允许外部客户以编程方式检索系统的聚合安全健康状况。</u>|
-|✰ WSearch|Windows Search|2||20|<u>为文件、电子邮件和其他内容提供内容索引、属性缓存和搜索结果。</u><br>待测试，禁用后会导致任务栏卡顿(十分明显且频繁)，非必要请勿禁用|
-|✰ WwanSvc|WWAN AutoConfig|3||20|<u>该服务管理移动宽带(GSM 和 CDMA)数据卡/嵌入式模块适配器和自动配置网络的连接。强烈建议: 保持运行此服务，以便获取移动宽带设备的最佳用户体验。</u>|
-|✰ XblAuthManager|Xbox Live 身份验证管理器|3|-|20|虽然我现在不玩 X 盒，但是万一呢？|
-|✰ XblGameSave|Xbox Live 游戏保存|3|-|20|<u>此服务为 Xbox Live 可保存游戏同步保存数据。如果此服务被停止，游戏保存数据将不会上传至 Xbox Live 或从 Xbox Live 下载。</u><br>虽然我现在不玩 X 盒，但是万一呢？|
-|✰ XboxGipSvc|Xbox Accessory Management Service|3|-|20|<u>This service manages connected Xbox Accessories.</u><br>虽然我现在不玩 X 盒，但是万一呢？|
-|✰ XboxNetApiSvc|Xbox Live 网络服务|3|-|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u><br>虽然我现在不玩 X 盒，但是万一呢？|
-|⚠⚠⚠⚠|⚠⚠⚠⚠||||下面的是只能在注册表中看到的服务项<br>一般用户建议不要碰<br>按 **照服务名称** 排列|
+|✰ UmRdpService|Remote Desktop Services UserMode Port Redirector|3|4 = 可 SysPrep, oobe|20|<u>允许为 RDP 连接重定向打印机/驱动程序/端口</u>|
+|✰ UnistoreSvc|User Data Storage|3|4 = 可 SysPrep, oobe|60|<u>处理结构化用户数据(包括联系人信息、日历、消息和其他内容)的存储。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
+|✰ upnphost|UPnP Device Host|3|4 = 可 SysPrep, oobe|20|<u>允许 UPnP 设备宿主在此计算机上。如果停止此服务，则所有宿主的 UPnP 设备都将停止工作，并且不能添加其他宿主设备。如果禁用此服务，则任何显式依赖于它的服务将都无法启动。</u><br>会影响 BT 一类的 UPnP 软件吗？|
+|✰ UserDataSvc|User Data Access|3|4 = 可 SysPrep, oobe|60|<u>提供对结构化用户数据(包括联系人信息、日历、消息和其他内容)的应用访问。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
+|✰ UserManager|User Manager|2|3 = 可 SysPrep, oobe (会被拉起)<br>4 = 不可 oobe|20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>如果禁用这个服务，会造成用户账户管理异常，不建议进行改动|
+|✰ UsoSvc|Update Orchestrator Service<br>更新 Orchestrator 服务|2|4 = 可 SysPrep, oobe|20|<u>管理 Windows 更新。如果已停止，你的设备将无法下载和安装最新更新。</u><sup>8</sup>|
+|✰ VacSvc|Volumetric Audio Compositor Service<br>立体音频组合器服务|3|4 = 可 SysPrep, oobe|10|<u>用于混合现实音频仿真的主机空间分析。</u><br>待测试，VR 相关|
+|✰ vmicguestinterface|Hyper-V Guest Service Interface<br>|3|4 = 可 SysPrep, oobe|20|<u>为 Hyper-V 主机提供一个接口，以便与虚拟机内运行的特定服务进行交互。</u>|
+|✰ vmicheartbeat|Hyper-V Heartbeat Service|3|4 = 可 SysPrep, oobe|20|<u>通过定期报告检测信号来监视此虚拟机的状态。此服务有助于你识别哪些运行的虚拟机已停止响应。</u>|
+|✰ vmickvpexchange|Hyper-V Data Exchange Service|3|4 = 可 SysPrep, oobe|20|<u>提供一种机制，用于在虚拟机和运行在物理计算机上的操作系统之间交换数据。</u>|
+|✰ vmicrdv|Hyper-V Remote Desktop Virtualization Service<br>Hyper-V 远程桌面虚拟化服务|3|4 = 可 SysPrep, oobe|20|<u>提供一个平台以在虚拟机和物理计算机上运行的操作系统之间进行通信。</u>|
+|✰ vmicshutdown|Hyper-V Guest Shutdown Service|3|4 = 可 SysPrep, oobe|20|<u>提供一种机制，用于从物理计算机上的管理界面关闭此虚拟机的操作系统。</u>|
+|✰ vmictimesync|Hyper-V Time Synchronization Service|3|4 = 可 SysPrep, oobe|20|<u>将此虚拟机的系统时间与物理计算机的系统时间同步。</u>|
+|✰ vmicvmsession|Hyper-V PowerShell Direct Service|3|4 = 可 SysPrep, oobe|20|<u>提供了一种在不使用虚拟网络的情况下，通过 VM 会话使用 PowerShell 管理虚拟机的机制。</u>|
+|✰ vmicvss|Hyper-V Volume Shadow Copy Requestor<br>Hyper-V 卷影复制请求程序|3|4 = 可 SysPrep, oobe|20|<u>协调使用卷影复制服务所需的通讯，以从物理计算机上的操作系统备份此虚拟机上的应用程序和数据。</u>|
+|✰ VSS|Volume Shadow Copy|3|4 = 可 SysPrep, oobe|10|<u>管理并执行用于备份和其它用途的卷影复制。如果此服务被终止，备份将没有卷影复制，并且备份会失败。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ WaaSMedicSvc|Windows Update Medic Service<br>Windows 更新医生服务|3|4 = 可 SysPrep, oobe|20|<u>启用 Windows 更新组件的修正和保护。</u><sup>8</sup>|
+|✰ wbengine|Block Level Backup Engine Service|3|4 = 可 SysPrep, oobe|10|<u>Windows 备份使用 WBENGINE 服务执行备份和恢复操作。如果用户停止了此服务，这可能会导致当前运行的备份或恢复操作失败。使用此计算机上的 Windows 备份禁用此服务可能会禁用备份和恢复操作。</u>|
+|✰ WdiServiceHost|Diagnostic Service Host|3|4 = 可 SysPrep, oobe|20|<u>诊断服务主机被诊断策略服务用来承载需要在本地服务上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u>|
+|✰ WdiSystemHost|Diagnostic System Host|3|4 = 可 SysPrep, oobe|20|<u>诊断系统主机被诊断策略服务用来承载需要在本地系统上下文中运行的诊断。如果停止该服务，则依赖于该服务的任何诊断将不再运行。</u>|
+|✰ WdNisSvc|Microsoft Defender Antivirus Network Inspection Service|3|4 = 可 SysPrep, oobe|10|<u>帮助防止针对网络协议中的已知和新发现的漏洞发起的入侵企图</u>|
+|✰ WebClient|WebClient|3|4 = 可 SysPrep, oobe|20|<u>使基于 Windows 的程序能创建、访问和修改基于 Internet 的文件。如果此服务被停止，这些功能将不可用。如果此服务被禁用，则明确依赖该服务的任何服务都将无法启动。</u><br>微软开发的 WebDav，已被微软弃用|
+|✰ wercplsupport|Problem Reports Control Panel Support|3|4 = 可 SysPrep, oobe|20|<u>此服务支持查看、发送和删除“问题报告”控制面板的系统级问题报告。</u>|
+|✰ WerSvc|Windows Error Reporting Service|3|4 = 可 SysPrep, oobe|10|<u>允许在程序停止运行或停止响应时报告错误，并允许提供现有解决方案。还允许为诊断和修复服务生成日志。如果此服务被停止，则错误报告将无法正确运行，而且可能不显示诊断服务和修复的结果。</u>|
+|✰ WinDefend|Microsoft Defender Antivirus Service|2|4 = 可 SysPrep, oobe|10|<u>帮助用户防止恶意软件及其他潜在的垃圾软件。</u>|
+|✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3|<br>3 = 会被拉起|20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u>|
+|✰ Winmgmt|Windows Management Instrumentation|2|4 = 可 SysPrep, oobe|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ WinRM|Windows Remote Management (WS-Management)|3|4 = 可 SysPrep, oobe|20|<u>Windows 远程管理(WinRM)服务执行 WS-Management 协议来实现远程管理。WS-Management 是用于远程软件和硬件管理的标准 Web 服务协议。WinRM 服务侦听网络上的 WS-Management 请求并对它们进行处理。通过组策略或使用 winrm.cmd 命令行工具的侦听程序，来配置 WinRM 服务，以使其可通过网络侦听。WinRM 服务提供对 WMI 数据的访问并启用事件集合。事件集合及对事件的订阅需要服务处于运行状态。传输 WinRM 消息时使用 HTTP 和 HTTPS 协议。WinRM 服务不依赖于 IIS ，但在同一计算机上预配置为与 IIS 共享端口。WinRM 服务保留 /wsman URL 前缀。若要防止与 IIS 发生冲突，管理员应确保 IIS 上承载的所有网站均不使用 /wsman URL 前缀。</u>|
+|✰ wisvc|Windows Insider Service<br>Windows 预览体验成员服务|3|4 = 可 SysPrep, oobe|20|<u>为 Windows 预览体验计划提供基础结构支持。此服务必须保持启用状态，Windows 预览体验计划才能正常运行。</u><br>恭喜你成为了付费测试的一员，正式成为巨硬旗下的正版受害者大冤种|
+|✰ wlidsvc|Microsoft Account Sign-in Assistant|1|4 = 可 SysPrep, oobe|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
+|✰ wlpasvc|Local Profile Assistant Service<br>本地配置文件助手服务|3|4 = 可 SysPrep, oobe|20|<u>此服务为订户标识模块提供配置文件管理</u>|
+|✰ WManSvc|Windows Management Service<br>Windows 管理服务|3|3 = 可 SysPrep, oobe<br>4 = 可 SysPrep, 不可 oobe|20|<u>执行包括预配和注册活动的管理操作</u>|
+|✰ wmiApSrv|WMI Performance Adapter|3|4 = 可 SysPrep, oobe|10|<u>向网络上的客户端提供 Windows Management Instrumentation (WMI) 提供程序中的性能库信息。只有在激活了性能数据助手时，才会运行此服务。</u><br>企业远程控制相关|
+|✰ WMPNetworkSvc|Windows Media Player Network Sharing Service|3|4 = 可 SysPrep, oobe|10|<u>使用通用即插即用设备与其他网络播放机和媒体设备共享 Windows Media Player 媒体库</u>|
+|✰ workfolderssvc|Work Folders|3|4 = 可 SysPrep, oobe|20|<u>此服务将与工作文件夹服务器同步文件，从而使你能够使用已设置工作文件夹的任何电脑和设备上的文件。</u>|
+|✰ WpcMonSvc|Parental Controls<br>家长控制|3|4 = 可 SysPrep, oobe|10|<u>对 Windows 中的子帐户强制执行家长控制。如果此服务被停止或禁用，家长控制可能无法强制执行。</u><br>这个功能是黑人开发的吗？为什么「Mom」直接等同于「家长」|
+|✰ WPDBusEnum|Portable Device Enumerator Service|3|4 = 可 SysPrep, oobe|20|<u>强制可移动大容量存储设备的组策略。使应用程序(如 Windows Media Player 和图像导入向导)能够使用可移动大容量存储设备传输和同步内容。</u>|
+|✰ WpnService|Windows Push Notifications System Service<br>Windows 推送通知系统服务|2|4 = 可 SysPrep, oobe|20|<u>此服务在会话 0 中运行，并托管通知平台和连接提供程序(用于处理设备与 WNS 服务器之间的连接)。</u><br>用于接收来自云端的开发者推送通知，打扰能力 Max ，禁用之|
+|✰ WpnUserService|Windows Push Notifications User Service|2|4 = 可 SysPrep, oobe|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>参见 **WpnService**|
+|✰ wscsvc|Security Center|2|4 = 可 SysPrep, oobe|20|<u>WSCSVC(Windows 安全中心)服务监视并报告计算机上的安全健康设置。健康设置包括防火墙(打开/关闭)、防病毒(打开/关闭/过期)、反间谍软件(打开/关闭/过期)、Windows 更新(自动/手动下载并安装更新)、用户帐户控制(打开/关闭)以及 Internet 设置(推荐/不推荐)。该服务为独立软件供应商提供 COM API 以便向安全中心服务注册并记录其产品的状态。安全和维护 UI 使用该服务在“安全和维护”控制面板中提供 systray 警报和安全健康状况的图形视图。网络访问保护(NAP)使用该服务向 NAP 网络策略服务器报告客户端的安全健康状况，以便进行网络隔离决策。该服务还提供一个公共 API，以允许外部客户以编程方式检索系统的聚合安全健康状况。</u>|
+|✰ WSearch|Windows Search|2|4 = 可 SysPrep, oobe|20|<u>为文件、电子邮件和其他内容提供内容索引、属性缓存和搜索结果。</u>|
+|✰ WwanSvc|WWAN AutoConfig|3|4 = 可 SysPrep, oobe|20|<u>该服务管理移动宽带(GSM 和 CDMA)数据卡/嵌入式模块适配器和自动配置网络的连接。强烈建议: 保持运行此服务，以便获取移动宽带设备的最佳用户体验。</u>|
+|✰ XblAuthManager|Xbox Live 身份验证管理器|3|4 = 可 SysPrep, oobe|20||
+|✰ XblGameSave|Xbox Live 游戏保存|3|4 = 可 SysPrep, oobe|20|<u>此服务为 Xbox Live 可保存游戏同步保存数据。如果此服务被停止，游戏保存数据将不会上传至 Xbox Live 或从 Xbox Live 下载。</u>|
+|✰ XboxGipSvc|Xbox Accessory Management Service|3|4 = 可 SysPrep, oobe|20|<u>This service manages connected Xbox Accessories.</u>|
+|✰ XboxNetApiSvc|Xbox Live 网络服务|3|4 = 可 SysPrep, oobe|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u>|
+|⚠⚠⚠⚠|⚠⚠⚠⚠||||下面的是只能在注册表中看到的服务项<br>一般用户建议不要碰<br>按照 **服务名称** 排列|
+|已测试的服务项||||||
+|待测试的服务||||||
 |1394ohci|1394 OHCI Compliant Host Controller|3|-|1|微软开发的 1394 驱动|
 |3ware||0|3|1|LSI 3ware SCSI 驱动|
 |ACPI|Microsoft ACPI Driver|0|-|1|微软开发的 ACPI NT 驱动<br>更改此项服务将会导致系统 **无法启动**|
