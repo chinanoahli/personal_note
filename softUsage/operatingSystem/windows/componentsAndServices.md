@@ -37,6 +37,13 @@
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
 ||||||带 ✰ 的是直接显示在 **计算机管理** 中的服务项<br>按照 **服务名称** 排列|
+|系统核心服务，不可更改||||||
+|✰ SENS|System Event Notification Service|2||20|<u>监视系统事件并通知订户这些事件的 COM+ 事件系统。</u><br>若此项服务无法启动，则任何非管理员账户都无法登入<br>此服务依赖于 `EventSystem`|
+|✰ gpsvc|Group Policy Client|2||20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u><br>若此项服务无法启动，则任何非管理员账户都无法登入<br>此服务依赖于 `RpcSs` `Mup`|
+|✰ EventSystem|COM+ Event System|2||20|<u>支持系统事件通知服务 (SENS)，此服务为订阅的组件对象模型 (COM) 组件提供自动分布事件功能。如果停止此服务，SENS 将关闭，而且不能提供登录和注销通知。如果禁用此服务，显式依赖此服务的其他服务都将无法启动。</u><br>此项服务作为 `SENS` 的依赖项必须保留<br>此服务依赖于 `RpcSs`|
+|✰ RpcSs|Remote Procedure Call (RPC)|2||20|<u>RPCSS 服务是 COM 和 DCOM 服务器的服务控制管理器。它执行 COM 和 DCOM 服务器的对象激活请求、对象导出程序解析和分布式垃圾回收。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 RPCSS 服务。</u><br>此项服务作为 `EventSystem` 的依赖项必须保留<br>此服务依赖于 `DcomLaunch` `RpcEptMapper`|
+|✰ DcomLaunch|DCOM Server Process Launcher|2||20|<u>DCOMLAUNCH 服务可启动 COM 和 DCOM 服务器，以响应对象激活请求。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 DCOMLAUNCH 服务。</u><br>此项服务作为 `RpcSs` 的依赖项必须保留|
+|✰ RpcEptMapper|RPC Endpoint Mapper|2||20|<u>解析 RPC 接口标识符以传输端点。如果此服务被停止或禁用，使用远程过程调用(RPC)服务的程序将无法正常运行。</u><br>作为 `EventSystem` 的依赖而必须保留<br>此项服务作为 `RpcSs` 的依赖项必须保留|
 |必须保留的服务项||||||
 |✰ AudioEndpointBuilder|Windows Audio Endpoint Builder|2|必须保留|20|<u>管理 Windows 音频服务的音频设备。如果停止了此服务，音频设备和效果将无法正常工作。如果禁用了此服务，任何明确依赖它的服务将无法启动</u>|
 |✰ Audiosrv|Windows Audio|2|必须保留|10|<u>管理基于 Windows 的程序的音频。如果此服务被停止，音频设备和效果将不能正常工作。如果此服务被禁用，任何依赖它的服务将无法启动</u>|
@@ -119,7 +126,6 @@
 |✰ CredentialEnrollmentManagerUserSvc|CredentialEnrollmentManagerUserSvc|3|4 = 可 SysPrep, oobe|50|<u>凭据注册管理器</u>|
 |✰ CryptSvc|Cryptographic Services|2|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
 |✰ CscService|Offline Files|4|4 = 可 SysPrep, oobe|20|<u>脱机文件服务在脱机文件缓存中执行维护活动，响应用户登录和注销事件，实现公共 API 的内部部分，并将相关的事件分配给关心脱机文件活动和缓存更改的用户。</u><br>Home 版不存在，可禁用之|
-|✰ DcomLaunch|DCOM Server Process Launcher|2|4 = 不可 SysPrep<br>最高只能设为 3|20|<u>DCOMLAUNCH 服务可启动 COM 和 DCOM 服务器，以响应对象激活请求。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 DCOMLAUNCH 服务。</u>|
 |✰ defragsvc|Optimize drives|3|4 = 可 SysPrep, oobe|10|<u>通过优化存储驱动器上的文件来帮助计算机更高效地运行。</u><br>经典巨硬式不说人话翻译，人话：定期运行 **磁盘碎片整理** 对于 SSD 有害无利，禁用之|
 |✰ DeviceAssociationBrokerSvc|DeviceAssociationBroker|3|4 = 可 SysPrep, oobe|60|<u>Enables apps to pair devices</u><br>待测试，1903 之前不存在，估计是允许 UWP 与某些硬件配对|
 |✰ DeviceAssociationService|Device Association Service|3|4 = 可 SysPrep, oobe|20|<u>在系统与有线或无线设备之间启用匹配。</u>|
@@ -144,13 +150,11 @@
 |✰ embeddedmode|Embedded Mode<br>嵌入模式|3|4 = 可 SysPrep, oobe|20|<u>嵌入模式服务启用与后台应用程序相关的方案。禁用此服务会阻止激活后台应用程序。</u><br>IoT 版本的特殊功能|
 |✰ EntAppSvc|Enterprise App Management Service|3|4 = 可 SysPrep, oobe|20|<u>启用企业应用程序管理。</u>|
 |✰ EventLog|Windows Event Log|2|4 = 可 SysPrep, oobe|20|<u>此服务管理事件和事件日志。它支持日志记录事件、查询事件、订阅事件、归档事件日志以及管理事件元数据。它可以用 XML 和纯文本两种格式显示事件。停止该服务可能危及系统的安全性和可靠性。</u>|
-|✰ EventSystem|COM+ Event System|2|4 = 可 SysPrep, oobe|20|<u>支持系统事件通知服务 (SENS)，此服务为订阅的组件对象模型 (COM) 组件提供自动分布事件功能。如果停止此服务，SENS 将关闭，而且不能提供登录和注销通知。如果禁用此服务，显式依赖此服务的其他服务都将无法启动。</u>|
 |✰ Fax|Fax|3|4 = 可 SysPrep, oobe|10|<u>Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network.</u><br>待测试，不知是否会影响扫描仪工作|
 |✰ fdPHost|Function Discovery Provider Host|3|4 = 可 SysPrep, oobe|20|<u>FDPHOST 服务承载功能发现(FD)网络发现提供程序。这些 FD 提供程序为简单服务发现协议(SSDP)和 Web 服务发现(WS-D)协议提供网络发现服务。使用 FD 时停止或禁用 FDPHOST 服务将禁用这些协议的网络发现。当该服务不可用时，使用 FD 和依靠这些发现协议的网络服务将无法找到网络服务或资源。</u><br>网络发现功能|
 |✰ FDResPub|Function Discovery Resource Publication|3|4 = 可 SysPrep, oobe|20|<u>发布该计算机以及连接到该计算机的资源，以便能够在网络上发现这些资源。如果该服务被停止，将不再发布网络资源，网络上的其他计算机将无法发现这些资源。</u><br>若在本 PC 共享，本服务可以让该共享资源被其他 PC 发现|
 |✰ fhsvc|File History Service|3|4 = 可 SysPrep, oobe|20|<u>将用户文件复制到备份位置以防意外丢失</u>|
 |✰ fvevol|BitLocker Drive Encryption Filter Driver|0|只能为 0|1|更改此项服务将会导致 **BSOD**|
-|✰ gpsvc|Group Policy Client|2|4 = 可 SysPrep, oobe|20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u>|
 |✰ hidserv|Human Interface Device Service|3|4 = 可 SysPrep, oobe|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u>|
 |✰ HvHost|HV 主机服务|3|4 = 可 SysPrep, oobe|20|<u>为 Hyper-V 虚拟机监控程序提供接口，以便为主机操作系统提供单分区性能计数器。</u>|
 |✰ icssvc|Windows Mobile Hotspot Service<br>Windows 移动热点服务|4 = 可 SysPrep, oobe|可禁用<br>3 = 不会被拉起|20|<u>提供与其他设备共享手机网络数据连接的功能。</u>|
@@ -175,7 +179,7 @@
 |✰ NcdAutoSetup|Network Connected Devices Auto-Setup|3|4 = 可 SysPrep, oobe<br>待测试是否影响即插即用网卡安装|20|<u>网络连接设备自动安装服务会监视和安装连接到合格网络的合格设备。停止或禁用此服务将阻止 Windows 自动发现和安装合格的网络连接设备。用户仍然可以通过用户界面将网络连接设备手动添加到电脑。</u>|
 |✰ Netlogon|Netlogon|3|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>为用户和服务身份验证维护此计算机和域控制器之间的安全通道。如果此服务被停用，计算机可能无法验证用户和服务身份并且域控制器无法注册 DNS 记录。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
 |✰ netprofm|Network List Service|3|4 = 可 SysPrep, oobe|20|<u>识别计算机已连接的网络，收集和存储这些网络的属性，并在更改这些属性时通知应用程序。</u>|
-|✰ NetTcpPortSharing|Net.Tcp Port Sharing Service|4|默认为 4 无需测试|20|<u>提供通过 net.tcp 协议共享 TCP 端口的功能。</u>|
+|✰ NetTcpPortSharing|Net.Tcp Port Sharing Service|4||20|<u>提供通过 net.tcp 协议共享 TCP 端口的功能。</u>|
 |✰ OneSyncSvc|Sync Host<br>同步主机|2|4 = 可 SysPrep, oobe|60|<u>此服务将同步邮件、联系人、日历和各种其他用户数据。此服务没有运行时，依赖于此功能的邮件和其他应用程序将无法正常工作。</u>|
 |✰ p2pimsvc|Peer Networking Identity Manager|3|4 = 可 SysPrep, oobe|20|<u>向对等名称解析协议(PNRP)和对等分组服务提供标识服务。如果禁用该功能，对等名称解析协议和对等分组服务可能无法正常运行，且某些应用程序(如家庭组和远程协助)可能无法正常运行。</u>|
 |✰ p2psvc|Peer Networking Grouping|3|4 = 可 SysPrep, oobe|20|<u>使用对等分组启用多方通信。如果禁用该功能，某些应用程序(如家庭组)可能无法正常运行。</u>|
@@ -195,16 +199,13 @@
 |✰ RemoteRegistry|Remote Registry|4||20|<u>使远程用户能修改此计算机上的注册表设置。如果此服务被终止，只有此计算机上的用户才能修改注册表。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
 |✰ RetailDemo|零售演示服务|3|4 = 可 SysPrep, oobe|20|<u>当设备处于零售演示模式时，零售演示服务将控制设备活动。</u>|
 |✰ RmSvc|Radio Management Service<br>无线电管理服务|3|4 = 可 SysPrep, oobe|20|<u>无线电管理和飞行模式服务</u><br>注意：开启飞行模式后， Wi-Fi 将会无论如何都连接不上|
-|✰ RpcEptMapper|RPC Endpoint Mapper|2|3 = 可 SysPrep, oobe(会被拉起)<br>4 = 不可 SysPrep|20|<u>解析 RPC 接口标识符以传输端点。如果此服务被停止或禁用，使用远程过程调用(RPC)服务的程序将无法正常运行。</u><br>很多服务依赖这项服务，故必须保留|
 |✰ RpcLocator|Remote Procedure Call (RPC) Locator|3|4 = 可 SysPrep, oobe|10|<u>在 Windows 2003 和 Windows 的早期版本中，远程过程调用(RPC)定位器服务可管理 RPC 名称服务数据库。在 Windows Vista 和 Windows 的更新版本中，此服务不提供任何功能，但可用于应用程序兼容性。</u>|
-|✰ RpcSs|Remote Procedure Call (RPC)|2|3 = 可 SysPrep, oobe (会被拉起)<br>4 = 不可 SysPrep|20|<u>RPCSS 服务是 COM 和 DCOM 服务器的服务控制管理器。它执行 COM 和 DCOM 服务器的对象激活请求、对象导出程序解析和分布式垃圾回收。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 RPCSS 服务。</u><br>很多服务依赖这项服务，故必须保留|
 |✰ SamSs|Security Accounts Manager|2|3 = 可 SysPrep, oobe (不会造成任何问题，会被拉起)<br>4 = 可 SysPrep, oobe (会造成新用户账户第一次登入时间超级加倍，explorer.exe 卡死，基本无法使用的情况)|20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u>|
 |✰ Schedule|Task Scheduler|2|3 = 可 SysPrep, oobe (正常，会被拉起)<br>4 = 可 SysPrep, 不可 oobe (每个步骤都出错，而且输入法失效，无法输入用户名)|20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>计划任务相关|
 |✰ SDRSVC|Windows Backup<br>Windows 备份|3|4 = 可 SysPrep, oobe|10|<u>提供 Windows 备份和还原功能。</u><br>真的有用吗？|
 |✰ seclogon|Secondary Logon|3|4 = 可 SysPrep, oobe|20|<u>在不同凭据下启用启动过程。如果此服务被停止，这种类型的登录访问将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>影响所有「以其他用户身份运行」功能以及以非当前登入用户身份运行的服务项，请勿随意修改|
 |✰ SecurityHealthService|Windows Security Service<br>Windows 安全中心服务|3|4 = 可 SysPrep, oobe|10|<u>Windows 安全中心服务处理统一的设备保护和运行状况信息</u><br>Windows Defender 相关，建议禁用|
 |✰ SEMgrSvc|Payments and NFC/SE Manager<br>付款和 NFC/SE 管理器|3|4 = 可 SysPrep, oobe|10|<u>管理付款和基于近场通信(NFC)的安全元件。</u><br>真的有人在 Windows 下用 NFC 付款吗？|
-|✰ SENS|System Event Notification Service|2|4 = 可 SysPrep, oobe|20|<u>监视系统事件并通知订户这些事件的 COM+ 事件系统。</u>|
 |✰ Sense|Windows Defender Advanced Threat Protection Service|3|4 = 可 SysPrep, oobe|10|<u>Windows Defender 高级威胁防护服务通过监视和报告计算机上发生的安全事件来防范高级威胁。</u>|
 |✰ SensorDataService|Sensor Data Service|3|4 = 可 SysPrep, oobe|10|<u>从各种传感器传送数据</u>|
 |✰ SensorService|Sensor Service|3|4 = 可 SysPrep, oobe|20|<u>一项用于管理各种传感器的功能的传感器服务。管理传感器的简单设备方向(SDO)和历史记录。加载对设备方向变化进行报告的 SDO 传感器。如果停止或禁用了此服务，则将不会加载 SDO 传感器，因此不会发生自动旋转。来自传感器的历史记录收集也将停止。</u>|
@@ -287,6 +288,8 @@
 |✰ XboxNetApiSvc|Xbox Live 网络服务|3|4 = 可 SysPrep, oobe|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u>|
 |⚠⚠⚠⚠|⚠⚠⚠⚠||||下面的是只能在注册表中看到的服务项<br>一般用户建议不要碰<br>按照 **服务名称** 排列|
 |已测试的服务项||||||
+|系统核心服务，不可更改||||||
+|Mup|MUP|0|-|2|<u>多个 UNC 提供程序驱动程序</u><br>此项服务作为 `gpsvc` 的依赖项必须保留|
 |待测试的服务||||||
 |1394ohci|1394 OHCI Compliant Host Controller|3|-|1|微软开发的 1394 驱动|
 |3ware||0|3|1|LSI 3ware SCSI 驱动|
@@ -313,7 +316,7 @@
 |bam|Background Activity Moderator Driver|1|-|1|<u>Controls activity of background applications</u>|
 |BasicDisplay||1|-|1|禁用似乎不影响使用，待测试|
 |BasicRender||1|-|1|禁用似乎不影响使用，待测试|
-|BDESVC|BitLocker Drive Encryption Service|3|4|20|<u>BDESVC 承载 BitLocker 驱动器加密服务。BitLocker 驱动器加密为操作系统提供安全启动保障，并为 OS、固定卷和可移动卷提供全卷加密功能。使用此服务，BitLocker 可以提示用户执行与已安装卷相关的各种操作，并自动解锁卷而无需用户交互。此外，它还会将恢复信息存储至 Active Directory (如果这种方法可用并且需要这样做)，并确保使用最新的恢复证书。停止或禁用该服务可以防止用户使用此功能。</u>|
+|BDESVC|BitLocker Drive Encryption Service|3|3 = 会被拉起<br>4|20|<u>BDESVC 承载 BitLocker 驱动器加密服务。BitLocker 驱动器加密为操作系统提供安全启动保障，并为 OS、固定卷和可移动卷提供全卷加密功能。使用此服务，BitLocker 可以提示用户执行与已安装卷相关的各种操作，并自动解锁卷而无需用户交互。此外，它还会将恢复信息存储至 Active Directory (如果这种方法可用并且需要这样做)，并确保使用最新的恢复证书。停止或禁用该服务可以防止用户使用此功能。</u>|
 |bcmfn2|bcmfn2 Service|3|-|1|BCM Function 2 Device Driver by Windows (R) Win 7 DDK provider??|
 |Beep|Beep|2|3|1|可能是主板的蜂鸣器驱动？|
 |bindflt|Windows Bind Filter Driver|2|-|2|<u>Binds filesystem namespaces to different locations and hides this remapping from the user</u><br>将文件系统命名空间绑定到不同位置，并向用户隐藏这种重新映射??|
@@ -459,7 +462,6 @@
 |mssmbios|Microsoft System Management BIOS Driver|1|-|1||
 |MSTEE|Microsoft Streaming Tee/Sink-to-Sink Converter<br>Microsoft 流 Tee/Sink-to-Sink 转换器|3|-|1|音视频流媒体支持|
 |MTConfig|Microsoft Input Configuration Driver|3|-|1||
-|Mup|MUP|0|-|2|<u>多个 UNC 提供程序驱动程序</u>|
 |mvumis||0|4|1|待测试，Marvell Flash 控制器驱动|
 |NativeWifiP|NativeWiFi Filter<br>NativeWiFi 筛选器|3|-|1||
 |ndfltr|NetworkDirect Service<br>NetworkDirect 服务|3|4|1|待测试，作用不明，禁用之|
