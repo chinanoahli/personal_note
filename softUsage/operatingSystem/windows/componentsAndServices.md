@@ -189,7 +189,7 @@
 |✰ PerfHost|Performance Counter DLL Host|3|4 = 可 SysPrep, oobe|10|<u>使远程用户和 64 位进程能够查询 32 位 DLL 提供的性能计数器。如果停止此服务，则只有本地用户和 32 位进程能够查询 32 位 DLL 提供的性能计数器。</u>|
 |✰ PhoneSvc|Phone Service|3|4 = 可 SysPrep, oobe|20|<u>在设备上管理电话服务状态</u>|
 |✰ PimIndexMaintenanceSvc|Contact Data|3|4 = 可 SysPrep, oobe|60|<u>为联系人数据编制索引以进行快速联系人搜索。如果停止或禁用此服务，你的搜索结果中可能会缺少联系人。</u>|
-|✰ pla|Performance Logs & Alerts|3|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>性能日志和警报根据预配置的计划参数从本地或远程计算机收集性能数据，然后将该数据写入日志或触发警报。如果停止此服务，将不收集性能信息。如果禁用此服务，则明确依赖它的所有服务将无法启动。</u>|
+|✰ pla|Performance Logs & Alerts|3|4 = 可 SysPrep, oobe|20|<u>性能日志和警报根据预配置的计划参数从本地或远程计算机收集性能数据，然后将该数据写入日志或触发警报。如果停止此服务，将不收集性能信息。如果禁用此服务，则明确依赖它的所有服务将无法启动。</u>|
 |✰ PlugPlay|Plug and Play|3|4 = 可 SysPrep, oobe|20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u>|
 |✰ PNRPAutoReg|PNRP Machine Name Publication Service|3|4 = 可 SysPrep, oobe|20|<u>此服务使用对等名称解析协议发布计算机名称。配置是通过 Netsh 上下文“p2p pnrp peer”管理的</u>|
 |✰ PNRPsvc|Peer Name Resolution Protocol|3|4 = 可 SysPrep, oobe|20|<u>使用对等名称解析协议(PNRP)在 Internet 上启用无服务器对等名称解析。如果禁用该功能，则某些对等应用程序和协作应用程序(如远程协助)可能无法运行。</u>|
@@ -239,7 +239,7 @@
 |✰ TroubleshootingSvc|Recommended Troubleshooting Service<br>建议疑难解答服务|3|4 = 可 SysPrep, oobe|20|<u>通过应用建议疑难解答启用针对已知问题的自动缓解。如果停止，你的设备将不会获得针对设备上问题的建议疑难解答。</u><br>解答不了疑难的疑难解答服务|
 |✰ tzautoupdate|Auto Time Zone Updater<br>自动时区更新程序|4||20|<u>自动设置系统时区。</u>|
 |✰ UdkUserSvc|Udk User Service<br>Udk 用户服务|3|4 = 可 SysPrep, oobe|3|允许微软为新的桌面 Shell 新增功能的一个服务|
-|✰ UevAgentDriver|UevAgentDriver|4||2|<u>User Experience Virtualization Agent Driver</u><br>用于保存用户的语言、桌面背景、字体大小、颜色等设定|
+|✰ UevAgentService|User Experience Virtualization Service|4||10|<u>为应用程序和 OS 设置漫游提供支持</u>|
 |✰ UmRdpService|Remote Desktop Services UserMode Port Redirector|3|4 = 可 SysPrep, oobe|20|<u>允许为 RDP 连接重定向打印机/驱动程序/端口</u>|
 |✰ UnistoreSvc|User Data Storage|3|4 = 可 SysPrep, oobe|60|<u>处理结构化用户数据(包括联系人信息、日历、消息和其他内容)的存储。如果停止或禁用此服务，使用此数据的应用可能无法正常工作。</u>|
 |✰ upnphost|UPnP Device Host|3|4 = 可 SysPrep, oobe|20|<u>允许 UPnP 设备宿主在此计算机上。如果停止此服务，则所有宿主的 UPnP 设备都将停止工作，并且不能添加其他宿主设备。如果禁用此服务，则任何显式依赖于它的服务将都无法启动。</u><br>会影响 BT 一类的 UPnP 软件吗？|
@@ -247,7 +247,7 @@
 |✰ UserManager|User Manager|2|3 = 可 SysPrep, oobe (会被拉起)<br>4 = 不可 oobe|20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>如果禁用这个服务，会造成用户账户管理异常，不建议进行改动|
 |✰ UsoSvc|Update Orchestrator Service<br>更新 Orchestrator 服务|2|4 = 可 SysPrep, oobe|20|<u>管理 Windows 更新。如果已停止，你的设备将无法下载和安装最新更新。</u><sup>8</sup>|
 |✰ VacSvc|Volumetric Audio Compositor Service<br>立体音频组合器服务|3|4 = 可 SysPrep, oobe|10|<u>用于混合现实音频仿真的主机空间分析。</u><br>待测试，VR 相关|
-|✰ vmicguestinterface|Hyper-V Guest Service Interface<br>|3|4 = 可 SysPrep, oobe|20|<u>为 Hyper-V 主机提供一个接口，以便与虚拟机内运行的特定服务进行交互。</u>|
+|✰ vmicguestinterface|Hyper-V Guest Service Interface|3|4 = 可 SysPrep, oobe|20|<u>为 Hyper-V 主机提供一个接口，以便与虚拟机内运行的特定服务进行交互。</u>|
 |✰ vmicheartbeat|Hyper-V Heartbeat Service|3|4 = 可 SysPrep, oobe|20|<u>通过定期报告检测信号来监视此虚拟机的状态。此服务有助于你识别哪些运行的虚拟机已停止响应。</u>|
 |✰ vmickvpexchange|Hyper-V Data Exchange Service|3|4 = 可 SysPrep, oobe|20|<u>提供一种机制，用于在虚拟机和运行在物理计算机上的操作系统之间交换数据。</u>|
 |✰ vmicrdv|Hyper-V Remote Desktop Virtualization Service<br>Hyper-V 远程桌面虚拟化服务|3|4 = 可 SysPrep, oobe|20|<u>提供一个平台以在虚拟机和物理计算机上运行的操作系统之间进行通信。</u>|
@@ -265,8 +265,8 @@
 |✰ wercplsupport|Problem Reports Control Panel Support|3|4 = 可 SysPrep, oobe|20|<u>此服务支持查看、发送和删除“问题报告”控制面板的系统级问题报告。</u>|
 |✰ WerSvc|Windows Error Reporting Service|3|4 = 可 SysPrep, oobe|10|<u>允许在程序停止运行或停止响应时报告错误，并允许提供现有解决方案。还允许为诊断和修复服务生成日志。如果此服务被停止，则错误报告将无法正确运行，而且可能不显示诊断服务和修复的结果。</u>|
 |✰ WinDefend|Microsoft Defender Antivirus Service|2|4 = 可 SysPrep, oobe|10|<u>帮助用户防止恶意软件及其他潜在的垃圾软件。</u>|
-|✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3|<br>3 = 会被拉起|20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u>|
-|✰ Winmgmt|Windows Management Instrumentation|2|4 = 可 SysPrep, oobe|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
+|✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3|3 = 可 SysPrep, oobe<br>4 = 可 SysPrep, 不可 oobe|20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u>|
+|✰ Winmgmt|Windows Management Instrumentation|2|3 = 可 SysPrep, oobe<br>4 = 可 SysPrep, 不可 oobe|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
 |✰ WinRM|Windows Remote Management (WS-Management)|3|4 = 可 SysPrep, oobe|20|<u>Windows 远程管理(WinRM)服务执行 WS-Management 协议来实现远程管理。WS-Management 是用于远程软件和硬件管理的标准 Web 服务协议。WinRM 服务侦听网络上的 WS-Management 请求并对它们进行处理。通过组策略或使用 winrm.cmd 命令行工具的侦听程序，来配置 WinRM 服务，以使其可通过网络侦听。WinRM 服务提供对 WMI 数据的访问并启用事件集合。事件集合及对事件的订阅需要服务处于运行状态。传输 WinRM 消息时使用 HTTP 和 HTTPS 协议。WinRM 服务不依赖于 IIS ，但在同一计算机上预配置为与 IIS 共享端口。WinRM 服务保留 /wsman URL 前缀。若要防止与 IIS 发生冲突，管理员应确保 IIS 上承载的所有网站均不使用 /wsman URL 前缀。</u>|
 |✰ wisvc|Windows Insider Service<br>Windows 预览体验成员服务|3|4 = 可 SysPrep, oobe|20|<u>为 Windows 预览体验计划提供基础结构支持。此服务必须保持启用状态，Windows 预览体验计划才能正常运行。</u><br>恭喜你成为了付费测试的一员，正式成为巨硬旗下的正版受害者大冤种|
 |✰ wlidsvc|Microsoft Account Sign-in Assistant|1|4 = 可 SysPrep, oobe|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
@@ -577,7 +577,7 @@
 |UdeCx|USB Device Emulation Support Library|3|-|1||
 |udfs|udfs|4||2|<u>Reads/Writes UDF 1.02,1.5,2.0x,2.5 disc formats, usually found on C/DVD discs. (Core) (All pieces)</u>|
 |UEFI|Microsoft UEFI Driver<br>Microsoft UEFI 驱动程序|3||10||
-|UevAgentService|User Experience Virtualization Service|4||10|<u>为应用程序和 OS 设置漫游提供支持</u>|
+|UevAgentDriver|UevAgentDriver|4||2|<u>User Experience Virtualization Agent Driver</u><br>用于保存用户的语言、桌面背景、字体大小、颜色等设定|
 |Ufx01000|USB Function Class Extension|3|-|1||
 |UfxChipidea|USB Chipidea Controller<br>USB Chipidea 控制器|3|-|1||
 |ufxsynopsys|USB Synopsys 控制器<br>USB Synopsys Controller|3|-|1||
