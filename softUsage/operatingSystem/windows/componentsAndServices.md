@@ -34,10 +34,36 @@
 
 ### 服务列表
 
+带 ✰ 的是直接显示在 **计算机管理** 中的服务项
+
+服务按照 **服务名称** 排列
+
+#### 关系图谱 (待施工)
+
+<!-- https://github.com/mermaid-js/mermaid/blob/develop/README.zh-CN.md#%E7%8A%B6%E6%80%81%E5%9B%BE-docs---live-editor -->
+<!-- https://mermaid.js.org/syntax/stateDiagram.html -->
+
+```mermaid
+stateDiagram-v2
+
+classDef coreService color:red,font-weight:bool
+
+state "Appinfo<br>(核,3,3)" as Appinfo
+state "RpcSs<br>(核,2,2)" as RpcSs
+state "ProfSvc<br>(核,2,2)" as ProfSvc
+
+RpcSs --> Appinfo
+ProfSvc --> Appinfo
+
+class RpcSs,Appinfo,ProfSvc coreService
+```
+
+#### 系统核心服务
+
+下列服务请勿更改，更改后将会影响系统正常工作
+
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
-||||||带 ✰ 的是直接显示在 **计算机管理** 中的服务项<br>按照 **服务名称** 排列|
-|以下服务为系统核心服务，不可更改||||||
 |✰ Appinfo|Application Information|3||20|<u>使用辅助管理权限便于交互式应用程序的运行。如果停止此服务，用户将无法使用辅助管理权限启动应用程序，而执行所需用户任务可能需要这些权限。</u><br>禁用将无法运行任何需要提升为管理员权限的软件(就算是管理员账户本身也不行)<br>此项服务不被依赖<br>此服务依赖于 `ProfSvc` `RpcSs`|
 |✰ DcomLaunch|DCOM Server Process Launcher|2||20|<u>DCOMLAUNCH 服务可启动 COM 和 DCOM 服务器，以响应对象激活请求。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 DCOMLAUNCH 服务。</u><br>此项服务作为 `LSM` `RpcSs` 的依赖项必须保留<br>此项服务无依赖|
 |✰ DeviceInstall|Device Install Service|3||20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u><br>禁用后系统无法正常识别一些常见硬件，如网卡等<br>此项服务不被依赖，且无依赖|
@@ -53,7 +79,14 @@
 |✰ SystemEventsBroker|System Events Broker|2||20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>此项服务作为 `Schedule` 的依赖项必须保留， `Schedule` 无法拉起本服务，若本服务未运行， `Schedule` 也无法运行<br>此服务依赖于 `RpcEptMapper` `RpcSs`|
 |✰ Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u><br>在 Windows 10 中禁用本服务会导致部分新设计的窗口无法被移动，无法最大化最小化窗口化，如 Explorer.exe 的窗口<br>而非新设计的窗口则不受影响，如 Taskmgr.exe 、 mmc.exe 等<br>此项服务不被依赖，且无依赖|
 |✰ UserManager|User Manager|2||20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>若更改此服务将导致用户后 explorer 持续崩毁并反复重启<br>作为 `TokenBroker` 的依赖<br>此服务依赖于 `ProfSvc` `RpcSs`|
-|以下服务影响 oobe ，不可更改||||||
+|✰ WpnUserService|Windows Push Notifications User Service|2|若要支持 UWP 仅可降级成 3<br>4 = 可 SysPrep, oobe|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx MSIX 文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
+
+#### oobe 相关服务
+
+下列服务禁用后将影响系统进行 oobe
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |✰ AppReadiness|App Readiness|3||20|<u>当用户初次登录到这台电脑和添加新应用(UWP?)时，使应用进入就绪可用的状态。</u><br>本服务在某些情况下会导致桌面黑屏 Bug ，具体请自行 Google<br>此项服务不被依赖，且无依赖|
 |✰ AppXSvc|AppX Deployment Service (AppXSVC)|3||20|<u>为部署 Microsoft Store 应用程序提供基础结构支持。此服务根据需要启动，如果已禁用的 Microsoft Store 应用程序未部署到系统，此服务可能无法正常工作。</u>UWP 相关<br>此项服务不被依赖<br>此服务依赖于 `RpcSs` `StateRepository`|
 |✰ BrokerInfrastructure|Background Tasks Infrastructure Service|2||20|<u>控制哪些后台任务可以在系统上运行的 Windows 基础结构服务。</u><br>此服务依赖于 `DcomLaunch` `RpcEptMapper` `RpcSs`|
@@ -65,7 +98,15 @@
 |✰ TokenBroker|Web 帐户管理器|3||20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>此项服务不被依赖<br>此服务依赖于 `UserManager`|
 |✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3||20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u><br>此项服务作为 `iphlpsvc` 的依赖<br>此服务依赖于 `Dhcp`|
 |✰ WManSvc|Windows Management Service<br>Windows 管理服务|3||20|<u>执行包括预配和注册活动的管理操作</u><br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
-|以下服务可降级为 `手动 (按需启动)` 的重要服务|降级后可被依赖它的服务拉起，可放心降级|||||
+
+#### 可以降级为 <u>「手动 (按需启动)」</u> 的重要服务
+
+下列服务为 **高重要度**，直接禁用会影响系统正常运行
+
+但可以降级为<u>「手动 (按需启动)」</u> ，降级后可被其他服务正常拉起
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |✰ BFE|Base Filtering Engine|2||20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u><br>若更改此项服务将会导致用户登录后，系统无法正常工作: explorer 会反复崩溃并自动重启<br>此服务依赖于 `RpcSs`|
 |✰ CoreMessagingRegistrar|CoreMessaging|2||20|<u>Manages communication between system components.</u><br>管理系统组件之间的通信。<br>4 = 不可 SysPrep|
 |✰ CryptSvc|Cryptographic Services|2|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
@@ -75,7 +116,13 @@
 |✰ SamSs|Security Accounts Manager|2||20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u><br>禁用后将会导致新用户账户第一次登入时间超级加倍，explorer.exe 卡死，基本无法正常使用系统的情况<br>4 = 可 SysPrep, oobe|
 |✰ Schedule|Task Scheduler|2||20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>禁用将导致 CJK 输入法失效，无法在 UWP(包括任务栏托盘区的 Wi-Fi 连接密码输入框) 应用中输入任何字符<br>此服务依赖于 `RpcSs` `SystemEventsBroker`|
 |✰ Winmgmt|Windows Management Instrumentation|2||20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
-|音频、蓝牙、网络、电源管理等||||||
+
+#### 音频、蓝牙、网络、电源管理等重要服务
+
+因为绝大部分的人都需要，这部分就不测试了，直接保留默认值
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |✰ AudioEndpointBuilder|Windows Audio Endpoint Builder|2||20|<u>管理 Windows 音频服务的音频设备。如果停止了此服务，音频设备和效果将无法正常工作。如果禁用了此服务，任何明确依赖它的服务将无法启动</u>|
 |✰ Audiosrv|Windows Audio|2||10|<u>管理基于 Windows 的程序的音频。如果此服务被停止，音频设备和效果将不能正常工作。如果此服务被禁用，任何依赖它的服务将无法启动</u>|
 |✰ BluetoothUserService|Bluetooth User Support Service<br>蓝牙用户支持服务|3||60|<u>蓝牙用户服务支持与每个用户会话相关的蓝牙功能的正确运行。</u>|
@@ -93,7 +140,47 @@
 |✰ WarpJITSvc|WarpJITSvc|3||10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算转为针对 CPU 运行|
 |✰ Wcmsvc|Windows Connection Manager|2||10|<u>根据电脑当前可用的网络连接选项做出自动连接/断开连接决策，并根据“组策略”设置启用网络连接管理。</u>|
 |✰ WlanSvc|WLAN AutoConfig|3||10|<u>WLANSVC 服务提供配置、发现、连接、断开与 IEEE 802.11 标准定义的无线局域网(WLAN)的连接所需的逻辑。它还包含将计算机变成软件访问点的逻辑，以便其他设备或计算机可以使用支持它的 WLAN 适配器无线连接到计算机。停止或禁用 WLANSVC 服务将使得计算机上的所有 WLAN 适配器无法访问 Windows 网络连接 UI。强烈建议: 如果你的计算机具有 WLAN 适配器，则运行 WLANSVC 服务。</u>|
-|个人需求的服务项||||||
+
+#### 其他需求相关的服务
+
+##### 打印机支持
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
+|✰ DeviceAssociationService|Device Association Service|3|4 = 可 SysPrep, oobe|20|<u>在系统与有线或无线设备之间启用匹配。</u><br>禁用后无法通过网络添加打印机|
+|✰ DsmSvc|Device Setup Manager|3|4 = 可 SysPrep, oobe|20|<u>支持检测、下载和安装与设备相关的软件。如果此服务被禁用，则可能使用过期软件对设备进行配置，因此设备可能无法正常工作。</u><br>禁用后，在新设计的 UWP 「 Windows 设置」应用中点击「设备」，将无法看到打印机与扫描仪，但不影响打印机与扫描仪正常工作<br>用于通过 Windows Update 来自动更新驱动，会造成 CPU 占用异常高的情况，若不用打印机的话建议将其禁用|
+|✰ Spooler|Print Spooler|2|4 = 可 SysPrep, oobe|110|<u>该服务在后台执行打印作业并处理与打印机的交互。如果关闭该服务，则无法进行打印或查看打印机。</u>|
+|✰ PlugPlay|Plug and Play|3|4 = 可 SysPrep, oobe|20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u>|
+
+#### UWP 支持
+
+我个人需要用到 iCloud ，因此下列服务主要针对 iCloud for Windows (UWP) ，可以正常运行为基准进行测试
+
+在断网安装 Appx Msix 时，会因为无法访问 SmartScreen 而造成下列问题：
+
+<u>**第一次**</u>点开安装包可能会在安装过程中直接闪退，这时需要重新安装该安装包即可，之后可以正常弹出「当前无法访问 SmartScreen」的弹窗，继续点击「运行」即可正常安装
+
+其他一些 UWP 可能无法正常运行，请自行测试
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
+|✰ LicenseManager|Windows License Manager Service<br>Windows 许可证管理器服务|3|4 = 可 SysPrep, oobe|20|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如果禁用此服务，则通过 Microsoft Store 获得的内容将无法正常运行。</u><br>禁用后，打开 UWP 时会提示「文件系统错误 (-2147416359)」|
+|✰ mpssvc|Windows Defender Firewall|2|4 = 可 SysPrep, oobe|20|<u>Windows Defender 防火墙通过阻止未授权用户通过 Internet 或网络访问你的计算机来帮助保护计算机。</u><br>若需要 UWP 正常工作，本服务必须设为「2. 自动」<br>若设为「3. 手动」这本地 Appx MSIX 无法安装，且 UWP 无法运行|
+|✰ wlidsvc|Microsoft Account Sign-in Assistant|3|4 = 可 SysPrep, oobe|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>禁用后，打开 UWP 时会提示「服务尚未启动」|
+
+#### 笔记本电脑支持
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
+|✰ DisplayEnhancementService|Display Enhancement Service<br>显示增强服务|3|按需禁用|20|<u>用于管理显示增强(如亮度控制)的服务。</u><br>笔记本用户建议保留<br>台式机用户可直接禁用|
+|✰ hidserv|Human Interface Device Service|3|4 = 可 SysPrep, oobe|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u><br>禁用后键盘上的部分多媒体按键(静音 、 音量+ 、 音量- 等)会失效|
+
+#### 其他需求 (未整理)
+
+这里的服务仍未整理，智能卡 (Yubico) 、扫描仪、摄像头相关
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |✰ CertPropSvc|Certificate Propagation|3||20|<u>将用户证书和根证书从智能卡复制到当前用户的证书存储，检测智能卡何时插入到智能卡读卡器中，并在需要时安装智能卡即插即用微型驱动器。</u>|
 |✰ FrameServer|Windows Camera Frame Server|3|4 = 可 SysPrep, oobe<br>偶尔用摄像头，保留|20|<u>允许多个客户端从相机设备访问视频帧。</u><br>摄像头相关|
 |✰ SCardSvr|Smart Card|3|4 = 可 SysPrep, oobe<br>我用 Yubico|20|<u>管理此计算机对智能卡的取读访问。如果此服务被终止，此计算机将无法取读智能卡。如果此服务被禁用，任何依赖它的服务将无法启动。</u>|
@@ -101,18 +188,13 @@
 |✰ SCPolicySvc|Smart Card Removal Policy|3|4 = 可 SysPrep, oobe<br>我用 Yubico|20|<u>允许系统配置为移除智能卡时锁定用户桌面</u>|
 |✰ stisvc|Windows Image Acquisition (WIA)|3|4 = 可 SysPrep, oobe<br>我用扫描仪|10|<u>为扫描仪和照相机提供图像采集服务</u>|
 |✰ WiaRpc|Still Image Acquisition Events|3|4 = 可 SysPrep, oobe<br>摄像头、打印机、扫描仪相关|20|<u>启动与静态映像获取事件关联的应用程序。</u>|
-|打印机、网络打印机|打印机使用 HP DJ 4800 驱动自带的网络打印机连接向导测试|||||
-|✰ DeviceAssociationService|Device Association Service|3|4 = 可 SysPrep, oobe|20|<u>在系统与有线或无线设备之间启用匹配。</u><br>禁用后无法通过网络添加打印机|
-|✰ DsmSvc|Device Setup Manager|3|4 = 可 SysPrep, oobe|20|<u>支持检测、下载和安装与设备相关的软件。如果此服务被禁用，则可能使用过期软件对设备进行配置，因此设备可能无法正常工作。</u><br>禁用后，在新设计的 UWP 「 Windows 设置」应用中点击「设备」，将无法看到打印机与扫描仪，但不影响打印机与扫描仪正常工作<br>用于通过 Windows Update 来自动更新驱动，会造成 CPU 占用异常高的情况，若不用打印机的话建议将其禁用|
-|✰ Spooler|Print Spooler|2|4 = 可 SysPrep, oobe|110|<u>该服务在后台执行打印作业并处理与打印机的交互。如果关闭该服务，则无法进行打印或查看打印机。</u>|
-|✰ PlugPlay|Plug and Play|3|4 = 可 SysPrep, oobe|20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u>|
-|UWP 支持|我的需求是 iCloud 可以正常工作即可<br>其他 UWP 应用请自行测试|||||
-|✰ LicenseManager|Windows License Manager Service<br>Windows 许可证管理器服务|3|4 = 可 SysPrep, oobe|20|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如果禁用此服务，则通过 Microsoft Store 获得的内容将无法正常运行。</u>|
-|✰ mpssvc|Windows Defender Firewall|2|4 = 可 SysPrep, oobe|20|<u>Windows Defender 防火墙通过阻止未授权用户通过 Internet 或网络访问你的计算机来帮助保护计算机。</u><br>若需要 UWP 正常工作，本服务必须设为「2. 自动」<br>若设为「3. 手动」这本地 Appx 无法安装，且 UWP 无法运行|
-|其他常见需求||||||
-|✰ DisplayEnhancementService|Display Enhancement Service<br>显示增强服务|3|按需禁用|20|<u>用于管理显示增强(如亮度控制)的服务。</u><br>笔记本用户建议保留<br>台式机用户可直接禁用|
-|✰ hidserv|Human Interface Device Service|3|4 = 可 SysPrep, oobe|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u><br>禁用后键盘上的部分多媒体按键(静音 、 音量+ 、 音量- 等)会失效|
-|需后续测试禁用后有什么影响的服务项||||||
+
+### 其他影响不明的服务
+
+待具体测试，禁用后似乎什么也不会影响
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |✰ FontCache|Windows Font Cache Service|2|4 = 可 SysPrep, oobe<br>具体影响需要测试|20|<u>通过缓存常用字体数据优化应用程序的性能。如果尚未运行该服务，则应用程序将启动该服务。也可以禁用该服务，但是这样做会降低应用程序性能。</u><br>待测试，真的会降低性能吗？用 Photoshop 2018 测测看|
 |✰ InstallService|Microsoft Store Install Service<br>Microsoft Store 安装服务|3|4 = 可 SysPrep, oobe|10|<u>为 Microsoft Store 提供基础结构支持。此服务按需启动，如被禁用，则安装将无法正常运行。</u><br>待测试，不知是否影响本地 Appx 文件的安装|
 |✰ IpxlatCfgSvc|IP Translation Configuration Service<br>IP 转换配置服务|3|4 = 可 SysPrep, oobe|20|<u>配置和启用从 v4 到 v6 的转换，反之亦然</u>|
@@ -134,11 +216,13 @@
 |✰ WbioSrvc|Windows Biometric Service|3|4 = 可 SysPrep, oobe|20|<u>Windows 生物识别服务使客户端应用程序能够捕获、比较、操纵和存储生物特征数据，而无需直接访问任何生物识别硬件或示例。该服务宿主在某个特权 SVCHOST 进程中。</u><br>待测试，不知是否会影响 Yubico 的使用|
 |✰ WEPHOSTSVC|Windows Encryption Provider Host Service|3|4 = 可 SysPrep, oobe|10|<u>Windows Encryption Provider 主机服务代理加密相关功能 - 从第三方加密提供程序到需要评估和应用 EAS 策略的进程。停止此服务将损害连接的邮件帐户已经建立的合规检查</u>|
 |✰ WFDSConMgrSvc|Wi-Fi Direct Services Connection Manager Service<br>WLAN Direct 服务连接管理器服务|3|4 = 可 SysPrep, oobe|20|<u>管理与无线服务(包括无线显示和插接)的连接。</u>|
-|✰ WPDBusEnum|Portable Device Enumerator Service|3|4 = 可 SysPrep, oobe|20|<u>强制可移动大容量存储设备的组策略。使应用程序(如 Windows Media Player 和图像导入向导)能够使用可移动大容量存储设备传输和同步内容。</u>|
-|以下测试，显示、声音正常，键盘(包括 CJK 输入法)鼠标正常，无线、有线网络正常，数位板压感、游戏手柄工作正常， ShareX 、 OBS 截图、录屏正常，打印正常， USB 储存、 MTP 、 PTP 、 MIDI 设备正常||||||
-|设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示缓冲区溢出，且闪退 设置 App，「账户 > 同步你的设置」闪退需测试||||||
-|系统更新、传递优化已被禁用， KMS 激活失败，需更多测试||||||
-|UWP 提示文件系统错误，无法安装 Appx ，无法打开 UWP||||||
+
+### 可以安全禁用的服务
+
+下列服务将同时禁用 Windows Update 和 Windows Defender
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |✰ AarSvc|Agent Activation Runtime|3|4 = 可 SysPrep, oobe|60|<u>Runtime for activating conversational agent applications</u>|
 |✰ AJRouter|AllJoyn Router Service|3|4 = 可 SysPrep, oobe|20|<u>路由本地 AllJoyn 客户端的 AllJoyn 消息。如果停止此服务，则自身没有捆绑路由器的 AllJoyn 客户端将无法运行。</u>|
 |✰ ALG|Application Layer Gateway Service|3|4 = 可 SysPrep, oobe|10|<u>为 Internet 连接共享提供第三方协议插件的支持</u>|
@@ -278,7 +362,6 @@
 |✰ WinDefend|Microsoft Defender Antivirus Service|2|4 = 可 SysPrep, oobe|10|<u>帮助用户防止恶意软件及其他潜在的垃圾软件。</u>|
 |✰ WinRM|Windows Remote Management (WS-Management)|3|4 = 可 SysPrep, oobe|20|<u>Windows 远程管理(WinRM)服务执行 WS-Management 协议来实现远程管理。WS-Management 是用于远程软件和硬件管理的标准 Web 服务协议。WinRM 服务侦听网络上的 WS-Management 请求并对它们进行处理。通过组策略或使用 winrm.cmd 命令行工具的侦听程序，来配置 WinRM 服务，以使其可通过网络侦听。WinRM 服务提供对 WMI 数据的访问并启用事件集合。事件集合及对事件的订阅需要服务处于运行状态。传输 WinRM 消息时使用 HTTP 和 HTTPS 协议。WinRM 服务不依赖于 IIS ，但在同一计算机上预配置为与 IIS 共享端口。WinRM 服务保留 /wsman URL 前缀。若要防止与 IIS 发生冲突，管理员应确保 IIS 上承载的所有网站均不使用 /wsman URL 前缀。</u>|
 |✰ wisvc|Windows Insider Service<br>Windows 预览体验成员服务|3|4 = 可 SysPrep, oobe|20|<u>为 Windows 预览体验计划提供基础结构支持。此服务必须保持启用状态，Windows 预览体验计划才能正常运行。</u><br>恭喜你成为了付费测试的一员，正式成为巨硬旗下的正版受害者大冤种|
-|✰ wlidsvc|Microsoft Account Sign-in Assistant|3|4 = 可 SysPrep, oobe|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>只对登入到系统的微软账户有效，如不在系统登入微软帐号，可以禁用， UWP 相关|
 |✰ wlpasvc|Local Profile Assistant Service<br>本地配置文件助手服务|3|4 = 可 SysPrep, oobe|20|<u>此服务为订户标识模块提供配置文件管理</u>|
 |✰ wmiApSrv|WMI Performance Adapter|3|4 = 可 SysPrep, oobe|10|<u>向网络上的客户端提供 Windows Management Instrumentation (WMI) 提供程序中的性能库信息。只有在激活了性能数据助手时，才会运行此服务。</u><br>企业远程控制相关|
 |✰ WMPNetworkSvc|Windows Media Player Network Sharing Service|3|4 = 可 SysPrep, oobe|10|<u>使用通用即插即用设备与其他网络播放机和媒体设备共享 Windows Media Player 媒体库</u>|
@@ -286,7 +369,6 @@
 |✰ WpcMonSvc|Parental Controls<br>家长控制|3|4 = 可 SysPrep, oobe|10|<u>对 Windows 中的子帐户强制执行家长控制。如果此服务被停止或禁用，家长控制可能无法强制执行。</u><br>这个功能是黑人开发的吗？为什么「Mom」直接等同于「家长」|
 |✰ WPDBusEnum|Portable Device Enumerator Service|3|4 = 可 SysPrep, oobe|20|<u>强制可移动大容量存储设备的组策略。使应用程序(如 Windows Media Player 和图像导入向导)能够使用可移动大容量存储设备传输和同步内容。</u>|
 |✰ WpnService|Windows Push Notifications System Service<br>Windows 推送通知系统服务|2|4 = 可 SysPrep, oobe|20|<u>此服务在会话 0 中运行，并托管通知平台和连接提供程序(用于处理设备与 WNS 服务器之间的连接)。</u><br>用于接收来自云端的开发者推送通知，打扰能力 Max ，禁用之|
-|✰ WpnUserService|Windows Push Notifications User Service|2|4 = 可 SysPrep, oobe|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>参见 **WpnService**|
 |✰ wscsvc|Security Center|2|4 = 可 SysPrep, oobe|20|<u>WSCSVC(Windows 安全中心)服务监视并报告计算机上的安全健康设置。健康设置包括防火墙(打开/关闭)、防病毒(打开/关闭/过期)、反间谍软件(打开/关闭/过期)、Windows 更新(自动/手动下载并安装更新)、用户帐户控制(打开/关闭)以及 Internet 设置(推荐/不推荐)。该服务为独立软件供应商提供 COM API 以便向安全中心服务注册并记录其产品的状态。安全和维护 UI 使用该服务在“安全和维护”控制面板中提供 systray 警报和安全健康状况的图形视图。网络访问保护(NAP)使用该服务向 NAP 网络策略服务器报告客户端的安全健康状况，以便进行网络隔离决策。该服务还提供一个公共 API，以允许外部客户以编程方式检索系统的聚合安全健康状况。</u>|
 |✰ WSearch|Windows Search|2|4 = 可 SysPrep, oobe|20|<u>为文件、电子邮件和其他内容提供内容索引、属性缓存和搜索结果。</u>|
 |✰ WwanSvc|WWAN AutoConfig|3|4 = 可 SysPrep, oobe|20|<u>该服务管理移动宽带(GSM 和 CDMA)数据卡/嵌入式模块适配器和自动配置网络的连接。强烈建议: 保持运行此服务，以便获取移动宽带设备的最佳用户体验。</u>|
@@ -294,13 +376,29 @@
 |✰ XblGameSave|Xbox Live 游戏保存|3|4 = 可 SysPrep, oobe|20|<u>此服务为 Xbox Live 可保存游戏同步保存数据。如果此服务被停止，游戏保存数据将不会上传至 Xbox Live 或从 Xbox Live 下载。</u>|
 |✰ XboxGipSvc|Xbox Accessory Management Service|3|4 = 可 SysPrep, oobe|20|<u>This service manages connected Xbox Accessories.</u>|
 |✰ XboxNetApiSvc|Xbox Live 网络服务|3|4 = 可 SysPrep, oobe|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u>|
-|⚠⚠⚠⚠|⚠⚠⚠⚠||||下面的是只能在注册表中看到的服务项<br>一般用户建议不要碰<br>按照 **服务名称** 排列|
-|已测试的服务项||||||
-|系统核心服务，不可更改||||||
+
+### 隐藏服务及驱动项
+
+下列服务不会显示在 **计算机管理** 中，仅可通过 <u>注册表编辑器</u> 进行调整
+
+注册表路径: `\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services`
+
+#### 系统核心服务
+
+下列服务请勿更改，更改后将会影响系统正常工作
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |AFD|Ancillary Function Driver for Winsock|1||1|<u>Ancillary Function Driver for Winsock</u><br>此项服务作为 `Dhcp` 的依赖项必须保留|
 |Mup|MUP|0||2|<u>多个 UNC 提供程序驱动程序</u><br>此项服务作为 `gpsvc` 的依赖项必须保留|
 |ProfSvc|User Profile Service|2||20|<u>此服务负责加载和卸载用户配置文件。如果已停止或禁用此服务，用户将无法再成功登录或注销，应用在获取用户数据时可能会出问题，而且为接收配置文件事件通知注册的组件将无法接收这些通知。</u><br>此项服务作为 `Appinfo` 的依赖项必须保留|
-|待测试的服务||||||
+
+#### 待测试服务
+
+下列任务尚未测试
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
 |1394ohci|1394 OHCI Compliant Host Controller|3|-|1|微软开发的 1394 驱动|
 |3ware||0|3|1|LSI 3ware SCSI 驱动|
 |ACPI|Microsoft ACPI Driver|0|-|1|微软开发的 ACPI NT 驱动<br>更改此项服务将会导致系统 **无法启动**|
@@ -655,17 +753,7 @@
 |xboxgip|Xbox Game Input Protocol Driver<br>Xbox 游戏输入协议驱动程序|1|-|1|各品牌的第三方手柄都会用到|
 |xinputhid|XINPUT HID Filter Driver<br>XINPUT HID 筛选器驱动程序|3|-|1|各品牌的第三方手柄都会用到|
 
-#### 其他查找不到信息的未知服务
-
-|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
-|----|----|----|----|----|----|
-|amdgpio2|AMD GPIO Client Driver<br>AMD GPIO 客户端驱动程序|3||1||
-|amdi2c|AMD I2C Controller Service<br>AMD I2C 控制器服务|3||1||
-|AmdK8|AMD K8 Processor Driver|3||1||
-|AmdPPM|AMD Processor Driver|3||1||
-|amdsata||0||1||
-|amdsbs||0||1||
-|amdxata||0||1||
+### 注释
 
 1. 该服务在 *注册表 (Regedit.exe)* 中的 *键名*
 2. 该服务在 *服务 (services.msc)* 中的 *显示名称*
