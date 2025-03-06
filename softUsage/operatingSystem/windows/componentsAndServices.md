@@ -2,7 +2,7 @@
 
 ## Windows 10 服务列表
 
-仅针对系统版本 `19045.5073 22H2`
+仅针对系统版本 `19045.5073 22H2`，请使用 `HEU ≥ 50.0.0` 进行激活，使用旧版本 HEU 将可能无法激活系统
 
 服务的注册表文件位于 `X:/Windows/System32/config/SYSTEM\ControlSet001\Services`
 
@@ -10,7 +10,13 @@
 
 \*. 有些服务的注册表键根目录不包含 *启动类型 (Start)* 及 *服务类型 (Type)* 键值，本表将不包含这种类型的服务，如 `.NET CLR Data` 、 `adsi` 等等
 
-**优化目标**: 最大程度保留一般家用用户(非企业用户，因此对外共享的功能有可能被禁用)日常使用的功能，以及个人艺术家经常会用到的功能(如： 数位板压感、多媒体解码推流、3D 工程渲染、MIDI 输入等)，而对系统进行的最高程度的服务项精简优化
+### 优化目标
+
+> 最大程度保留一般家用用户日常使用的功能， PC 游戏，以及个人艺术家经常会用到的功能，而对系统进行的最高程度的服务项精简优化，尽可能降低非常见系统功能及组件的运行概率，力求系统长治久安
+> 
+> 一般家用用户: 非企业用户，因此 **对外** 共享的功能有可能被禁用，且不影响访问外部共享
+> 
+> 个人艺术家经常会用到的功能: 数位板压感、多媒体解码推流、3D 工程建模及渲染、MIDI 输入等
 
 ### 启动类型
 
@@ -40,24 +46,79 @@
 
 服务按照 **服务名称** 排列
 
-#### 关系图谱 (待施工)
+#### 关系图谱
+
+\*. 正在施工中
+
+说明: `(核,2,2)` 代表 **系统核心服务**, 启动类型默认值 `2`, 建议优化设置值 `2`
 
 <!-- https://github.com/mermaid-js/mermaid/blob/develop/README.zh-CN.md#%E7%8A%B6%E6%80%81%E5%9B%BE-docs---live-editor -->
 <!-- https://mermaid.js.org/syntax/stateDiagram.html -->
-
+<!-- 被依赖 指向 依赖，即 服务名称 在后 -->
 ```mermaid
 stateDiagram-v2
 
-classDef coreService color:red,font-weight:bool
+classDef coreService stroke:red,color:red,font-weight:bool
+classDef hiddenCoreService stroke:red,stroke-width:4px,color:red,font-weight:bool
 
 state "Appinfo<br>(核,3,3)" as Appinfo
+state "DcomLaunch<br>(核,2,2)" as DcomLaunch
+state "DeviceInstall<br>(核,3,3)" as DeviceInstall
+state "DevicesFlowUserSvc<br>(核,3,3)" as DevicesFlowUserSvc
+state "EventLog<br>(核,2,2)" as EventLog
+state "EventSystem<br>(核,2,2)" as EventSystem
+state "fvevol<br>(核,0,0)" as fvevol
+state "gpsvc<br>(核,2,2)" as gpsvc
+state "LSM<br>(核,2,2)" as LSM
+state "RpcEptMapper<br>(核,2,2)" as RpcEptMapper
 state "RpcSs<br>(核,2,2)" as RpcSs
+state "SENS<br>(核,2,2)" as SENS
+state "SystemEventsBroker<br>(核,2,2)" as SystemEventsBroker
+state "Themes<br>(核,2,2)" as Theme
+state "UserManager<br>(核,2,2)" as UserManager
 state "ProfSvc<br>(核,2,2)" as ProfSvc
+state "Mup<br>(核,0,0)" as Mup
 
 RpcSs --> Appinfo
 ProfSvc --> Appinfo
+DcomLaunch
+DeviceInstall
+RpcSs --> DevicesFlowUserSvc
+EventLog
+RpcSs --> EventSystem
+fvevol
+RpcSs --> gpsvc
+Mup --> gpsvc
+DcomLaunch --> LSM
+RpcEptMapper --> LSM
+RpcSs --> LSM
+RpcEptMapper
+DcomLaunch --> RpcSs
+RpcEptMapper --> RpcSs
+EventSystem --> SENS
+RpcEptMapper --> SystemEventsBroker
+RpcSs --> SystemEventsBroker
+Theme
+ProfSvc --> UserManager
+RpcSs --> UserManager
 
-class RpcSs,Appinfo,ProfSvc coreService
+class Appinfo coreService
+class DcomLaunch coreService
+class DeviceInstall coreService
+class DevicesFlowUserSvc coreService
+class EventLog coreService
+class EventSystem coreService
+class fvevol coreService
+class gpsvc coreService
+class LSM coreService
+class RpcEptMapper coreService
+class RpcSs coreService
+class SENS coreService
+class SystemEventsBroker coreService
+class Theme coreService
+class UserManager coreService
+class ProfSvc hiddenCoreService
+class Mup hiddenCoreService
 ```
 
 #### 系统核心服务
@@ -69,19 +130,18 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ Appinfo|Application Information|3||20|<u>使用辅助管理权限便于交互式应用程序的运行。如果停止此服务，用户将无法使用辅助管理权限启动应用程序，而执行所需用户任务可能需要这些权限。</u><br>禁用将无法运行任何需要提升为管理员权限的软件(就算是管理员账户本身也不行)<br>此项服务不被依赖<br>此服务依赖于 `ProfSvc` `RpcSs`|
 |✰ DcomLaunch|DCOM Server Process Launcher|2||20|<u>DCOMLAUNCH 服务可启动 COM 和 DCOM 服务器，以响应对象激活请求。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 DCOMLAUNCH 服务。</u><br>此项服务作为 `LSM` `RpcSs` 的依赖项必须保留<br>此项服务无依赖|
 |✰ DeviceInstall|Device Install Service|3||20|<u>使计算机在极少或没有用户输入的情况下能识别并适应硬件的更改。终止或禁用此服务会造成系统不稳定。</u><br>禁用后系统无法正常识别一些常见硬件，如网卡等<br>此项服务不被依赖，且无依赖|
-|✰ DevicesFlowUserSvc|DevicesFlow|3||60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>禁用后，在新设计的 UWP 「 Windows 设置」应用中点击「设备」会让设置应用闪退，无法对连接到电脑上的硬件进行配置|
+|✰ DevicesFlowUserSvc|DevicesFlow|3||60|<u>允许 ConnectUX 和电脑设置连接 WLAN 显示器和蓝牙设备并与其配对。</u><br>禁用后，在新设计的 UWP 「 Windows 设置」应用中点击「设备」会让设置应用闪退，无法对连接到电脑上的硬件进行配置<br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
 |✰ EventLog|Windows Event Log|2||20|<u>此服务管理事件和事件日志。它支持日志记录事件、查询事件、订阅事件、归档事件日志以及管理事件元数据。它可以用 XML 和纯文本两种格式显示事件。停止该服务可能危及系统的安全性和可靠性。</u><br>禁用后网络管理器无法显示网络设备，且无法连接网络<br>此项服务无依赖|
 |✰ EventSystem|COM+ Event System|2||20|<u>支持系统事件通知服务 (SENS)，此服务为订阅的组件对象模型 (COM) 组件提供自动分布事件功能。如果停止此服务，SENS 将关闭，而且不能提供登录和注销通知。如果禁用此服务，显式依赖此服务的其他服务都将无法启动。</u><br>此项服务作为 `SENS` 的依赖项必须保留<br>此服务依赖于 `RpcSs`|
 |✰ fvevol|BitLocker Drive Encryption Filter Driver|0||1|更改此项服务将会导致 **BSOD**<br>此项服务不被依赖，且无依赖|
 |✰ gpsvc|Group Policy Client|2||20|<u>此服务负责应用管理员通过组策略组件为计算机和用户配置的设置。如果禁用此服务，将不会应用这些设置，并且将无法通过组策略管理应用程序和组件。如果禁用此服务，依赖于组策略组件的所有组件或应用程序都将无法正常运行。</u><br>若此项服务无法启动，则任何非管理员账户都无法登入<br>此项服务不被依赖<br>此服务依赖于 `RpcSs` `Mup`|
 |✰ LSM|Local Session Manager|2||20|<u>管理本地用户会话的核心 Windows 服务。停止或禁用此服务将导致系统不稳定。</u><br>若更改此服务将会导系开机时卡在点点转圈的步骤，无法启动<br>此项服务不被依赖<br>此服务依赖于 `DcomLaunch` `RpcEptMapper` `RpcSs`|
-|✰ RpcEptMapper|RPC Endpoint Mapper|2||20|<u>解析 RPC 接口标识符以传输端点。如果此服务被停止或禁用，使用远程过程调用(RPC)服务的程序将无法正常运行。</u><br>作为 `EventSystem` `RpcSs` 的依赖而必须保留<br>此项服务无依赖|
+|✰ RpcEptMapper|RPC Endpoint Mapper|2||20|<u>解析 RPC 接口标识符以传输端点。如果此服务被停止或禁用，使用远程过程调用(RPC)服务的程序将无法正常运行。</u><br>作为 `EventSystem` `RpcSs` 的依赖必须保留<br>此项服务无依赖|
 |✰ RpcSs|Remote Procedure Call (RPC)|2||20|<u>RPCSS 服务是 COM 和 DCOM 服务器的服务控制管理器。它执行 COM 和 DCOM 服务器的对象激活请求、对象导出程序解析和分布式垃圾回收。如果此服务被停用或禁用，则使用 COM 或 DCOM 的程序将无法正常工作。强烈建议你运行 RPCSS 服务。</u><br>此项服务作为 `Appinfo` `AppXSvc` `BrokerInfrastructure` `ClipSVC` `EventSystem` `WManSvc` 等服务的依赖项必须保留<br>此服务依赖于 `DcomLaunch` `RpcEptMapper`|
 |✰ SENS|System Event Notification Service|2||20|<u>监视系统事件并通知订户这些事件的 COM+ 事件系统。</u><br>若此项服务无法启动，则任何非管理员账户都无法登入<br>此服务依赖于 `EventSystem`|
 |✰ SystemEventsBroker|System Events Broker|2||20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>此项服务作为 `Schedule` 的依赖项必须保留， `Schedule` 无法拉起本服务，若本服务未运行， `Schedule` 也无法运行<br>此服务依赖于 `RpcEptMapper` `RpcSs`|
 |✰ Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u><br>在 Windows 10 中禁用本服务会导致部分新设计的窗口无法被移动，无法最大化最小化窗口化，如 Explorer.exe 的窗口<br>而非新设计的窗口则不受影响，如 Taskmgr.exe 、 mmc.exe 等<br>此项服务不被依赖，且无依赖|
-|✰ UserManager|User Manager|2||20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>若更改此服务将导致用户后 explorer 持续崩毁并反复重启<br>作为 `TokenBroker` 的依赖<br>此服务依赖于 `ProfSvc` `RpcSs`|
-
+|✰ UserManager|User Manager|2||20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>若更改此服务将导致用户后 explorer 持续崩毁并反复重启<br>此项服务作为 `TokenBroker` 的依赖必须保留<br>此服务依赖于 `ProfSvc` `RpcSs`|
 
 #### oobe 相关服务
 
@@ -118,7 +178,7 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ SamSs|Security Accounts Manager|2|3|20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u><br>禁用后将会导致新用户账户第一次登入时间超级加倍，explorer.exe 卡死，基本无法正常使用系统的情况<br>4 = 可 SysPrep, oobe|
 |✰ Schedule|Task Scheduler|2|3|20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>禁用将导致 CJK 输入法失效，无法在 UWP(包括任务栏托盘区的 Wi-Fi 连接密码输入框) 应用中输入任何字符<br>此服务依赖于 `RpcSs` `SystemEventsBroker`|
 |✰ Winmgmt|Windows Management Instrumentation|2|3|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
-|✰ WpnUserService|Windows Push Notifications User Service|2|3|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx Msix文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
+|✰ WpnUserService|Windows Push Notifications User Service|2|3|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx Msix 文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
 
 #### 音频、蓝牙、网络、电源管理等重要服务
 
@@ -147,6 +207,8 @@ class RpcSs,Appinfo,ProfSvc coreService
 #### 其他需求相关的服务
 
 ##### 打印机支持
+
+\*. 打印机使用 HP DJ 4800 驱动自带的网络打印机连接向导测试
 
 若不需要使用打印机，可以安全地禁用下列服务，若使用则需保留默认启动类型
 
@@ -395,10 +457,7 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 ⚠⚠⚠⚠ 一般电脑用户不建议对本部分的服务进行改动 ⚠⚠⚠⚠
 
-下列服务<u>**不会**<u>显示在 **计算机管理** 中，仅可通过 <u>注册表编辑器</u> 进行调整
-
-
-注册表路径: `\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services`
+下列服务<u>**不会**</u>显示在 **计算机管理** 中，仅可通过 <u>注册表编辑器</u> 进行调整
 
 #### 系统核心服务
 
