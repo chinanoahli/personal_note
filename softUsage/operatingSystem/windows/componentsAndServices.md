@@ -79,7 +79,7 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ SystemEventsBroker|System Events Broker|2||20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>此项服务作为 `Schedule` 的依赖项必须保留， `Schedule` 无法拉起本服务，若本服务未运行， `Schedule` 也无法运行<br>此服务依赖于 `RpcEptMapper` `RpcSs`|
 |✰ Themes|Themes|2||20|<u>为用户提供使用主题管理的体验。</u><br>在 Windows 10 中禁用本服务会导致部分新设计的窗口无法被移动，无法最大化最小化窗口化，如 Explorer.exe 的窗口<br>而非新设计的窗口则不受影响，如 Taskmgr.exe 、 mmc.exe 等<br>此项服务不被依赖，且无依赖|
 |✰ UserManager|User Manager|2||20|<u>用户管理器提供多用户交互所需要的运行时组件。如果停止此服务，某些应用程序可能无法正确运行。</u><br>若更改此服务将导致用户后 explorer 持续崩毁并反复重启<br>作为 `TokenBroker` 的依赖<br>此服务依赖于 `ProfSvc` `RpcSs`|
-|✰ WpnUserService|Windows Push Notifications User Service|2|若要支持 UWP 仅可降级成 3<br>4 = 可 SysPrep, oobe|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx MSIX 文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
+
 
 #### oobe 相关服务
 
@@ -87,17 +87,17 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
-|✰ AppReadiness|App Readiness|3||20|<u>当用户初次登录到这台电脑和添加新应用(UWP?)时，使应用进入就绪可用的状态。</u><br>本服务在某些情况下会导致桌面黑屏 Bug ，具体请自行 Google<br>此项服务不被依赖，且无依赖|
-|✰ AppXSvc|AppX Deployment Service (AppXSVC)|3||20|<u>为部署 Microsoft Store 应用程序提供基础结构支持。此服务根据需要启动，如果已禁用的 Microsoft Store 应用程序未部署到系统，此服务可能无法正常工作。</u>UWP 相关<br>此项服务不被依赖<br>此服务依赖于 `RpcSs` `StateRepository`|
-|✰ BrokerInfrastructure|Background Tasks Infrastructure Service|2||20|<u>控制哪些后台任务可以在系统上运行的 Windows 基础结构服务。</u><br>此服务依赖于 `DcomLaunch` `RpcEptMapper` `RpcSs`|
-|✰ camsvc|Capability Access Manager Service<br>功能访问管理器服务|3||20|<u>提供设施，用于管理 UWP 应用对应用功能的访问权限以及检查应用的特定应用功能访问权限</u><br>此项服务不被依赖，且无依赖|
-|✰ ClipSVC|Client License Service (ClipSVC)|3||20|<u>提供对 Microsoft Store 的基础结构支持。此服务按需启动，并且如果禁用了此服务，则使用 Windows Store 购买的应用程序将无法正常运行。</u><br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
-|✰ DmEnrollmentSvc|Device Management Enrollment Service<br>设备管理注册服务|3||10|<u>为设备管理执行设备注册活动</u><br>禁用本服务会让 oobe 卡在完成网络连接处|
-|✰ StateRepository|State Repository Service|3||20|<u>为应用程序模型提供所需的基础结构支持。</u><br>Windows 10 与 Edge 新增的一些神秘功能，会导致一些 Bug ，禁用之？<br>此项服务作为 `AppXSvc` 的依赖项必须保留<br>此服务依赖于 `RpcSs`|
-|✰ TimeBrokerSvc|Time Broker|3||20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>此项服务不被依赖，且无依赖|
-|✰ TokenBroker|Web 帐户管理器|3||20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>此项服务不被依赖<br>此服务依赖于 `UserManager`|
-|✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3||20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u><br>此项服务作为 `iphlpsvc` 的依赖<br>此服务依赖于 `Dhcp`|
-|✰ WManSvc|Windows Management Service<br>Windows 管理服务|3||20|<u>执行包括预配和注册活动的管理操作</u><br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
+|✰ AppReadiness|App Readiness|3|-|20|<u>当用户初次登录到这台电脑和添加新应用(UWP?)时，使应用进入就绪可用的状态。</u><br>本服务在某些情况下会导致桌面黑屏 Bug ，具体请自行 Google<br>此项服务不被依赖，且无依赖|
+|✰ AppXSvc|AppX Deployment Service (AppXSVC)|3|-|20|<u>为部署 Microsoft Store 应用程序提供基础结构支持。此服务根据需要启动，如果已禁用的 Microsoft Store 应用程序未部署到系统，此服务可能无法正常工作。</u>UWP 相关<br>此项服务不被依赖<br>此服务依赖于 `RpcSs` `StateRepository`|
+|✰ BrokerInfrastructure|Background Tasks Infrastructure Service|2|-|20|<u>控制哪些后台任务可以在系统上运行的 Windows 基础结构服务。</u><br>此服务依赖于 `DcomLaunch` `RpcEptMapper` `RpcSs`|
+|✰ camsvc|Capability Access Manager Service<br>功能访问管理器服务|3|-|20|<u>提供设施，用于管理 UWP 应用对应用功能的访问权限以及检查应用的特定应用功能访问权限</u><br>此项服务不被依赖，且无依赖|
+|✰ ClipSVC|Client License Service (ClipSVC)|3|-|20|<u>提供对 Microsoft Store 的基础结构支持。此服务按需启动，并且如果禁用了此服务，则使用 Windows Store 购买的应用程序将无法正常运行。</u><br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
+|✰ DmEnrollmentSvc|Device Management Enrollment Service<br>设备管理注册服务|3|-|10|<u>为设备管理执行设备注册活动</u><br>禁用本服务会让 oobe 卡在完成网络连接处|
+|✰ StateRepository|State Repository Service|3|-|20|<u>为应用程序模型提供所需的基础结构支持。</u><br>Windows 10 与 Edge 新增的一些神秘功能，会导致一些 Bug ，禁用之？<br>此项服务作为 `AppXSvc` 的依赖项必须保留<br>此服务依赖于 `RpcSs`|
+|✰ TimeBrokerSvc|Time Broker|3|-|20|<u>协调执行 WinRT 应用程序的后台作业。如果停止或禁用此服务，则可能不会触发后台作业。</u><br>此项服务不被依赖，且无依赖|
+|✰ TokenBroker|Web 帐户管理器|3|-|20|<u>Web 帐户管理器利用此服务实现应用和服务的单一登录。</u><br>此项服务不被依赖<br>此服务依赖于 `UserManager`|
+|✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3|-|20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u><br>此项服务作为 `iphlpsvc` 的依赖<br>此服务依赖于 `Dhcp`|
+|✰ WManSvc|Windows Management Service<br>Windows 管理服务|3|-|20|<u>执行包括预配和注册活动的管理操作</u><br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
 
 #### 可以降级为 <u>「手动 (按需启动)」</u> 的重要服务
 
@@ -107,15 +107,16 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
-|✰ BFE|Base Filtering Engine|2||20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u><br>若更改此项服务将会导致用户登录后，系统无法正常工作: explorer 会反复崩溃并自动重启<br>此服务依赖于 `RpcSs`|
-|✰ CoreMessagingRegistrar|CoreMessaging|2||20|<u>Manages communication between system components.</u><br>管理系统组件之间的通信。<br>4 = 不可 SysPrep|
-|✰ CryptSvc|Cryptographic Services|2|4 = 可 SysPrep, oobe<br>会被自动提升设置为 3|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
-|✰ dmwappushservice|Device Management Wireless Application Protocol (WAP) Push message Routing Service<br>设备管理无线应用程序协议 (WAP) 推送消息路由服务|3|最高只能设为 3|20|<u>路由设备收到的无线应用程序协议 (WAP) 推送消息并同步设备管理会话</u><br>4 = 不可 SysPrep|
-|✰ iphlpsvc|IP Helper|2||20|<u>使用 IPv6 转换技术(6to4、ISATAP、端口代理和 Teredo)和 IP-HTTPS 提供隧道连接。如果停止该服务，则计算机将不具备这些技术提供的增强连接优势。</u><br>4 = 可 SysPrep, 不可 oobe|
-|✰ nsi|Network Store Interface Service|2||20|<u>此服务向用户模式客户端发送网络通知(例如，添加/删除接口等)。停止此服务将导致丢失网络连接。如果禁用此服务，则显式依赖此服务的所有其他服务都将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
-|✰ SamSs|Security Accounts Manager|2||20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u><br>禁用后将会导致新用户账户第一次登入时间超级加倍，explorer.exe 卡死，基本无法正常使用系统的情况<br>4 = 可 SysPrep, oobe|
-|✰ Schedule|Task Scheduler|2||20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>禁用将导致 CJK 输入法失效，无法在 UWP(包括任务栏托盘区的 Wi-Fi 连接密码输入框) 应用中输入任何字符<br>此服务依赖于 `RpcSs` `SystemEventsBroker`|
-|✰ Winmgmt|Windows Management Instrumentation|2||20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
+|✰ BFE|Base Filtering Engine|2|3|20|<u>基本筛选引擎(BFE)是一种管理防火墙和 Internet 协议安全(IPsec)策略以及实施用户模式筛选的服务。停止或禁用 BFE 服务将大大降低系统的安全。还将造成 IPsec 管理和防火墙应用程序产生不可预知的行为。</u><br>若更改此项服务将会导致用户登录后，系统无法正常工作: explorer 会反复崩溃并自动重启<br>此服务依赖于 `RpcSs`|
+|✰ CoreMessagingRegistrar|CoreMessaging|2|3|20|<u>Manages communication between system components.</u><br>管理系统组件之间的通信。<br>4 = 不可 SysPrep|
+|✰ CryptSvc|Cryptographic Services|2|3|20|<u>提供三种管理服务: 编录数据库服务，用于确认 Windows 文件的签名和允许安装新程序；受保护的根服务，它从此计算机添加和删除受信任的根证书颁发机构的证书；自动根证书更新服务，用于从 Windows 更新中检索根证书和启用 SSL 等方案。如果此服务已停止，这些管理服务将无法正常运行。如果此服务已禁用，任何明确依赖它的服务将无法启动。</u>|
+|✰ dmwappushservice|Device Management Wireless Application Protocol (WAP) Push message Routing Service<br>设备管理无线应用程序协议 (WAP) 推送消息路由服务|3|3|20|<u>路由设备收到的无线应用程序协议 (WAP) 推送消息并同步设备管理会话</u><br>4 = 不可 SysPrep|
+|✰ iphlpsvc|IP Helper|2|3|20|<u>使用 IPv6 转换技术(6to4、ISATAP、端口代理和 Teredo)和 IP-HTTPS 提供隧道连接。如果停止该服务，则计算机将不具备这些技术提供的增强连接优势。</u><br>4 = 可 SysPrep, 不可 oobe|
+|✰ nsi|Network Store Interface Service|2|3|20|<u>此服务向用户模式客户端发送网络通知(例如，添加/删除接口等)。停止此服务将导致丢失网络连接。如果禁用此服务，则显式依赖此服务的所有其他服务都将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
+|✰ SamSs|Security Accounts Manager|2|3|20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u><br>禁用后将会导致新用户账户第一次登入时间超级加倍，explorer.exe 卡死，基本无法正常使用系统的情况<br>4 = 可 SysPrep, oobe|
+|✰ Schedule|Task Scheduler|2|3|20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>禁用将导致 CJK 输入法失效，无法在 UWP(包括任务栏托盘区的 Wi-Fi 连接密码输入框) 应用中输入任何字符<br>此服务依赖于 `RpcSs` `SystemEventsBroker`|
+|✰ Winmgmt|Windows Management Instrumentation|2|3|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
+|✰ WpnUserService|Windows Push Notifications User Service|2|3|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx MSIX 文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
 
 #### 音频、蓝牙、网络、电源管理等重要服务
 
@@ -123,27 +124,29 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
-|✰ AudioEndpointBuilder|Windows Audio Endpoint Builder|2||20|<u>管理 Windows 音频服务的音频设备。如果停止了此服务，音频设备和效果将无法正常工作。如果禁用了此服务，任何明确依赖它的服务将无法启动</u>|
-|✰ Audiosrv|Windows Audio|2||10|<u>管理基于 Windows 的程序的音频。如果此服务被停止，音频设备和效果将不能正常工作。如果此服务被禁用，任何依赖它的服务将无法启动</u>|
-|✰ BluetoothUserService|Bluetooth User Support Service<br>蓝牙用户支持服务|3||60|<u>蓝牙用户服务支持与每个用户会话相关的蓝牙功能的正确运行。</u>|
-|✰ BTAGService|Bluetooth Audio Gateway Service<br>蓝牙音频网关服务|3||20|<u>支持蓝牙免提配置文件的音频网关角色的服务。</u>|
-|✰ BthAvctpSvc|AVCTP service<br>AVCTP 服务|3||20|<u>这是音频视频控制传输协议服务</u>|
-|✰ bthserv|Bluetooth Support Service<br>蓝牙支持服务|3||20|<u>蓝牙服务支持发现和关联远程蓝牙设备。停止或禁用此服务可能会导致已安装的蓝牙设备无法正常运行，并使新设备无法被发现或关联。</u>|
-|✰ Dhcp|DHCP Client|2||20|<u>为此计算机注册并更新 IP 地址。如果此服务停止，计算机将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>此项服务作为 `WinHttpAutoProxySvc` 的依赖项必须保留<br>此服务依赖于 `AFD` `nsi`|
-|✰ Dnscache|DNS Client|2||20|<u>DNS 客户端服务(dnscache)缓存域名系统(DNS)名称并注册该计算机的完整计算机名。如果该服务被停止，将继续解析 DNS 名称。然而，将不缓存 DNS 名称的查询结果，且不注册计算机名。如果该服务被禁用，则任何明确依赖于它的服务都将无法启动。</u>|
-|✰ msiserver|Windows Installer|3||10|<u>添加、修改和删除作为 Windows Installer 程序包(\*.msi、\*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</u>|
-|✰ netprofm|Network List Service|3||20|<u>识别计算机已连接的网络，收集和存储这些网络的属性，并在更改这些属性时通知应用程序。</u><br>禁用后系统托盘将无法显示网络指示器，且无法连接到任何 Wi-Fi 网络<br><br>此服务依赖于 `NlaSvc` `RpcSs`|
-|✰ Power|Power|2||20|<u>管理电源策略和电源策略通知传递。</u>|
-|✰ QWAVE|Quality Windows Audio Video Experience|3||20|<u>优质 Windows 音频视频体验(qWave)是用于 IP 家庭网络上的音频视频(AV)流应用程序的网络平台。通过确保 AV 应用程序的网络服务质量(QoS)，qWave 增强了 AV 流的性能和可靠性。它提供了许可控制机制、运行时监视和实施、应用程序反馈以及流量优先顺序。</u>|
-|✰ TrustedInstaller|Windows Modules Installer|2||10|<u>启用 Windows 更新和可选组件的安装、修改和移除。如果此服务被禁用，则此计算机的 Windows 更新的安装或卸载可能会失败。</u>|
-|✰ W32Time|Windows Time|3||20|<u>维护在网络上的所有客户端和服务器的时间和日期同步。如果此服务被停止，时间和日期的同步将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>`Parameters\NtpServer` 中可以修改默认的 NTP 服务器|
-|✰ WarpJITSvc|WarpJITSvc|3||10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算转为针对 CPU 运行|
-|✰ Wcmsvc|Windows Connection Manager|2||10|<u>根据电脑当前可用的网络连接选项做出自动连接/断开连接决策，并根据“组策略”设置启用网络连接管理。</u>|
-|✰ WlanSvc|WLAN AutoConfig|3||10|<u>WLANSVC 服务提供配置、发现、连接、断开与 IEEE 802.11 标准定义的无线局域网(WLAN)的连接所需的逻辑。它还包含将计算机变成软件访问点的逻辑，以便其他设备或计算机可以使用支持它的 WLAN 适配器无线连接到计算机。停止或禁用 WLANSVC 服务将使得计算机上的所有 WLAN 适配器无法访问 Windows 网络连接 UI。强烈建议: 如果你的计算机具有 WLAN 适配器，则运行 WLANSVC 服务。</u>|
+|✰ AudioEndpointBuilder|Windows Audio Endpoint Builder|2|-|20|<u>管理 Windows 音频服务的音频设备。如果停止了此服务，音频设备和效果将无法正常工作。如果禁用了此服务，任何明确依赖它的服务将无法启动</u>|
+|✰ Audiosrv|Windows Audio|2|-|10|<u>管理基于 Windows 的程序的音频。如果此服务被停止，音频设备和效果将不能正常工作。如果此服务被禁用，任何依赖它的服务将无法启动</u>|
+|✰ BluetoothUserService|Bluetooth User Support Service<br>蓝牙用户支持服务|3|-|60|<u>蓝牙用户服务支持与每个用户会话相关的蓝牙功能的正确运行。</u>|
+|✰ BTAGService|Bluetooth Audio Gateway Service<br>蓝牙音频网关服务|3|-|20|<u>支持蓝牙免提配置文件的音频网关角色的服务。</u>|
+|✰ BthAvctpSvc|AVCTP service<br>AVCTP 服务|3|-|20|<u>这是音频视频控制传输协议服务</u>|
+|✰ bthserv|Bluetooth Support Service<br>蓝牙支持服务|3|-|20|<u>蓝牙服务支持发现和关联远程蓝牙设备。停止或禁用此服务可能会导致已安装的蓝牙设备无法正常运行，并使新设备无法被发现或关联。</u>|
+|✰ Dhcp|DHCP Client|2|-|20|<u>为此计算机注册并更新 IP 地址。如果此服务停止，计算机将不能接收动态 IP 地址和 DNS 更新。如果此服务被禁用，所有明确依赖它的服务都将不能启动。</u><br>此项服务作为 `WinHttpAutoProxySvc` 的依赖项必须保留<br>此服务依赖于 `AFD` `nsi`|
+|✰ Dnscache|DNS Client|2|-|20|<u>DNS 客户端服务(dnscache)缓存域名系统(DNS)名称并注册该计算机的完整计算机名。如果该服务被停止，将继续解析 DNS 名称。然而，将不缓存 DNS 名称的查询结果，且不注册计算机名。如果该服务被禁用，则任何明确依赖于它的服务都将无法启动。</u>|
+|✰ msiserver|Windows Installer|3|-|10|<u>添加、修改和删除作为 Windows Installer 程序包(\*.msi、\*.msp)提供的应用程序。如果禁用此服务，则任何显式依赖它的服务均将无法启动。</u>|
+|✰ netprofm|Network List Service|3|-|20|<u>识别计算机已连接的网络，收集和存储这些网络的属性，并在更改这些属性时通知应用程序。</u><br>禁用后系统托盘将无法显示网络指示器，且无法连接到任何 Wi-Fi 网络<br><br>此服务依赖于 `NlaSvc` `RpcSs`|
+|✰ Power|Power|2|-|20|<u>管理电源策略和电源策略通知传递。</u>|
+|✰ QWAVE|Quality Windows Audio Video Experience|3|-|20|<u>优质 Windows 音频视频体验(qWave)是用于 IP 家庭网络上的音频视频(AV)流应用程序的网络平台。通过确保 AV 应用程序的网络服务质量(QoS)，qWave 增强了 AV 流的性能和可靠性。它提供了许可控制机制、运行时监视和实施、应用程序反馈以及流量优先顺序。</u>|
+|✰ TrustedInstaller|Windows Modules Installer|2|-|10|<u>启用 Windows 更新和可选组件的安装、修改和移除。如果此服务被禁用，则此计算机的 Windows 更新的安装或卸载可能会失败。</u>|
+|✰ W32Time|Windows Time|3|-|20|<u>维护在网络上的所有客户端和服务器的时间和日期同步。如果此服务被停止，时间和日期的同步将不可用。如果此服务被禁用，任何明确依赖它的服务都将不能启动。</u><br>`Parameters\NtpServer` 中可以修改默认的 NTP 服务器|
+|✰ WarpJITSvc|WarpJITSvc|3|-|10|<u>Provides a JIT out of process service for WARP when running with ACG enabled.</u><br>当你的电脑只有核显的时候，会将图形运算转为针对 CPU 运行|
+|✰ Wcmsvc|Windows Connection Manager|2|-|10|<u>根据电脑当前可用的网络连接选项做出自动连接/断开连接决策，并根据“组策略”设置启用网络连接管理。</u>|
+|✰ WlanSvc|WLAN AutoConfig|3|-|10|<u>WLANSVC 服务提供配置、发现、连接、断开与 IEEE 802.11 标准定义的无线局域网(WLAN)的连接所需的逻辑。它还包含将计算机变成软件访问点的逻辑，以便其他设备或计算机可以使用支持它的 WLAN 适配器无线连接到计算机。停止或禁用 WLANSVC 服务将使得计算机上的所有 WLAN 适配器无法访问 Windows 网络连接 UI。强烈建议: 如果你的计算机具有 WLAN 适配器，则运行 WLANSVC 服务。</u>|
 
 #### 其他需求相关的服务
 
 ##### 打印机支持
+
+若不需要使用打印机，可以安全地禁用下列服务，若使用则需保留默认启动类型
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
@@ -154,13 +157,13 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 #### UWP 支持
 
-我个人需要用到 iCloud ，因此下列服务主要针对 iCloud for Windows (UWP) ，可以正常运行为基准进行测试
+我个人需要用到 iCloud ，因此下列服务主要针对 iCloud for Windows (UWP) 可以正常运行为基准进行测试
 
-在断网安装 Appx Msix 时，会因为无法访问 SmartScreen 而造成下列问题：
+在断网安装 Appx Msix 时，会因为无法访问 SmartScreen 而造成下列问题 ( 或 SmartScreen 被精简后 ) ：
 
-<u>**第一次**</u>点开安装包可能会在安装过程中直接闪退，这时需要重新安装该安装包即可，之后可以正常弹出「当前无法访问 SmartScreen」的弹窗，继续点击「运行」即可正常安装
+<u>**第一次**</u>点开安装包可能会在安装过程中直接闪退，这时需要重新安装该安装包即可，这时将正常弹出「当前无法访问 SmartScreen」的弹窗，继续点击「运行」即可正常安装
 
-其他一些 UWP 可能无法正常运行，请自行测试
+其他 UWP 可能无法正常运行，请自行测试
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
@@ -379,7 +382,10 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 ### 隐藏服务及驱动项
 
-下列服务不会显示在 **计算机管理** 中，仅可通过 <u>注册表编辑器</u> 进行调整
+⚠⚠⚠⚠ 一般电脑用户不建议对本部分的服务进行改动 ⚠⚠⚠⚠
+
+下列服务<u>**不会**<u>显示在 **计算机管理** 中，仅可通过 <u>注册表编辑器</u> 进行调整
+
 
 注册表路径: `\HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services`
 
