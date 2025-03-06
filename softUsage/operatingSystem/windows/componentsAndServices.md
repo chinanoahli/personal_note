@@ -101,7 +101,7 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ WinHttpAutoProxySvc|WinHTTP Web Proxy Auto-Discovery Service|3|-|20|<u>WinHTTP 实现了客户端 HTTP 堆栈并向开发人员提供 Win32 API 和 COM 自动化组件以供发送 HTTP 请求和接收响应。此外，通过执行 Web 代理自动发现(WPAD)协议，WinHTTP 还提供对自动发现代理服务器配置的支持。</u><br>此项服务作为 `iphlpsvc` 的依赖<br>此服务依赖于 `Dhcp`|
 |✰ WManSvc|Windows Management Service<br>Windows 管理服务|3|-|20|<u>执行包括预配和注册活动的管理操作</u><br>此项服务不被依赖<br>此服务依赖于 `RpcSs`|
 
-#### 可以降级为 <u>「手动 (按需启动)」</u> 的重要服务
+#### 可以降级为 <u>「3. 手动 (按需启动)」</u> 的重要服务
 
 下列服务为 **高重要度**，直接禁用会影响系统正常运行
 
@@ -118,7 +118,7 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ SamSs|Security Accounts Manager|2|3|20|<u>已准备就绪，可以接受请求。禁用此服务将导致在 SAM 准备就绪时，无法通知系统中的其他服务，从而可能导致这些服务无法正确启动。不应禁用此服务。</u><br>禁用后将会导致新用户账户第一次登入时间超级加倍，explorer.exe 卡死，基本无法正常使用系统的情况<br>4 = 可 SysPrep, oobe|
 |✰ Schedule|Task Scheduler|2|3|20|<u>使用户可以在此计算机上配置和计划自动任务。此服务还托管多个 Windows 系统关键任务。如果此服务被停止或禁用，这些任务将无法在计划的时间运行。如果此服务被禁用，则明确依赖它的所有服务将无法启动。</u><br>禁用将导致 CJK 输入法失效，无法在 UWP(包括任务栏托盘区的 Wi-Fi 连接密码输入框) 应用中输入任何字符<br>此服务依赖于 `RpcSs` `SystemEventsBroker`|
 |✰ Winmgmt|Windows Management Instrumentation|2|3|20|<u>提供共同的界面和对象模式以便访问有关操作系统、设备、应用程序和服务的管理信息。如果此服务被终止，多数基于 Windows 的软件将无法正常运行。如果此服务被禁用，任何依赖它的服务将无法启动。</u><br>4 = 可 SysPrep, 不可 oobe|
-|✰ WpnUserService|Windows Push Notifications User Service|2|3|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx MSIX 文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
+|✰ WpnUserService|Windows Push Notifications User Service|2|3|60|<u>此服务托管为本地通知和推送通知提供支持的 Windows 通知平台。支持的通知为磁贴、Toast 和 Raw。</u><br>禁用后，会导致设置 App 的「系统 > 专注助手」、「网络和 Internet 」 提示「缓冲区溢出」并闪退<br>且 Appx Msix文件将会无法安装，并提示「文件系统错误 (-2147219295)」|
 
 #### 音频、蓝牙、网络、电源管理等重要服务
 
@@ -163,9 +163,11 @@ class RpcSs,Appinfo,ProfSvc coreService
 
 在断网安装 Appx Msix 时，会因为无法访问 SmartScreen 而造成下列问题 ( 或 SmartScreen 被精简后 ) ：
 
-<u>**第一次**</u>点开安装包可能会在安装过程中直接闪退，这时需要重新安装该安装包即可，这时将正常弹出「当前无法访问 SmartScreen」的弹窗，继续点击「运行」即可正常安装
+<u>**第一次**</u>点开安装包可能会在安装过程中直接闪退，重新安装该安装包即可
 
-其他 UWP 可能无法正常运行，请自行测试
+这时将正常弹出「当前无法访问 SmartScreen」的弹窗，继续点击「运行」即可正常安装
+
+\*. 其他 UWP 可能无法正常运行，请自行测试
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
@@ -173,12 +175,23 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ mpssvc|Windows Defender Firewall|2|4 = 可 SysPrep, oobe|20|<u>Windows Defender 防火墙通过阻止未授权用户通过 Internet 或网络访问你的计算机来帮助保护计算机。</u><br>若需要 UWP 正常工作，本服务必须设为「2. 自动」<br>若设为「3. 手动」这本地 Appx MSIX 无法安装，且 UWP 无法运行|
 |✰ wlidsvc|Microsoft Account Sign-in Assistant|3|4 = 可 SysPrep, oobe|20|<u>支持用户通过 Microsoft 帐户标识服务登录。如果此服务已停止，用户将无法使用其 Microsoft 帐户登录到此计算机。</u><br>禁用后，打开 UWP 时会提示「服务尚未启动」|
 
-#### 笔记本电脑支持
+#### 笔记本电脑、键盘多媒体控制键支持
 
 |服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
 |----|----|----|----|----|----|
 |✰ DisplayEnhancementService|Display Enhancement Service<br>显示增强服务|3|按需禁用|20|<u>用于管理显示增强(如亮度控制)的服务。</u><br>笔记本用户建议保留<br>台式机用户可直接禁用|
 |✰ hidserv|Human Interface Device Service|3|4 = 可 SysPrep, oobe|16|<u>激活键盘、遥控器和其他多媒体设备上的热按钮并继续使用这些按钮。建议你让此服务一直运行。</u><br>禁用后键盘上的部分多媒体按键(静音 、 音量+ 、 音量- 等)会失效|
+
+#### Xbox 游戏相关
+
+不玩 Xbox 系游戏可安全禁用，否则建议保留默认值
+
+|服务名称<sup>1</sup>|显示名称<sup>2</sup><br>( EN / CN )|默认启动类型|优化后启动类型<sup>3, 4</sup>|服务类型<sup>5</sup>|备注<sup>6, 7</sup>|
+|----|----|----|----|----|----|
+|✰ XblAuthManager|Xbox Live 身份验证管理器|3|4 = 可 SysPrep, oobe|20||
+|✰ XblGameSave|Xbox Live 游戏保存|3|4 = 可 SysPrep, oobe|20|<u>此服务为 Xbox Live 可保存游戏同步保存数据。如果此服务被停止，游戏保存数据将不会上传至 Xbox Live 或从 Xbox Live 下载。</u>|
+|✰ XboxGipSvc|Xbox Accessory Management Service|3|4 = 可 SysPrep, oobe|20|<u>This service manages connected Xbox Accessories.</u>|
+|✰ XboxNetApiSvc|Xbox Live 网络服务|3|4 = 可 SysPrep, oobe|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u>|
 
 #### 其他需求 (未整理)
 
@@ -377,10 +390,6 @@ class RpcSs,Appinfo,ProfSvc coreService
 |✰ wscsvc|Security Center|2|4 = 可 SysPrep, oobe|20|<u>WSCSVC(Windows 安全中心)服务监视并报告计算机上的安全健康设置。健康设置包括防火墙(打开/关闭)、防病毒(打开/关闭/过期)、反间谍软件(打开/关闭/过期)、Windows 更新(自动/手动下载并安装更新)、用户帐户控制(打开/关闭)以及 Internet 设置(推荐/不推荐)。该服务为独立软件供应商提供 COM API 以便向安全中心服务注册并记录其产品的状态。安全和维护 UI 使用该服务在“安全和维护”控制面板中提供 systray 警报和安全健康状况的图形视图。网络访问保护(NAP)使用该服务向 NAP 网络策略服务器报告客户端的安全健康状况，以便进行网络隔离决策。该服务还提供一个公共 API，以允许外部客户以编程方式检索系统的聚合安全健康状况。</u>|
 |✰ WSearch|Windows Search|2|4 = 可 SysPrep, oobe|20|<u>为文件、电子邮件和其他内容提供内容索引、属性缓存和搜索结果。</u>|
 |✰ WwanSvc|WWAN AutoConfig|3|4 = 可 SysPrep, oobe|20|<u>该服务管理移动宽带(GSM 和 CDMA)数据卡/嵌入式模块适配器和自动配置网络的连接。强烈建议: 保持运行此服务，以便获取移动宽带设备的最佳用户体验。</u>|
-|✰ XblAuthManager|Xbox Live 身份验证管理器|3|4 = 可 SysPrep, oobe|20||
-|✰ XblGameSave|Xbox Live 游戏保存|3|4 = 可 SysPrep, oobe|20|<u>此服务为 Xbox Live 可保存游戏同步保存数据。如果此服务被停止，游戏保存数据将不会上传至 Xbox Live 或从 Xbox Live 下载。</u>|
-|✰ XboxGipSvc|Xbox Accessory Management Service|3|4 = 可 SysPrep, oobe|20|<u>This service manages connected Xbox Accessories.</u>|
-|✰ XboxNetApiSvc|Xbox Live 网络服务|3|4 = 可 SysPrep, oobe|20|<u>此服务支持 Windows.Networking.XboxLive 应用程序编程接口。</u>|
 
 ### 隐藏服务及驱动项
 
